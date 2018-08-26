@@ -40,9 +40,7 @@ import Foundation
 
 /**
  Instantiates the Logic Coordinator for the application.
- 
  - parameter servicesType: The type of Service Factory to be used (Production, Mock, etc.).  Allows the opportunity to use real or mock (static) data.
-
  */
 func initializeLogicCoordinator(_ servicesType: LogicCoordinatorServicesType) {
     _ = LogicCoordinator.sharedInstance   // instantiate singleton
@@ -67,10 +65,8 @@ protocol Logic {
     
     /**
      Protocol method for asking Logic modules to perform any relevant Action on the provided AppState struct.
-     
      - parameter state:  AppState struct: encapsulates the entire state of the application
      - parameter action: Action enum: encapsulates the desired operation being requested, and optionally carries any relevant data (as an attributed enum value)
-     
      Nothing is returned.  Instead, the logic (optionally) mutates the AppState object passed in (if the requested action was something relevant to what that business logic cared about).
      */
     func performLogic(_ state: AppState, action: Action)
@@ -97,10 +93,8 @@ protocol AppStateSubscriber {
     
     /**
      Offers a logic module the opportunity to (optionally) mutate the AppState, based on the most recent type of Action.
-     
      - parameter state:  Reference to the AppState to optionally be mutated.
      - parameter mostRecentAction:  The most recent Action executed by the business/service logic.  Allows the listener to determine what to do, if anything, based on the type of Action executed.
-
      */
     func update(_ state: AppState, mostRecentAction: Action)
 }
@@ -110,7 +104,6 @@ protocol AppStateSubscriber {
 
 /**
  Helper method to generate unique identifier.  Can be used as an attribute in comparing instances, to make them unique, identifiable, and able to be filtered.
- 
  - returns: A newly-created unique identifier.
  */
 private func generateUniqueIdentifier() -> String {
@@ -120,10 +113,8 @@ private func generateUniqueIdentifier() -> String {
 
 /**
  Equatable for AppStateSubscribers. This will allow us to filter them.
- 
  - parameter lhs: The first subscriber to be compared.
  - parameter rhs: The second subscriber to be compared.
- 
  - returns: True if the subscribers have the same identifier; False if not.
  */
 func !=(lhs: AppStateSubscriber, rhs: AppStateSubscriber) -> Bool {
@@ -151,7 +142,6 @@ class LogicCoordinator {
 
             // grab references to any Services (could be real or mock) from the ServiceFactory
             // ... then inject them into the business logic units that depend on them
-            
             self.fooService = serviceFactory!.fooService
             self.fooLogic.service = self.fooService
         }
@@ -199,7 +189,6 @@ class LogicCoordinator {
     /**
      The LogicCoordinator calls all the individual logic modules, which each mutate relevant portions of the app state as needed.
      - parameter action: The Action to be submitted to the various logic modules (with optional data).
-
      NOTE: 'performAction' is executed on the Main thread.  If the request is initiated from the main thread, then the logic (and the update:appState callback) will be executed synchronously.
      */
     func performAction(_ action: Action) {

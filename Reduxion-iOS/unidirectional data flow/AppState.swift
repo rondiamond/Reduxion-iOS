@@ -80,5 +80,4 @@ class AppState: NSObject, NSCoding {
     required init(coder aDecoder: NSCoder) {
         self.property1 = aDecoder.decodeBool(forKey: keyNameProperty1)
     }
-    
 }
