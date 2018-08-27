@@ -12,6 +12,14 @@
 //  https://github.com/armin/Redux-iOS/blob/8bf11d9e2495e1e7969d42ea266ec76b59472e1b/LICENSE
 //
 
+/**
+ Single Responsibility (SRP):
+ This class implements the LogicCoordinator object.  It:
+ ... accepts Action requests from the rest of the application
+ ... hands those actions off to each Logic unit for processing
+ ... notifies Subscribers when the logic processing has finished
+ */
+
 import Foundation
 
 

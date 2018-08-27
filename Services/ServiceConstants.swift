@@ -7,6 +7,11 @@
 //  Licensed per the LICENSE.txt file.
 //
 
+/**
+ Single Responsibility (SRP):
+ This class contains constants controlling behavior of the Service layer.
+ */
+
 import Foundation
 
 // MARK: - Services type

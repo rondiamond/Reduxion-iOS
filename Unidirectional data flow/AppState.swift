@@ -7,6 +7,11 @@
 //  Licensed per the LICENSE.txt file.
 //
 
+/**
+ Single Responsibility (SRP):
+ This class implements the AppState object, which contains the current state of the application.
+ */
+
 import Foundation
 
 /**

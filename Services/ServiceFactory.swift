@@ -7,6 +7,11 @@
 //  Licensed per the LICENSE.txt file.
 //
 
+/**
+ Single Responsibility (SRP):
+ This file contains protocols and classes related to the Service Factory.
+ */
+
 import Foundation
 
 // MARK: - Services
