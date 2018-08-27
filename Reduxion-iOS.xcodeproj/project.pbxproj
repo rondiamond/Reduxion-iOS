@@ -15,7 +15,6 @@
 		E4CE6ADA21314BE400E4E865 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD521314BE400E4E865 /* ServiceFactory.swift */; };
 		E4CE6ADB21314BE400E4E865 /* LogicCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */; };
 		E4CE6ADC21314BE400E4E865 /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD721314BE400E4E865 /* ServiceConstants.swift */; };
-		E4D4FE6F2133784400438A8F /* ObjCTryCatch.h in Headers */ = {isa = PBXBuildFile; fileRef = E4D4FE6D2133784400438A8F /* ObjCTryCatch.h */; };
 		E4D4FE702133784400438A8F /* ObjCTryCatch.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE6E2133784400438A8F /* ObjCTryCatch.m */; };
 		E4D4FE712133784400438A8F /* ObjCTryCatch.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE6E2133784400438A8F /* ObjCTryCatch.m */; };
 /* End PBXBuildFile section */
@@ -141,7 +140,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4D4FE6F2133784400438A8F /* ObjCTryCatch.h in Headers */,
 				E4CE6AC92131498B00E4E865 /* Reduxion_iOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
