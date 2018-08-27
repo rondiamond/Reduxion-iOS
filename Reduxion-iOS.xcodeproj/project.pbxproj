@@ -17,7 +17,7 @@
 		E4CE6ADC21314BE400E4E865 /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD721314BE400E4E865 /* ServiceConstants.swift */; };
 		E4D4FE702133784400438A8F /* ObjCTryCatch.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE6E2133784400438A8F /* ObjCTryCatch.m */; };
 		E4D4FE712133784400438A8F /* ObjCTryCatch.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE6E2133784400438A8F /* ObjCTryCatch.m */; };
-		E4D4FE802133BAC100438A8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE7F2133BAC100438A8F /* AppDelegate.swift */; };
+		E4D4FE802133BAC100438A8F /* Application Delegate in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE7F2133BAC100438A8F /* Application Delegate */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,7 @@
 		E4D4FE742133AE2000438A8F /* ReadMe.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 		E4D4FE7B2133B6EA00438A8F /* FooLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooLogic.swift; sourceTree = "<group>"; };
 		E4D4FE7E2133B78E00438A8F /* FooLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FooLogic.swift; path = "use cases/Foo/FooLogic.swift"; sourceTree = SOURCE_ROOT; };
-		E4D4FE7F2133BAC100438A8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "New Group/Application Delegate/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
+		E4D4FE7F2133BAC100438A8F /* Application Delegate */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Application Delegate"; path = "Use cases/Application Delegate"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,7 +178,7 @@
 		E4D4FE812133BC0800438A8F /* Application Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				E4D4FE7F2133BAC100438A8F /* AppDelegate.swift */,
+				E4D4FE7F2133BAC100438A8F /* Application Delegate */,
 			);
 			path = "Application Delegate";
 			sourceTree = "<group>";
@@ -297,7 +297,7 @@
 				E4CE6AD921314BE400E4E865 /* Actions.swift in Sources */,
 				E4CE6ADA21314BE400E4E865 /* ServiceFactory.swift in Sources */,
 				E4CE6ADC21314BE400E4E865 /* ServiceConstants.swift in Sources */,
-				E4D4FE802133BAC100438A8F /* AppDelegate.swift in Sources */,
+				E4D4FE802133BAC100438A8F /* Application Delegate in Sources */,
 				E4CE6ADB21314BE400E4E865 /* LogicCoordinator.swift in Sources */,
 				E4D4FE702133784400438A8F /* ObjCTryCatch.m in Sources */,
 			);
