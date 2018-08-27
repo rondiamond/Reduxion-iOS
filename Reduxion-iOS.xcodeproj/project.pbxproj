@@ -15,6 +15,9 @@
 		E4CE6ADA21314BE400E4E865 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD521314BE400E4E865 /* ServiceFactory.swift */; };
 		E4CE6ADB21314BE400E4E865 /* LogicCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */; };
 		E4CE6ADC21314BE400E4E865 /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD721314BE400E4E865 /* ServiceConstants.swift */; };
+		E4D4FE6F2133784400438A8F /* ObjCTryCatch.h in Headers */ = {isa = PBXBuildFile; fileRef = E4D4FE6D2133784400438A8F /* ObjCTryCatch.h */; };
+		E4D4FE702133784400438A8F /* ObjCTryCatch.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE6E2133784400438A8F /* ObjCTryCatch.m */; };
+		E4D4FE712133784400438A8F /* ObjCTryCatch.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE6E2133784400438A8F /* ObjCTryCatch.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +42,9 @@
 		E4CE6AD521314BE400E4E865 /* ServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogicCoordinator.swift; sourceTree = "<group>"; };
 		E4CE6AD721314BE400E4E865 /* ServiceConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceConstants.swift; sourceTree = "<group>"; };
+		E4D4FE6C2133784300438A8F /* Reduxion-iOSTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reduxion-iOSTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		E4D4FE6D2133784400438A8F /* ObjCTryCatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjCTryCatch.h; path = "third-party code/ObjCTryCatch/ObjCTryCatch.h"; sourceTree = SOURCE_ROOT; };
+		E4D4FE6E2133784400438A8F /* ObjCTryCatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjCTryCatch.m; path = "third-party code/ObjCTryCatch/ObjCTryCatch.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				E4CE6ADD21314BE800E4E865 /* unidirectional data flow */,
+				E4D4FE6B2133781600438A8F /* third-party code */,
 				E4CE6ABA2131498B00E4E865 /* Reduxion-iOS */,
 				E4CE6AC52131498B00E4E865 /* Reduxion-iOSTests */,
 				E4CE6AB92131498B00E4E865 /* Products */,
@@ -109,6 +116,24 @@
 			path = "unidirectional data flow";
 			sourceTree = "<group>";
 		};
+		E4D4FE6B2133781600438A8F /* third-party code */ = {
+			isa = PBXGroup;
+			children = (
+				E4D4FE6C2133784300438A8F /* Reduxion-iOSTests-Bridging-Header.h */,
+				E4D4FE722133786900438A8F /* ObjCTryCatch */,
+			);
+			path = "third-party code";
+			sourceTree = "<group>";
+		};
+		E4D4FE722133786900438A8F /* ObjCTryCatch */ = {
+			isa = PBXGroup;
+			children = (
+				E4D4FE6D2133784400438A8F /* ObjCTryCatch.h */,
+				E4D4FE6E2133784400438A8F /* ObjCTryCatch.m */,
+			);
+			path = ObjCTryCatch;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -116,6 +141,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4D4FE6F2133784400438A8F /* ObjCTryCatch.h in Headers */,
 				E4CE6AC92131498B00E4E865 /* Reduxion_iOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,6 +201,7 @@
 					};
 					E4CE6AC02131498B00E4E865 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -223,6 +250,7 @@
 				E4CE6ADA21314BE400E4E865 /* ServiceFactory.swift in Sources */,
 				E4CE6ADC21314BE400E4E865 /* ServiceConstants.swift in Sources */,
 				E4CE6ADB21314BE400E4E865 /* LogicCoordinator.swift in Sources */,
+				E4D4FE702133784400438A8F /* ObjCTryCatch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4CE6AC72131498B00E4E865 /* Reduxion_iOSTests.swift in Sources */,
+				E4D4FE712133784400438A8F /* ObjCTryCatch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +451,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Reduxion-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -431,6 +461,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "test4321.Reduxion-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "third-party code/Reduxion-iOSTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -440,6 +472,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Reduxion-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -449,6 +482,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "test4321.Reduxion-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "third-party code/Reduxion-iOSTests-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
