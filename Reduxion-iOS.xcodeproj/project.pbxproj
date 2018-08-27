@@ -44,6 +44,7 @@
 		E4D4FE6C2133784300438A8F /* Reduxion-iOSTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reduxion-iOSTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		E4D4FE6D2133784400438A8F /* ObjCTryCatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjCTryCatch.h; path = "third-party code/ObjCTryCatch/ObjCTryCatch.h"; sourceTree = SOURCE_ROOT; };
 		E4D4FE6E2133784400438A8F /* ObjCTryCatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjCTryCatch.m; path = "third-party code/ObjCTryCatch/ObjCTryCatch.m"; sourceTree = SOURCE_ROOT; };
+		E4D4FE742133AE2000438A8F /* ReadMe.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +69,7 @@
 		E4CE6AAE2131498B00E4E865 = {
 			isa = PBXGroup;
 			children = (
+				E4D4FE732133AE0E00438A8F /* _documentation */,
 				E4CE6ADD21314BE800E4E865 /* unidirectional data flow */,
 				E4D4FE6B2133781600438A8F /* third-party code */,
 				E4CE6ABA2131498B00E4E865 /* Reduxion-iOS */,
@@ -131,6 +133,14 @@
 				E4D4FE6E2133784400438A8F /* ObjCTryCatch.m */,
 			);
 			path = ObjCTryCatch;
+			sourceTree = "<group>";
+		};
+		E4D4FE732133AE0E00438A8F /* _documentation */ = {
+			isa = PBXGroup;
+			children = (
+				E4D4FE742133AE2000438A8F /* ReadMe.txt */,
+			);
+			path = _documentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
