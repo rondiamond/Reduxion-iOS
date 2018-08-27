@@ -12,7 +12,6 @@
  */
 
 import Foundation
-import UIKit
 
 class FooLogic: Logic, HasService {
     
@@ -20,10 +19,10 @@ class FooLogic: Logic, HasService {
     
     func performLogic(_ state: AppState, action: Action) {
         switch action {
-        case .userRegistriesServiceRequest:
+        case .FooServiceRequest:
             // fetch data via service, and store it (could be real or mock service/data; we don't care)
-            if let registryService = service {
-                registryService.fetchAndStoreData([:])
+            if let fooService = service {
+                fooService.fetchAndStoreData([:])
             }
             break
             

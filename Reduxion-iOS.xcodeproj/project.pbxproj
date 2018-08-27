@@ -18,6 +18,15 @@
 		E4D4FE702133784400438A8F /* ObjCTryCatch.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE6E2133784400438A8F /* ObjCTryCatch.m */; };
 		E4D4FE712133784400438A8F /* ObjCTryCatch.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE6E2133784400438A8F /* ObjCTryCatch.m */; };
 		E4D4FE802133BAC100438A8F /* Application Delegate in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE7F2133BAC100438A8F /* Application Delegate */; };
+		E4D4FE822133BEB500438A8F /* FooLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE7E2133B78E00438A8F /* FooLogic.swift */; };
+		E4D4FE832133BEB600438A8F /* FooLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE7E2133B78E00438A8F /* FooLogic.swift */; };
+		E4D4FE842133BEBB00438A8F /* LogicCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */; };
+		E4D4FE862133BF0300438A8F /* FooService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE852133BF0300438A8F /* FooService.swift */; };
+		E4D4FE872133BF0300438A8F /* FooService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE852133BF0300438A8F /* FooService.swift */; };
+		E4D4FE892133BFBF00438A8F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE882133BFBF00438A8F /* Constants.swift */; };
+		E4D4FE8A2133BFBF00438A8F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE882133BFBF00438A8F /* Constants.swift */; };
+		E4D4FE8C2133C28F00438A8F /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE8B2133C28F00438A8F /* Macros.swift */; };
+		E4D4FE8D2133C28F00438A8F /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE8B2133C28F00438A8F /* Macros.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,9 +55,11 @@
 		E4D4FE6D2133784400438A8F /* ObjCTryCatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjCTryCatch.h; path = "third-party code/ObjCTryCatch/ObjCTryCatch.h"; sourceTree = SOURCE_ROOT; };
 		E4D4FE6E2133784400438A8F /* ObjCTryCatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjCTryCatch.m; path = "third-party code/ObjCTryCatch/ObjCTryCatch.m"; sourceTree = SOURCE_ROOT; };
 		E4D4FE742133AE2000438A8F /* ReadMe.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
-		E4D4FE7B2133B6EA00438A8F /* FooLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooLogic.swift; sourceTree = "<group>"; };
 		E4D4FE7E2133B78E00438A8F /* FooLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FooLogic.swift; path = "use cases/Foo/FooLogic.swift"; sourceTree = SOURCE_ROOT; };
 		E4D4FE7F2133BAC100438A8F /* Application Delegate */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Application Delegate"; path = "Use cases/Application Delegate"; sourceTree = SOURCE_ROOT; };
+		E4D4FE852133BF0300438A8F /* FooService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FooService.swift; path = "Use cases/Foo/FooService.swift"; sourceTree = SOURCE_ROOT; };
+		E4D4FE882133BFBF00438A8F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = "Use cases/Constants.swift"; sourceTree = SOURCE_ROOT; };
+		E4D4FE8B2133C28F00438A8F /* Macros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Macros.swift; path = "Use cases/Macros.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,11 +84,10 @@
 		E4CE6AAE2131498B00E4E865 = {
 			isa = PBXGroup;
 			children = (
-				E4D4FE7B2133B6EA00438A8F /* FooLogic.swift */,
 				E4D4FE732133AE0E00438A8F /* _Documentation */,
 				E4CE6ADD21314BE800E4E865 /* Unidirectional data flow */,
 				E4D4FE782133B37D00438A8F /* Services */,
-				E4D4FE7C2133B6F200438A8F /* Use Cases */,
+				E4D4FE7C2133B6F200438A8F /* Use cases */,
 				E4D4FE6B2133781600438A8F /* third-party code */,
 				E4CE6ABA2131498B00E4E865 /* Reduxion-iOS */,
 				E4CE6AC52131498B00E4E865 /* Reduxion-iOSTests */,
@@ -157,13 +167,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		E4D4FE7C2133B6F200438A8F /* Use Cases */ = {
+		E4D4FE7C2133B6F200438A8F /* Use cases */ = {
 			isa = PBXGroup;
 			children = (
+				E4D4FE882133BFBF00438A8F /* Constants.swift */,
+				E4D4FE8B2133C28F00438A8F /* Macros.swift */,
 				E4D4FE812133BC0800438A8F /* Application Delegate */,
 				E4D4FE7D2133B74200438A8F /* Foo */,
 			);
-			name = "Use Cases";
+			name = "Use cases";
 			path = "New Group";
 			sourceTree = "<group>";
 		};
@@ -171,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				E4D4FE7E2133B78E00438A8F /* FooLogic.swift */,
+				E4D4FE852133BF0300438A8F /* FooService.swift */,
 			);
 			path = Foo;
 			sourceTree = "<group>";
@@ -296,8 +309,12 @@
 				E4CE6AD821314BE400E4E865 /* AppState.swift in Sources */,
 				E4CE6AD921314BE400E4E865 /* Actions.swift in Sources */,
 				E4CE6ADA21314BE400E4E865 /* ServiceFactory.swift in Sources */,
+				E4D4FE822133BEB500438A8F /* FooLogic.swift in Sources */,
 				E4CE6ADC21314BE400E4E865 /* ServiceConstants.swift in Sources */,
+				E4D4FE8C2133C28F00438A8F /* Macros.swift in Sources */,
+				E4D4FE892133BFBF00438A8F /* Constants.swift in Sources */,
 				E4D4FE802133BAC100438A8F /* Application Delegate in Sources */,
+				E4D4FE862133BF0300438A8F /* FooService.swift in Sources */,
 				E4CE6ADB21314BE400E4E865 /* LogicCoordinator.swift in Sources */,
 				E4D4FE702133784400438A8F /* ObjCTryCatch.m in Sources */,
 			);
@@ -307,8 +324,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4D4FE832133BEB600438A8F /* FooLogic.swift in Sources */,
 				E4CE6AC72131498B00E4E865 /* Reduxion_iOSTests.swift in Sources */,
 				E4D4FE712133784400438A8F /* ObjCTryCatch.m in Sources */,
+				E4D4FE842133BEBB00438A8F /* LogicCoordinator.swift in Sources */,
+				E4D4FE8D2133C28F00438A8F /* Macros.swift in Sources */,
+				E4D4FE872133BF0300438A8F /* FooService.swift in Sources */,
+				E4D4FE8A2133BFBF00438A8F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

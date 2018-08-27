@@ -16,3 +16,7 @@ Good, concise overview (of one available library which has been modified for use
 http://blog.jtribe.com.au/redux-for-ios/
 
 ~
+
+Possible future features:
+- Data display formatter classes
+...
