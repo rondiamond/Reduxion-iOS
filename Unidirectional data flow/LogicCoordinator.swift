@@ -138,11 +138,10 @@ class LogicCoordinator {
     }
     
     // MARK: - Logic modules (aka 'reducers')
-    
     // Note: this business logic is the same regardless of whether we're using real or mock data
     fileprivate var fooLogic = FooLogic()
-    
 
+    
     // MARK: - Service handlers
     fileprivate var fooService: FooServiceProtocol?
 

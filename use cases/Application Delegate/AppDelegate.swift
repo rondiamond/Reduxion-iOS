@@ -1,6 +1,7 @@
 //  AppDelegate.swift
+//  Reduxion-iOS
 //
-//  Copyright © 2018 Ron Diamond. All rights reserved.
+//  Copyright © 2016-2018 Ron Diamond. All rights reserved.
 //
 
 import UIKit

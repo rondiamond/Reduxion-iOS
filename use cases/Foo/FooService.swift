@@ -3,14 +3,12 @@
 //  Reduxion-iOS
 //
 //  Created by Ron Diamond on 8/26/18.
-//  Copyright © 2018 Ron Diamond. All rights reserved.
+//  Copyright © 2016-2018 Ron Diamond. All rights reserved.
 //
 
-class FooService: NSObject {
-
-}
-
 import Foundation
+//import Alamofire
+//import SwiftyJSON
 
 protocol FooServiceProtocol: Service {
     // protocol to ensure proper typing in LogicCoordinator and ServiceFactory
@@ -34,7 +32,7 @@ struct FooService: FooServiceProtocol {
         AlamofireManager.sharedInstance.request(urlString, headers: headers)
             .validate(contentType: [SERVICE_REQUEST_HEADER_CONTENT_TYPE_JSON])
             .responseString { response in
-                presentRelevantUserMessageIfErrorConditionInServiceResponse(response: response)
+                // error?
             }
             .responseJSON { response in
                 switch response.result {
@@ -58,10 +56,10 @@ struct MockFooService: FooServiceProtocol {
     
     func fetchAndStoreData(_ optionalArguments: [String : String]) {
         let mockSericeLatencyInSeconds = mockServiceSimulatedLatencyInSeconds    // simulate latency
-        Async.background(after: mockSericeLatencyInSeconds) {
+        DispatchQueue.main.asyncAfter(deadline: mockSericeLatencyInSeconds, execute: {
             let sampleFooData = self.sampleFooData()
             parseAndStoreFooData(sampleFooData)
-        }
+        })
     }
     
     fileprivate func sampleFooData() -> JSON {

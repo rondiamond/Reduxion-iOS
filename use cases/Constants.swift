@@ -16,7 +16,7 @@ class Constants: NSObject {
 // MARK: - Networking
 
 let networkTimeoutInSeconds: TimeInterval                 = 10.0
-let mockServiceSimulatedLatencyInSeconds: TimeInterval    = 0.5
+let mockServiceSimulatedLatencyInSeconds: DispatchTime    = 0.5
 
 /*
  https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml :
