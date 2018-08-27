@@ -71,6 +71,7 @@
 			children = (
 				E4D4FE732133AE0E00438A8F /* _documentation */,
 				E4CE6ADD21314BE800E4E865 /* unidirectional data flow */,
+				E4D4FE782133B37D00438A8F /* services */,
 				E4D4FE6B2133781600438A8F /* third-party code */,
 				E4CE6ABA2131498B00E4E865 /* Reduxion-iOS */,
 				E4CE6AC52131498B00E4E865 /* Reduxion-iOSTests */,
@@ -111,8 +112,6 @@
 				E4CE6AD421314BE400E4E865 /* Actions.swift */,
 				E4CE6AD321314BE400E4E865 /* AppState.swift */,
 				E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */,
-				E4CE6AD721314BE400E4E865 /* ServiceConstants.swift */,
-				E4CE6AD521314BE400E4E865 /* ServiceFactory.swift */,
 			);
 			path = "unidirectional data flow";
 			sourceTree = "<group>";
@@ -141,6 +140,15 @@
 				E4D4FE742133AE2000438A8F /* ReadMe.txt */,
 			);
 			path = _documentation;
+			sourceTree = "<group>";
+		};
+		E4D4FE782133B37D00438A8F /* services */ = {
+			isa = PBXGroup;
+			children = (
+				E4CE6AD721314BE400E4E865 /* ServiceConstants.swift */,
+				E4CE6AD521314BE400E4E865 /* ServiceFactory.swift */,
+			);
+			path = services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
