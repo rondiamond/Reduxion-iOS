@@ -7,7 +7,7 @@
 
 /*
  // Wrapper to convert NSException to Swift error
- // from http://stackoverflow.com/a/36454808
+ // from http://stackoverflow.com/a/36454808 (user 'freytag')
 
  Usage:
  

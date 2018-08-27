@@ -18,7 +18,7 @@ class AppState: NSObject, NSCoding {
      Persists the given AppState object to disk.
      */
     static func persist(_ appState: AppState) {
-        print("AppState - PERSIST ****")
+        print("AppState - PERSIST ***")
         if let filePath = persistenceFilePath() {
             NSKeyedArchiver.archiveRootObject(appState, toFile: filePath)
         }
@@ -28,7 +28,7 @@ class AppState: NSObject, NSCoding {
      Recalls the AppState object from disk, and returns it.  If it doesn't exist or can't be recalled, returns a new AppState object.
      */
     static func recall() -> AppState {
-        print("AppState - RECALL ****")
+        print("AppState - RECALL ***")
         var recalledAppState = AppState()
             if let filePath = persistenceFilePath() {
                 do {
