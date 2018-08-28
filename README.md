@@ -4,7 +4,7 @@
 Article on the problems *Reduxion-iOS* is intended to solve, and how it came about:  
 [***Introducing "Reduxion iOS"***](https://medium.com/p/6e1cdf5d7570/)  (Medium.com)
 
-##**TL;DR**  
+### **TL;DR**  
 *[blah blah blah]*
 
 
@@ -20,12 +20,12 @@ intended to be a best-practice
 
 ~
 
-###Getting Started
+### Getting Started
 *[how to use]*
 
 ~
 
-###Essential Architectural Overview  
+### Essential Architectural Overview  
 A few resources essential to understanding the underlying design patterns:
 
 [***The Principles of Clean Architecture***](https://www.youtube.com/watch?v=o_TH-Y78tt4&t=10m45s) - Robert Martin  
@@ -44,14 +44,14 @@ Good, concise overview (of one available library which has been modified for use
 
 ~
 
-###Possible future features
+### Possible future features
 - Framework, with sample app
 - Carthage support
 - Formatter classes (for display data)
 - ...
 
 ~
-###Special Thanks
+### Special Thanks
 - [Armin Kroll](https://twitter.com/persival)
 - [Benjamin Encz](https://twitter.com/benjaminencz)
 - ["Uncle Bob" Martin](https://twitter.com/unclebobmartin)
