@@ -24,37 +24,35 @@ intended to be a best-practice
 ~
 
 ###Getting Started
-
-for reference, here are 
-
-ESSENTIAL ARCHITECTURAL OVERVIEW
-
-***The Principles of Clean Architecture*** - Robert Martin  
-Superb overview of clean architectural design principles [1 hour]:
-https://www.youtube.com/watch?v=o_TH-Y78tt4&t=10m45s
-
-***Unidirectional Data Flow: Shrinking Massive View Controllers*** - Benjamin Encz  
-Video explaining the unidirectional data flow design pattern and its advantages in depth [31+ minutes]:
-https://realm.io/news/benji-encz-unidirectional-data-flow-swift/
-
-***Redux for iOS*** - Armin Kroll  
-Good, concise overview (of one available library which has been modified for use in this project):
-http://blog.jtribe.com.au/redux-for-ios/
-
-~
-
 *[how to use]*
 
+~
+
+###Essential Architectural Overview
+for reference, here are a few 
+
+[***The Principles of Clean Architecture***](https://www.youtube.com/watch?v=o_TH-Y78tt4&t=10m45s) - Robert Martin  
+Superb overview of clean architectural design principles [1 hour]
+
+[***Unidirectional Data Flow: Shrinking Massive View Controllers***](https://realm.io/news/benji-encz-unidirectional-data-flow-swift/) - Benjamin Encz  
+Video explaining the unidirectional data flow design pattern and its advantages in depth [31+ minutes]
+
+[***Redux for iOS***](http://blog.jtribe.com.au/redux-for-ios/) - Armin Kroll  
+Good, concise overview (of one available library which has been modified for use in this project)
+
 
 ~
 
-If there's interest, here are possible future features:
+
+
+
+~
+
+###Possible future features
 - Framework, with sample app
-- 
-- 
 - Carthage support
-- Display data formatter classes
-...
+- Formatter classes (for display data)
+- ...
 
 ~
 ###Special Thanks
@@ -65,5 +63,6 @@ If there's interest, here are possible future features:
 
 
 
-Contact info: [Ron Diamond](https://twitter.com/ron_diamond)
-
+Author:  
+[Ron Diamond](https://twitter.com/ron_diamond)  
+[PoP contact form ?]
