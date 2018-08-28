@@ -1,10 +1,11 @@
 
 # Reduxion-iOS
 
-Article on the problems *Reduxion-iOS* is intended to solve, and how it came about:  
+Article on how *Reduxion-iOS* came about, and the problems it's intended to solve:  
 [***Introducing "Reduxion iOS"***](https://medium.com/p/6e1cdf5d7570/)  (Medium.com)
 
 ### **TL;DR**  
+Easy-to-implement Unidirectional Data Flow for iOS apps.  
 *[blah blah blah]*
 
 
