@@ -6,6 +6,12 @@ Article on how *Reduxion-iOS* came about, and the problems it's intended to solv
 
 ### TL;DR
 Easy-to-implement Unidirectional Data Flow for iOS apps, with added features:  
+- Unidirectional data flow based on Redux
+- Loosely-coupled View / Business Logic / Data / Service layers
+- Designed for unit testability (TDD/BDD)
+- Ability to switch application from real to mock services using one line of code
+- Ability to easily persist & recall the entire state of the application
+
 *[blah blah blah]*
 
 
@@ -56,8 +62,7 @@ Good, concise overview (of one available library which has been modified for use
 - [Armin Kroll](https://twitter.com/persival)
 - [Benjamin Encz](https://twitter.com/benjaminencz)
 - ["Uncle Bob" Martin](https://twitter.com/unclebobmartin)
-- To those who've encouraged me on the journey to *Clean Code*, and to share it with others. Thank you!
-
+- To those who've encouraged me on the path to *Clean Code*, and to share it with others.
 
 
 Author:  
