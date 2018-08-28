@@ -4,7 +4,7 @@
 Article on the problems *Reduxion-iOS* is intended to solve, and how it came about:  
 [***Introducing "Reduxion iOS"***](https://medium.com/p/6e1cdf5d7570/)  (Medium.com)
 
-###**TL;DR**  
+##**TL;DR**  
 *[blah blah blah]*
 
 
