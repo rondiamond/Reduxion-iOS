@@ -63,7 +63,7 @@ Good, concise overview (of one available library which has been modified for use
 - [Armin Kroll](https://twitter.com/persival)
 - [Benjamin Encz](https://twitter.com/benjaminencz)
 - ["Uncle Bob" Martin](https://twitter.com/unclebobmartin)
-- To those who've encouraged me on the path to *Clean Code*, and to share it with others.
+- ... and everyone else who's inspired me on the path to *Clean Code*.  Thanks.
 
 
 Author:  
