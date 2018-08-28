@@ -1,13 +1,10 @@
 
 # Reduxion-iOS
 
+Article on the problems *Reduxion-iOS* is intended to solve, and how it came about:  
+[***Introducing "Reduxion iOS"***](https://medium.com/p/6e1cdf5d7570/)  (Medium.com)
 
-An overview of the problems Reduxion-iOS is intended to solve:
-
-***Introducing "Reduxion iOS"*** - article on Medium
-[URL]
-
-**TL;DR**  
+###**TL;DR**  
 *[blah blah blah]*
 
 
@@ -28,18 +25,17 @@ intended to be a best-practice
 
 ~
 
-###Essential Architectural Overview
-for reference, here are a few 
+###Essential Architectural Overview  
+A few resources essential to understanding the underlying design patterns:
 
 [***The Principles of Clean Architecture***](https://www.youtube.com/watch?v=o_TH-Y78tt4&t=10m45s) - Robert Martin  
-Superb overview of clean architectural design principles [1 hour]
+Superb overview of clean architectural design principles [1 hour].  Highly recommended.
 
 [***Unidirectional Data Flow: Shrinking Massive View Controllers***](https://realm.io/news/benji-encz-unidirectional-data-flow-swift/) - Benjamin Encz  
 Video explaining the unidirectional data flow design pattern and its advantages in depth [31+ minutes]
 
 [***Redux for iOS***](http://blog.jtribe.com.au/redux-for-ios/) - Armin Kroll  
 Good, concise overview (of one available library which has been modified for use in this project)
-
 
 ~
 

@@ -54,7 +54,7 @@
 		E4D4FE6C2133784300438A8F /* Reduxion-iOSTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reduxion-iOSTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		E4D4FE6D2133784400438A8F /* ObjCTryCatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjCTryCatch.h; path = "third-party code/ObjCTryCatch/ObjCTryCatch.h"; sourceTree = SOURCE_ROOT; };
 		E4D4FE6E2133784400438A8F /* ObjCTryCatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjCTryCatch.m; path = "third-party code/ObjCTryCatch/ObjCTryCatch.m"; sourceTree = SOURCE_ROOT; };
-		E4D4FE742133AE2000438A8F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E4D4FE742133AE2000438A8F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		E4D4FE7E2133B78E00438A8F /* FooLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FooLogic.swift; path = "use cases/Foo/FooLogic.swift"; sourceTree = SOURCE_ROOT; };
 		E4D4FE7F2133BAC100438A8F /* Application Delegate */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Application Delegate"; path = "Use cases/Application Delegate"; sourceTree = SOURCE_ROOT; };
 		E4D4FE852133BF0300438A8F /* FooService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FooService.swift; path = "Use cases/Foo/FooService.swift"; sourceTree = SOURCE_ROOT; };
