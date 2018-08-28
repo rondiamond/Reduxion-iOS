@@ -9,7 +9,7 @@ Easy-to-implement Unidirectional Data Flow for iOS apps, with added features:
 - Loosely-coupled layers for View / Business Logic / Services / Data
 - Composable business logic, in single-responsibility units
 - Designed for unit testability (TDD/BDD)
-- Ability to switch application from real to mock services using one line of code
+- Ability to switch entire application from real to mock services using one line of code
 - Ability to easily persist & recall the entire state of the application
 
 *[blah blah blah]*
@@ -43,7 +43,7 @@ Good, concise overview (of one available library which has been modified for use
 ~
 
 ### Block Diagram
-
+![](./_Documentation/reduxion-ios-architecture-block-diagram.png)
 
 ~
 
@@ -55,8 +55,8 @@ Good, concise overview (of one available library which has been modified for use
 ### Possible future features
 - Framework, with sample app
 - Carthage support
-- Formatter classes (for display data)
-- ...
+- Formatter classes (for displayed data)
+- ... more
 
 ~
 ### Special Thanks
