@@ -58,12 +58,12 @@ If there's interest, here are possible future features:
 
 ~
 ###Special Thanks
+- [Armin Kroll](https://twitter.com/persival)
+- [Benjamin Encz](https://twitter.com/benjaminencz)
+- ["Uncle Bob" Martin](https://twitter.com/unclebobmartin)
+- To those who've encouraged me on the journey to *Clean Code*, and to share it with others. Thank you!
 
 
 
-
-Contact info:
-
-Ron Diamond
-https://twitter.com/ron_diamond
+Contact info: [Ron Diamond](https://twitter.com/ron_diamond)
 
