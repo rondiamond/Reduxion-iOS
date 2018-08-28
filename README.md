@@ -20,11 +20,6 @@ intended to be a best-practice
 
 ~
 
-### Getting Started
-*[how to use]*
-
-~
-
 ### Essential Architectural Overview  
 A few resources essential to understanding the underlying design patterns:
 
@@ -36,6 +31,11 @@ Video explaining the unidirectional data flow design pattern and its advantages 
 
 [***Redux for iOS***](http://blog.jtribe.com.au/redux-for-ios/) - Armin Kroll  
 Good, concise overview (of one available library which has been modified for use in this project)
+
+~
+
+### Getting Started
+*[how to use]*
 
 ~
 
