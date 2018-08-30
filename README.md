@@ -24,7 +24,7 @@ A few resources essential to understanding the underlying design patterns:
 [***The Principles of Clean Architecture***](https://www.youtube.com/watch?v=o_TH-Y78tt4&t=10m45s) - Robert Martin  
 Superb overview of clean architectural design principles [1 hour].  Highly recommended.
 
-[***Unidirectional Data Flow: Shrinking Massive View Controllers***](https://realm.io/news/benji-encz-unidirectional-data-flow-swift/) - Benjamin Encz  
+[***Unidirectional Data Flow in Swift***](https://realm.io/news/benji-encz-unidirectional-data-flow-swift/) - Benjamin Encz  
 Video explaining the unidirectional data flow design pattern and its advantages in depth [31+ minutes].
 
 [***Redux for iOS***](http://blog.jtribe.com.au/redux-for-ios/) - Armin Kroll  
