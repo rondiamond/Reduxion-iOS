@@ -5,7 +5,7 @@
 Easy-to-implement, best-practice Unidirectional Data Flow for iOS apps, featuring:  
 - Loosely-coupled layers for View / Business Logic / Services / Data
 - Composable business logic, in single-responsibility units
-- Designed for unit testability (TDD/BDD)
+- Separation of concerns facilitates unit testing (TDD/BDD)
 - Ability to switch entire application from real to mock services using one line of code
 - Ability to easily persist & recall the entire state of the application
 

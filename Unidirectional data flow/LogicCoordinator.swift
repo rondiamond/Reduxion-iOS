@@ -120,7 +120,7 @@ class LogicCoordinator {
     fileprivate var appState = AppState()
     fileprivate var appStateRecalled: Bool = false
     fileprivate var subscribers = [AppStateSubscriber]()
-    fileprivate var serviceFactory: ServiceFactoryProtocol?
+    fileprivate var _serviceFactory: ServiceFactoryProtocol?
     
     var serviceFactory: ServiceFactoryProtocol {
         // lazy assignment, since Singleton's serviceFactory needs to be dependency injected (after instantiation)
@@ -129,11 +129,11 @@ class LogicCoordinator {
 
             // grab references to any Services (could be real or mock) from the ServiceFactory
             // ... then inject them into the business logic units that depend on them
-            self.fooService = serviceFactory!.fooService
+            self.fooService = _serviceFactory?.fooService
             self.fooLogic.service = self.fooService
         }
         get {
-            return serviceFactory!
+            return _serviceFactory!
         }
     }
     
