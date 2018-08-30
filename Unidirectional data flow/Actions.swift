@@ -20,6 +20,6 @@ import Foundation
  */
 enum Action {
     case null
-
-    case action1(argument: Bool)
+    case mathRequest(operand1: Int, operand2: Int, calculationType: CalculationType)
+    case mathResponse(solution: Int)
 }
