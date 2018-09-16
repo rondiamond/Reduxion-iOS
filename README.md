@@ -32,7 +32,7 @@ Good, concise overview of one available library which has been modified for use 
 ~
 
 ### Getting Started
-*[how to use]*
+*[info to come]*
 
 ~
 
@@ -52,4 +52,3 @@ Good, concise overview of one available library which has been modified for use 
 
 Author:  
 [Ron Diamond](https://twitter.com/ron_diamond)  
-[PoP contact form ?]
