@@ -35,7 +35,7 @@ Good, concise overview of one available library which has been modified for use 
 
 ~
 
-### Possible future features
+### Future milestones
 - Framework, with sample app
 - Carthage support
 - Formatter classes (for displayed data)
