@@ -4,11 +4,12 @@
 //  Copyright © 2016-2018 Ron Diamond. All rights reserved.
 //
 
-import UIKit
 /**
  Single Responsibility (SRP):
  This class responds to UIApplication lifecycle events.
  */
+
+import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -105,8 +105,8 @@ private func generateUniqueIdentifier() -> String {
  - returns: True if the subscribers have the same identifier; False if not.
  */
 func !=(lhs: AppStateSubscriber, rhs: AppStateSubscriber) -> Bool {
-    let isEqual = (lhs.appStateSubscriberIdentifier != rhs.appStateSubscriberIdentifier)
-    return isEqual
+    let isInequal = (lhs.appStateSubscriberIdentifier != rhs.appStateSubscriberIdentifier)
+    return isInequal
 }
 
 

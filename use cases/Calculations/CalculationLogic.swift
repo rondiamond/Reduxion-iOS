@@ -17,5 +17,3 @@ enum CalculationType {
     case multiplication
     case division
 }
-
-

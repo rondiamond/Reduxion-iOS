@@ -10,6 +10,7 @@
 /**
  Single Responsibility (SRP):
  This class implements the AppState object, which contains the current state of the application.
+ It can persist and recall itself as needed.
  */
 
 import Foundation
@@ -24,7 +25,7 @@ class AppState: NSObject, NSCoding {
     // ** NOTE: For persisting data -- when adding properties, be SURE to also add them to the NSCoding methods below **
 
     var property1 = false
-
+var calculations = Calculations()
     
     // MARK: - Persistence
 

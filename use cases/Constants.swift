@@ -20,7 +20,6 @@ let mockServiceSimulatedLatencyInSeconds: DispatchTime    = 0.5
 
 /*
  https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml :
- 
  1xx: Informational - Request received, continuing process
  2xx: Success - The action was successfully received, understood, and accepted
  3xx: Redirection - Further action must be taken in order to complete the request

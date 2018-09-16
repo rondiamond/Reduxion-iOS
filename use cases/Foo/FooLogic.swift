@@ -32,3 +32,5 @@ class FooLogic: Logic, HasService {
     }
     
 }
+
+

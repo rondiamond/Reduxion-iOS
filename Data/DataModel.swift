@@ -2,7 +2,6 @@ import Foundation
 
 // MARK: - Data model
 
-
 /**
  *  Operands inputted by the user, for doing calculations.
  */
