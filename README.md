@@ -28,7 +28,7 @@ Superb overview of clean architectural design principles [1 hour].  Highly recom
 Video explaining the unidirectional data flow design pattern and its advantages in depth [31+ minutes].
 
 [***Redux for iOS***](http://blog.jtribe.com.au/redux-for-ios/) - Armin Kroll  
-Good, concise overview (of one available library which has been modified for use in this project).
+Good, concise overview of one available library which has been modified for use in this project.
 
 
 ~
