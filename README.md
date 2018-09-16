@@ -1,6 +1,10 @@
 
 # Reduxion-iOS
 
+*Source code soon to come!*  
+   
+--   
+  
 ### TL;DR
 Easy-to-implement, best-practice Unidirectional Data Flow for iOS apps, featuring:  
 - Loosely-coupled layers for View / Business Logic / Services / Data
@@ -28,11 +32,6 @@ Good, concise overview of one available library which has been modified for use 
 
 ### Block Diagram
 ![](./_Documentation/reduxion-ios-architecture-block-diagram.png)
-
-~
-
-### Getting Started
-*[info to come]*
 
 ~
 
