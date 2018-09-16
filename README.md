@@ -11,13 +11,6 @@ Easy-to-implement, best-practice Unidirectional Data Flow for iOS apps, featuri
 
 ~
 
-### Background
-
-How *Reduxion-iOS* came about, and the problems it's intended to solve:  
-[***Introducing Reduxion iOS***](https://medium.com/p/6e1cdf5d7570/)  (Medium.com)
-
-~
-
 ### Essential Architectural Overview  
 A few resources essential to understanding the underlying design patterns:
 
