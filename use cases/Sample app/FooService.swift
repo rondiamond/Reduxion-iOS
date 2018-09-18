@@ -15,12 +15,11 @@ protocol FooServiceProtocol: Service {
 }
 
 struct FooService: FooServiceProtocol {
-    var endpointBaseURL: String
+    var SERVICE_BASE_URL: String
     
     func fetchAndStoreData(_ optionalArguments: [String : String]) {
-        assert(self.endpointBaseURL != EMPTY_STRING, "Invalid endpointBaseURL - could not process service request!")
-        
-        let urlString = self.endpointBaseURL + SERVICE_URL_FOO_DATA
+        assert(self.SERVICE_BASE_URL != EMPTY_STRING, "Invalid SERVICE_BASE_URL - could not process service request!")
+        let urlString = self.SERVICE_BASE_URL + SERVICE_URL_FOO_DATA
         
         showNetworkActivityIndicator()
         
@@ -48,7 +47,7 @@ struct FooService: FooServiceProtocol {
 }
 
 struct MockFooService: FooServiceProtocol {
-    var endpointBaseURL: String
+    var SERVICE_BASE_URL: String
     
     func fetchAndStoreData(_ optionalArguments: [String : String]) {
         let dispatchDeadline: DispatchTime = .now() + mockServiceSimulatedLatencyInSeconds

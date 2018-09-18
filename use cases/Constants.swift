@@ -16,7 +16,6 @@ class Constants: NSObject {
 
 let networkTimeoutInSeconds: TimeInterval           = 10.0
 let mockServiceSimulatedLatencyInSeconds: Double    = 0.5
-let endpointBaseURL = "https://www.google.com"      // TODO: replace
 
 /*
  https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml :
@@ -42,12 +41,14 @@ let HTTP_RESPONSE_STATUS_CODE_403_FORBIDDEN             = 403
 let HTTP_RESPONSE_STATUS_CODE_404_NOT_FOUND             = 404
 let HTTP_RESPONSE_STATUS_CODE_504_GATEWAY_TIMEOUT       = 504
 
+
 // MARK: - Action dictionary keys
-// MARK: Foo
-let FOO_OPERANDS = "operands"
+// ...
+
 
 // MARK: - Service calls
 // MARK: Paths
+let SERVICE_BASE_URL = "https://www.google.com"      // TODO: replace
 let SERVICE_URL_FOO_DATA = "/mock-data/foo.json"
 
 // MARK: Headers
@@ -61,6 +62,7 @@ let SERVICE_REQUEST_HEADER_POST = "POST"
 let EMPTY_STRING = ""
 let SPACE_CHARACTER = " "
 let NEWLINE_CHARACTER = "\n"
+
 
 // MARK: - Numerical
 let CGFLOAT_ZERO: CGFloat           = 0.0
