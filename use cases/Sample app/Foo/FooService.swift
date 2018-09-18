@@ -35,7 +35,7 @@ struct FooService: FooServiceProtocol {
                 switch response.result {
                 case .success(let value):
                     let json = SwiftyJSON.JSON(value)
-                    parseAndStoreFooData(json)
+                    parseAndStoreData(json)
                     break
                     
                 case .failure(let error):
@@ -54,7 +54,7 @@ struct MockFooService: FooServiceProtocol {
         let dispatchDeadline: DispatchTime = .now() + mockServiceSimulatedLatencyInSeconds
         DispatchQueue.main.asyncAfter(deadline: dispatchDeadline) {
             let sampleFooData = self.sampleFooData()
-            parseAndStoreFooData(sampleFooData)
+            parseAndStoreData(sampleFooData)
         }
     }
     
@@ -73,7 +73,7 @@ struct MockFooService: FooServiceProtocol {
     }
 }
 
-internal func parseAndStoreFooData(_ json: JSON) {
+internal func parseAndStoreData(_ json: JSON) {
     LogicCoordinator.sharedInstance.performAction(Action.fooServiceResponse(json: json))
     // hand off payload as-is - will be parsed by Logic unit
 }
