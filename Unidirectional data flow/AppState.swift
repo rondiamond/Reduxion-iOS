@@ -25,7 +25,6 @@ class AppState: NSObject, NSCoding {
     // ** NOTE: For persisting data -- when adding properties, be SURE to also add them to the NSCoding methods below **
 
     var property1 = false
-var calculations = Calculations()
     
     // MARK: - Persistence
 
@@ -45,22 +44,16 @@ var calculations = Calculations()
     static func recall() -> AppState {
         print("AppState - RECALL ***")
         var recalledAppState = AppState()
-            if let filePath = persistenceFilePath() {
-                do {
-                    try ObjCTryCatch.catchException {
-                        if let newAppState = NSKeyedUnarchiver.unarchiveObject(withFile: filePath) as? AppState {
-                            recalledAppState = newAppState
-                        }
-                    }
-                }
-                catch let error {
-                    print("Failed to load object from filePath \(filePath);  error = \(error)")
-                }
-                
+        if let filePath = persistenceFilePath() {
+            if let newAppState = NSKeyedUnarchiver.unarchiveObject(withFile: filePath) as? AppState {
+                recalledAppState = newAppState
             } else {
-                print("Couldn't get persistence file path")
+                print("Failed to load object from filePath \(filePath);  error = \(error)")
             }
-
+        } else {
+            print("Couldn't get persistence file path")
+        }
+        
         return recalledAppState
         // needs to be stored by caller
     }

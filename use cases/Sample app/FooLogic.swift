@@ -18,12 +18,14 @@ class FooLogic: Logic, HasService {
     
     func performLogic(_ state: AppState, action: Action) {
         switch action {
+        /*
         case .FooServiceRequest:
             // fetch data via service, and store it (could be real or mock service/data; we don't care)
             if let fooService = service {
                 fooService.fetchAndStoreData([:])
             }
             break
+         */
             
         default:
             break

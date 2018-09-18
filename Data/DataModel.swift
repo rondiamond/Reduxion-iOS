@@ -19,8 +19,3 @@ struct Calculation {
     var calculationType: CalculationType
     var timestamp: Date
 }
-
-struct Calculations {
-    var history: [Calculation]
-    var currentCalculation: UInt    // ?
-}

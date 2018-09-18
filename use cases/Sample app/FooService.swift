@@ -7,8 +7,8 @@
 //
 
 import Foundation
-//import Alamofire
-//import SwiftyJSON
+import Alamofire
+import SwiftyJSON
 
 protocol FooServiceProtocol: Service {
     // protocol to ensure proper typing in LogicCoordinator and ServiceFactory
@@ -28,7 +28,7 @@ struct FooService: FooServiceProtocol {
         var headers: [String : String]
         headers[SERVICE_REQUEST_HEADER_CONTENT_TYPE] = SERVICE_REQUEST_HEADER_CONTENT_TYPE_JSON
         
-        AlamofireManager.sharedInstance.request(urlString, headers: headers)
+        Alamofire.request(urlString, method: .post, parameters: nil, encoding: URLEncoding.default, headers: headers)
             .validate(contentType: [SERVICE_REQUEST_HEADER_CONTENT_TYPE_JSON])
             .responseString { response in
                 // error?

@@ -46,7 +46,7 @@ class ServiceFactory: ServiceFactoryProtocol {
     // ... other services go here
 
     init() {
-        self.fooService = FooService()
+        //self.fooService = FooService(endpointBaseURL: String)
         // ... other services
     }
 }

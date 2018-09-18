@@ -125,7 +125,7 @@ class LogicCoordinator {
     var serviceFactory: ServiceFactoryProtocol {
         // lazy assignment, since Singleton's serviceFactory needs to be dependency injected (after instantiation)
         set(newServiceFactory) {
-            serviceFactory = newServiceFactory
+            _serviceFactory = newServiceFactory
 
             // grab references to any Services (could be real or mock) from the ServiceFactory
             // ... then inject them into the business logic units that depend on them
