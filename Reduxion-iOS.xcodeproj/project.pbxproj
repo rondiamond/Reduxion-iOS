@@ -46,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		E44260AD2137BC6800A218C6 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		E442F60B21509637000B37FE /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
 		E4A194B22137BF46001612BF /* CalculationLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationLogic.swift; sourceTree = "<group>"; };
 		E4BAD627214E528400A221D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "use cases/Application Delegate/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		E4CE6AB82131498B00E4E865 /* Reduxion_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reduxion_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +107,14 @@
 			path = "Sample app";
 			sourceTree = "<group>";
 		};
+		E442F60A21509622000B37FE /* Carthage */ = {
+			isa = PBXGroup;
+			children = (
+				E442F60B21509637000B37FE /* Cartfile */,
+			);
+			path = Carthage;
+			sourceTree = "<group>";
+		};
 		E4CE6AAE2131498B00E4E865 = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +171,7 @@
 		E4D4FE6B2133781600438A8F /* third-party code */ = {
 			isa = PBXGroup;
 			children = (
+				E442F60A21509622000B37FE /* Carthage */,
 				E4D4FE6C2133784300438A8F /* Reduxion-iOSTests-Bridging-Header.h */,
 				E4D4FE722133786900438A8F /* ObjCTryCatch */,
 			);
