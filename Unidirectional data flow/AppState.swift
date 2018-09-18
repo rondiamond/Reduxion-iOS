@@ -48,10 +48,10 @@ class AppState: NSObject, NSCoding {
             if let newAppState = NSKeyedUnarchiver.unarchiveObject(withFile: filePath) as? AppState {
                 recalledAppState = newAppState
             } else {
-                print("Failed to load object from filePath \(filePath)")
+                print("Error: Failed to load object from filePath \(filePath)")
             }
         } else {
-            print("Couldn't get persistence file path")
+            print("Error: Couldn't get persistence file path")
         }
         
         return recalledAppState

@@ -65,7 +65,7 @@ struct MockFooService: FooServiceProtocol {
                 do {
                     try sampleFooData = JSON(data: data)
                 } catch {
-                    print("Unable to parse JSON for sampleFooData!")
+                    print("Error: Unable to parse JSON for sampleFooData!")
                 }
             }
         }

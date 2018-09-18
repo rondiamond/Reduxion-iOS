@@ -49,7 +49,6 @@ func initializeLogicCoordinator(_ servicesType: LogicCoordinatorServicesType) {
  *  A 'logic' module is something that mutates an AppState object as needed, based on a given Action.
  */
 protocol Logic {
-    
     /**
      Protocol method for asking Logic modules to perform any relevant Action on the provided AppState struct.
      - parameter state:  AppState struct: encapsulates the entire state of the application

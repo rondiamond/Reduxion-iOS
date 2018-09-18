@@ -190,8 +190,8 @@
 		E4D4FE6B2133781600438A8F /* third-party code */ = {
 			isa = PBXGroup;
 			children = (
-				E442F60A21509622000B37FE /* Carthage */,
 				E4D4FE6C2133784300438A8F /* Reduxion-iOSTests-Bridging-Header.h */,
+				E442F60A21509622000B37FE /* Carthage */,
 				E4A581932150BD1700B31C62 /* Frameworks */,
 				E4D4FE722133786900438A8F /* ObjCTryCatch */,
 			);

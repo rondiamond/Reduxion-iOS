@@ -21,8 +21,13 @@ import SwiftyJSON
  */
 enum Action {
     case null
-    case mathRequest(operand1: Int, operand2: Int, calculationType: CalculationType)
-    case mathResponse(solution: Int)
+    
+    // MARK: Math Calculations
+    case mathRequest(operand1: Float, operand2: Float, calculationType: CalculationType)
+    case mathResponse(solution: Float)
+    
+    // MARK: Foo Service
     case fooServiceRequest()
     case fooServiceResponse(json: JSON)
+    
 }
