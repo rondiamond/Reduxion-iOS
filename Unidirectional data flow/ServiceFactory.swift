@@ -22,7 +22,7 @@ import Foundation
  */
 protocol Service {
     /// Service base URL, injected by the service factory.
-    var SERVICE_BASE_URL: String { get set }
+    var endpointBaseURL: String { get set }
     
     /**
      Standard 'Service' entry method.  Initiates a fetch from a web service, using possible arguments.  Function returns nothing directly.  Results should be returned via a separate Action, once fetching/parsing is complete.
@@ -46,7 +46,7 @@ class ServiceFactory: ServiceFactoryProtocol {
     // ... other services go here
 
     init() {
-        self.fooService = FooService(SERVICE_BASE_URL: SERVICE_BASE_URL)
+        self.fooService = FooService(endpointBaseURL: endpointBaseURL)
         // ... other services
     }
 }
@@ -58,7 +58,7 @@ class MockServiceFactory: ServiceFactory {
     override init() {
         super.init()
 
-        //self.fooService = MockFooService(SERVICE_BASE_URL: "")
+        //self.fooService = MockFooService(endpointBaseURL: "")
         // ... other mock services
     }
 }
