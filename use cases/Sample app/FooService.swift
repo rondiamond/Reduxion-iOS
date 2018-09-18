@@ -29,7 +29,7 @@ struct FooService: FooServiceProtocol {
         Alamofire.request(urlString, method: .post, parameters: nil, encoding: URLEncoding.default, headers: headers)
             .validate(contentType: [SERVICE_REQUEST_HEADER_CONTENT_TYPE_JSON])
             .responseString { response in
-                // error?
+                // TODO: handle error (probably in HTML)
             }
             .responseJSON { response in
                 switch response.result {

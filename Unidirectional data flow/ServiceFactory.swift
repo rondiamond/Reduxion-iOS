@@ -46,7 +46,7 @@ class ServiceFactory: ServiceFactoryProtocol {
     // ... other services go here
 
     init() {
-        self.fooService = FooService(endpointBaseURL: endpointBaseURL)
+        self.fooService = FooService(endpointBaseURL: SERVICE_BASE_URL)
         // ... other services
     }
 }
@@ -58,7 +58,7 @@ class MockServiceFactory: ServiceFactory {
     override init() {
         super.init()
 
-        //self.fooService = MockFooService(endpointBaseURL: "")
+        self.fooService = MockFooService(endpointBaseURL: SERVICE_BASE_URL)
         // ... other mock services
     }
 }

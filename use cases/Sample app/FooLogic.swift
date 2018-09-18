@@ -13,25 +13,24 @@
 
 import Foundation
 
-class FooLogic: Logic, HasService {
+struct FooLogic: Logic, HasService {
     var service: Service?
     
     func performLogic(_ state: AppState, action: Action) {
         switch action {
-        /*
-        case .FooServiceRequest:
+        case .fooServiceRequest:
             // fetch data via service, and store it (could be real or mock service/data; we don't care)
             if let fooService = service {
                 fooService.fetchAndStoreData([:])
             }
             break
-         */
-            
+        case .fooServiceResponse (let json):
+            // TODO: parse response, and process data
+            _ = json
+            break
         default:
             break
         }
     }
     
 }
-
-
