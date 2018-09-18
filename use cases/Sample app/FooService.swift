@@ -18,16 +18,14 @@ struct FooService: FooServiceProtocol {
     var endpointBaseURL: String
     
     func fetchAndStoreData(_ optionalArguments: [String : String]) {
-        
         assert(self.endpointBaseURL != EMPTY_STRING, "Invalid endpointBaseURL - could not process service request!")
         
         let urlString = self.endpointBaseURL + SERVICE_URL_FOO_DATA
         
         showNetworkActivityIndicator()
         
-        var headers: [String : String]
+        var headers: [String : String] = [:]
         headers[SERVICE_REQUEST_HEADER_CONTENT_TYPE] = SERVICE_REQUEST_HEADER_CONTENT_TYPE_JSON
-        
         Alamofire.request(urlString, method: .post, parameters: nil, encoding: URLEncoding.default, headers: headers)
             .validate(contentType: [SERVICE_REQUEST_HEADER_CONTENT_TYPE_JSON])
             .responseString { response in
@@ -50,12 +48,10 @@ struct FooService: FooServiceProtocol {
 }
 
 struct MockFooService: FooServiceProtocol {
-    
     var endpointBaseURL: String
     
     func fetchAndStoreData(_ optionalArguments: [String : String]) {
-        let mockSericeLatencyInSeconds = mockServiceSimulatedLatencyInSeconds    // simulate latency
-        DispatchQueue.main.asyncAfter(deadline: mockSericeLatencyInSeconds, execute: {
+        DispatchQueue.main.asyncAfter(deadline: mockServiceSimulatedLatencyInSeconds, execute: {
             let sampleFooData = self.sampleFooData()
             parseAndStoreFooData(sampleFooData)
         })
@@ -65,7 +61,11 @@ struct MockFooService: FooServiceProtocol {
         var sampleFooData = JSON.null  // default value
         if let path = Bundle.main.path(forResource: "sampleFooData", ofType: "json") {
             if let data = try? Data(contentsOf: URL(fileURLWithPath: path)) {
-                sampleFooData = JSON(data: data)
+                do {
+                    try sampleFooData = JSON(data: data)
+                } catch {
+                    print("Unable to parse JSON for sampleFooData!")
+                }
             }
         }
         return sampleFooData
@@ -73,6 +73,6 @@ struct MockFooService: FooServiceProtocol {
 }
 
 internal func parseAndStoreFooData(_ json: JSON) {
-    LogicCoordinator.sharedInstance.performAction(Action.FooServiceResponse(json))
+    LogicCoordinator.sharedInstance.performAction(Action.fooServiceResponse(json: json))
     // hand off payload as-is - will be parsed by Logic unit
 }

@@ -12,6 +12,7 @@
  */
 
 import Foundation
+import SwiftyJSON
 
 /**
  Used to specify the type of command being issued to the various Logic modules, via LogicController.sharedInstance.performAction(...).
@@ -22,4 +23,6 @@ enum Action {
     case null
     case mathRequest(operand1: Int, operand2: Int, calculationType: CalculationType)
     case mathResponse(solution: Int)
+    case fooServiceRequest()
+    case fooServiceResponse(json: JSON)
 }

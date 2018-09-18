@@ -48,7 +48,7 @@ class AppState: NSObject, NSCoding {
             if let newAppState = NSKeyedUnarchiver.unarchiveObject(withFile: filePath) as? AppState {
                 recalledAppState = newAppState
             } else {
-                print("Failed to load object from filePath \(filePath);  error = \(error)")
+                print("Failed to load object from filePath \(filePath)")
             }
         } else {
             print("Couldn't get persistence file path")
@@ -64,9 +64,8 @@ class AppState: NSObject, NSCoding {
      Returns the absolute URL for the file persistence path within the Documents directory.  If for some reason this isn't available, returns nil.
      */
     private static func persistenceFilePath() -> String? {
-        let fileName: String = persistenceFileName
         let documentsDirectoryURL = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask)[0]
-        let fileURL = documentsDirectoryURL.appendingPathComponent(fileName)
+        let fileURL = documentsDirectoryURL.appendingPathComponent(persistenceFileName)
         let filePath = fileURL.path
 
         return filePath
