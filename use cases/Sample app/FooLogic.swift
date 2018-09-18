@@ -14,7 +14,6 @@
 import Foundation
 
 class FooLogic: Logic, HasService {
-    
     var service: Service?
     
     func performLogic(_ state: AppState, action: Action) {

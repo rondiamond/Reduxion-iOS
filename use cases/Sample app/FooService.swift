@@ -15,7 +15,6 @@ protocol FooServiceProtocol: Service {
 }
 
 struct FooService: FooServiceProtocol {
-    
     var endpointBaseURL: String
     
     func fetchAndStoreData(_ optionalArguments: [String : String]) {
