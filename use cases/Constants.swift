@@ -14,8 +14,8 @@ class Constants: NSObject {
 
 // MARK: - Networking
 
-let networkTimeoutInSeconds: TimeInterval                 = 10.0
-let mockServiceSimulatedLatencyInSeconds: DispatchTime    = 0.5
+let networkTimeoutInSeconds: TimeInterval           = 10.0
+let mockServiceSimulatedLatencyInSeconds: Double    = 0.5
 let endpointBaseURL = "https://www.google.com"      // TODO: replace
 
 /*

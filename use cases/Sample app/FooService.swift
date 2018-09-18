@@ -51,10 +51,11 @@ struct MockFooService: FooServiceProtocol {
     var endpointBaseURL: String
     
     func fetchAndStoreData(_ optionalArguments: [String : String]) {
-        DispatchQueue.main.asyncAfter(deadline: mockServiceSimulatedLatencyInSeconds, execute: {
+        let dispatchDeadline: DispatchTime = .now() + mockServiceSimulatedLatencyInSeconds
+        DispatchQueue.main.asyncAfter(deadline: dispatchDeadline) {
             let sampleFooData = self.sampleFooData()
             parseAndStoreFooData(sampleFooData)
-        })
+        }
     }
     
     fileprivate func sampleFooData() -> JSON {

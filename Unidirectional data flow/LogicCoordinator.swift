@@ -197,7 +197,7 @@ class LogicCoordinator {
      */
     fileprivate func performLogic(_ action: Action) {
         switch action {
-        case mathRequest(operand1, operand2, calculationType):
+        case .mathRequest(_):   // TODO
             // do stuff here
             break
         default:

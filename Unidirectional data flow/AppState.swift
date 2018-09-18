@@ -58,7 +58,7 @@ class AppState: NSObject, NSCoding {
         // needs to be stored by caller
     }
 
-    let persistenceFileName = "AppState"
+    static let persistenceFileName = "AppState"
 
     /**
      Returns the absolute URL for the file persistence path within the Documents directory.  If for some reason this isn't available, returns nil.
