@@ -107,8 +107,8 @@
 		E4CE6AD721314BE400E4E865 /* ServiceConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceConstants.swift; sourceTree = "<group>"; };
 		E4D4FE6C2133784300438A8F /* Reduxion-iOSTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reduxion-iOSTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		E4D4FE742133AE2000438A8F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		E4D4FE7E2133B78E00438A8F /* FooLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FooLogic.swift; path = "use cases/Sample app/Foo/FooLogic.swift"; sourceTree = SOURCE_ROOT; };
-		E4D4FE852133BF0300438A8F /* FooService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FooService.swift; path = "use cases/Sample app/Foo/FooService.swift"; sourceTree = SOURCE_ROOT; };
+		E4D4FE7E2133B78E00438A8F /* FooLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FooLogic.swift; path = "use cases/Sample app/Service/FooLogic.swift"; sourceTree = SOURCE_ROOT; };
+		E4D4FE852133BF0300438A8F /* FooService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FooService.swift; path = "use cases/Sample app/Service/FooService.swift"; sourceTree = SOURCE_ROOT; };
 		E4D4FE882133BFBF00438A8F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = "Use cases/Constants.swift"; sourceTree = SOURCE_ROOT; };
 		E4D4FE8B2133C28F00438A8F /* Macros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Macros.swift; path = "Use cases/Macros.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -157,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				E4A5819A2150E7B100B31C62 /* Calculation */,
-				E4A5819B2150E7C000B31C62 /* Foo */,
+				E4A5819B2150E7C000B31C62 /* Service */,
 			);
 			path = "Sample app";
 			sourceTree = "<group>";
@@ -200,13 +200,13 @@
 			path = Calculation;
 			sourceTree = "<group>";
 		};
-		E4A5819B2150E7C000B31C62 /* Foo */ = {
+		E4A5819B2150E7C000B31C62 /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				E4D4FE7E2133B78E00438A8F /* FooLogic.swift */,
 				E4D4FE852133BF0300438A8F /* FooService.swift */,
 			);
-			path = Foo;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		E4CE6AAE2131498B00E4E865 = {
