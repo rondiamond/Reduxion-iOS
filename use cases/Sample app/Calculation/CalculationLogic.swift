@@ -42,11 +42,6 @@ struct CalculationLogic: Logic {
     func performLogic(_ state: AppState, action: Action) {
         switch action {
         case .mathCalculation (let operand1, let operand2, let calculationType):
-            /*
-            state.currentCalculation.operand1 = operand1
-            state.currentCalculation.operand2 = operand2
-            state.currentCalculation.calculationType = calculationType
-             */
             let result = self.performCalculation(operand1: operand1, operand2: operand2, calculationType: calculationType)
             state.currentCalculation.result = result
             break

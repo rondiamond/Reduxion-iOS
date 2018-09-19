@@ -15,10 +15,4 @@ import Foundation
  */
 struct Calculation {
     var result: Float = 0
-    /*
-     // future use
-     var operand1: Float = 0
-     var operand2: Float = 0
-     var calculationType: CalculationType = .addition
-     */
 }
