@@ -21,10 +21,12 @@ import Foundation
 class AppState: NSObject, NSCoding {
     // (Needs to inherit from NSObject, in order to implement NSCoding.)
     // AppState is instantiated with default values (if not recalled from persistence).
-
     // ** NOTE: For persisting data -- when adding properties, be SURE to also add them to the NSCoding methods below **
 
-    var property1 = false
+    
+    // MARK: Calculations
+    var currentCalculation = Calculation()
+
     
     // MARK: - Persistence
 
@@ -80,11 +82,11 @@ class AppState: NSObject, NSCoding {
     
     // NSCoder persistence
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(self.property1, forKey:keyNameProperty1)
+        //aCoder.encode(self.property1, forKey:keyNameProperty1)
     }
     
     // NSCoder recall
     required init(coder aDecoder: NSCoder) {
-        self.property1 = aDecoder.decodeBool(forKey: keyNameProperty1)
+        //self.property1 = aDecoder.decodeBool(forKey: keyNameProperty1)
     }
 }
