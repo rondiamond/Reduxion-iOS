@@ -40,6 +40,9 @@ class ViewController: UIViewController, AppStateSubscriber {
     
     func update(_ state: AppState, mostRecentAction: Action) {
         switch mostRecentAction {
+        case .performCalculation(_):
+            let resultText = "\(state.currentCalculation.result)"
+            self.resultLabel.text = resultText
         default:
             break
         }

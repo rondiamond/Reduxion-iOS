@@ -23,7 +23,7 @@ enum Action {
     case null
     
     // MARK: Math Calculations
-    case mathCalculation(operand1: Float, operand2: Float, calculationType: CalculationType)
+    case performCalculation(operand1: Float, operand2: Float, calculationType: CalculationType)
     
     // MARK: Foo Service
     case fooServiceRequest()
