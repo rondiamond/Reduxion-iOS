@@ -41,7 +41,9 @@ struct CalculationLogic: Logic {
     
     func performLogic(_ state: AppState, action: Action) {
         switch action {
+            
         case .performCalculation(let operand1, let operand2, let calculationType):
+            print(".performCalculation: operand1 = \(operand1), operand2 = \(operand2), calculationType = \(calculationType)")
             let result = self.performCalculation(operand1: operand1, operand2: operand2, calculationType: calculationType)
             state.currentCalculation.result = result
             break
