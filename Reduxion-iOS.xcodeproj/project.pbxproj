@@ -170,14 +170,6 @@
 			path = Carthage;
 			sourceTree = "<group>";
 		};
-		E45A8527215226D300581DCE /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = View;
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		E45A853D2152372700581DCE /* Reduxion-iOS sample app */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,7 +217,6 @@
 				E4CE6ADD21314BE800E4E865 /* Unidirectional data flow */,
 				E4D4FE7C2133B6F200438A8F /* Use cases */,
 				E45A853D2152372700581DCE /* Reduxion-iOS sample app */,
-				E45A8527215226D300581DCE /* View */,
 				E4D4FE6B2133781600438A8F /* third-party code */,
 				E4CE6AC52131498B00E4E865 /* Reduxion-iOSTests */,
 				E4CE6AB92131498B00E4E865 /* Products */,

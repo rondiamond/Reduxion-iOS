@@ -46,13 +46,13 @@ class ViewController: UIViewController, AppStateSubscriber {
         
         var operand1: Float = 0
         var operand2: Float = 0
-        if let operand1Text = operand1TextField.text {
-            operand1 = Float(operand1Text)!
+        if operand1TextField.text!.count > 0 {
+            operand1 = Float(operand1TextField.text!) ?? 0
         }
-        if let operand2Text = operand2TextField.text {
-            operand2 = Float(operand2Text)!
+        if operand2TextField.text!.count > 0 {
+            operand2 = Float(operand2TextField.text!) ?? 0
         }
-        
+
         let calculationType: CalculationType
         switch self.calculationTypeSegmentedControl.selectedSegmentIndex {
         case 0:
