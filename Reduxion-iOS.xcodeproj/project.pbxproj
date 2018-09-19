@@ -11,6 +11,9 @@
 		E44260AF2137BC6900A218C6 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44260AD2137BC6800A218C6 /* DataModel.swift */; };
 		E442F6072150950E000B37FE /* Reduxion-iOSTests-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = E4D4FE6C2133784300438A8F /* Reduxion-iOSTests-Bridging-Header.h */; };
 		E442F6082150951A000B37FE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD321314BE400E4E865 /* AppState.swift */; };
+		E45A850B215225B200581DCE /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD521314BE400E4E865 /* ServiceFactory.swift */; };
+		E45A850C215225BC00581DCE /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD421314BE400E4E865 /* Actions.swift */; };
+		E45A850D215225C500581DCE /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD721314BE400E4E865 /* ServiceConstants.swift */; };
 		E4A194B32137BF46001612BF /* CalculationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A194B22137BF46001612BF /* CalculationLogic.swift */; };
 		E4A194B42137BF46001612BF /* CalculationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A194B22137BF46001612BF /* CalculationLogic.swift */; };
 		E4A581952150BD4C00B31C62 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581942150BD4C00B31C62 /* Alamofire.framework */; };
@@ -382,10 +385,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E45A850B215225B200581DCE /* ServiceFactory.swift in Sources */,
 				E4D4FE832133BEB600438A8F /* FooLogic.swift in Sources */,
 				E4CE6AC72131498B00E4E865 /* Reduxion_iOSTests.swift in Sources */,
+				E45A850D215225C500581DCE /* ServiceConstants.swift in Sources */,
 				E4A194B42137BF46001612BF /* CalculationLogic.swift in Sources */,
 				E442F6082150951A000B37FE /* AppState.swift in Sources */,
+				E45A850C215225BC00581DCE /* Actions.swift in Sources */,
 				E4D4FE842133BEBB00438A8F /* LogicCoordinator.swift in Sources */,
 				E4D4FE8D2133C28F00438A8F /* Macros.swift in Sources */,
 				E44260AF2137BC6900A218C6 /* DataModel.swift in Sources */,
