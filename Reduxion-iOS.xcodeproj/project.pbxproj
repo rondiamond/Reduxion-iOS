@@ -57,9 +57,6 @@
 /* Begin PBXFileReference section */
 		E44260AD2137BC6800A218C6 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		E442F60B21509637000B37FE /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
-		E45A85192152268E00581DCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E45A851E2152269000581DCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E45A85202152269000581DCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Reduxion-iOS sample app/Info.plist"; sourceTree = "<group>"; };
 		E45A853C2152372700581DCE /* Reduxion-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reduxion-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45A853E2152372700581DCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E45A85402152372700581DCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -144,16 +141,6 @@
 			path = Carthage;
 			sourceTree = "<group>";
 		};
-		E45A85132152268E00581DCE /* Reduxion-iOS */ = {
-			isa = PBXGroup;
-			children = (
-				E45A85182152268E00581DCE /* Main.storyboard */,
-				E45A851D2152269000581DCE /* LaunchScreen.storyboard */,
-				E45A85202152269000581DCE /* Info.plist */,
-			);
-			path = "Reduxion-iOS";
-			sourceTree = "<group>";
-		};
 		E45A8527215226D300581DCE /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,11 +192,10 @@
 			isa = PBXGroup;
 			children = (
 				E4D4FE732133AE0E00438A8F /* _Documentation */,
-				E45A853D2152372700581DCE /* Reduxion-iOS sample app */,
 				E44260AC2137BC6800A218C6 /* Data */,
 				E4CE6ADD21314BE800E4E865 /* Unidirectional data flow */,
 				E4D4FE7C2133B6F200438A8F /* Use cases */,
-				E45A85132152268E00581DCE /* Reduxion-iOS */,
+				E45A853D2152372700581DCE /* Reduxion-iOS sample app */,
 				E45A8527215226D300581DCE /* View */,
 				E4D4FE6B2133781600438A8F /* third-party code */,
 				E4CE6ABA2131498B00E4E865 /* Reduxion-iOS */,
@@ -483,24 +469,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E45A85182152268E00581DCE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E45A85192152268E00581DCE /* Base */,
-			);
-			name = Main.storyboard;
-			path = "../Reduxion-iOS sample app";
-			sourceTree = "<group>";
-		};
-		E45A851D2152269000581DCE /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E45A851E2152269000581DCE /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			path = "../Reduxion-iOS sample app";
-			sourceTree = "<group>";
-		};
 		E45A85422152372700581DCE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
