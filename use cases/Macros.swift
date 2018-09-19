@@ -12,6 +12,9 @@ import UIKit
 
 private var numberOfPendingShowActivityIndicatorRequests = 0
 
+/**
+ Shows the network activity spinner (and keeps track of the number of outstanding requests).
+ */
 func showNetworkActivityIndicator() {
     numberOfPendingShowActivityIndicatorRequests += 1
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
@@ -27,6 +30,9 @@ func forceHideNetworkActivityIndicator() {
     //SVProgressHUD.dismiss()  // uncomment if using SVProgressHUD
 }
 
+/**
+ Hides the network activity spinner (assuming this was the only pending request).
+ */
 func hideNetworkActivityIndicator() {
     numberOfPendingShowActivityIndicatorRequests -= 1
     if numberOfPendingShowActivityIndicatorRequests <= 0 {
