@@ -17,7 +17,6 @@ class ViewController: UIViewController, AppStateSubscriber {
     @IBOutlet weak var operand2TextField: UITextField!
     @IBOutlet weak var calculationTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var resultLabel: UILabel!
-
     
     // MARK: - UIViewController lifecycle
     
@@ -29,7 +28,6 @@ class ViewController: UIViewController, AppStateSubscriber {
     deinit {
         LogicCoordinator.sharedInstance.unsubscribe(self)
     }
-
     
     // MARK: - IBAction
     
@@ -59,7 +57,6 @@ class ViewController: UIViewController, AppStateSubscriber {
         
         LogicCoordinator.sharedInstance.performAction(Action.performCalculation(operand1: operand1, operand2: operand2, calculationType: calculationType))
     }
-
     
     // MARK: - AppState
     

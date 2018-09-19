@@ -20,6 +20,18 @@ enum CalculationType {
 
 struct CalculationLogic: Logic {
 
+    func performLogic(_ state: AppState, action: Action) {
+        switch action {
+        case .performCalculation(let operand1, let operand2, let calculationType):
+            print("[Action] .performCalculation: operand1 = \(operand1), operand2 = \(operand2), calculationType = \(calculationType)")
+            let result = self.performCalculation(operand1: operand1, operand2: operand2, calculationType: calculationType)
+            state.currentCalculation.result = result
+            break
+        default:
+            break
+        }
+    }
+
     func performCalculation(operand1: Float, operand2: Float, calculationType: CalculationType) -> Float {
         let result: Float
         switch calculationType {
@@ -38,19 +50,5 @@ struct CalculationLogic: Logic {
         }
         return result
     }
-    
-    func performLogic(_ state: AppState, action: Action) {
-        switch action {
-            
-        case .performCalculation(let operand1, let operand2, let calculationType):
-//            print("[Action] .performCalculation: operand1 = \(operand1), operand2 = \(operand2), calculationType = \(calculationType)")
-            let result = self.performCalculation(operand1: operand1, operand2: operand2, calculationType: calculationType)
-            state.currentCalculation.result = result
-            break
 
-        default:
-            break
-        }
-    }
-    
 }
