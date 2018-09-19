@@ -31,19 +31,9 @@ class ViewController: UIViewController, AppStateSubscriber {
     }
 
     
-    // MARK: - IBActions
+    // MARK: - IBAction
     
-    @IBAction func operand1EditingDidEnd(_ sender: Any) {
-        print("\n \(self) \(#function) line \(#line); NSDate = \(NSDate.init().timeIntervalSince1970)")
-    }
-
-    @IBAction func operand2EditingDidEnd(_ sender: Any) {
-        print("\n \(self) \(#function) line \(#line); NSDate = \(NSDate.init().timeIntervalSince1970)")
-    }
-
     @IBAction func buttonCalculateTapped(_ sender: Any) {
-        print("\n \(self) \(#function) line \(#line); NSDate = \(NSDate.init().timeIntervalSince1970)")
-        
         var operand1: Float = 0
         var operand2: Float = 0
         if operand1TextField.text!.count > 0 {

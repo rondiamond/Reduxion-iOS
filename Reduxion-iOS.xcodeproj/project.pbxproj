@@ -175,9 +175,9 @@
 			children = (
 				E45A853E2152372700581DCE /* AppDelegate.swift */,
 				E45A85402152372700581DCE /* ViewController.swift */,
+				E45A85472152372800581DCE /* LaunchScreen.storyboard */,
 				E45A85422152372700581DCE /* Main.storyboard */,
 				E45A85452152372800581DCE /* Assets.xcassets */,
-				E45A85472152372800581DCE /* LaunchScreen.storyboard */,
 				E45A854A2152372800581DCE /* Info.plist */,
 			);
 			path = "Reduxion-iOS sample app";
