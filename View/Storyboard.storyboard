@@ -25,12 +25,19 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="operand1EditingDidEnd:" destination="XLk-ba-JDL" eventType="editingDidEnd" id="y51-Gb-V9c"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q09-pj-pGU">
                                 <rect key="frame" x="209" y="99" width="100" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="operand2EditingDidEnd:" destination="XLk-ba-JDL" eventType="editingDidEnd" id="kpW-uT-1hu"/>
+                                    <action selector="operand2TextField:" destination="XLk-ba-JDL" eventType="editingDidEnd" id="2Zd-Q1-rKI"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Operand 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmL-MF-sH2">
                                 <rect key="frame" x="52" y="99" width="81" height="21"/>
@@ -57,6 +64,9 @@
                                 <rect key="frame" x="140.5" y="230" width="94" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="CALCULATE!"/>
+                                <connections>
+                                    <action selector="buttonCalculateTapped:" destination="XLk-ba-JDL" eventType="touchUpInside" id="nAS-sq-PaJ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhj-5t-f9i">
                                 <rect key="frame" x="52" y="296" width="48" height="21"/>
@@ -95,6 +105,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mNt-kT-YHJ"/>
                     </view>
+                    <connections>
+                        <outlet property="calculationTypeSegmentedControl" destination="yBK-1F-8PP" id="dY9-Dq-OPU"/>
+                        <outlet property="operand1TextField" destination="v6Z-dw-Cwb" id="1sF-rR-5xR"/>
+                        <outlet property="operand2TextField" destination="q09-pj-pGU" id="0Es-Cb-sxg"/>
+                        <outlet property="resultLabel" destination="b6e-Eo-FGg" id="5z6-t3-gtk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MQN-mY-6Vn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
