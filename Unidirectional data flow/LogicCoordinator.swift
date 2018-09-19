@@ -138,12 +138,8 @@ class LogicCoordinator {
     
     // MARK: - Logic modules (aka 'reducers')
     // Note: this business logic is the same regardless of whether we're using real or mock data
-    fileprivate var logicUnits: [Logic] = [
-        CalculationLogic(),
-        FooLogic()
-    ]
-//    fileprivate var calculationLogic = CalculationLogic()
-//    fileprivate var fooLogic = FooLogic()
+    fileprivate var calculationLogic = CalculationLogic()
+    fileprivate var fooLogic = FooLogic()
     
     // MARK: - Service handlers
     fileprivate var fooService: FooServiceProtocol?
@@ -202,8 +198,8 @@ class LogicCoordinator {
         // Note: Expensive action logic should be performed on a separate thread; and when ready with the results, should call another type of action specifically for the purpose of mutating the AppState.
         
         // Call each Logic module, allowing them to mutate the AppState; and daisy-chain their results, sequentially
-self.fooLogic.performLogic(self.appState, action: action)
-        self.
+        self.calculationLogic.performLogic  (self.appState, action: action)
+        self.fooLogic.performLogic          (self.appState, action: action)
         // ... any other Logic modules get called as well
           
         self.updateSubscribers(action)
