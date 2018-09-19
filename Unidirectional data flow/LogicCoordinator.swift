@@ -180,6 +180,8 @@ class LogicCoordinator {
         // All actions *must* be performed on the same thread, in order to insure data consistency.
         // In addition, since the resulting AppState updates the UI, this thread needs to be the Main thread.
 
+        print("[LogicCoordinator] performAction: action = \(action)")
+        
         if !Thread.current.isMainThread {
             DispatchQueue.main.async {
                 self.performLogic(action)

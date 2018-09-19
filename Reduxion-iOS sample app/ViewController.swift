@@ -67,7 +67,7 @@ class ViewController: UIViewController, AppStateSubscriber {
         switch mostRecentAction {
         case .performCalculation(_):
             let resultText = "\(state.currentCalculation.result)"
-            print("resultText = \(resultText)\n")
+            print("[AppState] state.currentCalculation.result = \(resultText)\n")
             self.resultLabel.text = resultText
         default:
             break
