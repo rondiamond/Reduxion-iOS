@@ -19,6 +19,19 @@
 		E45A85442152372700581DCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E45A85422152372700581DCE /* Main.storyboard */; };
 		E45A85462152372800581DCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E45A85452152372800581DCE /* Assets.xcassets */; };
 		E45A85492152372800581DCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E45A85472152372800581DCE /* LaunchScreen.storyboard */; };
+		E45A855021523B0000581DCE /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD421314BE400E4E865 /* Actions.swift */; };
+		E45A855121523B0000581DCE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD321314BE400E4E865 /* AppState.swift */; };
+		E45A855221523B0000581DCE /* LogicCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */; };
+		E45A855321523B0000581DCE /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD721314BE400E4E865 /* ServiceConstants.swift */; };
+		E45A855421523B0000581DCE /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD521314BE400E4E865 /* ServiceFactory.swift */; };
+		E45A855521523B0500581DCE /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44260AD2137BC6800A218C6 /* DataModel.swift */; };
+		E45A855621523B0A00581DCE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE882133BFBF00438A8F /* Constants.swift */; };
+		E45A855721523B0A00581DCE /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE8B2133C28F00438A8F /* Macros.swift */; };
+		E45A855821523B0E00581DCE /* CalculationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A194B22137BF46001612BF /* CalculationLogic.swift */; };
+		E45A855921523B1100581DCE /* FooLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE7E2133B78E00438A8F /* FooLogic.swift */; };
+		E45A855A21523B1100581DCE /* FooService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE852133BF0300438A8F /* FooService.swift */; };
+		E45A855B21523B2F00581DCE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581942150BD4C00B31C62 /* Alamofire.framework */; };
+		E45A855C21523B2F00581DCE /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581972150BD5600B31C62 /* SwiftyJSON.framework */; };
 		E4A194B32137BF46001612BF /* CalculationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A194B22137BF46001612BF /* CalculationLogic.swift */; };
 		E4A194B42137BF46001612BF /* CalculationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A194B22137BF46001612BF /* CalculationLogic.swift */; };
 		E4A581952150BD4C00B31C62 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581942150BD4C00B31C62 /* Alamofire.framework */; };
@@ -91,6 +104,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E45A855C21523B2F00581DCE /* SwiftyJSON.framework in Frameworks */,
+				E45A855B21523B2F00581DCE /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,8 +431,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E45A855821523B0E00581DCE /* CalculationLogic.swift in Sources */,
+				E45A855021523B0000581DCE /* Actions.swift in Sources */,
+				E45A855221523B0000581DCE /* LogicCoordinator.swift in Sources */,
+				E45A855921523B1100581DCE /* FooLogic.swift in Sources */,
 				E45A85412152372700581DCE /* ViewController.swift in Sources */,
+				E45A855321523B0000581DCE /* ServiceConstants.swift in Sources */,
+				E45A855A21523B1100581DCE /* FooService.swift in Sources */,
+				E45A855421523B0000581DCE /* ServiceFactory.swift in Sources */,
+				E45A855521523B0500581DCE /* DataModel.swift in Sources */,
+				E45A855721523B0A00581DCE /* Macros.swift in Sources */,
 				E45A853F2152372700581DCE /* AppDelegate.swift in Sources */,
+				E45A855121523B0000581DCE /* AppState.swift in Sources */,
+				E45A855621523B0A00581DCE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +520,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9VSXUETUH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Reduxion-iOS sample app/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -513,6 +543,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9VSXUETUH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Reduxion-iOS sample app/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (

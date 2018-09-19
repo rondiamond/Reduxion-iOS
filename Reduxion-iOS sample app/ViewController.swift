@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AppStateSubscriber {
+
+    var appStateSubscriberIdentifier: String = ""
 
     @IBOutlet weak var operand1TextField: UITextField!
     @IBAction func operand1EditingDidEnd(_ sender: Any) {
@@ -26,9 +28,22 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        LogicCoordinator.sharedInstance.subscribe(self)
     }
 
+    deinit {
+        LogicCoordinator.sharedInstance.unsubscribe(self)
+    }
+    
+    
+    // MARK: - AppState
+    
+    func update(_ state: AppState, mostRecentAction: Action) {
+        switch mostRecentAction {
+        default:
+            break
+        }
+    }
 
 }
 
