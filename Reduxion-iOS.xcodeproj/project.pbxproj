@@ -14,7 +14,6 @@
 		E45A850B215225B200581DCE /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD521314BE400E4E865 /* ServiceFactory.swift */; };
 		E45A850C215225BC00581DCE /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD421314BE400E4E865 /* Actions.swift */; };
 		E45A850D215225C500581DCE /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD721314BE400E4E865 /* ServiceConstants.swift */; };
-		E45A85152152268E00581DCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45A85142152268E00581DCE /* AppDelegate.swift */; };
 		E45A85172152268E00581DCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45A85162152268E00581DCE /* ViewController.swift */; };
 		E45A851A2152268E00581DCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E45A85182152268E00581DCE /* Main.storyboard */; };
 		E45A851C2152269000581DCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E45A851B2152269000581DCE /* Assets.xcassets */; };
@@ -458,7 +457,6 @@
 				E45A85362152306300581DCE /* Constants.swift in Sources */,
 				E45A85172152268E00581DCE /* ViewController.swift in Sources */,
 				E45A853121522F3200581DCE /* CalculationLogic.swift in Sources */,
-				E45A85152152268E00581DCE /* AppDelegate.swift in Sources */,
 				E45A852E21522F2900581DCE /* ServiceConstants.swift in Sources */,
 				E45A853021522F2D00581DCE /* DataModel.swift in Sources */,
 			);
