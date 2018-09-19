@@ -30,6 +30,10 @@
 		E45A853121522F3200581DCE /* CalculationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A194B22137BF46001612BF /* CalculationLogic.swift */; };
 		E45A853221522F3600581DCE /* FooLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE7E2133B78E00438A8F /* FooLogic.swift */; };
 		E45A853321522F3600581DCE /* FooService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE852133BF0300438A8F /* FooService.swift */; };
+		E45A85342152305500581DCE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581942150BD4C00B31C62 /* Alamofire.framework */; };
+		E45A85352152305800581DCE /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581972150BD5600B31C62 /* SwiftyJSON.framework */; };
+		E45A85362152306300581DCE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE882133BFBF00438A8F /* Constants.swift */; };
+		E45A85372152306900581DCE /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE8B2133C28F00438A8F /* Macros.swift */; };
 		E4A194B32137BF46001612BF /* CalculationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A194B22137BF46001612BF /* CalculationLogic.swift */; };
 		E4A194B42137BF46001612BF /* CalculationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A194B22137BF46001612BF /* CalculationLogic.swift */; };
 		E4A581952150BD4C00B31C62 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581942150BD4C00B31C62 /* Alamofire.framework */; };
@@ -80,7 +84,7 @@
 		E4A194B22137BF46001612BF /* CalculationLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationLogic.swift; sourceTree = "<group>"; };
 		E4A581942150BD4C00B31C62 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
 		E4A581972150BD5600B31C62 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = SOURCE_ROOT; };
-		E4BAD627214E528400A221D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "use cases/Application Delegate/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
+		E4BAD627214E528400A221D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Reduxion-iOS/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		E4CE6AB82131498B00E4E865 /* Reduxion_iOS_framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reduxion_iOS_framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4CE6ABB2131498B00E4E865 /* Reduxion_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reduxion_iOS.h; sourceTree = "<group>"; };
 		E4CE6ABC2131498B00E4E865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E45A85352152305800581DCE /* SwiftyJSON.framework in Frameworks */,
+				E45A85342152305500581DCE /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,9 +451,11 @@
 				E45A852F21522F2900581DCE /* ServiceFactory.swift in Sources */,
 				E45A852A21522F1E00581DCE /* AppDelegate.swift in Sources */,
 				E45A852C21522F2900581DCE /* AppState.swift in Sources */,
+				E45A85372152306900581DCE /* Macros.swift in Sources */,
 				E45A852B21522F2900581DCE /* Actions.swift in Sources */,
 				E45A853221522F3600581DCE /* FooLogic.swift in Sources */,
 				E45A852D21522F2900581DCE /* LogicCoordinator.swift in Sources */,
+				E45A85362152306300581DCE /* Constants.swift in Sources */,
 				E45A85172152268E00581DCE /* ViewController.swift in Sources */,
 				E45A853121522F3200581DCE /* CalculationLogic.swift in Sources */,
 				E45A85152152268E00581DCE /* AppDelegate.swift in Sources */,
@@ -530,6 +538,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9VSXUETUH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Reduxion-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -549,6 +561,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9VSXUETUH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Reduxion-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
