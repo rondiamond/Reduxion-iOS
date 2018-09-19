@@ -19,21 +19,23 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v6Z-dw-Cwb">
                                 <rect key="frame" x="209" y="57" width="100" height="30"/>
+                                <color key="backgroundColor" red="0.79318643440000003" green="0.96050107969999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="64e-AA-fRi"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <action selector="operand1EditingDidEnd:" destination="XLk-ba-JDL" eventType="editingDidEnd" id="y51-Gb-V9c"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q09-pj-pGU">
                                 <rect key="frame" x="209" y="99" width="100" height="30"/>
+                                <color key="backgroundColor" red="0.79318643440000003" green="0.96050107969999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <action selector="operand2EditingDidEnd:" destination="XLk-ba-JDL" eventType="editingDidEnd" id="kpW-uT-1hu"/>
                                     <action selector="operand2TextField:" destination="XLk-ba-JDL" eventType="editingDidEnd" id="2Zd-Q1-rKI"/>
