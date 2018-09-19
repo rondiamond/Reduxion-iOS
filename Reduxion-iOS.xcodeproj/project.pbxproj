@@ -45,7 +45,6 @@
 		E4CE6ADA21314BE400E4E865 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD521314BE400E4E865 /* ServiceFactory.swift */; };
 		E4CE6ADB21314BE400E4E865 /* LogicCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */; };
 		E4CE6ADC21314BE400E4E865 /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD721314BE400E4E865 /* ServiceConstants.swift */; };
-		E4D4FE702133784400438A8F /* ObjCTryCatch.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE6E2133784400438A8F /* ObjCTryCatch.m */; };
 		E4D4FE822133BEB500438A8F /* FooLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE7E2133B78E00438A8F /* FooLogic.swift */; };
 		E4D4FE832133BEB600438A8F /* FooLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE7E2133B78E00438A8F /* FooLogic.swift */; };
 		E4D4FE842133BEBB00438A8F /* LogicCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */; };
@@ -94,8 +93,6 @@
 		E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogicCoordinator.swift; sourceTree = "<group>"; };
 		E4CE6AD721314BE400E4E865 /* ServiceConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceConstants.swift; sourceTree = "<group>"; };
 		E4D4FE6C2133784300438A8F /* Reduxion-iOSTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reduxion-iOSTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		E4D4FE6D2133784400438A8F /* ObjCTryCatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjCTryCatch.h; path = "third-party code/ObjCTryCatch/ObjCTryCatch.h"; sourceTree = SOURCE_ROOT; };
-		E4D4FE6E2133784400438A8F /* ObjCTryCatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjCTryCatch.m; path = "third-party code/ObjCTryCatch/ObjCTryCatch.m"; sourceTree = SOURCE_ROOT; };
 		E4D4FE742133AE2000438A8F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		E4D4FE7E2133B78E00438A8F /* FooLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FooLogic.swift; path = "use cases/Sample app/Foo/FooLogic.swift"; sourceTree = SOURCE_ROOT; };
 		E4D4FE852133BF0300438A8F /* FooService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FooService.swift; path = "use cases/Sample app/Foo/FooService.swift"; sourceTree = SOURCE_ROOT; };
@@ -268,18 +265,8 @@
 				E4D4FE6C2133784300438A8F /* Reduxion-iOSTests-Bridging-Header.h */,
 				E442F60A21509622000B37FE /* Carthage */,
 				E4A581932150BD1700B31C62 /* Frameworks */,
-				E4D4FE722133786900438A8F /* ObjCTryCatch */,
 			);
 			path = "third-party code";
-			sourceTree = "<group>";
-		};
-		E4D4FE722133786900438A8F /* ObjCTryCatch */ = {
-			isa = PBXGroup;
-			children = (
-				E4D4FE6D2133784400438A8F /* ObjCTryCatch.h */,
-				E4D4FE6E2133784400438A8F /* ObjCTryCatch.m */,
-			);
-			path = ObjCTryCatch;
 			sourceTree = "<group>";
 		};
 		E4D4FE732133AE0E00438A8F /* _Documentation */ = {
@@ -484,7 +471,6 @@
 				E4D4FE892133BFBF00438A8F /* Constants.swift in Sources */,
 				E4D4FE862133BF0300438A8F /* FooService.swift in Sources */,
 				E4CE6ADB21314BE400E4E865 /* LogicCoordinator.swift in Sources */,
-				E4D4FE702133784400438A8F /* ObjCTryCatch.m in Sources */,
 				E4A194B32137BF46001612BF /* CalculationLogic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
