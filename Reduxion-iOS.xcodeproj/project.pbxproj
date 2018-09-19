@@ -20,6 +20,7 @@
 		E45A851C2152269000581DCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E45A851B2152269000581DCE /* Assets.xcassets */; };
 		E45A851F2152269000581DCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E45A851D2152269000581DCE /* LaunchScreen.storyboard */; };
 		E45A8525215226B900581DCE /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E45A8524215226B900581DCE /* Storyboard.storyboard */; };
+		E45A85292152281E00581DCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45A85282152281E00581DCE /* ViewController.swift */; };
 		E4A194B32137BF46001612BF /* CalculationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A194B22137BF46001612BF /* CalculationLogic.swift */; };
 		E4A194B42137BF46001612BF /* CalculationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A194B22137BF46001612BF /* CalculationLogic.swift */; };
 		E4A581952150BD4C00B31C62 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581942150BD4C00B31C62 /* Alamofire.framework */; };
@@ -67,7 +68,8 @@
 		E45A851B2152269000581DCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E45A851E2152269000581DCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E45A85202152269000581DCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E45A8524215226B900581DCE /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = View/Storyboard.storyboard; sourceTree = "<group>"; };
+		E45A8524215226B900581DCE /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = ../View/Storyboard.storyboard; sourceTree = "<group>"; };
+		E45A85282152281E00581DCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = View/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		E4A194B22137BF46001612BF /* CalculationLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationLogic.swift; sourceTree = "<group>"; };
 		E4A581942150BD4C00B31C62 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
 		E4A581972150BD5600B31C62 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = SOURCE_ROOT; };
@@ -164,6 +166,8 @@
 		E45A8527215226D300581DCE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E45A8524215226B900581DCE /* Storyboard.storyboard */,
+				E45A85282152281E00581DCE /* ViewController.swift */,
 			);
 			name = View;
 			path = "New Group";
@@ -198,7 +202,6 @@
 		E4CE6AAE2131498B00E4E865 = {
 			isa = PBXGroup;
 			children = (
-				E45A8524215226B900581DCE /* Storyboard.storyboard */,
 				E4D4FE732133AE0E00438A8F /* _Documentation */,
 				E44260AC2137BC6800A218C6 /* Data */,
 				E4CE6ADD21314BE800E4E865 /* Unidirectional data flow */,
@@ -444,6 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E45A85292152281E00581DCE /* ViewController.swift in Sources */,
 				E45A85172152268E00581DCE /* ViewController.swift in Sources */,
 				E45A85152152268E00581DCE /* AppDelegate.swift in Sources */,
 			);
