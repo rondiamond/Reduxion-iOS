@@ -209,9 +209,9 @@ class LogicCoordinator {
     // MARK: - Action
     
     /**
-     The LogicCoordinator calls all the individual logic modules, which each mutate relevant portions of the app state as needed.
+     Causes the LogicCoordinator to call all the individual logic modules, which each mutate relevant portions of the app state as needed.
      - parameter action: The Action to be submitted to the various logic modules (with optional data).
-     NOTE: 'performAction' is executed on the Main thread.  If the request is initiated from the main thread, then the logic (and the update:appState callback) will be executed synchronously.
+     NOTE: Logic is executed on the Main thread.  If the request is initiated from the main thread, then the logic (and the update:appState callback) will be executed synchronously.
      */
     func performAction(_ action: Action) {
         // All actions *must* be performed on the same thread, in order to insure data consistency.
@@ -233,14 +233,7 @@ class LogicCoordinator {
      */
     fileprivate func performLogic(_ action: Action) {
         // Note: Expensive action logic should be performed on a separate thread; and when ready with the results, should call another type of action specifically for the purpose of mutating the AppState.
-        
-        // Call each Logic module, allowing them to mutate the AppState; and daisy-chain their results, sequentially
-//        self.calculationLogic.performLogic  (self.appState, action: action)
-//        self.fooLogic.performLogic          (self.appState, action: action)
-//        // ... any other Logic modules get called as well
-
         self.logicUnits.forEach({ $0.performLogic(self.appState, action: action) })
-        
         self.updateSubscribers(action)
     }
     
