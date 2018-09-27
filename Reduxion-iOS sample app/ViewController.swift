@@ -23,6 +23,9 @@ class ViewController: UIViewController, AppStateSubscriber {
     override func viewDidLoad() {
         super.viewDidLoad()
         LogicCoordinator.sharedInstance.subscribe(self)
+        
+        let calculationLogic = CalculationLogic()
+        LogicCoordinator.sharedInstance.add(logic: calculationLogic)    // TODO: REFACTOR
     }
 
     deinit {

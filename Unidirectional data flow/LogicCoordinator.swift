@@ -128,15 +128,15 @@ class LogicCoordinator {
 
             // grab references to any Services (could be real or mock) from the ServiceFactory
             // ... then inject them into the business logic units that depend on them
-            self.fooService = _serviceFactory?.fooService
-            self.fooLogic.service = self.fooService
+//            self.fooService = _serviceFactory?.fooService
+//            self.fooLogic.service = self.fooService
         }
         get {
             return _serviceFactory!
         }
     }
     
-    
+
     
     
     // MARK: - Logic modules (aka 'reducers')
@@ -235,10 +235,12 @@ class LogicCoordinator {
         // Note: Expensive action logic should be performed on a separate thread; and when ready with the results, should call another type of action specifically for the purpose of mutating the AppState.
         
         // Call each Logic module, allowing them to mutate the AppState; and daisy-chain their results, sequentially
-        self.calculationLogic.performLogic  (self.appState, action: action)
-        self.fooLogic.performLogic          (self.appState, action: action)
-        // ... any other Logic modules get called as well
-          
+//        self.calculationLogic.performLogic  (self.appState, action: action)
+//        self.fooLogic.performLogic          (self.appState, action: action)
+//        // ... any other Logic modules get called as well
+
+        self.logicUnits.forEach({ $0.performLogic(self.appState, action: action) })
+        
         self.updateSubscribers(action)
     }
     
