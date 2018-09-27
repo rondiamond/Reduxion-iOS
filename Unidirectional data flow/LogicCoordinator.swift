@@ -136,10 +136,16 @@ class LogicCoordinator {
         }
     }
     
+    
+    
+    
     // MARK: - Logic modules (aka 'reducers')
     // Note: this business logic is the same regardless of whether we're using real or mock data
-    fileprivate var calculationLogic = CalculationLogic()
-    fileprivate var fooLogic = FooLogic()
+    
+    fileprivate var logicUnits: [Logic] = []    // the daisy chain of composable business logic units
+
+//    fileprivate var calculationLogic = CalculationLogic()
+//    fileprivate var fooLogic = FooLogic()
     
     // MARK: - Service handlers
     fileprivate var fooService: FooServiceProtocol?
@@ -150,6 +156,37 @@ class LogicCoordinator {
     init() {
         // no super.init, since this is a base class
     }
+    
+    
+    // MARK: - Logic units
+    
+    /**
+     Adds a Logic unit to the logic coordinator's chain of composable business logic.
+     - parameter logic:  A unit of business logic to be added.
+     */
+    func add(logic: Logic) {
+//        guard !self.logicUnits.contains(logic) else {
+//            return
+//        }
+        self.logicUnits.append(logic)
+    }
+    
+    /**
+     [synopsis]
+     Removes a Logic unit from the logic coordinator's chain of composable business logic (if it exists in that chain).
+     - parameter logic:  A unit of business logic to be removed.
+     */
+    func remove(logic: Logic) {
+//        self.logicUnits.removeAll(where: $0.typ)
+//        self.logicUnits.filter({ !($0 is logic) })
+//        self.logicUnits.filter({ $0 !== logic })
+//        self.logicUnits.removeAll(where: {true} )
+//        self.logicUnits = self.logicUnits.filter(){ $0 !== logic }
+    }
+    
+
+    
+    
     
     
     // MARK: - Data persistence
