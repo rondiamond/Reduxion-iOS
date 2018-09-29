@@ -25,4 +25,6 @@ struct Calculation {
 struct CalculationHistory {
     var history: [Calculation] = []
     var currentIndex: UInt?
+    var canGoBack: Bool = false
+    var canGoForward: Bool = false
 }

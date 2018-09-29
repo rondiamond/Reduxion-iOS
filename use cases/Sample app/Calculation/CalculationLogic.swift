@@ -27,6 +27,14 @@ struct CalculationLogic: Logic {
             let result = self.performCalculation(operand1: operand1, operand2: operand2, calculationType: calculationType)
             state.currentCalculation.result = result
             break
+        case .goBackCalculationHistory():
+            self.goBackCalculationHistory()
+            break
+
+        case .goForwardCalculationHistory():
+            
+            break
+
         default:
             break
         }
@@ -50,5 +58,24 @@ struct CalculationLogic: Logic {
         }
         return result
     }
+    
+    func goBackCalculationHistory() {
+    
+        // decrement 
+        
+        
+        
+    }
 
+    func goForwardCalculationHistory() {
+    
+        
+        
+    }
+
+    
+    // TODO: update current calculation (from index)
+    
+    
+    
 }
