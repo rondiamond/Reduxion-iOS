@@ -78,6 +78,9 @@ class ViewController: UIViewController, AppStateSubscriber {
             let resultText = "\(state.currentCalculation.result)"
             print("[AppState] state.currentCalculation.result = \(resultText)\n")
             self.resultLabel.text = resultText
+            
+            // TODO: enable/disable history buttons, depending
+            
         default:
             break
         }

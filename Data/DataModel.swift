@@ -22,7 +22,7 @@ struct Calculation {
  - parameter foo: [explanation]
  - returns: [explanation]
  */
-struct CalculationHistory {
+struct Calculations {
     var history: [Calculation] = []
     var currentIndex: UInt?
     var canGoBack: Bool = false

@@ -26,7 +26,7 @@ class AppState: NSObject, NSCoding {
     
     // MARK: Calculations
     var currentCalculation = Calculation()
-    var calculationHistory = CalculationHistory()
+    var calculations = Calculations()
 
     
     // MARK: - Persistence
