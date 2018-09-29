@@ -16,3 +16,13 @@ import Foundation
 struct Calculation {
     var result: Float = 0
 }
+
+/**
+ [synopsis]
+ - parameter foo: [explanation]
+ - returns: [explanation]
+ */
+struct CalculationHistory {
+    var history: [Calculation] = []
+    var currentIndex: UInt?
+}

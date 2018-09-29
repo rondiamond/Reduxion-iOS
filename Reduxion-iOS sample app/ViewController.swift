@@ -61,6 +61,15 @@ class ViewController: UIViewController, AppStateSubscriber {
         LogicCoordinator.sharedInstance.performAction(Action.performCalculation(operand1: operand1, operand2: operand2, calculationType: calculationType))
     }
     
+    @IBAction func buttonBackTapped(_ sender: Any) {
+        LogicCoordinator.sharedInstance.performAction(.goBackCalculationHistory())
+    }
+    
+    @IBAction func buttonForwardTapped(_ sender: Any) {
+        LogicCoordinator.sharedInstance.performAction(.goForwardCalculationHistory())
+    }
+    
+    
     // MARK: - AppState
     
     func update(_ state: AppState, mostRecentAction: Action) {

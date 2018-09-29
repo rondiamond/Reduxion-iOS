@@ -24,6 +24,8 @@ enum Action {
     
     // MARK: Math Calculations
     case performCalculation(operand1: Float, operand2: Float, calculationType: CalculationType)
+    case goBackCalculationHistory()
+    case goForwardCalculationHistory()
     
     // MARK: Foo Service
     case fooServiceRequest()
