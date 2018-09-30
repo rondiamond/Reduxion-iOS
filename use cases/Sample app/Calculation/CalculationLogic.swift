@@ -99,21 +99,16 @@ struct CalculationLogic: Logic {
      Move one step forward in calculation history (if possible).
      */
     private func stepForwardInCalculationHistory(with state: AppState) {
-        // increment calculation history index (if we can)
-
-//        // NOTE: there may be other 'future' states we now need to overwrite
-//        self.removeUnusedFutureHistory(with: state)
-        
-        
         if let currentIndex = state.calculations.currentIndex {
-let newIndex = max(currentIndex-1, 0)   // sanity check
+            let maxIndex = state.calculations.history.count - 1
+            let newIndex = min(currentIndex+1, maxIndex)
             state.calculations.currentIndex = newIndex
             self.updateCanGoBackOrForward(with: state)
         }
     }
 
     /**
-     [synopsis]
+     Update whether it's possible to step back or forward in the calculation history from the current index.
      */
     private func updateCanGoBackOrForward(with state: AppState) {
         if let historyCurrentIndex = state.calculations.currentIndex {
