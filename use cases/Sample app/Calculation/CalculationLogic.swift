@@ -24,12 +24,13 @@ struct CalculationLogic: Logic {
         switch action {
         case .performCalculation(let operand1, let operand2, let calculationType):
             print("[Action] .performCalculation: operand1 = \(operand1), operand2 = \(operand2), calculationType = \(calculationType)")
-            let result = self.performCalculation(operand1: operand1, operand2: operand2, calculationType: calculationType)
-            let calculation = Calculation(operand1: operand1, operand2: operand2, calculationType: calculationType, result: result)
-            state.currentCalculation = calculation
-            state.calculations.history.append(calculation)
-            state.calculations.currentIndex = state.calculations.history.count - 1
-            self.updateCanGoBackOrForward(with: state)
+            var calculation = Calculation(operand1: operand1, operand2: operand2, calculationType: calculationType, result: nil)
+            calculation.result = self.result(from: calculation)
+//            state.currentCalculation = calculation
+//            state.calculations.history.append(calculation)
+//            state.calculations.currentIndex = state.calculations.history.count - 1
+//            self.updateCanGoBackOrForward(with: state)
+            self.updateCalculationHistory(with: calculation, state: state)
             break
         case .goBackCalculationHistory():
             self.goBackCalculationHistory(with: state)
@@ -42,10 +43,30 @@ struct CalculationLogic: Logic {
         }
     }
 
-    func updateCalculations(with: AppState) {
-
+    func updateCalculationHistory(with calculation: Calculation, state: AppState) {
+//        print("[Action] .performCalculation: operand1 = \(operand1), operand2 = \(operand2), calculationType = \(calculationType)")
+//        let result = self.performCalculation(operand1: operand1, operand2: operand2, calculationType: calculationType)
+        
+//        let calculation = Calculation(operand1: operand1, operand2: operand2, calculationType: calculationType, result: result)
+        state.currentCalculation = calculation
+        
+        // wipe out any unneeded 'future' calculations first, before appending calculation to history
+        if let historyCurrentIndex = state.calculations.currentIndex {
+            let totalNumberOfHistoryCalculations = state.calculations.history.count
+            if historyCurrentIndex < (totalNumberOfHistoryCalculations - 1) {
+                let subrangeToRemove = historyCurrentIndex..<totalNumberOfHistoryCalculations
+                state.calculations.history.removeSubrange(subrangeToRemove)
+            }
+        }
+        
+        state.calculations.history.append(calculation)
+        state.calculations.currentIndex = state.calculations.history.count - 1
+        self.updateCanGoBackOrForward(with: state)
     }
     
+//    func removeUnusedFutureHistory(<#parameters#>) -> <#return type#> {
+//        <#function body#>
+//    }
     
     
     
@@ -55,20 +76,20 @@ struct CalculationLogic: Logic {
      - parameter foo: [explanation]
      - returns: [explanation]
      */
-    private func performCalculation(operand1: Float, operand2: Float, calculationType: CalculationType) -> Float {
+    private func result(from calculation: Calculation) -> Float {
         let result: Float
-        switch calculationType {
+        switch calculation.calculationType {
         case .addition:
-            result = operand1 + operand2
+            result = calculation.operand1 + calculation.operand2
             break
         case .subtraction:
-            result = operand1 - operand2
+            result = calculation.operand1 - calculation.operand2
             break
         case .multiplication:
-            result = operand1 * operand2
+            result = calculation.operand1 * calculation.operand2
             break
         case .division:
-            result = operand1 / operand2
+            result = calculation.operand1 / calculation.operand2
             break
         }
         return result
