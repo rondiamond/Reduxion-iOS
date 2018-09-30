@@ -24,11 +24,15 @@ struct CalculationLogic: Logic {
         switch action {
         case .performCalculation(let operand1, let operand2, let calculationType):
             print("[Action] .performCalculation: operand1 = \(operand1), operand2 = \(operand2), calculationType = \(calculationType)")
+            var calculation = Calculation()
+            calculation.operand1 = operand1
+            calculation.operand2 = operand2
+            calculation.calculationType = calculationType
             let result = self.performCalculation(operand1: operand1, operand2: operand2, calculationType: calculationType)
-            state.currentCalculation.result = result
-            
-            // TODO: append calculation/result to history array
-            
+            calculation.result = result
+            state.currentCalculation = calculation
+            state.calculations.history.append(state.currentCalculation)
+            state.calculations.currentIndex = state.calculations.history.count - 1
             break
         case .goBackCalculationHistory():
             self.goBackCalculationHistory(with: state)

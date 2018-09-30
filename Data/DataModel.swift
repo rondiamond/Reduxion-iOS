@@ -14,7 +14,10 @@ import Foundation
  -  A timestamp of when the calculation was requested
  */
 struct Calculation {
-    var result: Float = 0
+    var operand1: Float?
+    var operand2: Float?
+    var calculationType: CalculationType?
+    var result: Float?
 }
 
 /**
@@ -24,7 +27,7 @@ struct Calculation {
  */
 struct Calculations {
     var history: [Calculation] = []
-    var currentIndex: UInt?
+    var currentIndex: Int?
     var canGoBack: Bool = false
     var canGoForward: Bool = false
 }
