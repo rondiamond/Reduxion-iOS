@@ -25,7 +25,7 @@ class AppState: NSObject, NSCoding {
 
     
     // MARK: Calculations
-    var currentCalculation = Calculation()
+    var currentCalculation: Calculation?
     var calculations = Calculations()
 
     

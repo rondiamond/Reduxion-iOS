@@ -29,6 +29,7 @@ struct CalculationLogic: Logic {
             state.currentCalculation = calculation
             state.calculations.history.append(calculation)
             state.calculations.currentIndex = state.calculations.history.count - 1
+            self.updateCanGoBackOrForward(with: state)
             break
         case .goBackCalculationHistory():
             self.goBackCalculationHistory(with: state)
@@ -41,6 +42,14 @@ struct CalculationLogic: Logic {
         }
     }
 
+    func updateCalculations(with: AppState) {
+
+    }
+    
+    
+    
+    
+    
     /**
      [synopsis]
      - parameter foo: [explanation]
@@ -93,11 +102,12 @@ let newIndex = max(currentIndex-1, 0)   // sanity check
      [synopsis]
      */
     private func updateCanGoBackOrForward(with state: AppState) {
-    
-        // update CURRENT CALCULATION
-        
-        
-        
+        if let historyCurrentIndex = state.calculations.currentIndex {
+            let canGoForward = historyCurrentIndex < (state.calculations.history.count - 1)
+            state.calculations.canGoForward = canGoForward
+            let canGoBack = (historyCurrentIndex > 0)
+            state.calculations.canGoBack = canGoBack
+        }
     }
     
     

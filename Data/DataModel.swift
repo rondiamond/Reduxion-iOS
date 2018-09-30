@@ -3,11 +3,6 @@ import Foundation
 // MARK: - Data model
 
 /**
- * A
- Operands inputted by the user, for doing calculations.
- */
-
-/**
  An arithmetic calculation to be done, consisting of:
  -  Two operands (floats)
  -  A type of calculation (e.g., addition, subtraction, etc.)
@@ -21,9 +16,7 @@ struct Calculation {
 }
 
 /**
- [synopsis]
- - parameter foo: [explanation]
- - returns: [explanation]
+ The history of Calculations done by the user.
  */
 struct Calculations {
     var history: [Calculation] = []

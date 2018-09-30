@@ -75,9 +75,11 @@ class ViewController: UIViewController, AppStateSubscriber {
     func update(_ state: AppState, mostRecentAction: Action) {
         switch mostRecentAction {
         case .performCalculation(_):
-            let resultText = "\(state.currentCalculation.result)"
-            print("[AppState] state.currentCalculation.result = \(resultText)\n")
-            self.resultLabel.text = resultText
+            if let result = state.currentCalculation?.result {
+                let resultText = "\(result)"
+                print("[AppState] state.currentCalculation.result = \(resultText)\n")
+                self.resultLabel.text = resultText
+            }
             
             // TODO: enable/disable history buttons, depending
             
