@@ -26,31 +26,30 @@ struct CalculationLogic: Logic {
             print("[Action] .performCalculation: operand1 = \(operand1), operand2 = \(operand2), calculationType = \(calculationType)")
             var calculation = Calculation(operand1: operand1, operand2: operand2, calculationType: calculationType, result: nil)
             calculation.result = self.result(from: calculation)
-//            state.currentCalculation = calculation
-//            state.calculations.history.append(calculation)
-//            state.calculations.currentIndex = state.calculations.history.count - 1
-//            self.updateCanGoBackOrForward(with: state)
             self.updateCalculationHistory(with: calculation, state: state)
             break
         case .goBackCalculationHistory():
-            self.goBackCalculationHistory(with: state)
+            self.goBackInCalculationHistory(with: state)
             break
         case .goForwardCalculationHistory():
-            self.goForwardCalculationHistory(with: state)
+            self.goForwardInCalculationHistory(with: state)
             break
         default:
             break
         }
     }
 
-    func updateCalculationHistory(with calculation: Calculation, state: AppState) {
-//        print("[Action] .performCalculation: operand1 = \(operand1), operand2 = \(operand2), calculationType = \(calculationType)")
-//        let result = self.performCalculation(operand1: operand1, operand2: operand2, calculationType: calculationType)
-        
-//        let calculation = Calculation(operand1: operand1, operand2: operand2, calculationType: calculationType, result: result)
+    private func updateCalculationHistory(with calculation: Calculation, state: AppState) {
+        // first, wipe out any unneeded 'future' calculations
+        self.removeUnusedFutureHistory(with: state)
+
         state.currentCalculation = calculation
-        
-        // wipe out any unneeded 'future' calculations first, before appending calculation to history
+        state.calculations.history.append(calculation)
+        state.calculations.currentIndex = state.calculations.history.count - 1
+        self.updateCanGoBackOrForward(with: state)
+    }
+    
+    private func removeUnusedFutureHistory(with state: AppState) {
         if let historyCurrentIndex = state.calculations.currentIndex {
             let totalNumberOfHistoryCalculations = state.calculations.history.count
             if historyCurrentIndex < (totalNumberOfHistoryCalculations - 1) {
@@ -58,17 +57,7 @@ struct CalculationLogic: Logic {
                 state.calculations.history.removeSubrange(subrangeToRemove)
             }
         }
-        
-        state.calculations.history.append(calculation)
-        state.calculations.currentIndex = state.calculations.history.count - 1
-        self.updateCanGoBackOrForward(with: state)
     }
-    
-//    func removeUnusedFutureHistory(<#parameters#>) -> <#return type#> {
-//        <#function body#>
-//    }
-    
-    
     
     
     /**
@@ -96,9 +85,9 @@ struct CalculationLogic: Logic {
     }
     
     /**
-     [synopsis]
+     Move one step backward in calculation history (if possible).
      */
-    private func goBackCalculationHistory(with state: AppState) {
+    private func goBackInCalculationHistory(with state: AppState) {
         if let currentIndex = state.calculations.currentIndex {
             let newIndex = max(currentIndex-1, 0)   // sanity check
             state.calculations.currentIndex = newIndex
@@ -107,11 +96,15 @@ struct CalculationLogic: Logic {
     }
 
     /**
-     [synopsis]
+     Move one step forward in calculation history (if possible).
      */
-    private func goForwardCalculationHistory(with state: AppState) {
+    private func goForwardInCalculationHistory(with state: AppState) {
         // increment calculation history index (if we can)
-// NOTE: there may be other 'future' states we now need to overwrite
+
+        // NOTE: there may be other 'future' states we now need to overwrite
+        self.removeUnusedFutureHistory(with: state)
+        
+        
         if let currentIndex = state.calculations.currentIndex {
 let newIndex = max(currentIndex-1, 0)   // sanity check
             state.calculations.currentIndex = newIndex
@@ -126,6 +119,7 @@ let newIndex = max(currentIndex-1, 0)   // sanity check
         if let historyCurrentIndex = state.calculations.currentIndex {
             let canGoForward = historyCurrentIndex < (state.calculations.history.count - 1)
             state.calculations.canGoForward = canGoForward
+            
             let canGoBack = (historyCurrentIndex > 0)
             state.calculations.canGoBack = canGoBack
         }
