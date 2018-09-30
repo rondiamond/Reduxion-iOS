@@ -14,10 +14,10 @@ import Foundation
  -  A timestamp of when the calculation was requested
  */
 struct Calculation {
-    var operand1: Float?
-    var operand2: Float?
-    var calculationType: CalculationType?
-    var result: Float?
+    var operand1: Float
+    var operand2: Float
+    var calculationType: CalculationType
+    var result: Float
 }
 
 /**
