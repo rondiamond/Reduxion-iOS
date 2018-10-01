@@ -59,15 +59,15 @@ class ViewController: UIViewController, AppStateSubscriber {
             calculationType = .addition
         }
         
-        LogicCoordinator.sharedInstance.performAction(Action.performCalculation(operand1: operand1, operand2: operand2, calculationType: calculationType))
+        LogicCoordinator.performAction(Action.performCalculation(operand1: operand1, operand2: operand2, calculationType: calculationType))
     }
     
     @IBAction func buttonBackTapped(_ sender: Any) {
-        LogicCoordinator.sharedInstance.performAction(.goBackCalculationHistory())
+        LogicCoordinator.performAction(.goBackCalculationHistory())
     }
     
     @IBAction func buttonForwardTapped(_ sender: Any) {
-        LogicCoordinator.sharedInstance.performAction(.goForwardCalculationHistory())
+        LogicCoordinator.performAction(.goForwardCalculationHistory())
     }
 
     private func updateHistoryState(with state: AppState) {

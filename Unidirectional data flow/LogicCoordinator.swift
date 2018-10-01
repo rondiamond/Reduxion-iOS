@@ -207,13 +207,21 @@ class LogicCoordinator {
 
     
     // MARK: - Action
+
+    /**
+     Convenience function for asking the LogicCoordinator's sharedInstance to perform a given Action.
+     - parameter action: the Action to be performed.
+     */
+    static func performAction(_ action: Action) {
+        LogicCoordinator.sharedInstance.performAction(action)
+    }
     
     /**
      Causes the LogicCoordinator to call all the individual logic modules, which each mutate relevant portions of the app state as needed.
      - parameter action: The Action to be submitted to the various logic modules (with optional data).
      NOTE: Logic is executed on the Main thread.  If the request is initiated from the main thread, then the logic (and the update:appState callback) will be executed synchronously.
      */
-    func performAction(_ action: Action) {
+    private func performAction(_ action: Action) {
         // All actions *must* be performed on the same thread, in order to insure data consistency.
         // In addition, since the resulting AppState updates the UI, this thread needs to be the Main thread.
 
@@ -231,7 +239,7 @@ class LogicCoordinator {
       Logic execution, separated out from 'performAction', so it can be executed on the proper thread.
      - parameter action: The Action to be executed.
      */
-    fileprivate func performLogic(_ action: Action) {
+    private func performLogic(_ action: Action) {
         // Note: Expensive action logic should be performed on a separate thread; and when ready with the results, should call another type of action specifically for the purpose of mutating the AppState.
         self.logicUnits.forEach({ $0.performLogic(self.appState, action: action) })
         self.updateSubscribers(action)

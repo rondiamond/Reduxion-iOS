@@ -74,6 +74,6 @@ struct MockFooService: FooServiceProtocol {
 }
 
 internal func parseAndStoreData(_ json: JSON) {
-    LogicCoordinator.sharedInstance.performAction(Action.fooServiceResponse(json: json))
+    LogicCoordinator.performAction(Action.fooServiceResponse(json: json))
     // hand off payload as-is - will be parsed by Logic unit
 }
