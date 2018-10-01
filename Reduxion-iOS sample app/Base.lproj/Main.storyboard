@@ -132,6 +132,8 @@
                         <viewLayoutGuide key="safeArea" id="mNt-kT-YHJ"/>
                     </view>
                     <connections>
+                        <outlet property="buttonGoBack" destination="KId-N9-eI5" id="NVe-pK-mEU"/>
+                        <outlet property="buttonGoForward" destination="v7g-Qx-ued" id="WxE-aS-wqh"/>
                         <outlet property="calculationTypeSegmentedControl" destination="yBK-1F-8PP" id="dY9-Dq-OPU"/>
                         <outlet property="historyCountLabel" destination="peK-Qa-hz6" id="Lw8-30-78G"/>
                         <outlet property="operand1TextField" destination="v6Z-dw-Cwb" id="1sF-rR-5xR"/>

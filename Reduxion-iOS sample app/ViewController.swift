@@ -17,7 +17,9 @@ class ViewController: UIViewController, AppStateSubscriber {
     @IBOutlet weak var operand2TextField: UITextField!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var historyCountLabel: UILabel!
-
+    @IBOutlet weak var buttonGoBack: UIButton!
+    @IBOutlet weak var buttonGoForward: UIButton!
+    
     @IBOutlet weak var calculationTypeSegmentedControl: UISegmentedControl!
     let calculationTypesBySegmentedIndex: [CalculationType] = [.addition, .subtraction, .multiplication, .division]
     
@@ -65,11 +67,20 @@ class ViewController: UIViewController, AppStateSubscriber {
     }
     
     private func updateHistoryNavigationButtonsState(with state: AppState) {
-        
+        self.buttonGoBack.isEnabled = state.calculations.canGoBack
+        self.buttonGoForward.isEnabled = state.calculations.canGoForward
     }
 
     private func updateHistoryCountLabel(with state: AppState) {
-        
+        let historyCountLabelText: String
+        if state.calculations.currentIndex != nil {
+            let numberOfCurrentHistoryCalculation = state.calculations.currentIndex! + 1
+            let numberOfHistoryCalculations = state.calculations.history.count
+            historyCountLabelText = "\(numberOfCurrentHistoryCalculation) of \(numberOfHistoryCalculations)"
+        } else {
+            historyCountLabelText = EMPTY_STRING
+        }
+        self.historyCountLabel.text = historyCountLabelText
     }
     
 
