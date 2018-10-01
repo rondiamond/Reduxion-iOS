@@ -91,6 +91,12 @@
                                     <action selector="buttonForwardTapped:" destination="XLk-ba-JDL" eventType="touchUpInside" id="VuZ-RY-SMR"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peK-Qa-hz6">
+                                <rect key="frame" x="166.5" y="608" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -105,7 +111,9 @@
                             <constraint firstItem="mNt-kT-YHJ" firstAttribute="trailing" secondItem="q09-pj-pGU" secondAttribute="trailing" constant="66" id="NRP-EU-rHR"/>
                             <constraint firstItem="nhj-5t-f9i" firstAttribute="leading" secondItem="mNt-kT-YHJ" secondAttribute="leading" constant="52" id="Swk-Uo-Q5D"/>
                             <constraint firstItem="yBK-1F-8PP" firstAttribute="top" secondItem="q09-pj-pGU" secondAttribute="bottom" constant="38" id="T4O-cF-6w6"/>
+                            <constraint firstItem="mNt-kT-YHJ" firstAttribute="bottom" secondItem="peK-Qa-hz6" secondAttribute="bottom" constant="38" id="TgG-jp-WcM"/>
                             <constraint firstItem="gmL-MF-sH2" firstAttribute="leading" secondItem="mNt-kT-YHJ" secondAttribute="leading" constant="52" id="VCJ-c9-tfe"/>
+                            <constraint firstItem="peK-Qa-hz6" firstAttribute="centerX" secondItem="mNt-kT-YHJ" secondAttribute="centerX" id="YSU-g4-Lwy"/>
                             <constraint firstItem="d8u-cz-LCh" firstAttribute="centerX" secondItem="mNt-kT-YHJ" secondAttribute="centerX" id="Z9a-dr-SOh"/>
                             <constraint firstItem="v6Z-dw-Cwb" firstAttribute="top" secondItem="mNt-kT-YHJ" secondAttribute="top" constant="37" id="ay8-75-VPa"/>
                             <constraint firstItem="q09-pj-pGU" firstAttribute="top" secondItem="v6Z-dw-Cwb" secondAttribute="bottom" constant="12" id="csS-mR-4Je"/>
@@ -125,6 +133,7 @@
                     </view>
                     <connections>
                         <outlet property="calculationTypeSegmentedControl" destination="yBK-1F-8PP" id="dY9-Dq-OPU"/>
+                        <outlet property="historyCountLabel" destination="peK-Qa-hz6" id="Lw8-30-78G"/>
                         <outlet property="operand1TextField" destination="v6Z-dw-Cwb" id="1sF-rR-5xR"/>
                         <outlet property="operand2TextField" destination="q09-pj-pGU" id="0Es-Cb-sxg"/>
                         <outlet property="resultLabel" destination="b6e-Eo-FGg" id="5z6-t3-gtk"/>

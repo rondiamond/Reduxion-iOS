@@ -17,6 +17,7 @@ class ViewController: UIViewController, AppStateSubscriber {
     @IBOutlet weak var operand2TextField: UITextField!
     @IBOutlet weak var calculationTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var historyCountLabel: UILabel!
     
     // MARK: - UIViewController lifecycle
     
@@ -68,8 +69,21 @@ class ViewController: UIViewController, AppStateSubscriber {
     @IBAction func buttonForwardTapped(_ sender: Any) {
         LogicCoordinator.sharedInstance.performAction(.goForwardCalculationHistory())
     }
+
+    private func updateHistoryState(with state: AppState) {
+        self.updateHistoryNavigationButtonsState(with: state)
+        self.updateHistoryCountLabel(with: state)
+    }
     
+    private func updateHistoryNavigationButtonsState(with state: AppState) {
+        
+    }
+
+    private func updateHistoryCountLabel(with state: AppState) {
+        
+    }
     
+
     // MARK: - AppState
     
     func update(_ state: AppState, mostRecentAction: Action) {
@@ -79,10 +93,11 @@ class ViewController: UIViewController, AppStateSubscriber {
                 let resultText = "\(result)"
                 print("[AppState] state.currentCalculation.result = \(resultText)\n")
                 self.resultLabel.text = resultText
+                self.updateHistoryState(with: state)
             }
-            
-            // TODO: enable/disable history buttons, depending
-            
+        case .goBackCalculationHistory, .goForwardCalculationHistory:
+            self.updateHistoryState(with: state)
+            break
         default:
             break
         }
