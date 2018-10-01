@@ -50,13 +50,19 @@ struct CalculationLogic: Logic {
     }
     
     private func removeUnusedFutureHistory(with state: AppState) {
+        print("\n \(self) \(#function) line \(#line); NSDate = \(NSDate.init().timeIntervalSince1970)")
+        print("... [before] historyCurrentIndex = \(String(describing: state.calculations.currentIndex))")
+        print("... [before] totalNumberOfHistoryCalculations = \(state.calculations.history.count)")
         if let historyCurrentIndex = state.calculations.currentIndex {
             let totalNumberOfHistoryCalculations = state.calculations.history.count
             if historyCurrentIndex < (totalNumberOfHistoryCalculations - 1) {
-                let subrangeToRemove = historyCurrentIndex..<totalNumberOfHistoryCalculations
+                let subrangeToRemove = (historyCurrentIndex+1)..<totalNumberOfHistoryCalculations
+                print("... subrangeToRemove = \(subrangeToRemove)")
                 state.calculations.history.removeSubrange(subrangeToRemove)
             }
         }
+        print("... [after] historyCurrentIndex = \(String(describing: state.calculations.currentIndex))")
+        print("... [after] totalNumberOfHistoryCalculations = \(state.calculations.history.count)")
     }
     
     
