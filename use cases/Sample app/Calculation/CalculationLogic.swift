@@ -11,8 +11,8 @@ import Foundation
 /**
  Type of calculation to do with user-inputted operands.
  */
-enum CalculationType {
-    case addition
+enum CalculationType: Int {
+    case addition = 0
     case subtraction
     case multiplication
     case division
@@ -91,6 +91,7 @@ struct CalculationLogic: Logic {
         if let currentIndex = state.calculations.currentIndex {
             let newIndex = max(currentIndex-1, 0)   // sanity check
             state.calculations.currentIndex = newIndex
+            state.currentCalculation = state.calculations.history[newIndex]
             self.updateCanGoBackOrForward(with: state)
         }
     }
@@ -103,6 +104,7 @@ struct CalculationLogic: Logic {
             let maxIndex = state.calculations.history.count - 1
             let newIndex = min(currentIndex+1, maxIndex)
             state.calculations.currentIndex = newIndex
+            state.currentCalculation = state.calculations.history[newIndex]
             self.updateCanGoBackOrForward(with: state)
         }
     }
@@ -124,6 +126,7 @@ struct CalculationLogic: Logic {
     
     // TODO: update current calculation (from index)
     
+    // TODO: add accessor for 'currentCalculation', derived from history
     
     
 }

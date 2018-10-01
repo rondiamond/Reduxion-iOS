@@ -32,6 +32,8 @@ class ViewController: UIViewController, AppStateSubscriber {
         
         let calculationLogic = CalculationLogic()
         LogicCoordinator.add(logic: calculationLogic)    // TODO: REFACTOR
+        
+        assert(calculationTypesBySegmentedIndex.count == self.calculationTypeSegmentedControl.numberOfSegments, "Fatal error: calculationTypesBySegmentedIndex.count == self.calculationTypeSegmentedControl.numberOfSegments")
     }
 
     deinit {
@@ -71,6 +73,17 @@ class ViewController: UIViewController, AppStateSubscriber {
         self.buttonGoForward.isEnabled = state.calculations.canGoForward
     }
 
+    private func updateCalculationParameters(with state: AppState) {
+        if let currentCalculation = state.currentCalculation {
+            self.operand1TextField.text = "\(currentCalculation.operand1)"
+            self.operand2TextField.text = "\(currentCalculation.operand2)"
+            self.calculationTypeSegmentedControl.selectedSegmentIndex = currentCalculation.calculationType.rawValue
+            if let _ = currentCalculation.result {
+                self.resultLabel.text = "\(currentCalculation.result!)"
+            }
+        }
+    }
+    
     private func updateHistoryCountLabel(with state: AppState) {
         let historyCountLabelText: String
         if state.calculations.currentIndex != nil {
@@ -96,6 +109,7 @@ class ViewController: UIViewController, AppStateSubscriber {
                 self.updateHistoryState(with: state)
             }
         case .goBackCalculationHistory, .goForwardCalculationHistory:
+            self.updateCalculationParameters(with: state)
             self.updateHistoryState(with: state)
             break
         default:
