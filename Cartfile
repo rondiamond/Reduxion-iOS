@@ -1,2 +1,4 @@
 github "Alamofire/Alamofire"
+github "Quick/Nimble"
+github "Quick/Quick"
 github "SwiftyJSON/SwiftyJSON"
