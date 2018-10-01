@@ -23,14 +23,14 @@ class ViewController: UIViewController, AppStateSubscriber {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        LogicCoordinator.sharedInstance.subscribe(self)
+        LogicCoordinator.subscribe(self)
         
         let calculationLogic = CalculationLogic()
-        LogicCoordinator.sharedInstance.add(logic: calculationLogic)    // TODO: REFACTOR
+        LogicCoordinator.add(logic: calculationLogic)    // TODO: REFACTOR
     }
 
     deinit {
-        LogicCoordinator.sharedInstance.unsubscribe(self)
+        LogicCoordinator.unsubscribe(self)
     }
     
     // MARK: - IBAction

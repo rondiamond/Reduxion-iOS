@@ -164,7 +164,7 @@ class LogicCoordinator {
      Adds a Logic unit to the logic coordinator's chain of composable business logic.
      - parameter logic:  A unit of business logic to be added.
      */
-    func add(logic: Logic) {
+    private func add(logic: Logic) {
 //        guard !self.logicUnits.contains(logic) else {
 //            return
 //        }
@@ -206,22 +206,34 @@ class LogicCoordinator {
     }
 
     
-    // MARK: - Action
-
-    /**
-     Convenience function for asking the LogicCoordinator's sharedInstance to perform a given Action.
-     - parameter action: the Action to be performed.
-     */
+    // MARK: - Convenience functions
+    // Convenience functions for accessing the LogicCoordinator's sharedInstance.
+    
     static func performAction(_ action: Action) {
         LogicCoordinator.sharedInstance.performAction(action)
     }
+
+    static func subscribe(_ newSubscriber: AppStateSubscriber) {
+        LogicCoordinator.sharedInstance.subscribe(newSubscriber)
+    }
     
+    static func unsubscribe(_ listener: AppStateSubscriber) {
+        LogicCoordinator.sharedInstance.unsubscribe(listener)
+    }
+
+    static func add(logic: Logic) {
+        LogicCoordinator.sharedInstance.add(logic: logic)
+    }
+    
+    
+    // MARK: - Action
+
     /**
      Causes the LogicCoordinator to call all the individual logic modules, which each mutate relevant portions of the app state as needed.
      - parameter action: The Action to be submitted to the various logic modules (with optional data).
      NOTE: Logic is executed on the Main thread.  If the request is initiated from the main thread, then the logic (and the update:appState callback) will be executed synchronously.
      */
-    private func performAction(_ action: Action) {
+    fileprivate func performAction(_ action: Action) {
         // All actions *must* be performed on the same thread, in order to insure data consistency.
         // In addition, since the resulting AppState updates the UI, this thread needs to be the Main thread.
 
@@ -252,7 +264,7 @@ class LogicCoordinator {
      Wrapper method for 'subscribe(newSubscriber:updateWithCurrentAppState:', where updateWithCurrentAppState = True.
      - parameter newSubscriber: The new subscriber to be added.
      */
-    func subscribe(_ newSubscriber: AppStateSubscriber) {
+    fileprivate func subscribe(_ newSubscriber: AppStateSubscriber) {
         self.subscribe(newSubscriber, updateWithCurrentAppState: true)
     }
     
@@ -261,7 +273,7 @@ class LogicCoordinator {
      - parameter newSubscriber:  The new subscriber to be added.
      - parameter updateWithCurrentAppState: Whether or not to immediately call back the 'update:state' method with the current AppState.
      */
-    func subscribe(_ newSubscriber: AppStateSubscriber, updateWithCurrentAppState: Bool) {
+    fileprivate func subscribe(_ newSubscriber: AppStateSubscriber, updateWithCurrentAppState: Bool) {
         for subscriber in self.subscribers {
             if newSubscriber.appStateSubscriberIdentifier == subscriber.appStateSubscriberIdentifier {
                 // already subscribed
@@ -290,7 +302,7 @@ class LogicCoordinator {
      Removes the subscriber from being notified of the results of any subsequent 'performAction' call.
      - parameter listener: The subscriber to be removed.
      */
-    func unsubscribe(_ listener: AppStateSubscriber) {
+    fileprivate func unsubscribe(_ listener: AppStateSubscriber) {
         self.subscribers = self.subscribers.filter({ $0.appStateSubscriberIdentifier != listener.appStateSubscriberIdentifier })
     }
 }
