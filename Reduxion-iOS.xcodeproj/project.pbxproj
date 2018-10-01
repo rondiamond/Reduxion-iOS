@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E41DF63D2161FF2E004D248F /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41DF63B2161FF2E004D248F /* Quick.framework */; };
+		E41DF63E2161FF2E004D248F /* Quick.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E41DF63B2161FF2E004D248F /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E41DF63F2161FF2E004D248F /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41DF63C2161FF2E004D248F /* Nimble.framework */; };
+		E41DF6402161FF2E004D248F /* Nimble.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E41DF63C2161FF2E004D248F /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E44260AE2137BC6900A218C6 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44260AD2137BC6800A218C6 /* DataModel.swift */; };
 		E44260AF2137BC6900A218C6 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44260AD2137BC6800A218C6 /* DataModel.swift */; };
 		E442F6072150950E000B37FE /* Reduxion-iOSTests-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = E4D4FE6C2133784300438A8F /* Reduxion-iOSTests-Bridging-Header.h */; };
@@ -77,6 +81,8 @@
 			files = (
 				E45A856021523D1100581DCE /* SwiftyJSON.framework in Embed Frameworks */,
 				E45A855E21523D1100581DCE /* Alamofire.framework in Embed Frameworks */,
+				E41DF63E2161FF2E004D248F /* Quick.framework in Embed Frameworks */,
+				E41DF6402161FF2E004D248F /* Nimble.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +90,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E41DF63B2161FF2E004D248F /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		E41DF63C2161FF2E004D248F /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		E44260AD2137BC6800A218C6 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		E442F60B21509637000B37FE /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
 		E45A853C2152372700581DCE /* Reduxion-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reduxion-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +128,8 @@
 			files = (
 				E45A855F21523D1100581DCE /* SwiftyJSON.framework in Frameworks */,
 				E45A855D21523D1100581DCE /* Alamofire.framework in Frameworks */,
+				E41DF63D2161FF2E004D248F /* Quick.framework in Frameworks */,
+				E41DF63F2161FF2E004D248F /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +222,8 @@
 		E4CE6AAE2131498B00E4E865 = {
 			isa = PBXGroup;
 			children = (
+				E41DF63C2161FF2E004D248F /* Nimble.framework */,
+				E41DF63B2161FF2E004D248F /* Quick.framework */,
 				E4D4FE732133AE0E00438A8F /* _Documentation */,
 				E44260AC2137BC6800A218C6 /* Data */,
 				E4CE6ADD21314BE800E4E865 /* Unidirectional data flow */,
