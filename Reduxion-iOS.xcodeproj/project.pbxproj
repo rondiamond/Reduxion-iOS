@@ -90,8 +90,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E41DF63B2161FF2E004D248F /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
-		E41DF63C2161FF2E004D248F /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		E41DF63B2161FF2E004D248F /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = "<group>"; };
+		E41DF63C2161FF2E004D248F /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = "<group>"; };
 		E44260AD2137BC6800A218C6 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		E442F60B21509637000B37FE /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
 		E45A853C2152372700581DCE /* Reduxion-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reduxion-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				E4A581942150BD4C00B31C62 /* Alamofire.framework */,
+				E41DF63C2161FF2E004D248F /* Nimble.framework */,
+				E41DF63B2161FF2E004D248F /* Quick.framework */,
 				E4A581972150BD5600B31C62 /* SwiftyJSON.framework */,
 			);
 			path = Frameworks;
@@ -222,8 +224,6 @@
 		E4CE6AAE2131498B00E4E865 = {
 			isa = PBXGroup;
 			children = (
-				E41DF63C2161FF2E004D248F /* Nimble.framework */,
-				E41DF63B2161FF2E004D248F /* Quick.framework */,
 				E4D4FE732133AE0E00438A8F /* _Documentation */,
 				E44260AC2137BC6800A218C6 /* Data */,
 				E4CE6ADD21314BE800E4E865 /* Unidirectional data flow */,
