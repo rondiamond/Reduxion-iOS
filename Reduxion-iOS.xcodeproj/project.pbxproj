@@ -238,7 +238,7 @@
 				E4CE6ADD21314BE800E4E865 /* Unidirectional data flow */,
 				E4D4FE7C2133B6F200438A8F /* Use cases */,
 				E45A853D2152372700581DCE /* Reduxion-iOS sample app */,
-				E4D4FE6B2133781600438A8F /* third-party code */,
+				E4D4FE6B2133781600438A8F /* third-party dependencies */,
 				E4CE6AC52131498B00E4E865 /* Reduxion-iOSTests */,
 				E4CE6AB92131498B00E4E865 /* Products */,
 			);
@@ -275,15 +275,15 @@
 			path = "Unidirectional data flow";
 			sourceTree = "<group>";
 		};
-		E4D4FE6B2133781600438A8F /* third-party code */ = {
+		E4D4FE6B2133781600438A8F /* third-party dependencies */ = {
 			isa = PBXGroup;
 			children = (
 				E4D4FE6C2133784300438A8F /* Reduxion-iOSTests-Bridging-Header.h */,
 				E442F60A21509622000B37FE /* Carthage */,
-				E41DF6412162018F004D248F /* SwiftLint */,
 				E4A581932150BD1700B31C62 /* Frameworks */,
+				E41DF6412162018F004D248F /* SwiftLint */,
 			);
-			path = "third-party code";
+			path = "third-party dependencies";
 			sourceTree = "<group>";
 		};
 		E4D4FE732133AE0E00438A8F /* _Documentation */ = {
