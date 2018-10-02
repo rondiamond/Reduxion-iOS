@@ -22,8 +22,8 @@ struct CalculationLogic: Logic {
 
     func performLogic(_ state: AppState, action: Action) {
         switch action {
-        case .performCalculation(let operand1, let operand2, let calculationType):
-            print("[Action] .performCalculation: operand1 = \(operand1), operand2 = \(operand2), calculationType = \(calculationType)")
+        case .calculate(let operand1, let operand2, let calculationType):
+            print("[Action] .calculate: operand1 = \(operand1), operand2 = \(operand2), calculationType = \(calculationType)")
             var calculation = Calculation(operand1: operand1, operand2: operand2, calculationType: calculationType, result: nil)
             calculation.result = self.result(from: calculation)
             self.updateCalculationHistory(with: calculation, state: state)

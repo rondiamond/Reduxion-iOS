@@ -52,7 +52,7 @@ class ViewController: UIViewController, AppStateSubscriber {
             operand2 = Float(operand2TextField.text!) ?? 0
         }
         let calculationType = calculationTypesBySegmentedIndex[self.calculationTypeSegmentedControl.selectedSegmentIndex]
-        LogicCoordinator.performAction(Action.performCalculation(operand1: operand1, operand2: operand2, calculationType: calculationType))
+        LogicCoordinator.performAction(Action.calculate(operand1: operand1, operand2: operand2, calculationType: calculationType))
     }
     
     @IBAction func buttonBackTapped(_ sender: Any) {
@@ -101,7 +101,7 @@ class ViewController: UIViewController, AppStateSubscriber {
     
     func update(_ state: AppState, mostRecentAction: Action) {
         switch mostRecentAction {
-        case .performCalculation(_):
+        case .calculate(_):
             if let result = state.currentCalculation?.result {
                 let resultText = "\(result)"
                 print("[AppState] state.currentCalculation.result = \(resultText)\n")
