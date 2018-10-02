@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Reduxion_iOS
+//@testable import Reduxion_iOS
 import Quick
 import Nimble
 
