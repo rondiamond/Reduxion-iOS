@@ -67,6 +67,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E478EA2421636EAE008F05DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4CE6AAF2131498B00E4E865 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E45A853B2152372700581DCE;
+			remoteInfo = "Reduxion-iOS";
+		};
 		E4CE6AC32131498B00E4E865 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E4CE6AAF2131498B00E4E865 /* Project object */;
@@ -383,6 +390,7 @@
 			);
 			dependencies = (
 				E4CE6AC42131498B00E4E865 /* PBXTargetDependency */,
+				E478EA2521636EAE008F05DB /* PBXTargetDependency */,
 			);
 			name = "Reduxion-iOSTests";
 			productName = "Reduxion-iOSTests";
@@ -409,6 +417,7 @@
 					E4CE6AC02131498B00E4E865 = {
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1000;
+						TestTargetID = E45A853B2152372700581DCE;
 					};
 				};
 			};
@@ -520,6 +529,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E478EA2521636EAE008F05DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E45A853B2152372700581DCE /* Reduxion-iOS */;
+			targetProxy = E478EA2421636EAE008F05DB /* PBXContainerItemProxy */;
+		};
 		E4CE6AC42131498B00E4E865 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E4CE6AB72131498B00E4E865 /* Reduxion-iOS framework */;
@@ -802,6 +816,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Reduxion-iOS.app/Reduxion-iOS";
 			};
 			name = Debug;
 		};
@@ -828,6 +843,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "third-party dependencies/Reduxion-iOSTests-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Reduxion-iOS.app/Reduxion-iOS";
 			};
 			name = Release;
 		};
