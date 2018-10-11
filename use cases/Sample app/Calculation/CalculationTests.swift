@@ -66,12 +66,21 @@ class CalculationSpec: QuickSpec, AppStateSubscriber {
     var operand1: Float = 0.0
     var operand2: Float = 0.0
     var calculationType: CalculationType = .addition
-    var expectedResult: Float = 0.0
-    var actualResult: Float = 0.0
+//    var expectedResult: Float = 0.0
+var expectedResult: Float = -1
 
+    var actualResult: Float = 0.0
+    var awaitingResult: Bool = true
+    
     override func spec() {
         
         beforeEach {
+            self.awaitingResult = true
+            LogicCoordinator.subscribe(self)
+        }
+        
+        afterEach {
+            LogicCoordinator.unsubscribe(self)
         }
         
         describe("Math calculation") {
@@ -81,7 +90,13 @@ class CalculationSpec: QuickSpec, AppStateSubscriber {
                     self.operand2 = 45
                     self.calculationType = .addition
                     self.expectedResult = self.operand1 + self.operand2
-                    expect(self.actualResult) == self.expectedResult
+                    LogicCoordinator.performAction(.calculate(operand1: self.operand1, operand2: self.operand2, calculationType: self.calculationType))
+                    
+//                    while (self.awaitingResult) {
+//                        print("awaiting result")
+//                    }
+//                    expect(self.actualResult) == self.expectedResult
+                    expect(self.actualResult).toEventually(equal(self.expectedResult))
                 }
             }
         }
@@ -94,7 +109,8 @@ class CalculationSpec: QuickSpec, AppStateSubscriber {
         switch mostRecentAction {
         case .calculate(_):
             if let result = state.currentCalculation?.result {
-                actualResult = result
+                self.actualResult = result
+                self.awaitingResult = false
             } else {
                 // ?
             }
