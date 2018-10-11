@@ -60,6 +60,7 @@ import Nimble
 //@testable import Reduxion-iOS
 
 class CalculationSpec: QuickSpec, AppStateSubscriber {
+    
     var appStateSubscriberIdentifier: String = ""
 
     var operand1: Float = 0.0
@@ -85,20 +86,21 @@ class CalculationSpec: QuickSpec, AppStateSubscriber {
             }
         }
 
-        // MARK: - AppState
-
-        func update(_ state: AppState, mostRecentAction: Action) {
-            switch mostRecentAction {
-            case .calculate(_):
-                if let result = state.currentCalculation?.result {
-                    actualResult = result
-                } else {
-                    // ?
-                }
-            default:
-                break
-            }
-        }
-
     }
+
+    // MARK: - AppState
+    
+    func update(_ state: AppState, mostRecentAction: Action) {
+        switch mostRecentAction {
+        case .calculate(_):
+            if let result = state.currentCalculation?.result {
+                actualResult = result
+            } else {
+                // ?
+            }
+        default:
+            break
+        }
+    }
+
 }
