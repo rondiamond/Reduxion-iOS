@@ -6,8 +6,9 @@
 //  Copyright © 2018 Ron Diamond. All rights reserved.
 //
 
-import XCTest
+//import XCTest
 //@testable import Reduxion_iOS
+/*
 import Quick
 import Nimble
 
@@ -52,62 +53,52 @@ class Reduxion_iOSTests: XCTestCase {
     }
     
 }
+ */
 
 import Quick
 import Nimble
-@testable import MyApp
+//@testable import Reduxion-iOS
 
-class BoardSpec: QuickSpec, AppStateSubscriber {
+class CalculationSpec: QuickSpec, AppStateSubscriber {
     var appStateSubscriberIdentifier: String = ""
 
-    override func spec() {
-        var operand1: Float
-        var operand2: Float
-        var calculationType: CalculationType
-        var expectedResult: Float
-        var actualResult: Float
+    var operand1: Float = 0.0
+    var operand2: Float = 0.0
+    var calculationType: CalculationType = .addition
+    var expectedResult: Float = 0.0
+    var actualResult: Float = 0.0
 
+    override func spec() {
+        
         beforeEach {
         }
         
         describe("Math calculation") {
             context("attempt to add") {
                 it("should calculate correctly") {
-                    operand1 = 23
-                    operand2 = 45
-                    calculationType = .addition
-                    expectedResult = operand1 + operand2
-                    expect(actualResult) == expectedResult
-                    
-                    
-//                    try! something()
-//                    expect(some.state).to(equal(someother.state)))
+                    self.operand1 = 23
+                    self.operand2 = 45
+                    self.calculationType = .addition
+                    self.expectedResult = self.operand1 + self.operand2
+                    expect(self.actualResult) == self.expectedResult
                 }
             }
-            
-//            context("when") {
-//                it("then") {
-//                    try! something()
-////                    expect(some.state).to(equal(someother.state)))
-//                }
-//            }
-
-            
-            // MARK: - AppState
-            
-            func update(_ state: AppState, mostRecentAction: Action) {
-                switch mostRecentAction {
-                case .calculate(_):
-                    if let result = state.currentCalculation?.result {
-                        actualResult = result
-                    } else {
-                        // ?
-                    }
-                default:
-                    break
-                }
-            }
-            
         }
+
+        // MARK: - AppState
+
+        func update(_ state: AppState, mostRecentAction: Action) {
+            switch mostRecentAction {
+            case .calculate(_):
+                if let result = state.currentCalculation?.result {
+                    actualResult = result
+                } else {
+                    // ?
+                }
+            default:
+                break
+            }
+        }
+
     }
 }
