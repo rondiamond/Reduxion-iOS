@@ -217,6 +217,10 @@ class LogicCoordinator {
         LogicCoordinator.sharedInstance.subscribe(newSubscriber)
     }
     
+    static func subscribe(_ newSubscriber: AppStateSubscriber, updateWithCurrentAppState: Bool) {
+        LogicCoordinator.sharedInstance.subscribe(newSubscriber, updateWithCurrentAppState: updateWithCurrentAppState)
+    }
+    
     static func unsubscribe(_ listener: AppStateSubscriber) {
         LogicCoordinator.sharedInstance.unsubscribe(listener)
     }
