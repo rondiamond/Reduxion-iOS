@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E44260AE2137BC6900A218C6 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44260AD2137BC6800A218C6 /* DataModel.swift */; };
 		E44260AF2137BC6900A218C6 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44260AD2137BC6800A218C6 /* DataModel.swift */; };
-		E442F6072150950E000B37FE /* Reduxion-iOSTests-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = E4D4FE6C2133784300438A8F /* Reduxion-iOSTests-Bridging-Header.h */; };
 		E442F6082150951A000B37FE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD321314BE400E4E865 /* AppState.swift */; };
 		E45A850B215225B200581DCE /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD521314BE400E4E865 /* ServiceFactory.swift */; };
 		E45A850C215225BC00581DCE /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD421314BE400E4E865 /* Actions.swift */; };
@@ -36,35 +34,19 @@
 		E45A856021523D1100581DCE /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581972150BD5600B31C62 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E478EA1921635091008F05DB /* Quick.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E478EA1721635091008F05DB /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E478EA1A21635091008F05DB /* Nimble.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E478EA1821635091008F05DB /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E478EA1B216350A9008F05DB /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E478EA1821635091008F05DB /* Nimble.framework */; };
-		E478EA1C216350A9008F05DB /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E478EA1721635091008F05DB /* Quick.framework */; };
 		E478EA1D216350AA008F05DB /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E478EA1821635091008F05DB /* Nimble.framework */; };
 		E478EA1E216350AA008F05DB /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E478EA1721635091008F05DB /* Quick.framework */; };
 		E478EA202163605F008F05DB /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E478EA1821635091008F05DB /* Nimble.framework */; };
 		E478EA212163605F008F05DB /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E478EA1721635091008F05DB /* Quick.framework */; };
-		E49DF200216F213000AE36A4 /* CalculationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AC62131498B00E4E865 /* CalculationTests.swift */; };
 		E49DF201216F213000AE36A4 /* CalculationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AC62131498B00E4E865 /* CalculationTests.swift */; };
-		E4A194B32137BF46001612BF /* CalculationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A194B22137BF46001612BF /* CalculationLogic.swift */; };
 		E4A194B42137BF46001612BF /* CalculationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A194B22137BF46001612BF /* CalculationLogic.swift */; };
-		E4A581952150BD4C00B31C62 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581942150BD4C00B31C62 /* Alamofire.framework */; };
 		E4A581962150BD4C00B31C62 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581942150BD4C00B31C62 /* Alamofire.framework */; };
-		E4A581982150BD5600B31C62 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581972150BD5600B31C62 /* SwiftyJSON.framework */; };
 		E4A581992150BD5600B31C62 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581972150BD5600B31C62 /* SwiftyJSON.framework */; };
-		E4CE6AC22131498B00E4E865 /* Reduxion_iOS_framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CE6AB82131498B00E4E865 /* Reduxion_iOS_framework.framework */; };
 		E4CE6AC72131498B00E4E865 /* CalculationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AC62131498B00E4E865 /* CalculationTests.swift */; };
-		E4CE6AD821314BE400E4E865 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD321314BE400E4E865 /* AppState.swift */; };
-		E4CE6AD921314BE400E4E865 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD421314BE400E4E865 /* Actions.swift */; };
-		E4CE6ADA21314BE400E4E865 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD521314BE400E4E865 /* ServiceFactory.swift */; };
-		E4CE6ADB21314BE400E4E865 /* LogicCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */; };
-		E4CE6ADC21314BE400E4E865 /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD721314BE400E4E865 /* ServiceConstants.swift */; };
-		E4D4FE822133BEB500438A8F /* FooLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE7E2133B78E00438A8F /* FooLogic.swift */; };
 		E4D4FE832133BEB600438A8F /* FooLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE7E2133B78E00438A8F /* FooLogic.swift */; };
 		E4D4FE842133BEBB00438A8F /* LogicCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */; };
-		E4D4FE862133BF0300438A8F /* FooService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE852133BF0300438A8F /* FooService.swift */; };
 		E4D4FE872133BF0300438A8F /* FooService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE852133BF0300438A8F /* FooService.swift */; };
-		E4D4FE892133BFBF00438A8F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE882133BFBF00438A8F /* Constants.swift */; };
 		E4D4FE8A2133BFBF00438A8F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE882133BFBF00438A8F /* Constants.swift */; };
-		E4D4FE8C2133C28F00438A8F /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE8B2133C28F00438A8F /* Macros.swift */; };
 		E4D4FE8D2133C28F00438A8F /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE8B2133C28F00438A8F /* Macros.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,13 +56,6 @@
 			containerPortal = E4CE6AAF2131498B00E4E865 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E45A853B2152372700581DCE;
-			remoteInfo = "Reduxion-iOS";
-		};
-		E4CE6AC32131498B00E4E865 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E4CE6AAF2131498B00E4E865 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E4CE6AB72131498B00E4E865;
 			remoteInfo = "Reduxion-iOS";
 		};
 /* End PBXContainerItemProxy section */
@@ -118,7 +93,6 @@
 		E4A194B22137BF46001612BF /* CalculationLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationLogic.swift; sourceTree = "<group>"; };
 		E4A581942150BD4C00B31C62 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
 		E4A581972150BD5600B31C62 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = SOURCE_ROOT; };
-		E4CE6AB82131498B00E4E865 /* Reduxion_iOS_framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reduxion_iOS_framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4CE6AC12131498B00E4E865 /* Reduxion-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reduxion-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4CE6AC62131498B00E4E865 /* CalculationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationTests.swift; sourceTree = "<group>"; };
 		E4CE6AC82131498B00E4E865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -147,22 +121,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E4CE6AB52131498B00E4E865 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E478EA1C216350A9008F05DB /* Quick.framework in Frameworks */,
-				E478EA1B216350A9008F05DB /* Nimble.framework in Frameworks */,
-				E4A581982150BD5600B31C62 /* SwiftyJSON.framework in Frameworks */,
-				E4A581952150BD4C00B31C62 /* Alamofire.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E4CE6ABE2131498B00E4E865 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4CE6AC22131498B00E4E865 /* Reduxion_iOS_framework.framework in Frameworks */,
 				E4A581962150BD4C00B31C62 /* Alamofire.framework in Frameworks */,
 				E4A581992150BD5600B31C62 /* SwiftyJSON.framework in Frameworks */,
 				E478EA1E216350AA008F05DB /* Quick.framework in Frameworks */,
@@ -273,7 +235,6 @@
 		E4CE6AB92131498B00E4E865 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E4CE6AB82131498B00E4E865 /* Reduxion_iOS_framework.framework */,
 				E4CE6AC12131498B00E4E865 /* Reduxion-iOSTests.xctest */,
 				E45A853C2152372700581DCE /* Reduxion-iOS.app */,
 			);
@@ -332,17 +293,6 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		E4CE6AB32131498B00E4E865 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E442F6072150950E000B37FE /* Reduxion-iOSTests-Bridging-Header.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		E45A853B2152372700581DCE /* Reduxion-iOS */ = {
 			isa = PBXNativeTarget;
@@ -362,24 +312,6 @@
 			productReference = E45A853C2152372700581DCE /* Reduxion-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E4CE6AB72131498B00E4E865 /* Reduxion-iOS framework */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E4CE6ACC2131498B00E4E865 /* Build configuration list for PBXNativeTarget "Reduxion-iOS framework" */;
-			buildPhases = (
-				E4CE6AB32131498B00E4E865 /* Headers */,
-				E4CE6AB42131498B00E4E865 /* Sources */,
-				E4CE6AB52131498B00E4E865 /* Frameworks */,
-				E4CE6AB62131498B00E4E865 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Reduxion-iOS framework";
-			productName = "Reduxion-iOS";
-			productReference = E4CE6AB82131498B00E4E865 /* Reduxion_iOS_framework.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		E4CE6AC02131498B00E4E865 /* Reduxion-iOSTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4CE6ACF2131498B00E4E865 /* Build configuration list for PBXNativeTarget "Reduxion-iOSTests" */;
@@ -391,7 +323,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				E4CE6AC42131498B00E4E865 /* PBXTargetDependency */,
 				E478EA2521636EAE008F05DB /* PBXTargetDependency */,
 			);
 			name = "Reduxion-iOSTests";
@@ -411,10 +342,6 @@
 				TargetAttributes = {
 					E45A853B2152372700581DCE = {
 						CreatedOnToolsVersion = 10.0;
-					};
-					E4CE6AB72131498B00E4E865 = {
-						CreatedOnToolsVersion = 10.0;
-						LastSwiftMigration = 1000;
 					};
 					E4CE6AC02131498B00E4E865 = {
 						CreatedOnToolsVersion = 10.0;
@@ -437,7 +364,6 @@
 			projectRoot = "";
 			targets = (
 				E45A853B2152372700581DCE /* Reduxion-iOS */,
-				E4CE6AB72131498B00E4E865 /* Reduxion-iOS framework */,
 				E4CE6AC02131498B00E4E865 /* Reduxion-iOSTests */,
 			);
 		};
@@ -451,13 +377,6 @@
 				E45A85492152372800581DCE /* LaunchScreen.storyboard in Resources */,
 				E45A85462152372800581DCE /* Assets.xcassets in Resources */,
 				E45A85442152372700581DCE /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E4CE6AB62131498B00E4E865 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,25 +411,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E4CE6AB42131498B00E4E865 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E4CE6AD821314BE400E4E865 /* AppState.swift in Sources */,
-				E4CE6AD921314BE400E4E865 /* Actions.swift in Sources */,
-				E4CE6ADA21314BE400E4E865 /* ServiceFactory.swift in Sources */,
-				E4D4FE822133BEB500438A8F /* FooLogic.swift in Sources */,
-				E4CE6ADC21314BE400E4E865 /* ServiceConstants.swift in Sources */,
-				E44260AE2137BC6900A218C6 /* DataModel.swift in Sources */,
-				E4D4FE8C2133C28F00438A8F /* Macros.swift in Sources */,
-				E4D4FE892133BFBF00438A8F /* Constants.swift in Sources */,
-				E4D4FE862133BF0300438A8F /* FooService.swift in Sources */,
-				E4CE6ADB21314BE400E4E865 /* LogicCoordinator.swift in Sources */,
-				E4A194B32137BF46001612BF /* CalculationLogic.swift in Sources */,
-				E49DF200216F213000AE36A4 /* CalculationTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E4CE6ABD2131498B00E4E865 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -537,11 +437,6 @@
 			isa = PBXTargetDependency;
 			target = E45A853B2152372700581DCE /* Reduxion-iOS */;
 			targetProxy = E478EA2421636EAE008F05DB /* PBXContainerItemProxy */;
-		};
-		E4CE6AC42131498B00E4E865 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E4CE6AB72131498B00E4E865 /* Reduxion-iOS framework */;
-			targetProxy = E4CE6AC32131498B00E4E865 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -733,69 +628,6 @@
 			};
 			name = Release;
 		};
-		E4CE6ACD2131498B00E4E865 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)/third-party\\ dependencies/Frameworks",
-					"$(PROJECT_DIR)/third-party\\ dependencies/Frameworks",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Reduxion-iOS sample app/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "test4321.Reduxion-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		E4CE6ACE2131498B00E4E865 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)/third-party\\ dependencies/Frameworks",
-					"$(PROJECT_DIR)/third-party\\ dependencies/Frameworks",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Reduxion-iOS sample app/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "test4321.Reduxion-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		E4CE6AD02131498B00E4E865 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -868,15 +700,6 @@
 			buildConfigurations = (
 				E4CE6ACA2131498B00E4E865 /* Debug */,
 				E4CE6ACB2131498B00E4E865 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E4CE6ACC2131498B00E4E865 /* Build configuration list for PBXNativeTarget "Reduxion-iOS framework" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E4CE6ACD2131498B00E4E865 /* Debug */,
-				E4CE6ACE2131498B00E4E865 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
