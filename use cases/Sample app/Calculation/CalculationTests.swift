@@ -66,25 +66,25 @@ class CalculationSpec: QuickSpec, AppStateSubscriber {
     var operand1: Float = 0.0
     var operand2: Float = 0.0
     var calculationType: CalculationType = .addition
-//    var expectedResult: Float = 0.0
-var expectedResult: Float = -1
+    var expectedResult: Float = 0.0
+//var expectedResult: Float = -1
 
     var actualResult: Float = 0.0
 //    var awaitingResult: Bool = true
     
     override func spec() {
         
-//        beforeSuite {
-//            print("\n \(self) \(#function) line \(#line); NSDate = \(NSDate.init().timeIntervalSince1970)")
-//            print("** beforeSuite **")
-////            LogicCoordinator.subscribe(self)
-//        }
-//
-//        afterSuite {
-//            print("\n \(self) \(#function) line \(#line); NSDate = \(NSDate.init().timeIntervalSince1970)")
-//            print("** afterSuite **")
-////            LogicCoordinator.unsubscribe(self)
-//        }
+        beforeSuite {
+            print("\n \(self) \(#function) line \(#line); NSDate = \(NSDate.init().timeIntervalSince1970)")
+            print("** beforeSuite **")
+            LogicCoordinator.subscribe(self)
+        }
+
+        afterSuite {
+            print("\n \(self) \(#function) line \(#line); NSDate = \(NSDate.init().timeIntervalSince1970)")
+            print("** afterSuite **")
+            LogicCoordinator.unsubscribe(self)
+        }
 
 //        beforeEach {
 //            self.awaitingResult = true
@@ -98,14 +98,21 @@ var expectedResult: Float = -1
                     self.operand2 = 45
                     self.calculationType = .addition
                     self.expectedResult = self.operand1 + self.operand2
-//                    LogicCoordinator.performAction(.calculate(operand1: self.operand1, operand2: self.operand2, calculationType: self.calculationType))
+                    LogicCoordinator.performAction(.calculate(operand1: self.operand1, operand2: self.operand2, calculationType: self.calculationType))
                     
 //                    while (self.awaitingResult) {
 //                        print("awaiting result")
 //                    }
 //                    expect(self.actualResult) == self.expectedResult
-//                    expect(self.actualResult).toEventually(equal(self.expectedResult))
-expect(true)
+                    
+//                    let delayInSeconds: Double = 1.0
+//                    let when = DispatchTime.now() + delayInSeconds
+//                    DispatchQueue.main.asyncAfter(deadline: when, execute: {
+//                        expect(self.actualResult) == self.expectedResult
+//                    })
+                    
+                    expect(self.actualResult).toEventually(equal(self.expectedResult), timeout: 2)
+//expect(true)
                 }
             }
         }
