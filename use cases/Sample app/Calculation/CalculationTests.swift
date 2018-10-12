@@ -70,21 +70,25 @@ class CalculationSpec: QuickSpec, AppStateSubscriber {
 var expectedResult: Float = -1
 
     var actualResult: Float = 0.0
-    var awaitingResult: Bool = true
+//    var awaitingResult: Bool = true
     
     override func spec() {
         
-        beforeSuite {
-            LogicCoordinator.subscribe(self)
-        }
-        
-        afterSuite {
-            LogicCoordinator.unsubscribe(self)
-        }
+//        beforeSuite {
+//            print("\n \(self) \(#function) line \(#line); NSDate = \(NSDate.init().timeIntervalSince1970)")
+//            print("** beforeSuite **")
+////            LogicCoordinator.subscribe(self)
+//        }
+//
+//        afterSuite {
+//            print("\n \(self) \(#function) line \(#line); NSDate = \(NSDate.init().timeIntervalSince1970)")
+//            print("** afterSuite **")
+////            LogicCoordinator.unsubscribe(self)
+//        }
 
-        beforeEach {
-            self.awaitingResult = true
-        }
+//        beforeEach {
+//            self.awaitingResult = true
+//        }
         
         describe("Math calculation") {
             context("attempt to add") {
@@ -94,7 +98,7 @@ var expectedResult: Float = -1
                     self.operand2 = 45
                     self.calculationType = .addition
                     self.expectedResult = self.operand1 + self.operand2
-                    LogicCoordinator.performAction(.calculate(operand1: self.operand1, operand2: self.operand2, calculationType: self.calculationType))
+//                    LogicCoordinator.performAction(.calculate(operand1: self.operand1, operand2: self.operand2, calculationType: self.calculationType))
                     
 //                    while (self.awaitingResult) {
 //                        print("awaiting result")
@@ -115,7 +119,7 @@ expect(true)
         case .calculate(_):
             if let result = state.currentCalculation?.result {
                 self.actualResult = result
-                self.awaitingResult = false
+//                self.awaitingResult = false
                 print("*** GOT RESULT ***")
             } else {
                 // ?
