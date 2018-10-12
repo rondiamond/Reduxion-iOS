@@ -77,7 +77,7 @@ class CalculationSpec: QuickSpec, AppStateSubscriber {
         beforeSuite {
             print("\n \(self) \(#function) line \(#line); NSDate = \(NSDate.init().timeIntervalSince1970)")
             print("** beforeSuite **")
-            LogicCoordinator.subscribe(self)
+            LogicCoordinator.subscribe(self, updateWithCurrentAppState: false)
         }
 
         afterSuite {
