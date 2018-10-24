@@ -26,7 +26,7 @@ struct CalculationLogic: Logic {
             print("[Action] .calculate: operand1 = \(operand1), operand2 = \(operand2), calculationType = \(calculationType)")
             var calculation = Calculation(operand1: operand1, operand2: operand2, calculationType: calculationType, result: nil)
             calculation.result = self.result(from: calculation)
-            self.updateCalculationHistory(with: calculation, state: state)
+            self.appendCalculationHistory(with: calculation, state: state)
             break
         case .goBackCalculationHistory():
             self.stepBackInCalculationHistory(with: state)
@@ -39,7 +39,7 @@ struct CalculationLogic: Logic {
         }
     }
 
-    private func updateCalculationHistory(with calculation: Calculation, state: AppState) {
+    private func appendCalculationHistory(with calculation: Calculation, state: AppState) {
         // first, wipe out any unneeded 'future' calculations
         self.removeUnusedFutureHistory(with: state)
 
