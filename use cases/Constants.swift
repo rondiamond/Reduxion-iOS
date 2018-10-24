@@ -64,4 +64,6 @@ let NEWLINE_CHARACTER = "\n"
 // MARK: - Numerical
 let CGFLOAT_ZERO: CGFloat           = 0.0
 let CGFLOAT_ONE: CGFloat            = 1.0
+let FLOAT_ZERO: Float               = 0.0
+let FLOAT_ONE: Float                = 1.0
 let TIMEINTERVAL_ZERO: TimeInterval = 0.0
