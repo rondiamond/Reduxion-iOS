@@ -23,14 +23,30 @@ class AppState: NSObject, NSCoding {
     // AppState is instantiated with default values (if not recalled from persistence).
     // ** NOTE: For persisting data -- when adding properties, be SURE to also add them to the NSCoding methods below **
 
-    
     // MARK: Calculations
     var currentCalculation: Calculation?
     var calculations = Calculations()
 
+    override init() {}
+
     
     // MARK: - Persistence
-
+    
+    let currentCalculationKeyName = "currentCalculation"
+    let calculationsKeyName = "calculations"
+    
+    // persist
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.currentCalculation, forKey:currentCalculationKeyName)
+        aCoder.encode(self.calculations, forKey:calculationsKeyName)
+    }
+    
+    // recall
+    required init(coder aDecoder: NSCoder) {
+        self.currentCalculation = aDecoder.decodeObject(forKey: currentCalculationKeyName) as? Calculation
+        self.calculations = aDecoder.decodeObject(forKey: calculationsKeyName) as? Calculations ?? Calculations()
+    }
+    
     /**
      Persists the given AppState object to disk.
      */
@@ -74,20 +90,4 @@ class AppState: NSObject, NSCoding {
         return filePath
     }
     
-    
-    // MARK: - NSCoding methods (data persistence)
-    
-    let keyNameProperty1 = "property1"
-    
-    override init() {}
-    
-    // NSCoder persistence
-    func encode(with aCoder: NSCoder) {
-        //aCoder.encode(self.property1, forKey:keyNameProperty1)
-    }
-    
-    // NSCoder recall
-    required init(coder aDecoder: NSCoder) {
-        //self.property1 = aDecoder.decodeBool(forKey: keyNameProperty1)
-    }
 }
