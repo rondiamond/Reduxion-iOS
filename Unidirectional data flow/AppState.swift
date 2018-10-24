@@ -37,8 +37,8 @@ class AppState: NSObject, NSCoding {
     
     // persist
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(self.currentCalculation, forKey:currentCalculationKeyName)
-        aCoder.encode(self.calculations, forKey:calculationsKeyName)
+        aCoder.encode(self.currentCalculation,  forKey:currentCalculationKeyName)
+        aCoder.encode(self.calculations,        forKey:calculationsKeyName)
     }
     
     // recall
