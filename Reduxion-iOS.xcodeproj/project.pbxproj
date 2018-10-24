@@ -32,12 +32,8 @@
 		E45A855E21523D1100581DCE /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581942150BD4C00B31C62 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E45A855F21523D1100581DCE /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581972150BD5600B31C62 /* SwiftyJSON.framework */; };
 		E45A856021523D1100581DCE /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581972150BD5600B31C62 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E478EA1921635091008F05DB /* Quick.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E478EA1721635091008F05DB /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E478EA1A21635091008F05DB /* Nimble.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E478EA1821635091008F05DB /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E478EA1D216350AA008F05DB /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E478EA1821635091008F05DB /* Nimble.framework */; };
 		E478EA1E216350AA008F05DB /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E478EA1721635091008F05DB /* Quick.framework */; };
-		E478EA202163605F008F05DB /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E478EA1821635091008F05DB /* Nimble.framework */; };
-		E478EA212163605F008F05DB /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E478EA1721635091008F05DB /* Quick.framework */; };
 		E4A194B42137BF46001612BF /* CalculationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A194B22137BF46001612BF /* CalculationLogic.swift */; };
 		E4A581962150BD4C00B31C62 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581942150BD4C00B31C62 /* Alamofire.framework */; };
 		E4A581992150BD5600B31C62 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581972150BD5600B31C62 /* SwiftyJSON.framework */; };
@@ -68,8 +64,6 @@
 			files = (
 				E45A856021523D1100581DCE /* SwiftyJSON.framework in Embed Frameworks */,
 				E45A855E21523D1100581DCE /* Alamofire.framework in Embed Frameworks */,
-				E478EA1921635091008F05DB /* Quick.framework in Embed Frameworks */,
-				E478EA1A21635091008F05DB /* Nimble.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,8 +109,6 @@
 			files = (
 				E45A855F21523D1100581DCE /* SwiftyJSON.framework in Frameworks */,
 				E45A855D21523D1100581DCE /* Alamofire.framework in Frameworks */,
-				E478EA212163605F008F05DB /* Quick.framework in Frameworks */,
-				E478EA202163605F008F05DB /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

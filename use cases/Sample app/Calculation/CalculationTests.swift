@@ -8,6 +8,7 @@
 
 import Quick
 import Nimble
+@testable import Reduxion-iOS
 
 class CalculationSpec: QuickSpec, AppStateSubscriber {
     
