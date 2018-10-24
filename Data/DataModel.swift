@@ -6,7 +6,7 @@ import Foundation
  An arithmetic calculation to be done, consisting of:
  -  Two operands (floats)
  -  A type of calculation (e.g., addition, subtraction, etc.)
- -  A timestamp of when the calculation was requested
+ -  Optionally, a result of the calculation
  */
 class Calculation: NSObject, NSCoding {
     var operand1: Float
