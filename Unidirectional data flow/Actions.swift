@@ -4,6 +4,7 @@
 //
 //  Created by Ron Diamond on 9/14/16.
 //  Copyright © 2016-2018 Ron Diamond. All rights reserved.
+//  Licensed per the LICENSE.txt file.
 //
 
 /**

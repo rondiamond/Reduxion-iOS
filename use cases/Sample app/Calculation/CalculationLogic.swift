@@ -4,6 +4,7 @@
 //
 //  Created by Ron Diamond on 8/29/18.
 //  Copyright © 2018 Ron Diamond. All rights reserved.
+//  Licensed per the LICENSE.txt file.
 //
 
 import Foundation
