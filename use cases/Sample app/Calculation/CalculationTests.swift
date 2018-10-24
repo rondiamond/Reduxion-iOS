@@ -6,58 +6,8 @@
 //  Copyright © 2018 Ron Diamond. All rights reserved.
 //
 
-//import XCTest
-//@testable import Reduxion_iOS
-/*
 import Quick
 import Nimble
-
-class Reduxion_iOSTests: XCTestCase {
-
-    var operand1: Float
-    var operand2: Float
-    var calculationType: CalculationType
-    
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testCalculation() {
-        operand1 = 23
-        operand2 = 45
-        calculationType = .addition
-        expectedResult = operand1 + operand2
-
-        LogicCoordinator.performAction(.calculate(operand1: operand1, operand2: operand2, calculationType: calculationType))
-        
-        
-        
-    }
-    
-    
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
-}
- */
-
-import Quick
-import Nimble
-//@testable import Reduxion-iOS
 
 class CalculationSpec: QuickSpec, AppStateSubscriber {
     
@@ -86,27 +36,33 @@ class CalculationSpec: QuickSpec, AppStateSubscriber {
             LogicCoordinator.unsubscribe(self)
         }
 
-//        beforeEach {
-//            self.awaitingResult = true
-//        }
-        
         describe("Math calculation") {
             context("attempt to add") {
                 it("should calculate correctly") {
-                    print("** RUNNING TEST **")
                     self.operand1 = 23
                     self.operand2 = 45
                     self.calculationType = .addition
                     self.expectedResult = self.operand1 + self.operand2
                     LogicCoordinator.performAction(.calculate(operand1: self.operand1, operand2: self.operand2, calculationType: self.calculationType))
-                    
-                    expect(self.actualResult).toEventually(equal(self.expectedResult), timeout: 2)
+                    expect(self.actualResult).toEventually(equal(self.expectedResult))
+                }
+            }
+            
+            context("attempt to multiply") {
+                it("should calculate correctly") {
+                    self.operand1 = 23
+                    self.operand2 = 45
+                    self.calculationType = .multiplication
+                    self.expectedResult = self.operand1 * self.operand2
+                    LogicCoordinator.performAction(.calculate(operand1: self.operand1, operand2: self.operand2, calculationType: self.calculationType))
+                    expect(self.actualResult).toEventually(equal(self.expectedResult))
                 }
             }
         }
 
     }
 
+    
     // MARK: - AppState
     
     func update(_ state: AppState, mostRecentAction: Action) {
@@ -115,11 +71,8 @@ class CalculationSpec: QuickSpec, AppStateSubscriber {
         switch mostRecentAction {
         case .calculate(_):
             if let result = state.currentCalculation?.result {
+                print("... result = \(result)")
                 self.actualResult = result
-//                self.awaitingResult = false
-                print("*** GOT RESULT ***")
-            } else {
-                // ?
             }
         default:
             break
