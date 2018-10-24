@@ -67,16 +67,16 @@ class CalculationSpec: QuickSpec, AppStateSubscriber {
     var operand2: Float = 0.0
     var calculationType: CalculationType = .addition
     var expectedResult: Float = 0.0
-//var expectedResult: Float = -1
 
     var actualResult: Float = 0.0
-//    var awaitingResult: Bool = true
     
     override func spec() {
         
         beforeSuite {
             print("\n \(self) \(#function) line \(#line); NSDate = \(NSDate.init().timeIntervalSince1970)")
             print("** beforeSuite **")
+            let calculationLogic = CalculationLogic()
+            LogicCoordinator.add(logic: calculationLogic)
             LogicCoordinator.subscribe(self, updateWithCurrentAppState: false)
         }
 
@@ -100,19 +100,7 @@ class CalculationSpec: QuickSpec, AppStateSubscriber {
                     self.expectedResult = self.operand1 + self.operand2
                     LogicCoordinator.performAction(.calculate(operand1: self.operand1, operand2: self.operand2, calculationType: self.calculationType))
                     
-//                    while (self.awaitingResult) {
-//                        print("awaiting result")
-//                    }
-//                    expect(self.actualResult) == self.expectedResult
-                    
-//                    let delayInSeconds: Double = 1.0
-//                    let when = DispatchTime.now() + delayInSeconds
-//                    DispatchQueue.main.asyncAfter(deadline: when, execute: {
-//                        expect(self.actualResult) == self.expectedResult
-//                    })
-                    
-//                    expect(self.actualResult).toEventually(equal(self.expectedResult), timeout: 2)
-//expect(true)
+                    expect(self.actualResult).toEventually(equal(self.expectedResult), timeout: 2)
                 }
             }
         }

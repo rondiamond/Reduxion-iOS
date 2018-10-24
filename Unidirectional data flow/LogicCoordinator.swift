@@ -136,8 +136,6 @@ class LogicCoordinator {
         }
     }
     
-
-    
     
     // MARK: - Logic modules (aka 'reducers')
     // Note: this business logic is the same regardless of whether we're using real or mock data
@@ -165,29 +163,9 @@ class LogicCoordinator {
      - parameter logic:  A unit of business logic to be added.
      */
     private func add(logic: Logic) {
-//        guard !self.logicUnits.contains(logic) else {
-//            return
-//        }
         self.logicUnits.append(logic)
     }
-    
-    /**
-     [synopsis]
-     Removes a Logic unit from the logic coordinator's chain of composable business logic (if it exists in that chain).
-     - parameter logic:  A unit of business logic to be removed.
-     */
-    func remove(logic: Logic) {
-//        self.logicUnits.removeAll(where: $0.typ)
-//        self.logicUnits.filter({ !($0 is logic) })
-//        self.logicUnits.filter({ $0 !== logic })
-//        self.logicUnits.removeAll(where: {true} )
-//        self.logicUnits = self.logicUnits.filter(){ $0 !== logic }
-    }
-    
 
-    
-    
-    
     
     // MARK: - Data persistence
     

@@ -59,11 +59,10 @@ struct CalculationLogic: Logic {
         }
     }
     
-    
     /**
-     [synopsis]
-     - parameter foo: [explanation]
-     - returns: [explanation]
+     Performs the arithmetic calculation represented by the given Calculation object.
+     - parameter calculation: The object containing the calculation to be performed.
+     - returns: The calculation result, as a Float.
      */
     private func result(from calculation: Calculation) -> Float {
         let result: Float
@@ -85,7 +84,9 @@ struct CalculationLogic: Logic {
     }
     
     /**
-     Move one step backward in calculation history (if possible).
+     Move one step backward in the calculation history (if possible).
+     - parameter state: An AppState object with the calculation history to be evaluated and updated.
+     - returns: Nothing.  Directly modifies the given AppState object instead.
      */
     private func stepBackInCalculationHistory(with state: AppState) {
         if let currentIndex = state.calculations.currentIndex {
@@ -97,7 +98,9 @@ struct CalculationLogic: Logic {
     }
 
     /**
-     Move one step forward in calculation history (if possible).
+     Move one step forward in the calculation history (if possible).
+     - parameter state: An AppState object with the calculation history to be evaluated and updated.
+     - returns: Nothing.  Directly modifies the given AppState object instead.
      */
     private func stepForwardInCalculationHistory(with state: AppState) {
         if let currentIndex = state.calculations.currentIndex {
@@ -108,9 +111,11 @@ struct CalculationLogic: Logic {
             self.updateCanGoBackOrForward(with: state)
         }
     }
-
+    
     /**
      Update whether it's possible to step back or forward in the calculation history from the current index.
+     - parameter state: An AppState object with the calculation history to be evaluated and updated.
+     - returns: Nothing.  Directly modifies the given AppState object instead.
      */
     private func updateCanGoBackOrForward(with state: AppState) {
         if let historyCurrentIndex = state.calculations.currentIndex {
