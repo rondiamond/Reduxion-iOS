@@ -2,7 +2,7 @@
 //  Macros.swift
 //  Reduxion-iOS
 //
-//  Copyright © 2016-2018 Ron Diamond. All rights reserved.
+//  Copyright © 2016-2018 Ron Diamond.
 //  Licensed per the LICENSE.txt file.
 //
 
