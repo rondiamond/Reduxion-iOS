@@ -217,8 +217,6 @@ class LogicCoordinator {
      */
     fileprivate func performAction(_ action: Action) {
         // All actions *must* be performed on the same thread, in order to insure data consistency.
-        // In addition, since the resulting AppState updates the UI, this thread needs to be the Main thread.
-
         if !Thread.current.isMainThread {
             DispatchQueue.main.async {
                 self.performLogic(action)
@@ -277,6 +275,7 @@ class LogicCoordinator {
       Updates all subscribers of the resulting AppState of any 'performAction' call.
      */
     fileprivate func updateSubscribers(_ mostRecentAction: Action) {
+        // Since observers include the View layer, this needs to be on the Main thread.
         let appStateReadOnly = self.appState
         self.subscribers.forEach { $0.update(appStateReadOnly, mostRecentAction: mostRecentAction) }
     }

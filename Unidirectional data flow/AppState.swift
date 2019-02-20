@@ -15,10 +15,15 @@
 
 import Foundation
 
+protocol AppStatePersistable {
+    static func persist(_ appState: AppState)
+    static func recall() -> AppState
+}
+
 /**
  Object that encapsulates the state of the entire application, and can be persisted and recalled.
  */
-class AppState: NSObject, NSCoding {
+class AppState: NSObject, NSCoding, AppStatePersistable {
     // (Needs to inherit from NSObject, in order to implement NSCoding.)
     // AppState is instantiated with default values (if not recalled from persistence).
     // ** NOTE: For persisting data -- when adding properties, be SURE to also add them to the NSCoding methods below **
