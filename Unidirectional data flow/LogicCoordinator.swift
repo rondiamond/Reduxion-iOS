@@ -277,7 +277,8 @@ class LogicCoordinator {
       Updates all subscribers of the resulting AppState of any 'performAction' call.
      */
     fileprivate func updateSubscribers(_ mostRecentAction: Action) {
-        self.subscribers.forEach { $0.update(self.appState, mostRecentAction: mostRecentAction) }
+        let appStateReadOnly = self.appState
+        self.subscribers.forEach { $0.update(appStateReadOnly, mostRecentAction: mostRecentAction) }
     }
     
     /**
