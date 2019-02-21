@@ -3,7 +3,7 @@
 //  Reduxion-iOS
 //
 //  Created by Ron Diamond on 9/14/16.
-//  Copyright © 2016-2018 Ron Diamond.
+//  Copyright © 2016-2019 Ron Diamond.
 //  Licensed per the LICENSE.txt file.
 //
 

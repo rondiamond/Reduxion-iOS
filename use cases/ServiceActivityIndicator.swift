@@ -1,8 +1,8 @@
 //
-//  Macros.swift
+//  ServiceActivityIndicator.swift
 //  Reduxion-iOS
 //
-//  Copyright © 2016-2018 Ron Diamond.
+//  Copyright © 2016-2019 Ron Diamond.
 //  Licensed per the LICENSE.txt file.
 //
 
