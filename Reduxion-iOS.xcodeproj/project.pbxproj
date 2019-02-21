@@ -25,7 +25,6 @@
 		E45A855521523B0500581DCE /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44260AD2137BC6800A218C6 /* DataModel.swift */; };
 		E45A855621523B0A00581DCE /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE882133BFBF00438A8F /* GeneralConstants.swift */; };
 		E45A855721523B0A00581DCE /* ServiceActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */; };
-		E45A855821523B0E00581DCE /* CalculationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A194B22137BF46001612BF /* CalculationLogic.swift */; };
 		E45A855921523B1100581DCE /* StockQuoteLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE7E2133B78E00438A8F /* StockQuoteLogic.swift */; };
 		E45A855A21523B1100581DCE /* StockQuoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE852133BF0300438A8F /* StockQuoteService.swift */; };
 		E45A855D21523D1100581DCE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581942150BD4C00B31C62 /* Alamofire.framework */; };
@@ -41,10 +40,8 @@
 		E49569FF221E4C0F0070FB31 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = E49569FE221E4C0F0070FB31 /* License.txt */; };
 		E4956A00221E4C0F0070FB31 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = E49569FE221E4C0F0070FB31 /* License.txt */; };
 		E4956A03221E50BA0070FB31 /* StockQuoteTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4956A02221E50BA0070FB31 /* StockQuoteTest.swift */; };
-		E4A194B42137BF46001612BF /* CalculationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A194B22137BF46001612BF /* CalculationLogic.swift */; };
 		E4A581962150BD4C00B31C62 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581942150BD4C00B31C62 /* Alamofire.framework */; };
 		E4A581992150BD5600B31C62 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581972150BD5600B31C62 /* SwiftyJSON.framework */; };
-		E4CE6AC72131498B00E4E865 /* CalculationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AC62131498B00E4E865 /* CalculationTests.swift */; };
 		E4D4FE832133BEB600438A8F /* StockQuoteLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE7E2133B78E00438A8F /* StockQuoteLogic.swift */; };
 		E4D4FE842133BEBB00438A8F /* LogicCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */; };
 		E4D4FE872133BF0300438A8F /* StockQuoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE852133BF0300438A8F /* StockQuoteService.swift */; };
@@ -95,11 +92,9 @@
 		E49569FE221E4C0F0070FB31 /* License.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
 		E4956A01221E4DCD0070FB31 /* reduxion-ios-architecture-block-diagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reduxion-ios-architecture-block-diagram.png"; sourceTree = "<group>"; };
 		E4956A02221E50BA0070FB31 /* StockQuoteTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockQuoteTest.swift; sourceTree = "<group>"; };
-		E4A194B22137BF46001612BF /* CalculationLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationLogic.swift; sourceTree = "<group>"; };
 		E4A581942150BD4C00B31C62 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
 		E4A581972150BD5600B31C62 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = SOURCE_ROOT; };
 		E4CE6AC12131498B00E4E865 /* Reduxion-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reduxion-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4CE6AC62131498B00E4E865 /* CalculationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationTests.swift; sourceTree = "<group>"; };
 		E4CE6AC82131498B00E4E865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4CE6AD321314BE400E4E865 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		E4CE6AD421314BE400E4E865 /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
@@ -157,7 +152,6 @@
 		E442F60921509550000B37FE /* Sample app */ = {
 			isa = PBXGroup;
 			children = (
-				E4A5819A2150E7B100B31C62 /* Calculation */,
 				E49569FA221E4AD10070FB31 /* Stock quotes */,
 			);
 			path = "Sample app";
@@ -222,15 +216,6 @@
 				E4A581972150BD5600B31C62 /* SwiftyJSON.framework */,
 			);
 			path = Frameworks;
-			sourceTree = "<group>";
-		};
-		E4A5819A2150E7B100B31C62 /* Calculation */ = {
-			isa = PBXGroup;
-			children = (
-				E4A194B22137BF46001612BF /* CalculationLogic.swift */,
-				E4CE6AC62131498B00E4E865 /* CalculationTests.swift */,
-			);
-			path = Calculation;
 			sourceTree = "<group>";
 		};
 		E4CE6AAE2131498B00E4E865 = {
@@ -414,7 +399,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E45A855821523B0E00581DCE /* CalculationLogic.swift in Sources */,
 				E45A855021523B0000581DCE /* Actions.swift in Sources */,
 				E45A855221523B0000581DCE /* LogicCoordinator.swift in Sources */,
 				E45A855921523B1100581DCE /* StockQuoteLogic.swift in Sources */,
@@ -439,9 +423,7 @@
 				E49569F8221E464E0070FB31 /* ServiceConstants.swift in Sources */,
 				E4D4FE832133BEB600438A8F /* StockQuoteLogic.swift in Sources */,
 				E4956A03221E50BA0070FB31 /* StockQuoteTest.swift in Sources */,
-				E4CE6AC72131498B00E4E865 /* CalculationTests.swift in Sources */,
 				E45A850D215225C500581DCE /* ServiceTypes.swift in Sources */,
-				E4A194B42137BF46001612BF /* CalculationLogic.swift in Sources */,
 				E442F6082150951A000B37FE /* AppState.swift in Sources */,
 				E45A850C215225BC00581DCE /* Actions.swift in Sources */,
 				E4D4FE842133BEBB00438A8F /* LogicCoordinator.swift in Sources */,
