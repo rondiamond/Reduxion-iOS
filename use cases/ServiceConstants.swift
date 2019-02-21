@@ -1,20 +1,14 @@
 //
-//  Constants.swift
+//  ServiceConstants.swift
 //  Reduxion-iOS
 //
-//  Created by Ron Diamond on 8/26/18.
-//  Copyright © 2016-2018 Ron Diamond.
-//  Licensed per the LICENSE.txt file.
+//  Created by Ron Diamond on 2/20/19.
+//  Copyright © 2019 Ron Diamond. All rights reserved.
 //
 
 import Foundation
-import CoreGraphics
 
-// MARK: - Networking
-
-let networkTimeoutInSeconds: TimeInterval           = 10.0
-let mockServiceSimulatedLatencyInSeconds: Double    = 0.5
-
+// MARK: - HTTP response codes
 /*
  https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml :
  1xx: Informational - Request received, continuing process
@@ -40,31 +34,17 @@ let HTTP_RESPONSE_STATUS_CODE_404_NOT_FOUND             = 404
 let HTTP_RESPONSE_STATUS_CODE_504_GATEWAY_TIMEOUT       = 504
 
 
-// MARK: - Action dictionary keys
-// ...
+// MARK: - Paths
+let SERVICE_BASE_URL                = "https://api.iextrading.com/1.0/"
+let SERVICE_URL_STOCK_QUOTE_FORMAT  = "stock/%@/quote"
 
-
-// MARK: - Service calls
-// MARK: Paths
-let SERVICE_BASE_URL        = "https://www.google.com"  // TODO: replace
-let SERVICE_URL_FOO_DATA    = "/mock-data/foo.json"
-
-// MARK: Headers
+// MARK: - Request headers
 let SERVICE_REQUEST_HEADER_CONTENT_TYPE = "Content-Type"
 let SERVICE_REQUEST_HEADER_CONTENT_TYPE_JSON = "application/json"
 let SERVICE_REQUEST_HEADER_GET = "GET"
 let SERVICE_REQUEST_HEADER_POST = "POST"
 
 
-// MARK: - Text
-let EMPTY_STRING = ""
-let SPACE_CHARACTER = " "
-let NEWLINE_CHARACTER = "\n"
-
-
-// MARK: - Numerical
-let CGFLOAT_ZERO: CGFloat           = 0.0
-let CGFLOAT_ONE: CGFloat            = 1.0
-let FLOAT_ZERO: Float               = 0.0
-let FLOAT_ONE: Float                = 1.0
-let TIMEINTERVAL_ZERO: TimeInterval = 0.0
+// MARK: - Latency
+let networkTimeoutInSeconds: TimeInterval           = 10.0
+let mockServiceSimulatedLatencyInSeconds: Double    = 0.5

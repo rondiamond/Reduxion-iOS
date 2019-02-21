@@ -23,7 +23,7 @@
 		E45A855321523B0000581DCE /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD721314BE400E4E865 /* ServiceConstants.swift */; };
 		E45A855421523B0000581DCE /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD521314BE400E4E865 /* ServiceFactory.swift */; };
 		E45A855521523B0500581DCE /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44260AD2137BC6800A218C6 /* DataModel.swift */; };
-		E45A855621523B0A00581DCE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE882133BFBF00438A8F /* Constants.swift */; };
+		E45A855621523B0A00581DCE /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE882133BFBF00438A8F /* GeneralConstants.swift */; };
 		E45A855721523B0A00581DCE /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE8B2133C28F00438A8F /* Macros.swift */; };
 		E45A855821523B0E00581DCE /* CalculationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A194B22137BF46001612BF /* CalculationLogic.swift */; };
 		E45A855921523B1100581DCE /* FooLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE7E2133B78E00438A8F /* FooLogic.swift */; };
@@ -34,6 +34,8 @@
 		E45A856021523D1100581DCE /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581972150BD5600B31C62 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E478EA1D216350AA008F05DB /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E478EA1821635091008F05DB /* Nimble.framework */; };
 		E478EA1E216350AA008F05DB /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E478EA1721635091008F05DB /* Quick.framework */; };
+		E49569F7221E464E0070FB31 /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49569F6221E464E0070FB31 /* ServiceConstants.swift */; };
+		E49569F8221E464E0070FB31 /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49569F6221E464E0070FB31 /* ServiceConstants.swift */; };
 		E4A194B42137BF46001612BF /* CalculationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A194B22137BF46001612BF /* CalculationLogic.swift */; };
 		E4A581962150BD4C00B31C62 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581942150BD4C00B31C62 /* Alamofire.framework */; };
 		E4A581992150BD5600B31C62 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581972150BD5600B31C62 /* SwiftyJSON.framework */; };
@@ -41,7 +43,7 @@
 		E4D4FE832133BEB600438A8F /* FooLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE7E2133B78E00438A8F /* FooLogic.swift */; };
 		E4D4FE842133BEBB00438A8F /* LogicCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */; };
 		E4D4FE872133BF0300438A8F /* FooService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE852133BF0300438A8F /* FooService.swift */; };
-		E4D4FE8A2133BFBF00438A8F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE882133BFBF00438A8F /* Constants.swift */; };
+		E4D4FE8A2133BFBF00438A8F /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE882133BFBF00438A8F /* GeneralConstants.swift */; };
 		E4D4FE8D2133C28F00438A8F /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE8B2133C28F00438A8F /* Macros.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +85,7 @@
 		E45A854A2152372800581DCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E478EA1721635091008F05DB /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = SOURCE_ROOT; };
 		E478EA1821635091008F05DB /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = SOURCE_ROOT; };
+		E49569F6221E464E0070FB31 /* ServiceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConstants.swift; sourceTree = "<group>"; };
 		E4A194B22137BF46001612BF /* CalculationLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationLogic.swift; sourceTree = "<group>"; };
 		E4A581942150BD4C00B31C62 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
 		E4A581972150BD5600B31C62 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = SOURCE_ROOT; };
@@ -98,7 +101,7 @@
 		E4D4FE742133AE2000438A8F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		E4D4FE7E2133B78E00438A8F /* FooLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FooLogic.swift; path = "use cases/Sample app/Service/FooLogic.swift"; sourceTree = SOURCE_ROOT; };
 		E4D4FE852133BF0300438A8F /* FooService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FooService.swift; path = "use cases/Sample app/Service/FooService.swift"; sourceTree = SOURCE_ROOT; };
-		E4D4FE882133BFBF00438A8F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = "Use cases/Constants.swift"; sourceTree = SOURCE_ROOT; };
+		E4D4FE882133BFBF00438A8F /* GeneralConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GeneralConstants.swift; path = "Use cases/GeneralConstants.swift"; sourceTree = SOURCE_ROOT; };
 		E4D4FE8B2133C28F00438A8F /* Macros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Macros.swift; path = "Use cases/Macros.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -274,7 +277,8 @@
 		E4D4FE7C2133B6F200438A8F /* Use cases */ = {
 			isa = PBXGroup;
 			children = (
-				E4D4FE882133BFBF00438A8F /* Constants.swift */,
+				E4D4FE882133BFBF00438A8F /* GeneralConstants.swift */,
+				E49569F6221E464E0070FB31 /* ServiceConstants.swift */,
 				E4D4FE8B2133C28F00438A8F /* Macros.swift */,
 				E442F60921509550000B37FE /* Sample app */,
 			);
@@ -397,7 +401,8 @@
 				E45A855721523B0A00581DCE /* Macros.swift in Sources */,
 				E45A853F2152372700581DCE /* AppDelegate.swift in Sources */,
 				E45A855121523B0000581DCE /* AppState.swift in Sources */,
-				E45A855621523B0A00581DCE /* Constants.swift in Sources */,
+				E45A855621523B0A00581DCE /* GeneralConstants.swift in Sources */,
+				E49569F7221E464E0070FB31 /* ServiceConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E45A850B215225B200581DCE /* ServiceFactory.swift in Sources */,
+				E49569F8221E464E0070FB31 /* ServiceConstants.swift in Sources */,
 				E4D4FE832133BEB600438A8F /* FooLogic.swift in Sources */,
 				E4CE6AC72131498B00E4E865 /* CalculationTests.swift in Sources */,
 				E45A850D215225C500581DCE /* ServiceConstants.swift in Sources */,
@@ -416,7 +422,7 @@
 				E4D4FE8D2133C28F00438A8F /* Macros.swift in Sources */,
 				E44260AF2137BC6900A218C6 /* DataModel.swift in Sources */,
 				E4D4FE872133BF0300438A8F /* FooService.swift in Sources */,
-				E4D4FE8A2133BFBF00438A8F /* Constants.swift in Sources */,
+				E4D4FE8A2133BFBF00438A8F /* GeneralConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
