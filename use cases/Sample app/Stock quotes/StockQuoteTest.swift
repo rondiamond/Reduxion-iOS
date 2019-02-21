@@ -11,7 +11,7 @@ import Quick
 import Nimble
 @testable import Reduxion-iOS
 
-class CalculationSpec: QuickSpec, AppStateSubscriber {
+class StockQuoteSpec: QuickSpec, AppStateSubscriber {
     
     var appStateSubscriberIdentifier: String = ""
     
@@ -22,11 +22,47 @@ class CalculationSpec: QuickSpec, AppStateSubscriber {
     var expectedResult: Float = 0.0
     var actualResult: Float = 0.0
      */
+
+    struct StockQuoteTestData {
+        let stockSymbol: String
+//        let stockCurrentPrice: Float
+        let stockExpectedPriceMinimum: Float
+        let stockExpectedPriceMaximum: Float
+        let stockExpectedCompanyNamePartial: String     // case insensitive
+        let stockCompanySector: String                  // case insensitive
+    }
+
+    let stock1: StockQuoteTestData = ("aapl", 100.00, 300.00, "apple", "tech")
+    let stock2: StockQuoteTestData = ("goog", 750.00, 3000.00, "google", "tech")
+    let stock3: StockQuoteTestData = ("nflx", 200.00, 500.00, "netflix", "consumer")
+    let stock4: StockQuoteTestData = ("sbux", 40.00, 150.00, "starbucks", "consumer")
+    let stock5 = StockQuoteTestData(stockSymbol: <#T##String#>, stockExpectedPriceMinimum: <#T##Float#>, stockExpectedPriceMaximum: <#T##Float#>, stockExpectedCompanyNamePartial: <#T##String#>, stockCompanySector: <#T##String#>)
+        "tgt", 30, 150, "target", "consumer")
+
     
-    var stockSymbol: String
-    var stockCurrentPrice: Float
-    var stockExpectedPriceMinimum: Float
-    var stockExpectedPriceMaximum: Float
+
+    var stocksToTest: [StockQuoteTestData] = [
+        
+        ]
+    
+
+    
+    
+    
+//    var stocksToTest: [StockQuoteTestData] =
+//    {
+//        StockQuoteTestData(stockSymbol: <#T##String#>, stockCurrentPrice: <#T##Float#>, stockExpectedPriceMinimum: <#T##Float#>, stockExpectedPriceMaximum: <#T##Float#>),
+//        StockQuoteTestData(stockSymbol: <#T##String#>, stockCurrentPrice: <#T##Float#>, stockExpectedPriceMinimum: <#T##Float#>, stockExpectedPriceMaximum: <#T##Float#>),
+//        StockQuoteTestData(stockSymbol: <#T##String#>, stockCurrentPrice: <#T##Float#>, stockExpectedPriceMinimum: <#T##Float#>, stockExpectedPriceMaximum: <#T##Float#>),
+//
+//
+//
+//
+//    }
+    
+    
+    
+    
     
     override func spec() {
         
