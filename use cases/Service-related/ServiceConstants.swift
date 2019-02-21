@@ -35,8 +35,9 @@ let HTTP_RESPONSE_STATUS_CODE_504_GATEWAY_TIMEOUT       = 504
 
 
 // MARK: - Paths
-let SERVICE_BASE_URL                = "https://api.iextrading.com/1.0/"
+let SERVICE_URL_BASE                = "https://api.iextrading.com/1.0/"
 let SERVICE_URL_STOCK_QUOTE_FORMAT  = "stock/%@/quote"
+
 
 // MARK: - Request headers
 let SERVICE_REQUEST_HEADER_CONTENT_TYPE = "Content-Type"

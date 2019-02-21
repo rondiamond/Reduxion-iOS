@@ -30,5 +30,5 @@ enum Action {
     
     // MARK: Foo Service
     case fooServiceRequest()
-    case fooServiceResponse(json: JSON)
+    case stockQuoteServiceResponse(json: JSON)
 }

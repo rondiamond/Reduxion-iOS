@@ -1,5 +1,5 @@
 //
-//  FooService.swift
+//  StockQuoteService.swift
 //  Reduxion-iOS
 //
 //  Created by Ron Diamond on 8/26/18.
@@ -11,19 +11,19 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-protocol FooServiceProtocol: Service {
+protocol StockQuoteServiceProtocol: Service {
     // protocol to ensure proper typing in LogicCoordinator and ServiceFactory
 }
 
-struct FooService: FooServiceProtocol {
+struct StockQuoteService: StockQuoteServiceProtocol {
     var endpointBaseURL: String
     
     func fetchAndStoreData(_ optionalArguments: [String : String]) {
         assert(self.endpointBaseURL != EMPTY_STRING, "Invalid endpointBaseURL - could not process service request!")
         
-        let urlString = self.endpointBaseURL + SERVICE_URL_FOO_DATA
+        let urlString = self.endpointBaseURL + SERVICE_URL_STOCK_QUOTE_FORMAT
         
-        showNetworkActivityIndicator()
+        serviceRequestBegin()
         
         var headers: [String : String] = [:]
         headers[SERVICE_REQUEST_HEADER_CONTENT_TYPE] = SERVICE_REQUEST_HEADER_CONTENT_TYPE_JSON
@@ -43,38 +43,38 @@ struct FooService: FooServiceProtocol {
                     print("Request failed with error: \(error)")
                 }
                 
-                hideNetworkActivityIndicator()
+                serviceRequestEnd()
         }
     }
 }
 
-struct MockFooService: FooServiceProtocol {
+struct MockStockQuoteService: StockQuoteServiceProtocol {
     var endpointBaseURL: String
     
     func fetchAndStoreData(_ optionalArguments: [String : String]) {
         let dispatchDeadline: DispatchTime = .now() + mockServiceSimulatedLatencyInSeconds
         DispatchQueue.main.asyncAfter(deadline: dispatchDeadline) {
-            let sampleFooData = self.sampleFooData()
-            parseAndStoreData(sampleFooData)
+            let sampleStockQuoteData = self.sampleStockQuoteData()
+            parseAndStoreData(sampleStockQuoteData)
         }
     }
     
-    fileprivate func sampleFooData() -> JSON {
-        var sampleFooData = JSON.null  // default value
-        if let path = Bundle.main.path(forResource: "sampleFooData", ofType: "json") {
+    fileprivate func sampleStockQuoteData() -> JSON {
+        var sampleStockQuoteData = JSON.null  // default value
+        if let path = Bundle.main.path(forResource: "StockQuoteMockData", ofType: "json") {
             if let data = try? Data(contentsOf: URL(fileURLWithPath: path)) {
                 do {
-                    try sampleFooData = JSON(data: data)
+                    try sampleStockQuoteData = JSON(data: data)
                 } catch {
-                    print("Error: Unable to parse JSON for sampleFooData!")
+                    print("Error: Unable to parse JSON for sampleStockQuoteData!")
                 }
             }
         }
-        return sampleFooData
+        return sampleStockQuoteData
     }
 }
 
 internal func parseAndStoreData(_ json: JSON) {
-    LogicCoordinator.performAction(Action.fooServiceResponse(json: json))
+    LogicCoordinator.performAction(Action.stockQuoteServiceResponse(json: json))
     // hand off payload as-is - will be parsed by Logic unit
 }
