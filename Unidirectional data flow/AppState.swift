@@ -15,6 +15,7 @@
 
 import Foundation
 
+
 protocol AppStatePersistable {
     static func persist(_ appState: AppState)
     static func recall() -> AppState
