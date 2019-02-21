@@ -11,7 +11,7 @@
 		E442F6082150951A000B37FE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD321314BE400E4E865 /* AppState.swift */; };
 		E45A850B215225B200581DCE /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD521314BE400E4E865 /* ServiceFactory.swift */; };
 		E45A850C215225BC00581DCE /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD421314BE400E4E865 /* Actions.swift */; };
-		E45A850D215225C500581DCE /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD721314BE400E4E865 /* ServiceConstants.swift */; };
+		E45A850D215225C500581DCE /* ServiceTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD721314BE400E4E865 /* ServiceTypes.swift */; };
 		E45A853F2152372700581DCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45A853E2152372700581DCE /* AppDelegate.swift */; };
 		E45A85412152372700581DCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45A85402152372700581DCE /* ViewController.swift */; };
 		E45A85442152372700581DCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E45A85422152372700581DCE /* Main.storyboard */; };
@@ -20,7 +20,7 @@
 		E45A855021523B0000581DCE /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD421314BE400E4E865 /* Actions.swift */; };
 		E45A855121523B0000581DCE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD321314BE400E4E865 /* AppState.swift */; };
 		E45A855221523B0000581DCE /* LogicCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */; };
-		E45A855321523B0000581DCE /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD721314BE400E4E865 /* ServiceConstants.swift */; };
+		E45A855321523B0000581DCE /* ServiceTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD721314BE400E4E865 /* ServiceTypes.swift */; };
 		E45A855421523B0000581DCE /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD521314BE400E4E865 /* ServiceFactory.swift */; };
 		E45A855521523B0500581DCE /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44260AD2137BC6800A218C6 /* DataModel.swift */; };
 		E45A855621523B0A00581DCE /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE882133BFBF00438A8F /* GeneralConstants.swift */; };
@@ -96,13 +96,13 @@
 		E4CE6AD421314BE400E4E865 /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		E4CE6AD521314BE400E4E865 /* ServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogicCoordinator.swift; sourceTree = "<group>"; };
-		E4CE6AD721314BE400E4E865 /* ServiceConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceConstants.swift; sourceTree = "<group>"; };
+		E4CE6AD721314BE400E4E865 /* ServiceTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTypes.swift; sourceTree = "<group>"; };
 		E4D4FE6C2133784300438A8F /* Reduxion-iOSTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reduxion-iOSTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		E4D4FE742133AE2000438A8F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		E4D4FE7E2133B78E00438A8F /* FooLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FooLogic.swift; path = "use cases/Sample app/Service/FooLogic.swift"; sourceTree = SOURCE_ROOT; };
-		E4D4FE852133BF0300438A8F /* FooService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FooService.swift; path = "use cases/Sample app/Service/FooService.swift"; sourceTree = SOURCE_ROOT; };
+		E4D4FE7E2133B78E00438A8F /* FooLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FooLogic.swift; path = "use cases/Sample app/Foo/FooLogic.swift"; sourceTree = SOURCE_ROOT; };
+		E4D4FE852133BF0300438A8F /* FooService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FooService.swift; path = "use cases/Sample app/Foo/FooService.swift"; sourceTree = SOURCE_ROOT; };
 		E4D4FE882133BFBF00438A8F /* GeneralConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GeneralConstants.swift; path = "Use cases/GeneralConstants.swift"; sourceTree = SOURCE_ROOT; };
-		E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceActivityIndicator.swift; path = "Use cases/ServiceActivityIndicator.swift"; sourceTree = SOURCE_ROOT; };
+		E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceActivityIndicator.swift; path = "use cases/Service-related/ServiceActivityIndicator.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				E4A5819A2150E7B100B31C62 /* Calculation */,
-				E4A5819B2150E7C000B31C62 /* Service */,
+				E4A5819B2150E7C000B31C62 /* Foo */,
 			);
 			path = "Sample app";
 			sourceTree = "<group>";
@@ -182,6 +182,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E49569F9221E47F80070FB31 /* Service-related */ = {
+			isa = PBXGroup;
+			children = (
+				E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */,
+				E49569F6221E464E0070FB31 /* ServiceConstants.swift */,
+				E4CE6AD521314BE400E4E865 /* ServiceFactory.swift */,
+				E4CE6AD721314BE400E4E865 /* ServiceTypes.swift */,
+			);
+			path = "Service-related";
+			sourceTree = "<group>";
+		};
 		E4A581932150BD1700B31C62 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,13 +213,13 @@
 			path = Calculation;
 			sourceTree = "<group>";
 		};
-		E4A5819B2150E7C000B31C62 /* Service */ = {
+		E4A5819B2150E7C000B31C62 /* Foo */ = {
 			isa = PBXGroup;
 			children = (
 				E4D4FE7E2133B78E00438A8F /* FooLogic.swift */,
 				E4D4FE852133BF0300438A8F /* FooService.swift */,
 			);
-			path = Service;
+			path = Foo;
 			sourceTree = "<group>";
 		};
 		E4CE6AAE2131498B00E4E865 = {
@@ -249,8 +260,6 @@
 				E4CE6AD421314BE400E4E865 /* Actions.swift */,
 				E4CE6AD321314BE400E4E865 /* AppState.swift */,
 				E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */,
-				E4CE6AD721314BE400E4E865 /* ServiceConstants.swift */,
-				E4CE6AD521314BE400E4E865 /* ServiceFactory.swift */,
 			);
 			path = "Unidirectional data flow";
 			sourceTree = "<group>";
@@ -277,9 +286,8 @@
 		E4D4FE7C2133B6F200438A8F /* Use cases */ = {
 			isa = PBXGroup;
 			children = (
+				E49569F9221E47F80070FB31 /* Service-related */,
 				E4D4FE882133BFBF00438A8F /* GeneralConstants.swift */,
-				E49569F6221E464E0070FB31 /* ServiceConstants.swift */,
-				E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */,
 				E442F60921509550000B37FE /* Sample app */,
 			);
 			name = "Use cases";
@@ -394,7 +402,7 @@
 				E45A855221523B0000581DCE /* LogicCoordinator.swift in Sources */,
 				E45A855921523B1100581DCE /* FooLogic.swift in Sources */,
 				E45A85412152372700581DCE /* ViewController.swift in Sources */,
-				E45A855321523B0000581DCE /* ServiceConstants.swift in Sources */,
+				E45A855321523B0000581DCE /* ServiceTypes.swift in Sources */,
 				E45A855A21523B1100581DCE /* FooService.swift in Sources */,
 				E45A855421523B0000581DCE /* ServiceFactory.swift in Sources */,
 				E45A855521523B0500581DCE /* DataModel.swift in Sources */,
@@ -414,7 +422,7 @@
 				E49569F8221E464E0070FB31 /* ServiceConstants.swift in Sources */,
 				E4D4FE832133BEB600438A8F /* FooLogic.swift in Sources */,
 				E4CE6AC72131498B00E4E865 /* CalculationTests.swift in Sources */,
-				E45A850D215225C500581DCE /* ServiceConstants.swift in Sources */,
+				E45A850D215225C500581DCE /* ServiceTypes.swift in Sources */,
 				E4A194B42137BF46001612BF /* CalculationLogic.swift in Sources */,
 				E442F6082150951A000B37FE /* AppState.swift in Sources */,
 				E45A850C215225BC00581DCE /* Actions.swift in Sources */,

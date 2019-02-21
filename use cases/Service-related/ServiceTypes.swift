@@ -1,5 +1,5 @@
 //
-//  ServiceConstants.swift
+//  ServiceTypes.swift
 //  Reduxion-iOS
 //
 //  Created by Ron Diamond on 9/14/16.
