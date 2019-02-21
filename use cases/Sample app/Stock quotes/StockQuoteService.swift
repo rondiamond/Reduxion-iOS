@@ -15,11 +15,24 @@ protocol StockQuoteServiceProtocol: Service {
     // protocol to ensure proper typing in LogicCoordinator and ServiceFactory
 }
 
+// MARK: - Dictionary keys
+
+let StockQuoteServiceKey_Symbol = "StockQuoteServiceKey_Symbol"
+
+
+// MARK: - StockQuoteService
+
 struct StockQuoteService: StockQuoteServiceProtocol {
     var endpointBaseURL: String
     
     func fetchAndStoreData(_ optionalArguments: [String : String]) {
         assert(self.endpointBaseURL != EMPTY_STRING, "Invalid endpointBaseURL - could not process service request!")
+        
+        if let stockSymbol = optionalArguments[StockQuoteServiceKey_Symbol] {
+            assert(stockSymbol?.count > 0, "")
+        } else {
+            assert(false, <#T##message: String##String#>)
+        }
         
         let urlString = self.endpointBaseURL + SERVICE_URL_STOCK_QUOTE_FORMAT
         
