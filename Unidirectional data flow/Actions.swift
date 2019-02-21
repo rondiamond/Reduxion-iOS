@@ -28,7 +28,7 @@ enum Action {
     case goBackCalculationHistory()
     case goForwardCalculationHistory()
     
-    // MARK: Foo Service
-    case fooServiceRequest()
+    // MARK: Stock quote Service
+    case stockQuoteServiceRequest()
     case stockQuoteServiceResponse(json: JSON)
 }

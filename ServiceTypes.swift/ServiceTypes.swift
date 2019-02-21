@@ -24,4 +24,4 @@ enum LogicCoordinatorServicesType {
 /**
  Selects the type of services injected into the logic coordinator, for the running application (vs. the unit tests)
  */
-let currentLogicCoordinatorServicesType: LogicCoordinatorServicesType = .real
+let currentLogicCoordinatorServicesType: LogicCoordinatorServicesType = .mock

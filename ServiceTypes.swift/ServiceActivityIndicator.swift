@@ -6,6 +6,11 @@
 //  Licensed per the LICENSE.txt file.
 //
 
+/**
+ Single Responsibility (SRP):
+ This file manages the network activity indicator.
+ */
+
 import Foundation
 import UIKit
 
@@ -16,7 +21,7 @@ private var numberOfPendingShowActivityIndicatorRequests = 0
 /**
  Shows the network activity spinner (and keeps track of the number of outstanding requests).
  */
-func serviceRequestBegin() {
+func serviceRequestBegan() {
     numberOfPendingShowActivityIndicatorRequests += 1
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
     //SVProgressHUD.show()  // uncomment if using SVProgressHUD
@@ -25,7 +30,7 @@ func serviceRequestBegin() {
 /**
  Hides the network activity spinner (assuming this was the only pending request).
  */
-func serviceRequestEnd() {
+func serviceRequestEnded() {
     numberOfPendingShowActivityIndicatorRequests -= 1
     if numberOfPendingShowActivityIndicatorRequests <= 0 {
         numberOfPendingShowActivityIndicatorRequests = 0
@@ -37,7 +42,7 @@ func serviceRequestEnd() {
 /**
  Hides the network activity spinner, regardless of any pending network requests.
  */
-func forceserviceRequestEnd() {
+func forceserviceRequestEnded() {
     numberOfPendingShowActivityIndicatorRequests = 0
     UIApplication.shared.isNetworkActivityIndicatorVisible = false
     //SVProgressHUD.dismiss()  // uncomment if using SVProgressHUD

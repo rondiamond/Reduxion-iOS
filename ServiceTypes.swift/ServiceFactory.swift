@@ -34,7 +34,7 @@ protocol Service {
 // MARK: - Service Factory
 
 protocol ServiceFactoryProtocol {
-    var fooService: FooServiceProtocol { get }
+    var stockQuoteService: StockQuoteServiceProtocol { get }
 }
 
 
@@ -42,11 +42,11 @@ protocol ServiceFactoryProtocol {
  Holds references to all relevant services.  These are injected into the LogicController (so that mock services/data can be substituted when needed for testing.)
  */
 class ServiceFactory: ServiceFactoryProtocol {
-    var fooService: FooServiceProtocol
+    var stockQuoteService: StockQuoteServiceProtocol
     // ... other services go here
 
     init() {
-        self.fooService = FooService(endpointBaseURL: SERVICE_URL_BASE)
+        self.stockQuoteService = StockQuoteService(endpointBaseURL: SERVICE_URL_BASE)
         // ... other services
     }
 }
@@ -58,7 +58,7 @@ class MockServiceFactory: ServiceFactory {
     override init() {
         super.init()
 
-        self.fooService = MockFooService(endpointBaseURL: SERVICE_URL_BASE)
+        self.stockQuoteService = MockStockQuoteService(endpointBaseURL: SERVICE_URL_BASE)
         // ... other mock services
     }
 }

@@ -23,7 +23,7 @@ struct StockQuoteService: StockQuoteServiceProtocol {
         
         let urlString = self.endpointBaseURL + SERVICE_URL_STOCK_QUOTE_FORMAT
         
-        serviceRequestBegin()
+        serviceRequestBegan()
         
         var headers: [String : String] = [:]
         headers[SERVICE_REQUEST_HEADER_CONTENT_TYPE] = SERVICE_REQUEST_HEADER_CONTENT_TYPE_JSON
@@ -43,7 +43,7 @@ struct StockQuoteService: StockQuoteServiceProtocol {
                     print("Request failed with error: \(error)")
                 }
                 
-                serviceRequestEnd()
+                serviceRequestEnded()
         }
     }
 }

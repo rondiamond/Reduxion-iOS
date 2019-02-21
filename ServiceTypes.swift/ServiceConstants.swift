@@ -6,6 +6,11 @@
 //  Copyright © 2018-2019 Ron Diamond. All rights reserved.
 //
 
+/**
+ Single Responsibility (SRP):
+ This file contains constants related to the Service layer.
+ */
+
 import Foundation
 
 // MARK: - HTTP response codes

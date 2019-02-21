@@ -128,8 +128,8 @@ class LogicCoordinator {
 
             // grab references to any Services (could be real or mock) from the ServiceFactory
             // ... then inject them into the business logic units that depend on them
-//            self.fooService = _serviceFactory?.fooService
-//            self.fooLogic.service = self.fooService
+//            self.stockQuoteService = _serviceFactory?.stockQuoteService
+//            self.stockQuoteLogic.service = self.stockQuoteService
         }
         get {
             return _serviceFactory!
@@ -138,15 +138,16 @@ class LogicCoordinator {
     
     
     // MARK: - Logic modules (aka 'reducers')
-    // Note: this business logic is the same regardless of whether we're using real or mock data
     
-    fileprivate var logicUnits: [Logic] = []    // the daisy chain of composable business logic units
+    // Note: This business logic is the same regardless of whether we're using real or mock data.
+    private var logicUnits: [Logic] = []    // the daisy chain of composable business logic units
+    // Note: The order of logic units in the daisy chain shouldn't matter.  If so, that's a code smell, and dependencies should be handled differently.
 
 //    fileprivate var calculationLogic = CalculationLogic()
-//    fileprivate var fooLogic = FooLogic()
+//    fileprivate var stockQuoteLogic = StockQuoteLogic()
     
     // MARK: - Service handlers
-    fileprivate var fooService: FooServiceProtocol?
+    private var stockQuoteService: StockQuoteServiceProtocol?
 
     
     // MARK: - Setup
@@ -203,9 +204,9 @@ class LogicCoordinator {
         LogicCoordinator.sharedInstance.unsubscribe(listener)
     }
 
-    static func add(logic: Logic) {
-        LogicCoordinator.sharedInstance.add(logic: logic)
-    }
+//    static func add(logic: Logic) {
+//        LogicCoordinator.sharedInstance.add(logic: logic)
+//    }
     
     
     // MARK: - Action
@@ -215,7 +216,7 @@ class LogicCoordinator {
      - parameter action: The Action to be submitted to the various logic modules (with optional data).
      NOTE: Logic is executed on the Main thread.  If the request is initiated from the main thread, then the logic (and the update:appState callback) will be executed synchronously.
      */
-    fileprivate func performAction(_ action: Action) {
+    private func performAction(_ action: Action) {
         // All actions *must* be performed on the same thread, in order to insure data consistency.
         if !Thread.current.isMainThread {
             DispatchQueue.main.async {
@@ -244,7 +245,7 @@ class LogicCoordinator {
      Wrapper method for 'subscribe(newSubscriber:updateWithCurrentAppState:', where updateWithCurrentAppState = True.
      - parameter newSubscriber: The new subscriber to be added.
      */
-    fileprivate func subscribe(_ newSubscriber: AppStateSubscriber) {
+    private func subscribe(_ newSubscriber: AppStateSubscriber) {
         self.subscribe(newSubscriber, updateWithCurrentAppState: true)
     }
     
@@ -253,7 +254,7 @@ class LogicCoordinator {
      - parameter newSubscriber:  The new subscriber to be added.
      - parameter updateWithCurrentAppState: Whether or not to immediately call back the 'update:state' method with the current AppState.
      */
-    fileprivate func subscribe(_ newSubscriber: AppStateSubscriber, updateWithCurrentAppState: Bool) {
+    private func subscribe(_ newSubscriber: AppStateSubscriber, updateWithCurrentAppState: Bool) {
         for subscriber in self.subscribers {
             if newSubscriber.appStateSubscriberIdentifier == subscriber.appStateSubscriberIdentifier {
                 // already subscribed
@@ -274,7 +275,7 @@ class LogicCoordinator {
     /**
       Updates all subscribers of the resulting AppState of any 'performAction' call.
      */
-    fileprivate func updateSubscribers(_ mostRecentAction: Action) {
+    private func updateSubscribers(_ mostRecentAction: Action) {
         // Since observers include the View layer, this needs to be on the Main thread.
         let appStateReadOnly = self.appState
         self.subscribers.forEach { $0.update(appStateReadOnly, mostRecentAction: mostRecentAction) }
@@ -284,7 +285,7 @@ class LogicCoordinator {
      Removes the subscriber from being notified of the results of any subsequent 'performAction' call.
      - parameter listener: The subscriber to be removed.
      */
-    fileprivate func unsubscribe(_ listener: AppStateSubscriber) {
+    private func unsubscribe(_ listener: AppStateSubscriber) {
         self.subscribers = self.subscribers.filter({ $0.appStateSubscriberIdentifier != listener.appStateSubscriberIdentifier })
     }
 }

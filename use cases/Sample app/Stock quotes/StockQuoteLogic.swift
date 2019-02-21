@@ -1,5 +1,5 @@
 //
-//  FooLogic.swift
+//  StockQuoteLogic.swift
 //  Reduxion-iOS
 //
 //  Created by Ron Diamond on 8/26/18.
@@ -14,20 +14,31 @@
 
 import Foundation
 
-struct FooLogic: Logic, HasService {
+struct StockQuoteLogic: Logic, HasService {
     var service: Service?
     
     func performLogic(_ state: AppState, action: Action) {
         switch action {
-        case .fooServiceRequest:
+        case .stockQuoteServiceRequest:
             // fetch data via service, and store it (could be real or mock service/data; we don't care)
-            if let fooService = service {
-                fooService.fetchAndStoreData([:])
+            if let stockQuoteService = service {
+                stockQuoteService.fetchAndStoreData([:])
             }
             break
-        case .fooServiceResponse (let json):
+        case .stockQuoteServiceResponse (let json):
             // TODO: parse response, and process data
             _ = json
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             break
         default:
             break
