@@ -30,12 +30,31 @@ struct StockQuoteLogic: Logic, HasService {
             _ = json
             
             
+            // parse response into a StockInfo object
+            let symbol =
+            let companyName =
+            let sector =
+            let primaryExchange =
+            let latestPrice =
+            let latestUpdate =
+            let latestVolume =
+            let previousClose =
+            let change =
+            let changePercent =
+            let week52High =
+            let week52Low =
             
             
             
             
             
             
+            
+var stockInfo = StockInfo(
+            
+            // append to StocksHistory
+            
+            // update index, current, etc.
             
             
             
@@ -46,3 +65,6 @@ struct StockQuoteLogic: Logic, HasService {
     }
     
 }
+
+
+

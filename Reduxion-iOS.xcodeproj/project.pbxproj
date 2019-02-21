@@ -87,7 +87,7 @@
 		E45A854A2152372800581DCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E478EA1721635091008F05DB /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = SOURCE_ROOT; };
 		E478EA1821635091008F05DB /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = SOURCE_ROOT; };
-		E49569F6221E464E0070FB31 /* ServiceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceConstants.swift; path = ../../ServiceTypes.swift/ServiceConstants.swift; sourceTree = "<group>"; };
+		E49569F6221E464E0070FB31 /* ServiceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConstants.swift; sourceTree = "<group>"; };
 		E49569FB221E4B040070FB31 /* StockQuoteMockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StockQuoteMockData.json; sourceTree = "<group>"; };
 		E49569FE221E4C0F0070FB31 /* License.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
 		E4956A01221E4DCD0070FB31 /* reduxion-ios-architecture-block-diagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reduxion-ios-architecture-block-diagram.png"; sourceTree = "<group>"; };
@@ -98,15 +98,15 @@
 		E4CE6AC82131498B00E4E865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4CE6AD321314BE400E4E865 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		E4CE6AD421314BE400E4E865 /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
-		E4CE6AD521314BE400E4E865 /* ServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceFactory.swift; path = ../../ServiceTypes.swift/ServiceFactory.swift; sourceTree = "<group>"; };
+		E4CE6AD521314BE400E4E865 /* ServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogicCoordinator.swift; sourceTree = "<group>"; };
-		E4CE6AD721314BE400E4E865 /* ServiceTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceTypes.swift; path = ../../ServiceTypes.swift/ServiceTypes.swift; sourceTree = "<group>"; };
+		E4CE6AD721314BE400E4E865 /* ServiceTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTypes.swift; sourceTree = "<group>"; };
 		E4D4FE6C2133784300438A8F /* Reduxion-iOSTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reduxion-iOSTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		E4D4FE742133AE2000438A8F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		E4D4FE7E2133B78E00438A8F /* StockQuoteLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StockQuoteLogic.swift; path = "use cases/Sample app/Stock quotes/StockQuoteLogic.swift"; sourceTree = SOURCE_ROOT; };
 		E4D4FE852133BF0300438A8F /* StockQuoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StockQuoteService.swift; path = "use cases/Sample app/Stock quotes/StockQuoteService.swift"; sourceTree = SOURCE_ROOT; };
 		E4D4FE882133BFBF00438A8F /* GeneralConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GeneralConstants.swift; path = "Use cases/GeneralConstants.swift"; sourceTree = SOURCE_ROOT; };
-		E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceActivityIndicator.swift; path = ServiceTypes.swift/ServiceActivityIndicator.swift; sourceTree = SOURCE_ROOT; };
+		E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceActivityIndicator.swift; path = "Services (general)/ServiceActivityIndicator.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +223,7 @@
 			children = (
 				E4D4FE732133AE0E00438A8F /* _Documentation */,
 				E44260AC2137BC6800A218C6 /* Data */,
+				E49569F9221E47F80070FB31 /* Services (general) */,
 				E4CE6ADD21314BE800E4E865 /* Unidirectional data flow */,
 				E4D4FE7C2133B6F200438A8F /* Use cases */,
 				E45A853D2152372700581DCE /* Reduxion-iOS sample app */,
@@ -285,7 +286,6 @@
 			isa = PBXGroup;
 			children = (
 				E4D4FE882133BFBF00438A8F /* GeneralConstants.swift */,
-				E49569F9221E47F80070FB31 /* Services (general) */,
 				E442F60921509550000B37FE /* Sample app */,
 			);
 			name = "Use cases";

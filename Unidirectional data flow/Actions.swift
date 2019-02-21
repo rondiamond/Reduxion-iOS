@@ -23,12 +23,11 @@ import SwiftyJSON
 enum Action {
     case null
     
-    // MARK: Math Calculations
-    case calculate(operand1: Float, operand2: Float, calculationType: CalculationType)
-    case goBackCalculationHistory()
-    case goForwardCalculationHistory()
-    
     // MARK: Stock quote Service
     case stockQuoteServiceRequest(symbol: String)
-    case stockQuoteServiceResponse(json: JSON)
+    case stockQuoteServiceResponse(json: JSON, error: String)
+    
+    case goBackInHistory()
+    case goForwardInHistory()
+    case clearHistory()
 }
