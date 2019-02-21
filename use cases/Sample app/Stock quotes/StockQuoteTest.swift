@@ -23,27 +23,45 @@ class StockQuoteSpec: QuickSpec, AppStateSubscriber {
     var actualResult: Float = 0.0
      */
 
+    /// used to verify that actual stock price is in range, relative to expected price
+    let stockExpectedPriceRangeMinimum = 0.5
+    let stockExpectedPriceRangeMaximum = 2.0
+
+    
     struct StockQuoteTestData {
         let stockSymbol: String
 //        let stockCurrentPrice: Float
-        let stockExpectedPriceMinimum: Float
-        let stockExpectedPriceMaximum: Float
+//        let stockExpectedPriceMinimum: Float
+//        let stockExpectedPriceMaximum: Float
         let stockExpectedCompanyNamePartial: String     // case insensitive
         let stockCompanySector: String                  // case insensitive
     }
 
-    let stock1: StockQuoteTestData = ("aapl", 100.00, 300.00, "apple", "tech")
-    let stock2: StockQuoteTestData = ("goog", 750.00, 3000.00, "google", "tech")
-    let stock3: StockQuoteTestData = ("nflx", 200.00, 500.00, "netflix", "consumer")
-    let stock4: StockQuoteTestData = ("sbux", 40.00, 150.00, "starbucks", "consumer")
-    let stock5 = StockQuoteTestData(stockSymbol: <#T##String#>, stockExpectedPriceMinimum: <#T##Float#>, stockExpectedPriceMaximum: <#T##Float#>, stockExpectedCompanyNamePartial: <#T##String#>, stockCompanySector: <#T##String#>)
-        "tgt", 30, 150, "target", "consumer")
+    
+    
+    var stocksToTest: [StockQuoteTestData] = [
+        ("aapl", 170.00, "apple", "tech"),
+        ("goog", 1100.00, "google", "tech"),
+        ("nflx", 360.00, "netflix", "consumer"),
+        ("sbux", 70.00, "starbucks", "consumer"),
+        ("tgt", 70.00, "target", "consumer")
+    ]
 
     
-
-    var stocksToTest: [StockQuoteTestData] = [
-        
-        ]
+//    let stock1 = ("aapl", 100.00, 300.00, "apple", "tech")
+    
+//    let stock1: StockQuoteTestData = ("aapl", 100.00, 300.00, "apple", "tech")
+//    let stock2: StockQuoteTestData = ("goog", 750.00, 3000.00, "google", "tech")
+//    let stock3: StockQuoteTestData = ("nflx", 200.00, 500.00, "netflix", "consumer")
+//    let stock4: StockQuoteTestData = ("sbux", 40.00, 150.00, "starbucks", "consumer")
+//    let stock5 = StockQuoteTestData(stockSymbol: <#T##String#>, stockExpectedPriceMinimum: <#T##Float#>, stockExpectedPriceMaximum: <#T##Float#>, stockExpectedCompanyNamePartial: <#T##String#>, stockCompanySector: <#T##String#>)
+//        "tgt", 30, 150, "target", "consumer")
+//
+//
+//
+//    var stocksToTest: [StockQuoteTestData] = [
+//
+//        ]
     
 
     
@@ -77,6 +95,7 @@ class StockQuoteSpec: QuickSpec, AppStateSubscriber {
         afterSuite {
             print("\n \(self) \(#function) line \(#line); NSDate = \(NSDate.init().timeIntervalSince1970)")
             print("** afterSuite **")
+            // TODO: remove Logic from LogicCoordinator ?
             LogicCoordinator.unsubscribe(self)
         }
 
@@ -114,16 +133,14 @@ class StockQuoteSpec: QuickSpec, AppStateSubscriber {
 //                    self.calculationType = .addition
 //                    self.expectedResult = self.operand1 + self.operand2
                     self.stockSymbol = "MB"
-                    expect(self.stockCurrentPrice).toEventually(
-                    
+//                    expect(self.stockCurrentPrice).toEventually(
                     
 //                    self.stockCurrentPrice
-                    LogicCoordinator.performAction(.calculate(operand1: self.operand1, operand2: self.operand2, calculationType: self.calculationType))
-                    expect(self.actualResult).toEventually(equal(self.expectedResult))
+                    LogicCoordinator.performAction(.stockQuoteServiceRequest(symbol: self.stockSymbol))
+//                        calculate(operand1: self.operand1, operand2: self.operand2, calculationType: self.calculationType))
+//                    expect(self.actualResult).toEventually(equal(self.expectedResult))
                 }
             }
-
-        
     }
     
     
