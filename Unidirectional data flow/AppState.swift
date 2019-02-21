@@ -28,18 +28,19 @@ class AppState: NSObject, NSCoding, AppStatePersistable {
     // AppState is instantiated with default values (if not recalled from persistence).
     // ** NOTE: For persisting data -- when adding properties, be SURE to also add them to the NSCoding methods below **
 
-    // MARK: Calculations
-    var currentCalculation: Calculation?
-    var calculations = Calculations()
-
+    static let persistenceFileName = "AppState"
     override init() {}
+    
+    // MARK: Properties
+    var currentStockInfo: StockInfo?
+    var stocksHistory = StocksHistory()
 
+    // MARK: Persistence key names
+//    let currentStockInfoKeyName = "stockInfo"
+    let stocksHistoryKeyName = "stocksHistory"
     
-    // MARK: - Persistence
-    
-    let currentCalculationKeyName = "currentCalculation"
-    let calculationsKeyName = "calculations"
-    
+    // MARK: - Persistence methods
+
     // persist
     func encode(with aCoder: NSCoder) {
         aCoder.encode(self.currentCalculation,  forKey:currentCalculationKeyName)
@@ -81,8 +82,6 @@ class AppState: NSObject, NSCoding, AppStatePersistable {
         return recalledAppState
         // needs to be stored by caller
     }
-
-    static let persistenceFileName = "AppState"
 
     /**
      Returns the absolute URL for the file persistence path within the Documents directory.  If for some reason this isn't available, returns nil.
