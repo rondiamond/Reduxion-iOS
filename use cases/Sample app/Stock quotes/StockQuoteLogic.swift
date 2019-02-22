@@ -16,7 +16,13 @@ import Foundation
 import SwiftyJSON
 
 struct StockQuoteLogic: Logic, HasService {
-    var service: Service?
+    var activeService: Service?
+//var realService = StockQuoteService(endpointBaseURL: SERVICE_URL_BASE)
+//var mockService = MockStockQuoteService(endpointBaseURL: SERVICE_URL_BASE)
+
+    var realService = StockQuoteService(endpointBaseURL: SERVICE_URL_BASE)
+    var mockService = MockStockQuoteService(endpointBaseURL: SERVICE_URL_BASE)
+
     
     func performLogic(_ state: AppState, action: Action) {
         switch action {

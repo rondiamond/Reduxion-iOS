@@ -56,7 +56,7 @@ class ServiceFactory: ServiceFactoryProtocol {
  */
 class MockServiceFactory: ServiceFactory {
     override init() {
-        super.init()
+//        super.init()
 
         self.stockQuoteService = MockStockQuoteService(endpointBaseURL: SERVICE_URL_BASE)
         // ... other mock services

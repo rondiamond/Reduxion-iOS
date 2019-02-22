@@ -62,7 +62,11 @@ protocol Logic {
  *  Adopted by logic modules which connect with a web service. (The logic module's reference to the Service must be injected, to support unit testing, mock data, etc.).
  */
 protocol HasService {
-    var service: Service? { get set }
+    var activeService: Service? { get set }
+    var mockService: Service { get }
+    var realService: Service { get }
+}
+
 }
 
 
@@ -121,6 +125,11 @@ class LogicCoordinator {
     fileprivate var subscribers = [AppStateSubscriber]()
     fileprivate var _serviceFactory: ServiceFactoryProtocol?
     
+//protocol LogicServiceTypes {
+//    var mock: Service
+//    var real: Service
+//}
+    
     var serviceFactory: ServiceFactoryProtocol {
         // lazy assignment, since Singleton's serviceFactory needs to be dependency injected (after instantiation)
         set(newServiceFactory) {
@@ -129,7 +138,8 @@ class LogicCoordinator {
             // grab references to any Services (could be real or mock) from the ServiceFactory
             // ... then inject them into the business logic units that depend on them
 //            self.stockQuoteService = _serviceFactory?.stockQuoteService
-//            self.stockQuoteLogic.service = self.stockQuoteService
+//            self.stockQuoteLogic.activeService = self.stockQuoteService
+            self.logicUnits.forEach(<#T##body: (Logic) throws -> Void##(Logic) throws -> Void#>)
         }
         get {
             return _serviceFactory!
