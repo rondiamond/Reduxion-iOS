@@ -27,14 +27,14 @@ struct StockQuoteService: StockQuoteServiceProtocol {
     
     func fetchAndStoreData(_ optionalArguments: [String : String]) {
         assert(self.endpointBaseURL != EMPTY_STRING, "Invalid endpointBaseURL - could not process service request!")
-        
-        if let stockSymbol = optionalArguments[StockQuoteServiceKey_Symbol] {
-            assert(stockSymbol?.count > 0, "")
-        } else {
-            assert(false, <#T##message: String##String#>)
+
+        guard let stockSymbol = optionalArguments[StockQuoteServiceKey_Symbol] else {
+            print("Error - can't do stock lookup without a stock symbol!")
+            return
         }
         
-        let urlString = self.endpointBaseURL + SERVICE_URL_STOCK_QUOTE_FORMAT
+        let subpath = String(format: SERVICE_URL_STOCK_QUOTE_FORMAT, stockSymbol)
+        let urlString = self.endpointBaseURL + subpath
         
         serviceRequestBegan()
         
@@ -49,10 +49,11 @@ struct StockQuoteService: StockQuoteServiceProtocol {
                 switch response.result {
                 case .success(let value):
                     let json = SwiftyJSON.JSON(value)
-                    parseAndStoreData(json)
+                    parseAndStoreData(json: json, error: nil)
                     break
                     
                 case .failure(let error):
+                    // TODO: handle error case
                     print("Request failed with error: \(error)")
                 }
                 
@@ -68,7 +69,7 @@ struct MockStockQuoteService: StockQuoteServiceProtocol {
         let dispatchDeadline: DispatchTime = .now() + mockServiceSimulatedLatencyInSeconds
         DispatchQueue.main.asyncAfter(deadline: dispatchDeadline) {
             let sampleStockQuoteData = self.sampleStockQuoteData()
-            parseAndStoreData(sampleStockQuoteData)
+            parseAndStoreData(json: sampleStockQuoteData, error: nil)
         }
     }
     
@@ -87,7 +88,7 @@ struct MockStockQuoteService: StockQuoteServiceProtocol {
     }
 }
 
-internal func parseAndStoreData(_ json: JSON) {
-    LogicCoordinator.performAction(Action.stockQuoteServiceResponse(json: json))
+internal func parseAndStoreData(json: JSON, error: String?) {
+    LogicCoordinator.performAction(Action.stockQuoteServiceResponse(json: json, error: error))
     // hand off payload as-is - will be parsed by Logic unit
 }

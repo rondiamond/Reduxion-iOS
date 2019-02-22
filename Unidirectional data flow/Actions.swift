@@ -25,7 +25,7 @@ enum Action {
     
     // MARK: Stock quote Service
     case stockQuoteServiceRequest(symbol: String)
-    case stockQuoteServiceResponse(json: JSON, error: String)
+    case stockQuoteServiceResponse(json: JSON, error: String?)
     
     case goBackInHistory()
     case goForwardInHistory()

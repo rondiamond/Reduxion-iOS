@@ -43,14 +43,12 @@ class AppState: NSObject, NSCoding, AppStatePersistable {
 
     // persist
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(self.currentCalculation,  forKey:currentCalculationKeyName)
-        aCoder.encode(self.calculations,        forKey:calculationsKeyName)
+        aCoder.encode(self.stocksHistory, forKey:stocksHistoryKeyName)
     }
     
     // recall
     required init(coder aDecoder: NSCoder) {
-        self.currentCalculation = aDecoder.decodeObject(forKey: currentCalculationKeyName) as? Calculation
-        self.calculations = aDecoder.decodeObject(forKey: calculationsKeyName) as? Calculations ?? Calculations()
+        self.stocksHistory = aDecoder.decodeObject(forKey: stocksHistoryKeyName) as? StocksHistory ?? StocksHistory()
     }
     
     /**

@@ -34,8 +34,8 @@ struct StockQuoteLogic: Logic, HasService {
             break
 
         case .stockQuoteServiceResponse (let jsonPayload, let error):
-            if (error.count > 0) {
-                print("stockQuoteServiceResponse - error = \(error)")
+            if (error != nil) {
+                print("stockQuoteServiceResponse - error = \(error!)")
             }
             
             if (jsonPayload != JSON.null) {
