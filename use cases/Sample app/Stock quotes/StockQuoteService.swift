@@ -20,6 +20,12 @@ protocol StockQuoteServiceProtocol: Service {
 let StockQuoteServiceKey_Symbol = "StockQuoteServiceKey_Symbol"
 
 
+// MARK: - Service paths
+
+let STOCK_QUOTE_SERVICE_URL_BASE    = "https://api.iextrading.com/1.0/"
+let STOCK_QUOTE_SERVICE_URL_FORMAT  = "stock/%@/quote"
+
+
 // MARK: - StockQuoteService
 
 struct StockQuoteService: StockQuoteServiceProtocol {
@@ -33,7 +39,7 @@ struct StockQuoteService: StockQuoteServiceProtocol {
             return
         }
         
-        let subpath = String(format: SERVICE_URL_STOCK_QUOTE_FORMAT, stockSymbol)
+        let subpath = String(format: STOCK_QUOTE_SERVICE_URL_FORMAT, stockSymbol)
         let urlString = self.endpointBaseURL + subpath
         
         serviceRequestBegan()

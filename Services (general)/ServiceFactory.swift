@@ -53,7 +53,7 @@ class ServiceFactory: ServiceFactoryProtocol {
     // ... other services go here
 
     init() {
-        self.stockQuoteService = StockQuoteService(endpointBaseURL: SERVICE_URL_BASE)
+        self.stockQuoteService = StockQuoteService(endpointBaseURL: STOCK_QUOTE_STOCK_QUOTE_SERVICE_URL_BASE)
         // ... other services
     }
 }
@@ -65,7 +65,7 @@ class MockServiceFactory: ServiceFactory {
     override init() {
 //        super.init()
 
-        self.stockQuoteService = MockStockQuoteService(endpointBaseURL: SERVICE_URL_BASE)
+        self.stockQuoteService = MockStockQuoteService(endpointBaseURL: STOCK_QUOTE_STOCK_QUOTE_SERVICE_URL_BASE)
         // ... other mock services
     }
 }

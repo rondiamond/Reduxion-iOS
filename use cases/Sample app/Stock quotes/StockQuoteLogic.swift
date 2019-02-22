@@ -30,8 +30,8 @@ private var _serviceTypes: ServiceTypes
     
     
     
-var mockService: Service = MockStockQuoteService(endpointBaseURL: SERVICE_URL_BASE)
-var realService: Service = StockQuoteService(endpointBaseURL: SERVICE_URL_BASE)
+var mockService: Service = MockStockQuoteService(endpointBaseURL: STOCK_QUOTE_SERVICE_URL_BASE)
+var realService: Service = StockQuoteService(endpointBaseURL: STOCK_QUOTE_SERVICE_URL_BASE)
     
     func performLogic(_ state: AppState, action: Action) {
         switch action {
