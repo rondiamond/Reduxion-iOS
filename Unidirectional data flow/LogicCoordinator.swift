@@ -154,6 +154,7 @@ class LogicCoordinator {
     
     init() {
         // no super.init, since this is a base class
+        self.add(logic: StockQuoteLogic())
     }
     
     

@@ -9,32 +9,24 @@
 
 import UIKit
 
-class ViewController: UIViewController, AppStateSubscriber {
-
+class StockQuoteViewController: UIViewController, AppStateSubscriber {
     var appStateSubscriberIdentifier: String = ""
 
+    @IBOutlet weak var symbolTextField: UITextField!
+    @IBOutlet weak var stockFetchDataButton: UIButton!
+    
     // MARK: - IBOutlets
+    
     @IBOutlet weak var operand1TextField: UITextField!
-    @IBOutlet weak var operand2TextField: UITextField!
-    @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var historyCountLabel: UILabel!
     @IBOutlet weak var buttonGoBack: UIButton!
     @IBOutlet weak var buttonGoForward: UIButton!
     
-    @IBOutlet weak var calculationTypeSegmentedControl: UISegmentedControl!
-    let calculationTypesBySegmentedIndex: [CalculationType] = [.addition, .subtraction, .multiplication, .division]
-    
-
     // MARK: - UIViewController lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         LogicCoordinator.subscribe(self)
-        
-        let calculationLogic = CalculationLogic()
-        LogicCoordinator.add(logic: calculationLogic)    // TODO: REFACTOR
-        
-        assert(calculationTypesBySegmentedIndex.count == self.calculationTypeSegmentedControl.numberOfSegments, "Fatal error: calculationTypesBySegmentedIndex.count == self.calculationTypeSegmentedControl.numberOfSegments")
     }
 
     deinit {
@@ -43,17 +35,15 @@ class ViewController: UIViewController, AppStateSubscriber {
     
     // MARK: - IBAction
     
-    @IBAction func buttonCalculateTapped(_ sender: Any) {
-        var operand1: Float = 0
-        var operand2: Float = 0
-        if operand1TextField.text!.count > 0 {
-            operand1 = Float(operand1TextField.text!) ?? 0
-        }
-        if operand2TextField.text!.count > 0 {
-            operand2 = Float(operand2TextField.text!) ?? 0
-        }
-        let calculationType = calculationTypesBySegmentedIndex[self.calculationTypeSegmentedControl.selectedSegmentIndex]
-        LogicCoordinator.performAction(Action.calculate(operand1: operand1, operand2: operand2, calculationType: calculationType))
+    
+    @IBAction func symbolTextFieldValueChanged(_ sender: Any) {
+        let hasText = ((sender as! UITextField).text!.count > 0)
+        self.stockFetchDataButton.isEnabled = hasText
+    }
+    
+    @IBAction func stockFetchDataTapped(_ sender: Any) {
+        let symbol = (sender as! UITextField).text!
+        LogicCoordinator.performAction(Action.stockQuoteServiceRequest(symbol: symbol))
     }
     
     @IBAction func buttonBackTapped(_ sender: Any) {
