@@ -12,14 +12,11 @@ import UIKit
 class StockQuoteViewController: UIViewController, AppStateSubscriber {
     var appStateSubscriberIdentifier: String = ""
 
+    // MARK: - IBOutlets
+
     @IBOutlet weak var symbolTextField: UITextField!
     @IBOutlet weak var stockFetchDataButton: UIButton!
     @IBOutlet weak var stockInfoResultsTextField: UITextView!
-    
-    
-    // MARK: - IBOutlets
-    
-    @IBOutlet weak var operand1TextField: UITextField!
     @IBOutlet weak var historyCountLabel: UILabel!
     @IBOutlet weak var buttonGoBack: UIButton!
     @IBOutlet weak var buttonGoForward: UIButton!
@@ -45,8 +42,10 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber {
     }
     
     @IBAction func stockFetchDataTapped(_ sender: Any) {
-        let symbol = (sender as! UITextField).text!
-        LogicCoordinator.performAction(Action.stockQuoteServiceRequest(symbol: symbol))
+        if ((self.symbolTextField.text?.count)! > 0) {
+            let symbol = self.symbolTextField.text!
+            LogicCoordinator.performAction(Action.stockQuoteServiceRequest(symbol: symbol))
+        }
     }
     
     
@@ -74,6 +73,7 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber {
         }
         return stockInfoText
     }
+    
     
     // MARK: - History navigation
     

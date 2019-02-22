@@ -10,16 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Stock Quote View Controller-->
         <scene sceneID="bA9-GW-69N">
             <objects>
-                <viewController id="XLk-ba-JDL" customClass="ViewController" customModule="Reduxion_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XLk-ba-JDL" customClass="StockQuoteViewController" customModule="Reduxion_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lvf-pr-KCx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="v6Z-dw-Cwb">
-                                <rect key="frame" x="137" y="76" width="100" height="30"/>
+                                <rect key="frame" x="137.5" y="76" width="100" height="30"/>
                                 <color key="backgroundColor" red="0.79318643440000003" green="0.96050107969999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="64e-AA-fRi"/>
@@ -42,7 +42,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="FETCH DATA"/>
                                 <connections>
-                                    <action selector="stockInfoFetchTapped:" destination="XLk-ba-JDL" eventType="touchUpInside" id="nAS-sq-PaJ"/>
+                                    <action selector="stockFetchDataTapped:" destination="XLk-ba-JDL" eventType="touchUpInside" id="C5O-zk-Nx2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KId-N9-eI5">
@@ -50,7 +50,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                                 <state key="normal" title="&lt;"/>
                                 <connections>
-                                    <action selector="buttonBackTapped:" destination="XLk-ba-JDL" eventType="touchUpInside" id="GvU-ML-VpO"/>
+                                    <action selector="buttonBackTapped:" destination="XLk-ba-JDL" eventType="touchUpInside" id="hdo-tu-79J"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7g-Qx-ued">
@@ -58,7 +58,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                                 <state key="normal" title="&gt;"/>
                                 <connections>
-                                    <action selector="buttonForwardTapped:" destination="XLk-ba-JDL" eventType="touchUpInside" id="VuZ-RY-SMR"/>
+                                    <action selector="buttonForwardTapped:" destination="XLk-ba-JDL" eventType="touchUpInside" id="zx5-LI-yvJ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peK-Qa-hz6">
@@ -81,28 +81,28 @@
                             <constraint firstItem="mNt-kT-YHJ" firstAttribute="trailing" secondItem="ZRa-MZ-iDe" secondAttribute="trailing" constant="16" id="0fK-av-LqI"/>
                             <constraint firstItem="KId-N9-eI5" firstAttribute="leading" secondItem="mNt-kT-YHJ" secondAttribute="leading" constant="30" id="2Pv-dO-X3C"/>
                             <constraint firstItem="ZRa-MZ-iDe" firstAttribute="top" secondItem="d8u-cz-LCh" secondAttribute="bottom" constant="22" id="4k2-Bq-C4J"/>
+                            <constraint firstItem="d8u-cz-LCh" firstAttribute="top" secondItem="v6Z-dw-Cwb" secondAttribute="bottom" constant="11" id="5GX-iz-yKy"/>
                             <constraint firstItem="d8u-cz-LCh" firstAttribute="centerX" secondItem="peK-Qa-hz6" secondAttribute="centerX" id="Ezu-TF-vCa"/>
+                            <constraint firstItem="v6Z-dw-Cwb" firstAttribute="centerX" secondItem="mNt-kT-YHJ" secondAttribute="centerX" id="HrU-Zo-okp"/>
                             <constraint firstItem="qak-Zf-Miv" firstAttribute="top" secondItem="mNt-kT-YHJ" secondAttribute="top" constant="27" id="MMc-uI-gik"/>
                             <constraint firstItem="mNt-kT-YHJ" firstAttribute="bottom" secondItem="peK-Qa-hz6" secondAttribute="bottom" constant="38" id="TgG-jp-WcM"/>
                             <constraint firstItem="peK-Qa-hz6" firstAttribute="centerX" secondItem="mNt-kT-YHJ" secondAttribute="centerX" id="YSU-g4-Lwy"/>
-                            <constraint firstItem="v6Z-dw-Cwb" firstAttribute="top" secondItem="mNt-kT-YHJ" secondAttribute="top" constant="56" id="ay8-75-VPa"/>
                             <constraint firstItem="peK-Qa-hz6" firstAttribute="top" secondItem="ZRa-MZ-iDe" secondAttribute="bottom" constant="31" id="cyw-iu-bXa"/>
                             <constraint firstItem="mNt-kT-YHJ" firstAttribute="trailing" secondItem="v7g-Qx-ued" secondAttribute="trailing" constant="30" id="dst-cs-Nnq"/>
+                            <constraint firstItem="v6Z-dw-Cwb" firstAttribute="top" secondItem="qak-Zf-Miv" secondAttribute="bottom" constant="8" id="fln-6Q-bzC"/>
                             <constraint firstItem="ZRa-MZ-iDe" firstAttribute="leading" secondItem="mNt-kT-YHJ" secondAttribute="leading" constant="16" id="kMj-4M-awe"/>
                             <constraint firstItem="qak-Zf-Miv" firstAttribute="centerX" secondItem="mNt-kT-YHJ" secondAttribute="centerX" id="lIB-vb-zSC"/>
-                            <constraint firstItem="d8u-cz-LCh" firstAttribute="top" secondItem="Lvf-pr-KCx" secondAttribute="top" constant="117" id="uO1-jz-NWe"/>
-                            <constraint firstItem="mNt-kT-YHJ" firstAttribute="trailing" secondItem="v6Z-dw-Cwb" secondAttribute="trailing" constant="138" id="yMe-7D-ldJ"/>
                             <constraint firstItem="mNt-kT-YHJ" firstAttribute="bottom" secondItem="KId-N9-eI5" secondAttribute="bottom" constant="25" id="z3N-qr-xod"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mNt-kT-YHJ"/>
                     </view>
                     <connections>
-                        <outlet property="buttonGoBack" destination="KId-N9-eI5" id="NVe-pK-mEU"/>
-                        <outlet property="buttonGoForward" destination="v7g-Qx-ued" id="WxE-aS-wqh"/>
-                        <outlet property="historyCountLabel" destination="peK-Qa-hz6" id="Lw8-30-78G"/>
-                        <outlet property="stockFetchDataButton" destination="d8u-cz-LCh" id="zgd-n3-G5N"/>
-                        <outlet property="stockInfoResultsTextField" destination="ZRa-MZ-iDe" id="l4T-wB-1PO"/>
-                        <outlet property="symbolTextField" destination="v6Z-dw-Cwb" id="TD5-Qv-kHR"/>
+                        <outlet property="buttonGoBack" destination="KId-N9-eI5" id="nQT-CB-Bhc"/>
+                        <outlet property="buttonGoForward" destination="v7g-Qx-ued" id="dQs-kp-MzS"/>
+                        <outlet property="historyCountLabel" destination="peK-Qa-hz6" id="SyS-p3-l1J"/>
+                        <outlet property="stockFetchDataButton" destination="d8u-cz-LCh" id="LcV-jC-7NF"/>
+                        <outlet property="stockInfoResultsTextField" destination="ZRa-MZ-iDe" id="bgm-GF-o93"/>
+                        <outlet property="symbolTextField" destination="v6Z-dw-Cwb" id="wnN-Ps-IfX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MQN-mY-6Vn" userLabel="First Responder" sceneMemberID="firstResponder"/>
