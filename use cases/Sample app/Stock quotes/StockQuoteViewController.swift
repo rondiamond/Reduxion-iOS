@@ -14,7 +14,8 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber {
 
     @IBOutlet weak var symbolTextField: UITextField!
     @IBOutlet weak var stockFetchDataButton: UIButton!
-    @IBOutlet weak var stockDataResultsTextField: UITextView!
+    @IBOutlet weak var stockInfoResultsTextField: UITextView!
+    
     
     // MARK: - IBOutlets
     
@@ -22,6 +23,7 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber {
     @IBOutlet weak var historyCountLabel: UILabel!
     @IBOutlet weak var buttonGoBack: UIButton!
     @IBOutlet weak var buttonGoForward: UIButton!
+
     
     // MARK: - UIViewController lifecycle
     
@@ -34,8 +36,8 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber {
         LogicCoordinator.unsubscribe(self)
     }
     
-    // MARK: - IBAction
     
+    // MARK: - IBAction
     
     @IBAction func symbolTextFieldValueChanged(_ sender: Any) {
         let hasText = ((sender as! UITextField).text!.count > 0)
@@ -47,29 +49,40 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber {
         LogicCoordinator.performAction(Action.stockQuoteServiceRequest(symbol: symbol))
     }
     
+    
+    // MARK: - Stock info
+    
+    private func updateStockInfoText(with state: AppState) {
+        let stockInfo = state.currentStockInfo
+        self.stockInfoResultsTextField.text = stockInfoText(from: stockInfo)
+    }
+
+    private func stockInfoText(from stockInfo: StockInfo?) -> String {
+        var stockInfoText = ""
+        if let stockInfo = stockInfo {
+            stockInfoText.append("symbol = \(String(describing: stockInfo.symbol))")
+            stockInfoText.append("name = \(String(describing: stockInfo.name))")
+            stockInfoText.append("primaryExchange = \(String(describing: stockInfo.primaryExchange))")
+            stockInfoText.append("sector = \(String(describing: stockInfo.sector))")
+            stockInfoText.append("latestPrice = \(String(describing: stockInfo.latestPrice))")
+            stockInfoText.append("previousClose = \(String(describing: stockInfo.previousClose))")
+            stockInfoText.append("change = \(String(describing: stockInfo.change))")
+            stockInfoText.append("changePercent = \(String(describing: stockInfo.changePercent))%")
+            stockInfoText.append("week52High = \(String(describing: stockInfo.week52High))")
+            stockInfoText.append("week52Low = \(String(describing: stockInfo.week52Low))")
+            stockInfoText.append("latestVolume = \(String(describing: stockInfo.latestVolume))")
+        }
+        return stockInfoText
+    }
+    
+    // MARK: - History navigation
+    
     @IBAction func buttonBackTapped(_ sender: Any) {
         LogicCoordinator.performAction(.goBackInHistory())
     }
     
     @IBAction func buttonForwardTapped(_ sender: Any) {
         LogicCoordinator.performAction(.goForwardInHistory())
-    }
-
-    private func stockDataText(from stock: StockInfo) -> String {
-        var stockDataText = ""
-        if let currentStock = state.currentStockInfo {
-            stockDataText.append("symbol = \(String(describing: currentStock.symbol))")
-            stockDataText.append("name = \(String(describing: currentStock.name))")
-            stockDataText.append("primaryExchange = \(String(describing: currentStock.primaryExchange))")
-            stockDataText.append("sector = \(String(describing: currentStock.sector))")
-            stockDataText.append("latestPrice = \(String(describing: currentStock.latestPrice))")
-            stockDataText.append("previousClose = \(String(describing: currentStock.previousClose))")
-            stockDataText.append("change = \(String(describing: currentStock.change))")
-            stockDataText.append("changePercent = \(String(describing: currentStock.changePercent))%")
-            stockDataText.append("week52High = \(String(describing: currentStock.week52High))")
-            stockDataText.append("week52Low = \(String(describing: currentStock.week52Low))")
-            stockDataText.append("latestVolume = \(String(describing: currentStock.latestVolume))")
-        }
     }
     
     private func updateHistoryState(with state: AppState) {
@@ -81,12 +94,6 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber {
         self.buttonGoBack.isEnabled = state.stocksHistory.canGoBack
         self.buttonGoForward.isEnabled = state.stocksHistory.canGoForward
     }
-
-    private func updateStockDataText(stockDataText: String) {
-      let stockDataText = self.stockDataText(from: <#T##AppState#>)
-                self.stockDataResultsTextField.text = stockDataText
-    }
-    
     
     private func updateHistoryCountLabel(with state: AppState) {
         let historyCountLabelText: String
@@ -106,18 +113,14 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber {
     func update(_ state: AppState, mostRecentAction: Action) {
         switch mostRecentAction {
         case .stockQuoteServiceResponse(_, _):
-            if let result = state.currentCalculation?.result {
-//                let resultText = "\(result)"
-//                self.resultLabel.text = resultText
-                self.updateHistoryState(with: state)
-            }
-        case .goBackCalculationHistory, .goForwardCalculationHistory:
-            self.updateCalculationParameters(with: state)
+            self.updateStockInfoText(with: state)
+            self.updateHistoryState(with: state)
+            break
+        case .goBackInHistory(), .goForwardInHistory():
             self.updateHistoryState(with: state)
             break
         default:
             break
         }
     }
-
 }

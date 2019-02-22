@@ -42,7 +42,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="FETCH DATA"/>
                                 <connections>
-                                    <action selector="stockDataFetchTapped:" destination="XLk-ba-JDL" eventType="touchUpInside" id="nAS-sq-PaJ"/>
+                                    <action selector="stockInfoFetchTapped:" destination="XLk-ba-JDL" eventType="touchUpInside" id="nAS-sq-PaJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KId-N9-eI5">
@@ -100,8 +100,8 @@
                         <outlet property="buttonGoBack" destination="KId-N9-eI5" id="NVe-pK-mEU"/>
                         <outlet property="buttonGoForward" destination="v7g-Qx-ued" id="WxE-aS-wqh"/>
                         <outlet property="historyCountLabel" destination="peK-Qa-hz6" id="Lw8-30-78G"/>
-                        <outlet property="stockDataResultsTextField" destination="ZRa-MZ-iDe" id="l4T-wB-1PO"/>
                         <outlet property="stockFetchDataButton" destination="d8u-cz-LCh" id="zgd-n3-G5N"/>
+                        <outlet property="stockInfoResultsTextField" destination="ZRa-MZ-iDe" id="l4T-wB-1PO"/>
                         <outlet property="symbolTextField" destination="v6Z-dw-Cwb" id="TD5-Qv-kHR"/>
                     </connections>
                 </viewController>
