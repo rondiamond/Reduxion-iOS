@@ -17,23 +17,19 @@ import SwiftyJSON
 
 struct StockQuoteLogic: Logic, HasService {
     var activeService: Service?
-//var realService = StockQuoteService(endpointBaseURL: SERVICE_URL_BASE)
-//var mockService = MockStockQuoteService(endpointBaseURL: SERVICE_URL_BASE)
-
-    var realService = StockQuoteService(endpointBaseURL: SERVICE_URL_BASE)
-    var mockService = MockStockQuoteService(endpointBaseURL: SERVICE_URL_BASE)
-
+var mockService: Service = MockStockQuoteService(endpointBaseURL: SERVICE_URL_BASE)
+var realService: Service = StockQuoteService(endpointBaseURL: SERVICE_URL_BASE)
     
     func performLogic(_ state: AppState, action: Action) {
         switch action {
         case .stockQuoteServiceRequest(let symbol):
-            if service != nil {
+            if activeService != nil {
                 if (symbol.count == 0) {
                     print("Error - can't do stock lookup without a stock symbol!")
                     return
                 }
                 // fetch data via service, and store it (could be real or mock service/data; we don't care)
-                service?.fetchAndStoreData([:])
+                activeService?.fetchAndStoreData([:])
             } else {
                 
             }

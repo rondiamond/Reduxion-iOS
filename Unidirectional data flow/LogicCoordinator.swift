@@ -67,8 +67,6 @@ protocol HasService {
     var realService: Service { get }
 }
 
-}
-
 
 // MARK: AppStateSubscriber
 
