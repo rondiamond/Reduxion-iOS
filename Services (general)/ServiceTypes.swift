@@ -18,7 +18,9 @@ import Foundation
 
 enum LogicCoordinatorServicesType {
     case mock
-    case real
+    case development
+    case staging
+    case production
 }
 
 /**

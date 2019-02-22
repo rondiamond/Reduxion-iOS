@@ -36,7 +36,7 @@ func initializeLogicCoordinator(_ servicesType: LogicCoordinatorServicesType) {
     case .mock:
         LogicCoordinator.sharedInstance.serviceFactory = MockServiceFactory()   // inject a factory of mock services
         break
-    case .real:
+    case .development, .staging, .production:
         LogicCoordinator.sharedInstance.serviceFactory = ServiceFactory()       // inject a factory of real services
         break
     }
@@ -63,8 +63,12 @@ protocol Logic {
  */
 protocol HasService {
     var activeService: Service? { get set }
-    var mockService: Service { get }
-    var realService: Service { get }
+    var serviceTypes: ServiceTypes { get }
+}
+
+struct ServiceTypes {
+    var mockService: Service
+    var realService: Service
 }
 
 

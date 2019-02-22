@@ -37,6 +37,13 @@ protocol ServiceFactoryProtocol {
     var stockQuoteService: StockQuoteServiceProtocol { get }
 }
 
+//enum ServiceEnvironmentType {
+//    case mock
+//    case development
+//    case staging
+//    case production
+//}
+
 
 /**
  Holds references to all relevant services.  These are injected into the LogicController (so that mock services/data can be substituted when needed for testing.)

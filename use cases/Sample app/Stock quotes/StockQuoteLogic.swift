@@ -17,6 +17,19 @@ import SwiftyJSON
 
 struct StockQuoteLogic: Logic, HasService {
     var activeService: Service?
+    var serviceTypes: ServiceTypes {
+        get {
+            return _serviceTypes
+        }
+    }
+    
+private var _serviceTypes: ServiceTypes
+    
+    
+    
+    
+    
+    
 var mockService: Service = MockStockQuoteService(endpointBaseURL: SERVICE_URL_BASE)
 var realService: Service = StockQuoteService(endpointBaseURL: SERVICE_URL_BASE)
     
