@@ -21,77 +21,48 @@ struct StockQuoteLogic: Logic, HasService {
     func performLogic(_ state: AppState, action: Action) {
         switch action {
         case .stockQuoteServiceRequest(let symbol):
-            if let stockQuoteService = service {
+            if service != nil {
                 if (symbol.count == 0) {
                     print("Error - can't do stock lookup without a stock symbol!")
                     return
                 }
                 // fetch data via service, and store it (could be real or mock service/data; we don't care)
-                stockQuoteService.fetchAndStoreData([:])
-            }
-            break
-        case .stockQuoteServiceResponse (let jsonPayload):
-// TODO: parse response, and process data
-
-            if (jsonPayload != JSON.null) {
-                
-                // parse response into a StockInfo object
-                let symbol              = jsonPayload["symbol"].stringValue
-                let companyName         = jsonPayload["companyName"].stringValue
-                let sector              = jsonPayload["sector"].stringValue
-                let primaryExchange     = jsonPayload["primaryExchange"].stringValue
-                let latestPrice         = jsonPayload["latestPrice"].floatValue
-                let latestUpdate        = jsonPayload["latestUpdate"].intValue
-                let latestVolume        = jsonPayload["latestVolume"].intValue
-                let previousClose       = jsonPayload["previousClose"].floatValue
-                let change              = jsonPayload["change"].floatValue
-                let changePercent       = jsonPayload["changePercent"].floatValue
-                let week52High          = jsonPayload["week52High"].floatValue
-                let week52Low           = jsonPayload["week52Low"].floatValue
-
-                let stockData = stockInfo(
-            }
-
-                
-                
-                
-            
-            
-            
-            
-            
-            
-            
-            
-var stockInfo = StockInfo(
-            
-            // append to StocksHistory
-            
-            // update index, current, etc.
-    
-    
-    
-    
-    
-
-                
-                
-    
+                service?.fetchAndStoreData([:])
             } else {
-                print("Error - no response payload!")
+                
+            }
+            break
+
+        case .stockQuoteServiceResponse (let jsonPayload, let error):
+            if (error.count > 0) {
+                print("stockQuoteServiceResponse - error = \(error)")
             }
             
-
+            if (jsonPayload != JSON.null) {
+                var stockInfo = StockInfo()
+                stockInfo.symbol            = jsonPayload["symbol"].stringValue
+                stockInfo.name              = jsonPayload["companyName"].stringValue
+                stockInfo.sector            = jsonPayload["sector"].stringValue
+                stockInfo.primaryExchange   = jsonPayload["primaryExchange"].stringValue
+                stockInfo.latestPrice       = jsonPayload["latestPrice"].floatValue
+                stockInfo.latestUpdate      = jsonPayload["latestUpdate"].intValue
+                stockInfo.latestVolume      = jsonPayload["latestVolume"].intValue
+                stockInfo.previousClose     = jsonPayload["previousClose"].floatValue
+                stockInfo.change            = jsonPayload["change"].floatValue
+                stockInfo.changePercent     = jsonPayload["changePercent"].floatValue
+                stockInfo.week52High        = jsonPayload["week52High"].floatValue
+                stockInfo.week52Low         = jsonPayload["week52Low"].floatValue
             
+                if (state.stocksHistory.history.count > 0),
+                    (state.stocksHistory.currentIndex != nil) {
+                    // remove any 'forward' history states
+                    let subrangeToDelete = state.stocksHistory.currentIndex!..<state.stocksHistory.history.count
+                    state.stocksHistory.history.removeSubrange(subrangeToDelete)
+                }
+                state.stocksHistory.history.append(stockInfo)
+                state.stocksHistory.currentIndex = state.stocksHistory.history.count - 1
+            }
             break
-    
-    
-            
-            
-            break
-
-    
-    
     
         default:
             break

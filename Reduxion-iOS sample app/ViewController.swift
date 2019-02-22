@@ -57,11 +57,11 @@ class ViewController: UIViewController, AppStateSubscriber {
     }
     
     @IBAction func buttonBackTapped(_ sender: Any) {
-        LogicCoordinator.performAction(.goBackCalculationHistory())
+        LogicCoordinator.performAction(.goBackInHistory())
     }
     
     @IBAction func buttonForwardTapped(_ sender: Any) {
-        LogicCoordinator.performAction(.goForwardCalculationHistory())
+        LogicCoordinator.performAction(.goForwardInHistory())
     }
 
     private func updateHistoryState(with state: AppState) {
@@ -70,8 +70,8 @@ class ViewController: UIViewController, AppStateSubscriber {
     }
     
     private func updateHistoryNavigationButtonsState(with state: AppState) {
-        self.buttonGoBack.isEnabled = state.calculations.canGoBack
-        self.buttonGoForward.isEnabled = state.calculations.canGoForward
+        self.buttonGoBack.isEnabled = state.stocksHistory.canGoBack
+        self.buttonGoForward.isEnabled = state.stocksHistory.canGoForward
     }
 
     private func updateCalculationParameters(with state: AppState) {

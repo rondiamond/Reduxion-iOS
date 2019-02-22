@@ -3,18 +3,18 @@ import Foundation
 // MARK: - Data model
 
 struct StockInfo {
-    let symbol: String
-    let companyName: String
-    let companySector: String
-    let primaryExchange: String
-    let latestPrice: Float
-    let latestUpdate: Int   // Unix seconds
-    let latestVolume: Int
-    let previousClose: Float
-    let change: Float
-    let changePercent: Float
-    let week52High: Float
-    let week52Low: Float
+    var symbol: String?
+    var name: String?
+    var sector: String?
+    var primaryExchange: String?
+    var latestPrice: Float?
+    var latestUpdate: Int?   // Unix seconds
+    var latestVolume: Int?
+    var previousClose: Float?
+    var change: Float?
+    var changePercent: Float?
+    var week52High: Float?
+    var week52Low: Float?
 }
 
 /**
