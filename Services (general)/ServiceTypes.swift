@@ -18,11 +18,11 @@ import Foundation
 
 enum LogicCoordinatorServicesType {
     case mock
-    case real
+    case real(ServiceEnvironment)
 }
 
-enum LogicCoordinatorServiceEnvironment {
-    case none   // i.e., mock
+enum ServiceEnvironment {
+//    case none   // i.e., mock
     case development
     case staging
     case production
@@ -36,4 +36,4 @@ let currentLogicCoordinatorServicesType: LogicCoordinatorServicesType = .mock
 /**
  Specifies the type of 'real' service environment, if any.
  */
-let currentLogicCoordinatorServiceEnvironment: LogicCoordinatorServiceEnvironment = .none
+let currentServiceEnvironment: ServiceEnvironment = .none

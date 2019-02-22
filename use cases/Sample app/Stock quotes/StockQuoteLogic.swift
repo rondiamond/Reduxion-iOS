@@ -17,15 +17,28 @@ import SwiftyJSON
 
 struct StockQuoteLogic: Logic, HasService {
     var activeService: Service?
-    var serviceTypes: ServiceTypes {
-        get {
-            return _serviceTypes
+//    var serviceTypes: ServiceTypes {
+//        get {
+//            return _serviceTypes
+//        }
+//    }
+//
+//private var _serviceTypes: ServiceTypes
+    
+    func baseURL(for environment: ServiceEnvironment) -> String? {
+        var baseURL: String
+        
+        switch environment {
+        case .none:
+            break
+        case .development, .staging, .production:
+            baseURL = STOCK_QUOTE_SERVICE_URL_BASE
+            break
         }
+        
+        return baseURL
     }
-    
-private var _serviceTypes: ServiceTypes
-    
-    
+
     
     
     
