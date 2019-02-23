@@ -39,14 +39,16 @@ struct StockQuoteService: StockQuoteServiceProtocol, HasEndpoint {
         return baseURL
     }
 
-    private let _endpointBaseURL: String
+//    private let _endpointBaseURL: String
+//
+//    init(endpointBaseURL: String) {
+//        self._endpointBaseURL = endpointBaseURL
+//    }
 
-    init(endpointBaseURL: String) {
-        self._endpointBaseURL = endpointBaseURL
-    }
+    var endpointBaseURL: String?
     
     func fetchAndStoreData(_ optionalArguments: [String : String]) {
-        assert(self._endpointBaseURL != EMPTY_STRING, "Invalid endpointBaseURL - could not process service request!")
+        assert(self.endpointBaseURL.count > 0, "Invalid endpointBaseURL - could not process service request!")
 
         guard let stockSymbol = optionalArguments[StockQuoteServiceKey_Symbol] else {
             print("Error - can't do stock lookup without a stock symbol!")
@@ -54,7 +56,7 @@ struct StockQuoteService: StockQuoteServiceProtocol, HasEndpoint {
         }
         
         let subpath = String(format: STOCK_QUOTE_SERVICE_URL_FORMAT, stockSymbol)
-        let urlString = self._endpointBaseURL + subpath
+        let urlString = self.endpointBaseURL + subpath
         
         serviceRequestBegan()
         
