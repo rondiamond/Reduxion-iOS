@@ -7,8 +7,7 @@
 //  Licensed per the LICENSE.txt file.
 //
 //  Based upon:
-//  Redux-iOS
-//  Created by Armin Kroll on 12/12/2015.
+//  Redux-iOS - created by Armin Kroll on 12/12/2015.
 //  https://github.com/armin/Redux-iOS/blob/8bf11d9e2495e1e7969d42ea266ec76b59472e1b/LICENSE
 //
 
@@ -56,14 +55,16 @@ protocol Logic {
      Nothing is returned.  Instead, the logic (optionally) mutates the AppState object passed in (if the requested action was something relevant to what that business logic cared about).
      */
     func performLogic(_ state: AppState, action: Action)
-}
 
-/**
- *  Adopted by logic modules which connect with a web service. (The logic module's reference to the Service must be injected, to support unit testing, mock data, etc.).
- */
-protocol HasService {
+    /**
+     *  Utilized by logic modules which connect with a web service. (The logic module's reference to the Service must be injected, to support unit testing, mock data, etc.).
+     */
     var service: Service? { get set }
 }
+
+//protocol HasService {
+//    var service: Service? { get set }
+//}
 
 
 ///**
@@ -149,8 +150,22 @@ class LogicCoordinator {
 
             // grab references to any Services (could be real or mock) from the ServiceFactory
             // ... then inject them into the business logic units that depend on them
-            self.stockQuoteService = _serviceFactory?.stockQuoteService
-            self.stockQuoteLogic.service = self.stockQuoteService
+//            self.stockQuoteService = _serviceFactory?.stockQuoteService
+//            self.stockQuoteLogic.service = self.stockQuoteService
+            
+//            allUseCaseComponents.forEach { (componentsForUseCase) in
+//                componentsForUseCase.logic.service = componentsForUseCase.service
+//            }
+//
+
+            for componentsForUseCase in allUseCaseComponents {
+                componentsForUseCase.logic.service = componentsForUseCase.service
+                
+            }
+
+            
+            
+            
         }
         get {
             return _serviceFactory!

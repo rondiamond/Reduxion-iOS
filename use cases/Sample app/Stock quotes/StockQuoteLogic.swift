@@ -15,7 +15,8 @@
 import Foundation
 import SwiftyJSON
 
-struct StockQuoteLogic: Logic, HasService {
+//struct StockQuoteLogic: Logic, HasService {
+struct StockQuoteLogic: Logic {
     var service: Service?
 //    var serviceTypes: ServiceTypes {
 //        get {

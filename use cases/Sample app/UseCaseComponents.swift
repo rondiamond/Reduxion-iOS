@@ -8,16 +8,44 @@
 
 import Foundation
 
-struct UseCaseComponents {
+struct ComponentsForUseCase {
     var logic: Logic
     var service: Service
     var mockService: Service    // ?
 }
 
-let useCaseComponents: [UseCaseComponents] = [
-    UseCaseComponents(
-        logic: StockQuoteLogic(),
-        service: StockQuoteService(),
-        mockService: MockStockQuoteService()
-    )
-]
+//var allUseCaseComponents: [ComponentsForUseCase] = [
+//    ComponentsForUseCase(
+//        logic: StockQuoteLogic(),
+//        service: StockQuoteService(),
+//        mockService: MockStockQuoteService()
+//    )
+//]
+
+var allUseCaseComponents: [ComponentsForUseCase] = []
+
+func initializeUseCaseComponents() {
+
+    var logic = StockQuoteLogic()
+    var service = StockQuoteService()
+    
+    switch <#value#> {
+    case <#pattern#>:
+        <#code#>
+    default:
+        <#code#>
+    }
+    logic.service =
+    
+    
+    
+    allUseCaseComponents = [ComponentsForUseCase(logic: StockQuoteLogic(),
+                                                 service: StockQuoteService(),
+                                                 mockService: MockStockQuoteService())]
+    
+    
+    
+    
+    
+}
+
