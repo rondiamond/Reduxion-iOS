@@ -28,14 +28,14 @@ protocol Service {
 }
 
 /**
- Protocol adopted by object which implements a 'real' service (vs. a mock service).
+ Protocol adopted by a service which has an external endpoint (e.g., a 'real' service, vs. a mock service).
  Real services must have a base URL, which potentially varies based on the type of environment.
  */
-protocol RealService {
+protocol HasEndpoint {
     /// This service's base URL for the different types of environments.
     static func baseURL(for environment: ServiceEnvironment) -> String?
     
-    /// Service base URL currently in use, injected by the service factory.
+    /// Service base URL currently in use for the current type of environment, injected by the service factory.
     init(endpointBaseURL: String)
 }
 

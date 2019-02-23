@@ -26,10 +26,9 @@ let STOCK_QUOTE_SERVICE_URL_BASE    = "https://api.iextrading.com/1.0/"
 let STOCK_QUOTE_SERVICE_URL_FORMAT  = "stock/%@/quote"
 
 
-
 // MARK: - StockQuoteService
 
-struct StockQuoteService: StockQuoteServiceProtocol {
+struct StockQuoteService: StockQuoteServiceProtocol, HasEndpoint {
     static func baseURL(for environment: ServiceEnvironment) -> String? {
         var baseURL: String
         switch environment {
@@ -40,19 +39,11 @@ struct StockQuoteService: StockQuoteServiceProtocol {
         return baseURL
     }
 
-    /**
-     The base URL for this type of service, for the current environment.  In the form of "https://www.example.com/".
-     Injected by the service factory via the Init method.
-     */
     private let _endpointBaseURL: String
 
     init(endpointBaseURL: String) {
         self._endpointBaseURL = endpointBaseURL
     }
-    
-    
-    
-
     
     func fetchAndStoreData(_ optionalArguments: [String : String]) {
         assert(self._endpointBaseURL != EMPTY_STRING, "Invalid endpointBaseURL - could not process service request!")
@@ -91,8 +82,6 @@ struct StockQuoteService: StockQuoteServiceProtocol {
 }
 
 struct MockStockQuoteService: StockQuoteServiceProtocol {
-    var endpointBaseURL: String
-    
     func fetchAndStoreData(_ optionalArguments: [String : String]) {
         let dispatchDeadline: DispatchTime = .now() + mockServiceSimulatedLatencyInSeconds
         DispatchQueue.main.asyncAfter(deadline: dispatchDeadline) {
