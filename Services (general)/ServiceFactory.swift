@@ -56,9 +56,18 @@ class ServiceFactory: ServiceFactoryProtocol {
     // ... other services go here
 
     init() {
-        let envi
-        self.stockQuoteService = StockQuoteService(endpointBaseURL: StockQuoteService.baseURL(for: currentServiceEnvironment))
-        // ... other services
+        switch currentServiceEnvironmentType {
+        case .mock:
+            assert(false, "Error - ServiceFactory needs an environment type!")
+        case .real(let environment):
+            if let baseURL = StockQuoteService.baseURL(for: environment) {
+                self.stockQuoteService = StockQuoteService(endpointBaseURL: baseURL)
+            } else {
+                assert(false, "Error - ServiceFactory needs a base URL!")
+            }
+            // ... other services
+            break
+        }
     }
 }
 

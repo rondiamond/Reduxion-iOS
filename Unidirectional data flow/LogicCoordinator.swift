@@ -58,6 +58,14 @@ protocol Logic {
     func performLogic(_ state: AppState, action: Action)
 }
 
+/**
+ *  Adopted by logic modules which connect with a web service. (The logic module's reference to the Service must be injected, to support unit testing, mock data, etc.).
+ */
+protocol HasService {
+    var service: Service? { get set }
+}
+
+
 ///**
 // *  Adopted by logic modules which connect with a web service. (The logic module's reference to the Service must be injected, to support unit testing, mock data, etc.).
 // */
@@ -126,18 +134,23 @@ class LogicCoordinator {
     fileprivate var appState = AppState()
     fileprivate var appStateRecalled: Bool = false
     fileprivate var subscribers = [AppStateSubscriber]()
-    fileprivate var _serviceFactory: ServiceFactoryProtocol?
+
+    // MARK: - Logic units
+    fileprivate var stockQuoteLogic = StockQuoteLogic()
     
+    // MARK: - Service handling
+    fileprivate var _serviceFactory: ServiceFactoryProtocol?
+    private var stockQuoteService: StockQuoteServiceProtocol?
+
     var serviceFactory: ServiceFactoryProtocol {
-        // lazy assignment, since Singleton's serviceFactory needs to be dependency injected (after instantiation)
+        // lazy assignment, since Singleton's serviceFactory needs to be dependency-injected (after instantiation)
         set(newServiceFactory) {
             _serviceFactory = newServiceFactory
 
             // grab references to any Services (could be real or mock) from the ServiceFactory
             // ... then inject them into the business logic units that depend on them
-//            self.stockQuoteService = _serviceFactory?.stockQuoteService
-//            self.stockQuoteLogic.activeService = self.stockQuoteService
-            self.logicUnits.forEach(<#T##body: (Logic) throws -> Void##(Logic) throws -> Void#>)
+            self.stockQuoteService = _serviceFactory?.stockQuoteService
+            self.stockQuoteLogic.service = self.stockQuoteService
         }
         get {
             return _serviceFactory!
@@ -147,15 +160,14 @@ class LogicCoordinator {
     
     // MARK: - Logic modules (aka 'reducers')
     
-    // Note: This business logic is the same regardless of whether we're using real or mock data.
-    private var logicUnits: [Logic] = []    // the daisy chain of composable business logic units
-    // Note: The order of logic units in the daisy chain shouldn't matter.  If so, that's a code smell, and dependencies should be handled differently.
-
-//    fileprivate var calculationLogic = CalculationLogic()
-//    fileprivate var stockQuoteLogic = StockQuoteLogic()
-    
-    // MARK: - Service handlers
-    private var stockQuoteService: StockQuoteServiceProtocol?
+    /**
+     The daisy chain of composable business logic units
+     
+     Notes:
+     - This business logic is the same regardless of whether we're using real or mock data.
+     - The order of logic units in the daisy chain shouldn't matter.  If so, that's a code smell, and dependent operations should be handled differently.
+     */
+    private var logicUnits: [Logic] = []
 
     
     // MARK: - Setup
