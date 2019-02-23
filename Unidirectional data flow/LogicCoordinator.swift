@@ -158,7 +158,15 @@ class LogicCoordinator {
     }
     
     
-    // MARK: - Logic modules (aka 'reducers')
+    // MARK: - Setup
+    
+    init() {
+        // no super.init, since this is a base class
+        self.add(logic: StockQuoteLogic())
+    }
+    
+    
+    // MARK: - Logic units (aka 'reducers')
     
     /**
      The daisy chain of composable business logic units
@@ -168,17 +176,6 @@ class LogicCoordinator {
      - The order of logic units in the daisy chain shouldn't matter.  If so, that's a code smell, and dependent operations should be handled differently.
      */
     private var logicUnits: [Logic] = []
-
-    
-    // MARK: - Setup
-    
-    init() {
-        // no super.init, since this is a base class
-        self.add(logic: StockQuoteLogic())
-    }
-    
-    
-    // MARK: - Logic units
     
     /**
      Adds a Logic unit to the logic coordinator's chain of composable business logic.
