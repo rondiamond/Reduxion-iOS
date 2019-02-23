@@ -27,12 +27,12 @@ enum ServiceEnvironment {
     case production
 }
 
-/**
- Selects the type of services injected into the logic coordinator -- i.e., for the running application vs. the unit tests.
- */
-let currentLogicCoordinatorServicesType: LogicCoordinatorServicesType = .mock
+///**
+// Selects the type of services injected into the logic coordinator -- i.e., for the running application vs. the unit tests.
+// */
+//let currentLogicCoordinatorServicesType: LogicCoordinatorServicesType = .mock
 
-/**
- Selects the type of services injected into the logic coordinator; and the service environment, if any.
- */
-let currentServiceEnvironment: LogicCoordinatorServicesType = .real(.production)
+///**
+// Selects the type of services injected into the logic coordinator; and the service environment, if any.
+// */
+//let currentServiceEnvironmentType: LogicCoordinatorServicesType = .real(.production)

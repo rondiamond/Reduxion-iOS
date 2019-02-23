@@ -58,19 +58,19 @@ protocol Logic {
     func performLogic(_ state: AppState, action: Action)
 }
 
-/**
- *  Adopted by logic modules which connect with a web service. (The logic module's reference to the Service must be injected, to support unit testing, mock data, etc.).
- */
-protocol HasService {
-    var activeService: Service? { get set }
-    var serviceTypes: ServiceTypes { get }
-//    func baseURL(for environment: ServiceEnvironment) -> String
-}
-
-struct ServiceTypes {
-    var mockService: Service
-    var realService: Service
-}
+///**
+// *  Adopted by logic modules which connect with a web service. (The logic module's reference to the Service must be injected, to support unit testing, mock data, etc.).
+// */
+//protocol HasService {
+//    var activeService: Service? { get set }
+//    var serviceTypes: ServiceTypes { get }
+////    func baseURL(for environment: ServiceEnvironment) -> String
+//}
+//
+//struct ServiceTypes {
+//    var mockService: Service
+//    var realService: Service
+//}
 
 
 // MARK: AppStateSubscriber
@@ -108,7 +108,7 @@ private func generateUniqueIdentifier() -> String {
  Equatable for AppStateSubscribers. This will allow us to filter them.
  - parameter lhs: The first subscriber to be compared.
  - parameter rhs: The second subscriber to be compared.
- - returns: True if the subscribers have the same identifier; False if not.
+ - returns: True if the subscribers have the different identifiers; False if they're the same.
  */
 func !=(lhs: AppStateSubscriber, rhs: AppStateSubscriber) -> Bool {
     let isInequal = (lhs.appStateSubscriberIdentifier != rhs.appStateSubscriberIdentifier)
@@ -127,11 +127,6 @@ class LogicCoordinator {
     fileprivate var appStateRecalled: Bool = false
     fileprivate var subscribers = [AppStateSubscriber]()
     fileprivate var _serviceFactory: ServiceFactoryProtocol?
-    
-//protocol LogicServiceTypes {
-//    var mock: Service
-//    var real: Service
-//}
     
     var serviceFactory: ServiceFactoryProtocol {
         // lazy assignment, since Singleton's serviceFactory needs to be dependency injected (after instantiation)

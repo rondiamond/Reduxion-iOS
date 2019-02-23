@@ -8,16 +8,7 @@
 
 import Foundation
 
-//func baseURL(for environment: ServiceEnvironment) -> String? {
-//    var baseURL: String
-//
-//    switch environment {
-//    case .none:
-//        break
-//    case .development, .staging, .production:
-//        baseURL = STOCK_QUOTE_SERVICE_URL_BASE
-//        break
-//    }
-//
-//    return baseURL
-//}
+/**
+ Selects the type of services injected into the logic coordinator; and the service environment, if any.
+ */
+let currentServiceEnvironmentType: LogicCoordinatorServicesType = .real(.production)
