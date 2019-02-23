@@ -25,19 +25,19 @@ struct StockQuoteLogic: Logic, HasService {
 //
 //private var _serviceTypes: ServiceTypes
     
-    func baseURL(for environment: ServiceEnvironment) -> String? {
-        var baseURL: String
-        
-        switch environment {
-        case .none:
-            break
-        case .development, .staging, .production:
-            baseURL = STOCK_QUOTE_SERVICE_URL_BASE
-            break
-        }
-        
-        return baseURL
-    }
+//    func baseURL(for environment: ServiceEnvironment) -> String? {
+//        var baseURL: String
+//
+//        switch environment {
+//        case .none:
+//            break
+//        case .development, .staging, .production:
+//            baseURL = STOCK_QUOTE_SERVICE_URL_BASE
+//            break
+//        }
+//
+//        return baseURL
+//    }
 
     
     

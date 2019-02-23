@@ -64,7 +64,7 @@ protocol Logic {
 protocol HasService {
     var activeService: Service? { get set }
     var serviceTypes: ServiceTypes { get }
-    func baseURL(for environment: ServiceEnvironment) -> String
+//    func baseURL(for environment: ServiceEnvironment) -> String
 }
 
 struct ServiceTypes {

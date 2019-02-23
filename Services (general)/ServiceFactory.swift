@@ -21,8 +21,17 @@ import Foundation
  Includes entry point for requesting it to fetch data from its corresponding endpoint (and if applicable, store the results).
  */
 protocol Service {
-    /// Service base URL, injected by the service factory.
+    /// Service base URL currently in use, injected by the service factory.
     var endpointBaseURL: String { get set }
+    
+    
+func baseURL(for environment: ServiceEnvironment) -> String?
+
+    
+    
+    
+    
+    
     
     /**
      Standard 'Service' entry method.  Initiates a fetch from a web service, using possible arguments.  Function returns nothing directly.  Results should be returned via a separate Action, once fetching/parsing is complete.

@@ -26,10 +26,26 @@ let STOCK_QUOTE_SERVICE_URL_BASE    = "https://api.iextrading.com/1.0/"
 let STOCK_QUOTE_SERVICE_URL_FORMAT  = "stock/%@/quote"
 
 
+
 // MARK: - StockQuoteService
 
 struct StockQuoteService: StockQuoteServiceProtocol {
     var endpointBaseURL: String
+    
+    func baseURL(for environment: ServiceEnvironment) -> String? {
+        var baseURL: String
+        switch environment {
+//        case .none:
+//            break
+        case .development, .staging, .production:
+            baseURL = STOCK_QUOTE_SERVICE_URL_BASE
+            break
+        }
+        return baseURL
+    }
+    
+    
+
     
     func fetchAndStoreData(_ optionalArguments: [String : String]) {
         assert(self.endpointBaseURL != EMPTY_STRING, "Invalid endpointBaseURL - could not process service request!")
