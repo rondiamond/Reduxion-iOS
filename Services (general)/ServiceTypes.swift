@@ -22,7 +22,6 @@ enum LogicCoordinatorServicesType {
 }
 
 enum ServiceEnvironment {
-//    case none   // i.e., mock
     case development
     case staging
     case production
@@ -34,6 +33,6 @@ enum ServiceEnvironment {
 let currentLogicCoordinatorServicesType: LogicCoordinatorServicesType = .mock
 
 /**
- Specifies the type of 'real' service environment, if any.
+ Selects the type of services injected into the logic coordinator; and the service environment, if any.
  */
-let currentServiceEnvironment: ServiceEnvironment = .none
+let currentServiceEnvironment: LogicCoordinatorServicesType = .real(.production)

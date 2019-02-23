@@ -36,7 +36,7 @@ func initializeLogicCoordinator(_ servicesType: LogicCoordinatorServicesType) {
     case .mock:
         LogicCoordinator.sharedInstance.serviceFactory = MockServiceFactory()   // inject a factory of mock services
         break
-    case .development, .staging, .production:
+    case .real(_):
         LogicCoordinator.sharedInstance.serviceFactory = ServiceFactory()       // inject a factory of real services
         break
     }

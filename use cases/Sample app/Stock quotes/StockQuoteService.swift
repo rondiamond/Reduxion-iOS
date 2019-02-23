@@ -30,25 +30,32 @@ let STOCK_QUOTE_SERVICE_URL_FORMAT  = "stock/%@/quote"
 // MARK: - StockQuoteService
 
 struct StockQuoteService: StockQuoteServiceProtocol {
-    var endpointBaseURL: String
-    
-    func baseURL(for environment: ServiceEnvironment) -> String? {
+    static func baseURL(for environment: ServiceEnvironment) -> String? {
         var baseURL: String
         switch environment {
-//        case .none:
-//            break
         case .development, .staging, .production:
             baseURL = STOCK_QUOTE_SERVICE_URL_BASE
             break
         }
         return baseURL
     }
+
+    /**
+     The base URL for this type of service, for the current environment.  In the form of "https://www.example.com/".
+     Injected by the service factory via the Init method.
+     */
+    private let _endpointBaseURL: String
+
+    init(endpointBaseURL: String) {
+        self._endpointBaseURL = endpointBaseURL
+    }
+    
     
     
 
     
     func fetchAndStoreData(_ optionalArguments: [String : String]) {
-        assert(self.endpointBaseURL != EMPTY_STRING, "Invalid endpointBaseURL - could not process service request!")
+        assert(self._endpointBaseURL != EMPTY_STRING, "Invalid endpointBaseURL - could not process service request!")
 
         guard let stockSymbol = optionalArguments[StockQuoteServiceKey_Symbol] else {
             print("Error - can't do stock lookup without a stock symbol!")
@@ -56,7 +63,7 @@ struct StockQuoteService: StockQuoteServiceProtocol {
         }
         
         let subpath = String(format: STOCK_QUOTE_SERVICE_URL_FORMAT, stockSymbol)
-        let urlString = self.endpointBaseURL + subpath
+        let urlString = self._endpointBaseURL + subpath
         
         serviceRequestBegan()
         
@@ -65,7 +72,7 @@ struct StockQuoteService: StockQuoteServiceProtocol {
         Alamofire.request(urlString, method: .post, parameters: nil, encoding: URLEncoding.default, headers: headers)
             .validate(contentType: [SERVICE_REQUEST_HEADER_CONTENT_TYPE_JSON])
             .responseString { response in
-                // TODO: handle error (probably in HTML)
+                // handle any non-JSON errors here (e.g., HTML)
             }
             .responseJSON { response in
                 switch response.result {
@@ -73,7 +80,6 @@ struct StockQuoteService: StockQuoteServiceProtocol {
                     let json = SwiftyJSON.JSON(value)
                     parseAndStoreData(json: json, error: nil)
                     break
-                    
                 case .failure(let error):
                     // TODO: handle error case
                     print("Request failed with error: \(error)")

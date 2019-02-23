@@ -21,23 +21,25 @@ import Foundation
  Includes entry point for requesting it to fetch data from its corresponding endpoint (and if applicable, store the results).
  */
 protocol Service {
-    /// Service base URL currently in use, injected by the service factory.
-    var endpointBaseURL: String { get set }
-    
-    
-func baseURL(for environment: ServiceEnvironment) -> String?
-
-    
-    
-    
-    
-    
-    
     /**
      Standard 'Service' entry method.  Initiates a fetch from a web service, using possible arguments.  Function returns nothing directly.  Results should be returned via a separate Action, once fetching/parsing is complete.
      */
     func fetchAndStoreData(_ optionalArguments: [String : String])
 }
+
+/**
+ Protocol adopted by object which implements a 'real' service (vs. a mock service).
+ Real services must have a base URL, which potentially varies based on the type of environment.
+ */
+protocol RealService {
+    /// This service's base URL for the different types of environments.
+    static func baseURL(for environment: ServiceEnvironment) -> String?
+    
+    /// Service base URL currently in use, injected by the service factory.
+    init(endpointBaseURL: String)
+}
+
+
 
 
 // MARK: - Service Factory
@@ -45,14 +47,6 @@ func baseURL(for environment: ServiceEnvironment) -> String?
 protocol ServiceFactoryProtocol {
     var stockQuoteService: StockQuoteServiceProtocol { get }
 }
-
-//enum ServiceEnvironmentType {
-//    case mock
-//    case development
-//    case staging
-//    case production
-//}
-
 
 /**
  Holds references to all relevant services.  These are injected into the LogicController (so that mock services/data can be substituted when needed for testing.)
