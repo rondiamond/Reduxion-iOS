@@ -44,20 +44,21 @@ protocol HasEnvironment {
 // MARK: - Service Factory
 
 protocol ServiceFactoryProtocol {
-    var stockQuoteService: StockQuoteServiceProtocol { get }
+    var stockQuoteService: StockQuoteServiceProtocol? { get }
 }
 
 /**
  Holds references to all relevant services.  These are injected into the LogicController (so that mock services/data can be substituted when needed for testing.)
  */
-class ServiceFactory: ServiceFactoryProtocol {
-    var stockQuoteService: StockQuoteServiceProtocol
+struct ServiceFactory: ServiceFactoryProtocol {
+    var stockQuoteService: StockQuoteServiceProtocol?
     // ... other services go here
 
     init() {
         switch currentServiceEnvironmentType {
-        case .mock:
-            assert(false, "Error - ServiceFactory needs an environment type!")
+//        case .mock:
+//            assert(false, "Error - ServiceFactory needs an environment type!")
+//            break
         case .real(let environment):
             self.stockQuoteService = StockQuoteService(environment: environment)
             // ... other services
@@ -69,10 +70,12 @@ class ServiceFactory: ServiceFactoryProtocol {
 /**
  A mock ServiceFactory, which substitutes mock services/data for testing purposes.  Injected into the LogicController, which in turn injects those references into relevant Logic modules.
  */
-class MockServiceFactory: ServiceFactory {
+struct MockServiceFactory: ServiceFactoryProtocol {
+    var stockQuoteService: StockQuoteServiceProtocol?
+    // ... other services go here
+    
     init(environment: ServiceEnvironment) {
-        super.init()
-        self.stockQuoteService = MockStockQuoteService()
+        self.stockQuoteService = MockStockQuoteService(environment: environment)
         // ... other mock services
     }
 }
