@@ -28,7 +28,7 @@ import Foundation
  Instantiates the Logic Coordinator for the application.
  - parameter servicesType: The type of Service Factory to be used (Production, Mock, etc.).  Allows the opportunity to use real or mock (static) data.
  */
-func initializeLogicCoordinator(_ servicesType: LogicCoordinatorServicesType) {
+func initializeLogicCoordinator(_ servicesType: ServicesType) {
     _ = LogicCoordinator.sharedInstance   // instantiate singleton
 
     switch servicesType {

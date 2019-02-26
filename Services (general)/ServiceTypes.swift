@@ -14,9 +14,9 @@
 
 import Foundation
 
-// MARK: - Services type
+// MARK: - Service type & Environment
 
-enum LogicCoordinatorServicesType {
+enum ServicesType {
     case mock
     case real(ServiceEnvironment)
 }
@@ -25,14 +25,5 @@ enum ServiceEnvironment {
     case development
     case staging
     case production
+    // more as needed ...
 }
-
-///**
-// Selects the type of services injected into the logic coordinator -- i.e., for the running application vs. the unit tests.
-// */
-//let currentLogicCoordinatorServicesType: LogicCoordinatorServicesType = .mock
-
-///**
-// Selects the type of services injected into the logic coordinator; and the service environment, if any.
-// */
-//let currentServiceEnvironmentType: LogicCoordinatorServicesType = .real(.production)

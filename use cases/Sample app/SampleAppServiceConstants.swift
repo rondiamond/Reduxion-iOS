@@ -11,4 +11,4 @@ import Foundation
 /**
  Selects the type of services injected into the logic coordinator; and the service environment, if any.
  */
-let currentServiceEnvironmentType: LogicCoordinatorServicesType = .real(.production)
+let currentServiceEnvironmentType: ServicesType = .real(.production)

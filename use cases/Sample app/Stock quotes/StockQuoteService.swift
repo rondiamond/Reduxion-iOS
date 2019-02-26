@@ -28,14 +28,25 @@ let STOCK_QUOTE_SERVICE_URL_FORMAT  = "stock/%@/quote"
 
 // MARK: - StockQuoteService
 
-struct StockQuoteService: StockQuoteServiceProtocol, HasEndpoint {
-    static func baseURL(for environment: ServiceEnvironment) -> String? {
-        var baseURL: String
+struct StockQuoteService: StockQuoteServiceProtocol, HasEnvironment {
+    private var baseURL: String?
+    
+    init(environment: ServiceEnvironment) {
         switch environment {
         case .development, .staging, .production:
-            baseURL = STOCK_QUOTE_SERVICE_URL_BASE
+            self.baseURL = STOCK_QUOTE_SERVICE_URL_BASE
             break
         }
+        default:
+        break
+    }
+    
+    static func baseURL(for environment: ServiceEnvironment) -> String? {
+//        switch environment {
+//        case .development, .staging, .production:
+//            baseURL = STOCK_QUOTE_SERVICE_URL_BASE
+//            break
+//        }
         return baseURL
     }
 
@@ -84,6 +95,7 @@ struct StockQuoteService: StockQuoteServiceProtocol, HasEndpoint {
 }
 
 struct MockStockQuoteService: StockQuoteServiceProtocol {
+    
     func fetchAndStoreData(_ optionalArguments: [String : String]) {
         let dispatchDeadline: DispatchTime = .now() + mockServiceSimulatedLatencyInSeconds
         DispatchQueue.main.asyncAfter(deadline: dispatchDeadline) {

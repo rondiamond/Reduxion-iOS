@@ -22,24 +22,23 @@ import Foundation
  */
 protocol Service {
     /**
+     Initializes the Service for a particular type of environment.
+     */
+    init(servicesType: ServicesType)
+    
+    /**
      Standard 'Service' entry method.  Initiates a fetch from a web service, using possible arguments.  Function returns nothing directly.  Results should be returned via a separate Action, once fetching/parsing is complete.
      */
     func fetchAndStoreData(_ optionalArguments: [String : String])
 }
 
 /**
- Protocol adopted by a service which has an external endpoint (e.g., a 'real' service, vs. a mock service).
- Real services must have a base URL, which potentially varies based on the type of environment.
+ Protocol adopted by a service which has an external endpoint.
  */
-protocol HasEndpoint {
-    /// This service's base URL for the different types of environments.
-    static func baseURL(for environment: ServiceEnvironment) -> String?
-    
-    /// Service base URL currently in use for the current type of environment, injected by the service factory.
-    init(endpointBaseURL: String)
+protocol HasEnvironment {
+    /// Environment is injected by the service factory.
+    init(environment: ServiceEnvironment)
 }
-
-
 
 
 // MARK: - Service Factory
@@ -75,7 +74,8 @@ class ServiceFactory: ServiceFactoryProtocol {
  A mock ServiceFactory, which substitutes mock services/data for testing purposes.  Injected into the LogicController, which in turn injects those references into relevant Logic modules.
  */
 class MockServiceFactory: ServiceFactory {
-    override init() {
+    init(environment: ServiceEnvironment) {
+        super.init()
         self.stockQuoteService = MockStockQuoteService()
         // ... other mock services
     }
