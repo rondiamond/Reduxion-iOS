@@ -36,19 +36,19 @@ struct StockQuoteService: StockQuoteServiceProtocol, HasEnvironment {
         case .development, .staging, .production:
             self.baseURL = STOCK_QUOTE_SERVICE_URL_BASE
             break
-        }
         default:
-        break
+            break
+        }
     }
     
-    static func baseURL(for environment: ServiceEnvironment) -> String? {
-//        switch environment {
-//        case .development, .staging, .production:
-//            baseURL = STOCK_QUOTE_SERVICE_URL_BASE
-//            break
-//        }
-        return baseURL
-    }
+//    static func baseURL(for environment: ServiceEnvironment) -> String? {
+////        switch environment {
+////        case .development, .staging, .production:
+////            baseURL = STOCK_QUOTE_SERVICE_URL_BASE
+////            break
+////        }
+//        return baseURL
+//    }
 
 //    private let _endpointBaseURL: String
 //
@@ -56,10 +56,8 @@ struct StockQuoteService: StockQuoteServiceProtocol, HasEnvironment {
 //        self._endpointBaseURL = endpointBaseURL
 //    }
 
-    var endpointBaseURL: String?
-    
     func fetchAndStoreData(_ optionalArguments: [String : String]) {
-        assert(self.endpointBaseURL.count > 0, "Invalid endpointBaseURL - could not process service request!")
+        assert((self.baseURL?.count)! > 0, "Invalid endpointBaseURL - could not process service request!")
 
         guard let stockSymbol = optionalArguments[StockQuoteServiceKey_Symbol] else {
             print("Error - can't do stock lookup without a stock symbol!")
@@ -67,7 +65,7 @@ struct StockQuoteService: StockQuoteServiceProtocol, HasEnvironment {
         }
         
         let subpath = String(format: STOCK_QUOTE_SERVICE_URL_FORMAT, stockSymbol)
-        let urlString = self.endpointBaseURL + subpath
+        let urlString = self.baseURL + subpath
         
         serviceRequestBegan()
         
@@ -95,6 +93,8 @@ struct StockQuoteService: StockQuoteServiceProtocol, HasEnvironment {
 }
 
 struct MockStockQuoteService: StockQuoteServiceProtocol {
+    
+    init(environment: ServiceEnvironment) {}
     
     func fetchAndStoreData(_ optionalArguments: [String : String]) {
         let dispatchDeadline: DispatchTime = .now() + mockServiceSimulatedLatencyInSeconds

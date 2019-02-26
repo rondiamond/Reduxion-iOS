@@ -22,9 +22,9 @@ import Foundation
  */
 protocol Service {
     /**
-     Initializes the Service for a particular type of environment.
+     Initializes the Service for a particular type of endpoint environment.
      */
-    init(servicesType: ServicesType)
+    init(environment: ServiceEnvironment)
     
     /**
      Standard 'Service' entry method.  Initiates a fetch from a web service, using possible arguments.  Function returns nothing directly.  Results should be returned via a separate Action, once fetching/parsing is complete.
@@ -59,11 +59,7 @@ class ServiceFactory: ServiceFactoryProtocol {
         case .mock:
             assert(false, "Error - ServiceFactory needs an environment type!")
         case .real(let environment):
-            if let baseURL = StockQuoteService.baseURL(for: environment) {
-                self.stockQuoteService = StockQuoteService(endpointBaseURL: baseURL)
-            } else {
-                assert(false, "Error - ServiceFactory needs a base URL!")
-            }
+            self.stockQuoteService = StockQuoteService(environment: environment)
             // ... other services
             break
         }
