@@ -22,11 +22,6 @@ import Foundation
  */
 protocol Service {
     /**
-     Initializes the Service for a particular type of endpoint environment.
-     */
-    init(environment: ServiceEnvironment)
-    
-    /**
      Standard 'Service' entry method.  Initiates a fetch from a web service, using possible arguments.  Function returns nothing directly.  Results should be returned via a separate Action, once fetching/parsing is complete.
      */
     func fetchAndStoreData(_ optionalArguments: [String : String])
@@ -43,39 +38,22 @@ protocol HasEnvironment {
 
 // MARK: - Service Factory
 
-protocol ServiceFactoryProtocol {
-    var stockQuoteService: StockQuoteServiceProtocol? { get }
-}
-
 /**
- Holds references to all relevant services.  These are injected into the LogicController (so that mock services/data can be substituted when needed for testing.)
+ Holds references to all relevant services, whether real or mock.  These are injected into the LogicController, which in turn injects those references into relevant Logic modules.
  */
-struct ServiceFactory: ServiceFactoryProtocol {
-    var stockQuoteService: StockQuoteServiceProtocol?
+struct ServiceFactory {
+    var stockQuoteService: Service?
     // ... other services go here
 
-    init() {
-        switch currentServiceEnvironmentType {
-//        case .mock:
-//            assert(false, "Error - ServiceFactory needs an environment type!")
-//            break
+    init(environmentType: ServicesType) {
+        switch currentServicesType {
+        case .mock:
+            self.stockQuoteService = MockStockQuoteService()
+            break
         case .real(let environment):
             self.stockQuoteService = StockQuoteService(environment: environment)
             // ... other services
             break
         }
-    }
-}
-
-/**
- A mock ServiceFactory, which substitutes mock services/data for testing purposes.  Injected into the LogicController, which in turn injects those references into relevant Logic modules.
- */
-struct MockServiceFactory: ServiceFactoryProtocol {
-    var stockQuoteService: StockQuoteServiceProtocol?
-    // ... other services go here
-    
-    init(environment: ServiceEnvironment) {
-        self.stockQuoteService = MockStockQuoteService(environment: environment)
-        // ... other mock services
     }
 }

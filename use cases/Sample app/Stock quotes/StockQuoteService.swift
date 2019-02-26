@@ -11,9 +11,9 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-protocol StockQuoteServiceProtocol: Service {
-    // protocol to ensure proper typing in LogicCoordinator and ServiceFactory
-}
+//protocol StockQuoteServiceProtocol: Service {
+//    // protocol to ensure proper typing in LogicCoordinator and ServiceFactory
+//}
 
 // MARK: - Dictionary keys
 
@@ -28,7 +28,7 @@ let STOCK_QUOTE_SERVICE_URL_FORMAT  = "stock/%@/quote"
 
 // MARK: - StockQuoteService
 
-struct StockQuoteService: StockQuoteServiceProtocol, HasEnvironment {
+struct StockQuoteService: Service, HasEnvironment {
     private var baseURL: String?
     
     init(environment: ServiceEnvironment) {
@@ -36,26 +36,9 @@ struct StockQuoteService: StockQuoteServiceProtocol, HasEnvironment {
         case .development, .staging, .production:
             self.baseURL = STOCK_QUOTE_SERVICE_URL_BASE
             break
-        default:
-            break
         }
     }
     
-//    static func baseURL(for environment: ServiceEnvironment) -> String? {
-////        switch environment {
-////        case .development, .staging, .production:
-////            baseURL = STOCK_QUOTE_SERVICE_URL_BASE
-////            break
-////        }
-//        return baseURL
-//    }
-
-//    private let _endpointBaseURL: String
-//
-//    init(endpointBaseURL: String) {
-//        self._endpointBaseURL = endpointBaseURL
-//    }
-
     func fetchAndStoreData(_ optionalArguments: [String : String]) {
         assert((self.baseURL?.count)! > 0, "Invalid endpointBaseURL - could not process service request!")
 
@@ -65,7 +48,7 @@ struct StockQuoteService: StockQuoteServiceProtocol, HasEnvironment {
         }
         
         let subpath = String(format: STOCK_QUOTE_SERVICE_URL_FORMAT, stockSymbol)
-        let urlString = self.baseURL + subpath
+        let urlString = self.baseURL! + subpath
         
         serviceRequestBegan()
         
@@ -86,15 +69,15 @@ struct StockQuoteService: StockQuoteServiceProtocol, HasEnvironment {
                     // TODO: handle error case
                     print("Request failed with error: \(error)")
                 }
-                
-                serviceRequestEnded()
         }
+        
+        serviceRequestEnded()
     }
 }
 
-struct MockStockQuoteService: StockQuoteServiceProtocol {
+struct MockStockQuoteService: Service {
     
-    init(environment: ServiceEnvironment) {}
+//    init(environment: ServiceEnvironment?) {}
     
     func fetchAndStoreData(_ optionalArguments: [String : String]) {
         let dispatchDeadline: DispatchTime = .now() + mockServiceSimulatedLatencyInSeconds
@@ -119,7 +102,7 @@ struct MockStockQuoteService: StockQuoteServiceProtocol {
     }
 }
 
-internal func parseAndStoreData(json: JSON, error: String?) {
+fileprivate func parseAndStoreData(json: JSON, error: String?) {
     LogicCoordinator.performAction(Action.stockQuoteServiceResponse(json: json, error: error))
     // hand off payload as-is - will be parsed by Logic unit
 }

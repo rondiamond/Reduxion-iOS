@@ -44,8 +44,8 @@ struct StockQuoteLogic: Logic {
     
     
     
-var mockService: Service = MockStockQuoteService()
-var realService: Service = StockQuoteService(endpointBaseURL: STOCK_QUOTE_SERVICE_URL_BASE)
+//var mockService: Service = MockStockQuoteService()
+//var realService: Service = StockQuoteService(endpointBaseURL: STOCK_QUOTE_SERVICE_URL_BASE)
     
     func performLogic(_ state: AppState, action: Action) {
         switch action {

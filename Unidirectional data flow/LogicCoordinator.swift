@@ -30,15 +30,7 @@ import Foundation
  */
 func initializeLogicCoordinator(_ servicesType: ServicesType) {
     _ = LogicCoordinator.sharedInstance   // instantiate singleton
-
-    switch servicesType {
-    case .mock:
-        LogicCoordinator.sharedInstance.serviceFactory = MockServiceFactory()   // inject a factory of mock services
-        break
-    case .real(_):
-        LogicCoordinator.sharedInstance.serviceFactory = ServiceFactory()       // inject a factory of real services
-        break
-    }
+    LogicCoordinator.sharedInstance.serviceFactory = ServiceFactory(environmentType: currentServicesType)
 }
 
 
@@ -140,10 +132,11 @@ class LogicCoordinator {
     fileprivate var stockQuoteLogic = StockQuoteLogic()
     
     // MARK: - Service handling
-    fileprivate var _serviceFactory: ServiceFactoryProtocol?
-    private var stockQuoteService: StockQuoteServiceProtocol?
+    fileprivate var _serviceFactory: ServiceFactory?
+    private var stockQuoteService: Service?
+//    private var services:
 
-    var serviceFactory: ServiceFactoryProtocol {
+    var serviceFactory: ServiceFactory {
         // lazy assignment, since Singleton's serviceFactory needs to be dependency-injected (after instantiation)
         set(newServiceFactory) {
             _serviceFactory = newServiceFactory
