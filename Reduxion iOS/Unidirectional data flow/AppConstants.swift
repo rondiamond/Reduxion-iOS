@@ -8,17 +8,6 @@
 
 import Foundation
 
-/*
-/**
- Selects the type of services injected into the logic coordinator; and the service environment, if any.
- */
-let currentServicesType: ServicesType = .real(.production)
- */
-
-protocol AppComponents {
-    var allUseCaseComponents: [UseCaseComponents] { get }
-}
-
 struct ServiceHandlers {
     var mock: Service
     var real: Service
@@ -28,4 +17,8 @@ struct UseCaseComponents {
     var name: String
     var logic: Logic
     var services: ServiceHandlers
+}
+
+protocol AppComponents {
+    var allUseCaseComponents: [UseCaseComponents] { get }
 }

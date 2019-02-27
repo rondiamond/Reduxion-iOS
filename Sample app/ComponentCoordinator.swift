@@ -18,12 +18,17 @@ struct ComponentCoordinator: AppComponents, CurrentServicesType {
         for useCaseComponents in allUseCaseComponents {
             var logic = useCaseComponents.logic
             let service: Service
+            
             switch currentServicesType {
             case .mock:
                 service = useCaseComponents.services.mock
                 break
-            case .real(let environment):
+            case .real(_):
                 service = useCaseComponents.services.real
+                if (service is HasEnvironment) {
+
+                    
+                }
                 break
             }
             logic.service = service
@@ -31,38 +36,10 @@ struct ComponentCoordinator: AppComponents, CurrentServicesType {
         }
 
         initializeLogicCoordinator(logicUnits: logicUnits)
-        
-
-        
-        // inject into Logic Coordinator
-//        initializeLogicCoordinator(logicUnits: <#T##[Logic]#>
-
-//        _ = LogicCoordinator.sharedInstance   // instantiate singleton
-//        initializeLogicCoordinator(logicUnits: <#T##[Logic]#>)
-//        LogicCoordinator.sharedInstance.serviceFactory = ServiceFactory(environmentType: currentServicesType)
-
-
-//        ServiceFactory.init(environmentType: currentServicesType)
-        
-        
-
-        
-        
-        // initialize LogicCoordinator w/ logic units
-        
-        
-        
-        
-        
-        
-        
     }
-    
-    
 
     var allUseCaseComponents: [UseCaseComponents] {
         get {
-//            var _allUseCaseComponents: [UseCaseComponents]
             let _allUseCaseComponents: [UseCaseComponents] = [
                 UseCaseComponents.init(name: "StockQuote",
                                        logic: StockQuoteLogic(),
@@ -70,11 +47,8 @@ struct ComponentCoordinator: AppComponents, CurrentServicesType {
                                                                       real: StockQuoteService() )
                 )
                 ]
-                
                 return _allUseCaseComponents
             }
         }
+
 }
-
-
-

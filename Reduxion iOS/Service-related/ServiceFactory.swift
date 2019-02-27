@@ -21,24 +21,29 @@ import Foundation
  Includes entry point for requesting it to fetch data from its corresponding endpoint (and if applicable, store the results).
  */
 protocol Service {
+    var environment: ServiceEnvironment? { get set }
+    
     /**
      Standard 'Service' entry method.  Initiates a fetch from a web service, using possible arguments.  Function returns nothing directly.  Results should be returned via a separate Action, once fetching/parsing is complete.
      */
     func fetchAndStoreData(_ optionalArguments: [String : String])
 }
 
+/*
 /**
  Protocol adopted by a service which has an external endpoint.
  */
 protocol HasEnvironment {
     /// Environment is injected by the service factory.
 //    init(environment: ServiceEnvironment)
-    var environment: ServiceEnvironment? { get set }
+//    var environment: ServiceEnvironment? { get set }
 }
+ */
 
 
 // MARK: - Service Factory
 
+/*
 /**
  Holds references to all relevant services, whether real or mock.  These are injected into the LogicController, which in turn injects those references into relevant Logic modules.
  */
@@ -61,3 +66,4 @@ struct ServiceFactory {
         }
     }
 }
+*/
