@@ -9,7 +9,7 @@
 
 import UIKit
 
-class StockQuoteViewController: UIViewController, AppStateSubscriber {
+class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFieldDelegate {
     var appStateSubscriberIdentifier: String = ""
 
     // MARK: - IBOutlets
@@ -26,6 +26,7 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.symbolTextField.delegate = self
         LogicCoordinator.subscribe(self)
     }
 
@@ -39,6 +40,15 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber {
     @IBAction func symbolTextFieldValueChanged(_ sender: Any) {
         let hasText = ((sender as! UITextField).text!.count > 0)
         self.stockFetchDataButton.isEnabled = hasText
+    }
+    
+//    @IBAction func symbolTextFieldEditingDidEnd(_ sender: Any) {
+//        self.stockFetchDataTapped(sender)
+//    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.stockFetchDataTapped(textField)
+        return true
     }
     
     @IBAction func stockFetchDataTapped(_ sender: Any) {
