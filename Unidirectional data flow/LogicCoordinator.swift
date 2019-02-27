@@ -135,6 +135,10 @@ class LogicCoordinator {
     fileprivate var _serviceFactory: ServiceFactory?
     private var stockQuoteService: Service?
 //    private var services:
+    
+//    struct ServiceLogicPairs {
+//        <#fields#>
+//    }
 
     var serviceFactory: ServiceFactory {
         // lazy assignment, since Singleton's serviceFactory needs to be dependency-injected (after instantiation)
@@ -151,10 +155,10 @@ class LogicCoordinator {
 //            }
 //
 
-            for componentsForUseCase in allUseCaseComponents {
-                componentsForUseCase.logic.service = componentsForUseCase.service
-                
-            }
+//            for componentsForUseCase in allUseCaseComponents {
+//                componentsForUseCase.logic.service = componentsForUseCase.service
+//
+//            }
 
             
             
