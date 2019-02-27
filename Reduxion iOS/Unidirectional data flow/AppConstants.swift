@@ -16,7 +16,6 @@ let currentServicesType: ServicesType = .real(.production)
  */
 
 protocol AppComponents {
-    var currentServicesType: ServicesType { get }
     var allUseCaseComponents: [UseCaseComponents] { get }
 }
 

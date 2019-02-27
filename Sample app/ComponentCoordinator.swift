@@ -10,23 +10,13 @@ import Foundation
 
 struct ComponentCoordinator: AppComponents, CurrentServicesType {
     
-    let currentServicesType: ServicesType = .real(.production)
+    internal let currentServicesType: ServicesType = .real(.production)
 
     init() {
-
         
-        
-        
-        // get current environment
-        
-        ServiceFactory.init(environmentType: currentServicesType)
-
-        
-        // make list of Logic units
-        
-        var logicUnits: [Logic]
+        var logicUnits: [Logic] = []
         for useCaseComponents in allUseCaseComponents {
-            let logic = useCaseComponents.logic
+            var logic = useCaseComponents.logic
             let service: Service
             switch currentServicesType {
             case .mock:
@@ -34,26 +24,28 @@ struct ComponentCoordinator: AppComponents, CurrentServicesType {
                 break
             case .real(let environment):
                 service = useCaseComponents.services.real
-                
                 break
             }
-            
-            
-            let service = useCaseComponents.services.
-            
-            
-            // get Service for that Logic
-            // append to list of LogicUnits
-            
-            
+            logic.service = service
+            logicUnits.append(logic)
         }
+
+        initializeLogicCoordinator(logicUnits: logicUnits)
         
+
         
         // inject into Logic Coordinator
 //        initializeLogicCoordinator(logicUnits: <#T##[Logic]#>
 
-        LogicCoordinator.sharedInstance
+//        _ = LogicCoordinator.sharedInstance   // instantiate singleton
+//        initializeLogicCoordinator(logicUnits: <#T##[Logic]#>)
+//        LogicCoordinator.sharedInstance.serviceFactory = ServiceFactory(environmentType: currentServicesType)
+
+
+//        ServiceFactory.init(environmentType: currentServicesType)
         
+        
+
         
         
         // initialize LogicCoordinator w/ logic units
@@ -67,49 +59,21 @@ struct ComponentCoordinator: AppComponents, CurrentServicesType {
     }
     
     
-    
-    
-    
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var allUseCaseComponents: [UseCaseComponents] {
-    get {
-        var _allUseCaseComponents: [UseCaseComponents]
-        _allUseCaseComponents = {
-            UseCaseComponents.init(name: "StockQuote",
-                                   logic: StockQuoteLogic(),
-                                   services: ServiceHandlers.init(mock: MockStockQuoteService(),
-                                                                  real: StockQuoteService())    // FIX
-            )
+    var allUseCaseComponents: [UseCaseComponents] {
+        get {
+//            var _allUseCaseComponents: [UseCaseComponents]
+            let _allUseCaseComponents: [UseCaseComponents] = [
+                UseCaseComponents.init(name: "StockQuote",
+                                       logic: StockQuoteLogic(),
+                                       services: ServiceHandlers.init(mock: MockStockQuoteService(),
+                                                                      real: StockQuoteService() )
+                )
+                ]
+                
+                return _allUseCaseComponents
+            }
         }
-        
-        return _allUseCaseComponents
-    }
 }
 
 
