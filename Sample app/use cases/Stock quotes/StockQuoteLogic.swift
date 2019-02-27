@@ -56,7 +56,7 @@ struct StockQuoteLogic: Logic {
                     return
                 }
                 // fetch data via service, and store it (could be real or mock service/data; we don't care)
-                service?.fetchAndStoreData([:])
+                service?.fetchAndStoreData([StockQuoteServiceKey_Symbol : symbol])
             } else {
                 
             }
