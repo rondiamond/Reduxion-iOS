@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
 //        initializeLogicCoordinator(currentServicesType)
-_ = ComponentCoordinator.init()
+_ = ComponentFactory.init()
         
         return true
     }

@@ -56,7 +56,7 @@ class StockQuoteSpec: QuickSpec, AppStateSubscriber {
             print("** beforeSuite **")
 //            initializeLogicCoordinator(currentServicesType)
 
-            ComponentCoordinator.init()
+            ComponentFactory.init()
             
             
             let stockQuoteLogic = StockQuoteLogic()

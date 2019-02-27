@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ComponentCoordinator: AppComponents, CurrentServicesType {
+struct ComponentFactory: AppComponents, CurrentServicesType {
     
     internal let currentServicesType: ServicesType = .real(.production)
 
