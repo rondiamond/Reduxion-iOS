@@ -13,28 +13,22 @@ struct ComponentCoordinator: AppComponents, CurrentServicesType {
     internal let currentServicesType: ServicesType = .real(.production)
 
     init() {
-        
         var logicUnits: [Logic] = []
-        for useCaseComponents in allUseCaseComponents {
-            var logic = useCaseComponents.logic
+        for componentsForUseCase in allUseCaseComponents {
+            var logic = componentsForUseCase.logic
             let service: Service
             
             switch currentServicesType {
             case .mock:
-                service = useCaseComponents.services.mock
+                service = componentsForUseCase.services.mock
                 break
             case .real(_):
-                service = useCaseComponents.services.real
-                if (service is HasEnvironment) {
-
-                    
-                }
+                service = componentsForUseCase.services.real
                 break
             }
             logic.service = service
             logicUnits.append(logic)
         }
-
         initializeLogicCoordinator(logicUnits: logicUnits)
     }
 

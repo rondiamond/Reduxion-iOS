@@ -150,14 +150,15 @@ class LogicCoordinator {
     fileprivate var stockQuoteLogic = StockQuoteLogic()
     
     // MARK: - Service handling
-    fileprivate var _serviceFactory: ServiceFactory?
-    private var stockQuoteService: Service?
+//    fileprivate var _serviceFactory: ServiceFactory?
+//    private var stockQuoteService: Service?
 //    private var services:
     
 //    struct ServiceLogicPairs {
 //        <#fields#>
 //    }
 
+    /*
     var serviceFactory: ServiceFactory {
         // lazy assignment, since Singleton's serviceFactory needs to be dependency-injected (after instantiation)
         set(newServiceFactory) {
@@ -186,6 +187,7 @@ class LogicCoordinator {
             return _serviceFactory!
         }
     }
+     */
     
     
     // MARK: - Setup
