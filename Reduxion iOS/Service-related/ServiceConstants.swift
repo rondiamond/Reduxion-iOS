@@ -15,6 +15,10 @@ import Foundation
 
 // MARK: - Service type & Environment
 
+protocol CurrentServicesType {
+    let currentServicesType: ServicesType
+}
+
 enum ServicesType {
     case mock
     case real(ServiceEnvironment)

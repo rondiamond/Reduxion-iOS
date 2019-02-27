@@ -8,12 +8,19 @@
 
 import Foundation
 
-struct ComponentCoordinator: AppComponents {
+struct ComponentCoordinator: AppComponents, CurrentServicesType {
+    let currentServicesType: ServicesType = .real(.production)
 
+//    var allUseCaseComponents: [UseCaseComponents]
+    
+    
+
+
+    
     init() {
         
         // get current environment
-        let currentEnvironment = curr
+//        let currentEnvironment = curr
         
         // initialize ServiceFactory, based on environment
         

@@ -20,11 +20,6 @@ protocol AppComponents {
     var allUseCaseComponents: [UseCaseComponents] { get }
 }
 
-protocol CurrentServicesType {
-    <#requirements#>
- let currentServicesType: ServicesType = .real(.production)
-}
-
 struct ServiceHandlers {
     var mock: Service
     var real: Service
@@ -35,4 +30,3 @@ struct UseCaseComponents {
     var logic: Logic
     var services: ServiceHandlers
 }
-
