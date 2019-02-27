@@ -65,17 +65,17 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
     private func stockInfoText(from stockInfo: StockInfo?) -> String {
         var stockInfoText = ""
         if let stockInfo = stockInfo {
-            stockInfoText.append("symbol = \(String(describing: stockInfo.symbol))")
-            stockInfoText.append("name = \(String(describing: stockInfo.name))")
-            stockInfoText.append("primaryExchange = \(String(describing: stockInfo.primaryExchange))")
-            stockInfoText.append("sector = \(String(describing: stockInfo.sector))")
-            stockInfoText.append("latestPrice = \(String(describing: stockInfo.latestPrice))")
-            stockInfoText.append("previousClose = \(String(describing: stockInfo.previousClose))")
-            stockInfoText.append("change = \(String(describing: stockInfo.change))")
-            stockInfoText.append("changePercent = \(String(describing: stockInfo.changePercent))%")
-            stockInfoText.append("week52High = \(String(describing: stockInfo.week52High))")
-            stockInfoText.append("week52Low = \(String(describing: stockInfo.week52Low))")
-            stockInfoText.append("latestVolume = \(String(describing: stockInfo.latestVolume))")
+            stockInfoText.append("symbol = \(String(describing: stockInfo.symbol))\n")
+            stockInfoText.append("name = \(String(describing: stockInfo.name))\n")
+            stockInfoText.append("primaryExchange = \(String(describing: stockInfo.primaryExchange))\n")
+            stockInfoText.append("sector = \(String(describing: stockInfo.sector))\n")
+            stockInfoText.append("latestPrice = \(String(describing: stockInfo.latestPrice))\n")
+            stockInfoText.append("previousClose = \(String(describing: stockInfo.previousClose))\n")
+            stockInfoText.append("change = \(String(describing: stockInfo.change))\n")
+            stockInfoText.append("changePercent = \(String(describing: stockInfo.changePercent))%\n")
+            stockInfoText.append("week52High = \(String(describing: stockInfo.week52High))\n")
+            stockInfoText.append("week52Low = \(String(describing: stockInfo.week52Low))\n")
+            stockInfoText.append("latestVolume = \(String(describing: stockInfo.latestVolume))\n")
         }
         return stockInfoText
     }

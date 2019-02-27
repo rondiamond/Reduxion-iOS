@@ -88,6 +88,7 @@ struct StockQuoteLogic: Logic {
                     let subrangeToDelete = state.stocksHistory.currentIndex!..<state.stocksHistory.history.count
                     state.stocksHistory.history.removeSubrange(subrangeToDelete)
                 }
+                state.currentStockInfo = stockInfo
                 state.stocksHistory.history.append(stockInfo)
                 state.stocksHistory.currentIndex = state.stocksHistory.history.count - 1
             }
