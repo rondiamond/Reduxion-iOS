@@ -8,6 +8,62 @@
 
 import Foundation
 
+struct ComponentCoordinator: AppConstants {
+
+    init() {
+        
+        // get current environment
+        
+        // initialize ServiceFactory, based on environment
+        
+        // initialize LogicCoordinator w/ logic units
+        
+        
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var allUseCaseComponents: [UseCaseComponents] {
     get {
         var _allUseCaseComponents: [UseCaseComponents]
@@ -21,17 +77,4 @@ var allUseCaseComponents: [UseCaseComponents] {
         
         return _allUseCaseComponents
     }
-}
-
-
-
-struct UseCaseComponents {
-    var name: String
-    var logic: Logic
-    var services: ServiceHandlers
-}
-
-struct ServiceHandlers {
-    var mock: Service
-    var real: Service
 }

@@ -24,6 +24,7 @@ import Foundation
 
 // MARK: - Initialization
 
+/*
 /**
  Instantiates the Logic Coordinator for the application.
  - parameter servicesType: The type of Service Factory to be used (Production, Mock, etc.).  Allows the opportunity to use real or mock (static) data.
@@ -35,6 +36,8 @@ func initializeLogicCoordinator(_ servicesType: ServicesType) {
     
     
 }
+ 
+ 
 
 func initializeLogicUnits() -> [Logic] {
 
