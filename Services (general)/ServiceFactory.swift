@@ -42,8 +42,11 @@ protocol HasEnvironment {
  Holds references to all relevant services, whether real or mock.  These are injected into the LogicController, which in turn injects those references into relevant Logic modules.
  */
 struct ServiceFactory {
-    var stockQuoteService: Service?
-    // ... other services go here
+    private var services: [Service]
+    
+    
+//    var stockQuoteService: Service?
+//    // ... other services go here
 
     init(environmentType: ServicesType) {
         switch currentServicesType {

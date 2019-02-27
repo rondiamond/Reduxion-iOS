@@ -31,7 +31,18 @@ import Foundation
 func initializeLogicCoordinator(_ servicesType: ServicesType) {
     _ = LogicCoordinator.sharedInstance   // instantiate singleton
     LogicCoordinator.sharedInstance.serviceFactory = ServiceFactory(environmentType: currentServicesType)
+    
+    
+    
 }
+
+func initializeLogicUnits() -> [Logic] {
+
+    
+    
+    
+}
+
 
 
 // MARK: - Protocols
