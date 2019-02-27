@@ -42,10 +42,6 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
         self.stockFetchDataButton.isEnabled = hasText
     }
     
-//    @IBAction func symbolTextFieldEditingDidEnd(_ sender: Any) {
-//        self.stockFetchDataTapped(sender)
-//    }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.stockFetchDataTapped(textField)
         return true

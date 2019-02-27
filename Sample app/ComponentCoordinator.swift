@@ -40,18 +40,19 @@ struct ComponentCoordinator: AppComponents, CurrentServicesType {
         }
         initializeLogicCoordinator(logicUnits: logicUnits)
     }
-
+    
     var allUseCaseComponents: [UseCaseComponents] {
         get {
             let _allUseCaseComponents: [UseCaseComponents] = [
                 UseCaseComponents.init(name: "StockQuote",
                                        logic: StockQuoteLogic(),
                                        services: ServiceHandlers.init(mock: MockStockQuoteService(),
-                                                                      real: StockQuoteService() )
+                                                                      real: StockQuoteService()
+                    )
                 )
-                ]
-                return _allUseCaseComponents
-            }
+            ]
+            return _allUseCaseComponents
         }
-
+    }
+    
 }

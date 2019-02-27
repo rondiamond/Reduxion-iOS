@@ -35,8 +35,8 @@ class StockQuoteService: Service {
     
     var environment: ServiceEnvironment? {
         set {
-            if (environment != nil) {
-                switch environment! {
+            if (newValue != nil) {
+                switch newValue! {
                 case .development, .staging, .production:
                     self.baseURL = STOCK_QUOTE_SERVICE_URL_BASE
                     break
