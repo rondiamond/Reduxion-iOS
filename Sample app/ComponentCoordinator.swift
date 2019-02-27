@@ -9,20 +9,52 @@
 import Foundation
 
 struct ComponentCoordinator: AppComponents, CurrentServicesType {
+    
     let currentServicesType: ServicesType = .real(.production)
 
-//    var allUseCaseComponents: [UseCaseComponents]
-    
-    
-
-
-    
     init() {
+
+        
+        
         
         // get current environment
-//        let currentEnvironment = curr
         
-        // initialize ServiceFactory, based on environment
+        ServiceFactory.init(environmentType: currentServicesType)
+
+        
+        // make list of Logic units
+        
+        var logicUnits: [Logic]
+        for useCaseComponents in allUseCaseComponents {
+            let logic = useCaseComponents.logic
+            let service: Service
+            switch currentServicesType {
+            case .mock:
+                service = useCaseComponents.services.mock
+                break
+            case .real(let environment):
+                service = useCaseComponents.services.real
+                
+                break
+            }
+            
+            
+            let service = useCaseComponents.services.
+            
+            
+            // get Service for that Logic
+            // append to list of LogicUnits
+            
+            
+        }
+        
+        
+        // inject into Logic Coordinator
+//        initializeLogicCoordinator(logicUnits: <#T##[Logic]#>
+
+        LogicCoordinator.sharedInstance
+        
+        
         
         // initialize LogicCoordinator w/ logic units
         
@@ -38,13 +70,6 @@ struct ComponentCoordinator: AppComponents, CurrentServicesType {
     
     
     
-    
-}
-
-
-
-
-
 
 
 
@@ -86,3 +111,6 @@ var allUseCaseComponents: [UseCaseComponents] {
         return _allUseCaseComponents
     }
 }
+
+
+

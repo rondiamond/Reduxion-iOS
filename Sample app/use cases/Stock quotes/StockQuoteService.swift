@@ -31,11 +31,19 @@ let STOCK_QUOTE_SERVICE_URL_FORMAT  = "stock/%@/quote"
 struct StockQuoteService: Service, HasEnvironment {
     private var baseURL: String?
     
-    init(environment: ServiceEnvironment) {
-        switch environment {
-        case .development, .staging, .production:
-            self.baseURL = STOCK_QUOTE_SERVICE_URL_BASE
-            break
+    private var _environment: ServiceEnvironment?
+    var environment: ServiceEnvironment? {
+        set {
+            if (environment != nil) {
+                switch environment! {
+                case .development, .staging, .production:
+                    self.baseURL = STOCK_QUOTE_SERVICE_URL_BASE
+                    break
+                }
+            }
+        }
+        get {
+            return self._environment
         }
     }
     

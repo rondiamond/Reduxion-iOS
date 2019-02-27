@@ -16,7 +16,7 @@ import Foundation
 // MARK: - Service type & Environment
 
 protocol CurrentServicesType {
-    let currentServicesType: ServicesType
+    var currentServicesType: ServicesType { get }
 }
 
 enum ServicesType {

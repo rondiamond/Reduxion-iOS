@@ -32,7 +32,8 @@ protocol Service {
  */
 protocol HasEnvironment {
     /// Environment is injected by the service factory.
-    init(environment: ServiceEnvironment)
+//    init(environment: ServiceEnvironment)
+    var environment: ServiceEnvironment? { get set }
 }
 
 

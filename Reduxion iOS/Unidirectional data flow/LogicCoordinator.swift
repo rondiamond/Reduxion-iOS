@@ -47,6 +47,14 @@ func initializeLogicUnits() -> [Logic] {
 }
  */
 
+func initializeLogicCoordinator(logicUnits: [Logic]) {
+    _ = LogicCoordinator.sharedInstance   // instantiate singleton
+    LogicCoordinator.sharedInstance.logicUnits = logicUnits
+    
+    
+    
+}
+
 
 
 // MARK: - Protocols
@@ -202,7 +210,7 @@ class LogicCoordinator {
      - This business logic is the same regardless of whether we're using real or mock data.
      - The order of logic units in the daisy chain shouldn't matter.  If so, that's a code smell, and dependent operations should be handled differently.
      */
-    private var logicUnits: [Logic] = []
+    fileprivate var logicUnits: [Logic] = []
     
     /**
      Adds a Logic unit to the logic coordinator's chain of composable business logic.

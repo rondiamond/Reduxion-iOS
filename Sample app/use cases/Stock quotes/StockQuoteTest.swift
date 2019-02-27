@@ -54,7 +54,9 @@ class StockQuoteSpec: QuickSpec, AppStateSubscriber {
         beforeSuite {
             print("\n \(self) \(#function) line \(#line); NSDate = \(NSDate.init().timeIntervalSince1970)")
             print("** beforeSuite **")
-            initializeLogicCoordinator(currentServicesType)
+//            initializeLogicCoordinator(currentServicesType)
+            ComponentCoordinator.init()
+            
             
             let stockQuoteLogic = StockQuoteLogic()
             LogicCoordinator.add(logic: stockQuoteLogic)
