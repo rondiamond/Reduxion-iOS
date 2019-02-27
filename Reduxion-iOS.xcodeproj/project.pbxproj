@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E44260AF2137BC6900A218C6 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44260AD2137BC6800A218C6 /* DataModel.swift */; };
 		E442F6082150951A000B37FE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD321314BE400E4E865 /* AppState.swift */; };
-		E45A850B215225B200581DCE /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD521314BE400E4E865 /* ServiceFactory.swift */; };
 		E45A850C215225BC00581DCE /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD421314BE400E4E865 /* Actions.swift */; };
 		E45A853F2152372700581DCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45A853E2152372700581DCE /* AppDelegate.swift */; };
 		E45A85412152372700581DCE /* StockQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45A85402152372700581DCE /* StockQuoteViewController.swift */; };
@@ -19,7 +18,6 @@
 		E45A855021523B0000581DCE /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD421314BE400E4E865 /* Actions.swift */; };
 		E45A855121523B0000581DCE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD321314BE400E4E865 /* AppState.swift */; };
 		E45A855221523B0000581DCE /* LogicCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */; };
-		E45A855421523B0000581DCE /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD521314BE400E4E865 /* ServiceFactory.swift */; };
 		E45A855521523B0500581DCE /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44260AD2137BC6800A218C6 /* DataModel.swift */; };
 		E45A855621523B0A00581DCE /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE882133BFBF00438A8F /* GeneralConstants.swift */; };
 		E45A855721523B0A00581DCE /* ServiceActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */; };
@@ -103,7 +101,6 @@
 		E4CE6AC82131498B00E4E865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../../Reduxion iOS/Reduxion-iOSTests/Info.plist"; sourceTree = "<group>"; };
 		E4CE6AD321314BE400E4E865 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		E4CE6AD421314BE400E4E865 /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
-		E4CE6AD521314BE400E4E865 /* ServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogicCoordinator.swift; sourceTree = "<group>"; };
 		E4D4FE6C2133784300438A8F /* Reduxion-iOSTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Reduxion-iOSTests-Bridging-Header.h"; path = "../../Reduxion iOS/third-party dependencies/Reduxion-iOSTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		E4D4FE742133AE2000438A8F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
@@ -180,7 +177,6 @@
 			children = (
 				E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */,
 				E49569F6221E464E0070FB31 /* ServiceConstants.swift */,
-				E4CE6AD521314BE400E4E865 /* ServiceFactory.swift */,
 			);
 			name = "Service-related";
 			path = "../Reduxion iOS/Service-related";
@@ -426,7 +422,6 @@
 				E45A85412152372700581DCE /* StockQuoteViewController.swift in Sources */,
 				E4BBF61F22262D6B00A1C5FA /* ComponentCoordinator.swift in Sources */,
 				E45A855A21523B1100581DCE /* StockQuoteService.swift in Sources */,
-				E45A855421523B0000581DCE /* ServiceFactory.swift in Sources */,
 				E45A855521523B0500581DCE /* DataModel.swift in Sources */,
 				E45A855721523B0A00581DCE /* ServiceActivityIndicator.swift in Sources */,
 				E45A853F2152372700581DCE /* AppDelegate.swift in Sources */,
@@ -440,7 +435,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E45A850B215225B200581DCE /* ServiceFactory.swift in Sources */,
 				E4BBF62022262D6B00A1C5FA /* ComponentCoordinator.swift in Sources */,
 				E49569F8221E464E0070FB31 /* ServiceConstants.swift in Sources */,
 				E4BBF6212226466E00A1C5FA /* AppDelegate.swift in Sources */,

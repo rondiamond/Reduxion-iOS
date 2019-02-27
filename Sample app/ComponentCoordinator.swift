@@ -13,10 +13,18 @@ struct ComponentCoordinator: AppComponents, CurrentServicesType {
     internal let currentServicesType: ServicesType = .real(.production)
 
     init() {
+        var currentEnvironment: ServiceEnvironment? = nil
+        switch currentServicesType {
+        case .mock:
+            break
+        case .real(let environment):
+            currentEnvironment = environment
+        }
+        
         var logicUnits: [Logic] = []
         for componentsForUseCase in allUseCaseComponents {
             var logic = componentsForUseCase.logic
-            let service: Service
+            var service: Service
             
             switch currentServicesType {
             case .mock:
@@ -24,6 +32,7 @@ struct ComponentCoordinator: AppComponents, CurrentServicesType {
                 break
             case .real(_):
                 service = componentsForUseCase.services.real
+                service.environment = currentEnvironment
                 break
             }
             logic.service = service
