@@ -13,6 +13,21 @@
 
 import Foundation
 
+// MARK: - Service type & Environment
+
+enum ServicesType {
+    case mock
+    case real(ServiceEnvironment)
+}
+
+enum ServiceEnvironment {
+    case development
+    case staging
+    case production
+    // more as needed ...
+}
+
+
 // MARK: - HTTP response codes
 /*
  https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml :
@@ -38,13 +53,11 @@ let HTTP_RESPONSE_STATUS_CODE_403_FORBIDDEN             = 403
 let HTTP_RESPONSE_STATUS_CODE_404_NOT_FOUND             = 404
 let HTTP_RESPONSE_STATUS_CODE_504_GATEWAY_TIMEOUT       = 504
 
-
 // MARK: - Request headers
 let SERVICE_REQUEST_HEADER_CONTENT_TYPE = "Content-Type"
 let SERVICE_REQUEST_HEADER_CONTENT_TYPE_JSON = "application/json"
 let SERVICE_REQUEST_HEADER_GET = "GET"
 let SERVICE_REQUEST_HEADER_POST = "POST"
-
 
 // MARK: - Latency
 let networkTimeoutInSeconds: TimeInterval           = 10.0

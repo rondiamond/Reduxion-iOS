@@ -13,6 +13,7 @@ struct ComponentCoordinator: AppConstants {
     init() {
         
         // get current environment
+        let currentEnvironment = curr
         
         // initialize ServiceFactory, based on environment
         
