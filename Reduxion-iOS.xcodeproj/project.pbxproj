@@ -179,7 +179,7 @@
 				E49569F6221E464E0070FB31 /* ServiceConstants.swift */,
 			);
 			name = "Service-related";
-			path = "../Reduxion iOS/Service-related";
+			path = "Reduxion iOS/Service-related";
 			sourceTree = "<group>";
 		};
 		E49569FA221E4AD10070FB31 /* Stock quotes */ = {
@@ -236,7 +236,6 @@
 				E4CE6AB92131498B00E4E865 /* Products */,
 			);
 			name = "Reduxion iOS";
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		E4CE6AAE2131498B00E4E865 = {
@@ -262,7 +261,8 @@
 			children = (
 				E4CE6AC82131498B00E4E865 /* Info.plist */,
 			);
-			path = "Reduxion-iOSTests";
+			name = "Reduxion-iOSTests";
+			path = "Reduxion iOS/Reduxion-iOSTests";
 			sourceTree = "<group>";
 		};
 		E4CE6ADD21314BE800E4E865 /* Unidirectional data flow */ = {
@@ -274,7 +274,7 @@
 				E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */,
 			);
 			name = "Unidirectional data flow";
-			path = "../Reduxion iOS/Unidirectional data flow";
+			path = "Reduxion iOS/Unidirectional data flow";
 			sourceTree = "<group>";
 		};
 		E4D4FE6B2133781600438A8F /* third-party dependencies */ = {
@@ -285,7 +285,8 @@
 				E4A581932150BD1700B31C62 /* Frameworks */,
 				E41DF6412162018F004D248F /* SwiftLint */,
 			);
-			path = "third-party dependencies";
+			name = "third-party dependencies";
+			path = "Reduxion iOS/third-party dependencies";
 			sourceTree = "<group>";
 		};
 		E4D4FE732133AE0E00438A8F /* Documentation */ = {
@@ -296,7 +297,7 @@
 				E4956A01221E4DCD0070FB31 /* reduxion-ios-architecture-block-diagram.png */,
 			);
 			name = Documentation;
-			path = "../Reduxion iOS/Documentation";
+			path = "Reduxion iOS/Documentation";
 			sourceTree = "<group>";
 		};
 		E4D4FE7C2133B6F200438A8F /* Use cases */ = {
@@ -491,7 +492,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "Reduxion-iOS sample app/Info.plist";
+				INFOPLIST_FILE = "Sample app/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -514,7 +515,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "Reduxion-iOS sample app/Info.plist";
+				INFOPLIST_FILE = "Sample app/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
