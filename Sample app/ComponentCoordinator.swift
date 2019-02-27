@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ComponentCoordinator: AppConstants {
+struct ComponentCoordinator: AppComponents {
 
     init() {
         

@@ -10,19 +10,15 @@
 import Foundation
 import CoreGraphics
 
-// MARK: - Action dictionary keys
-// ...
-
-
-// MARK: - Text
-let EMPTY_STRING = ""
-let SPACE_CHARACTER = " "
-let NEWLINE_CHARACTER = "\n"
-
-
 // MARK: - Numerical
 let CGFLOAT_ZERO: CGFloat           = 0.0
 let CGFLOAT_ONE: CGFloat            = 1.0
 let FLOAT_ZERO: Float               = 0.0
 let FLOAT_ONE: Float                = 1.0
 let TIME_INTERVAL_ZERO: TimeInterval = 0.0
+
+
+// MARK: - Text
+let EMPTY_STRING = ""
+let SPACE_CHARACTER = " "
+let NEWLINE_CHARACTER = "\n"

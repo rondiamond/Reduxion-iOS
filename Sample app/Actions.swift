@@ -23,7 +23,7 @@ import SwiftyJSON
 enum Action {
     case null
     
-    // MARK: Stock quote Service
+    // MARK: Stock quote service
     case stockQuoteServiceRequest(symbol: String)
     case stockQuoteServiceResponse(json: JSON, error: String?)
     
@@ -31,3 +31,8 @@ enum Action {
     case goForwardInHistory()
     case clearHistory()
 }
+
+
+// MARK: - Action dictionary keys
+// ...
+

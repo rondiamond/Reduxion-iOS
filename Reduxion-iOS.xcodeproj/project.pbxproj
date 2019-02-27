@@ -148,7 +148,9 @@
 		E442F60921509550000B37FE /* Sample app */ = {
 			isa = PBXGroup;
 			children = (
+				E4CE6AD421314BE400E4E865 /* Actions.swift */,
 				E45A853E2152372700581DCE /* AppDelegate.swift */,
+				E4BBF61E22262D6B00A1C5FA /* ComponentCoordinator.swift */,
 				E45A854A2152372800581DCE /* Info.plist */,
 				E4BBF6222226467500A1C5FA /* Data */,
 				E4D4FE7C2133B6F200438A8F /* Use cases */,
@@ -229,7 +231,7 @@
 		E4BBF625222649BF00A1C5FA /* Reduxion iOS */ = {
 			isa = PBXGroup;
 			children = (
-				E4D4FE732133AE0E00438A8F /* _Documentation */,
+				E4D4FE732133AE0E00438A8F /* Documentation */,
 				E49569F9221E47F80070FB31 /* Service-related */,
 				E4CE6ADD21314BE800E4E865 /* Unidirectional data flow */,
 				E4D4FE6B2133781600438A8F /* third-party dependencies */,
@@ -270,10 +272,8 @@
 		E4CE6ADD21314BE800E4E865 /* Unidirectional data flow */ = {
 			isa = PBXGroup;
 			children = (
-				E4CE6AD421314BE400E4E865 /* Actions.swift */,
 				E4956A042220AC750070FB31 /* AppConstants.swift */,
 				E4CE6AD321314BE400E4E865 /* AppState.swift */,
-				E4BBF61E22262D6B00A1C5FA /* ComponentCoordinator.swift */,
 				E4D4FE882133BFBF00438A8F /* GeneralConstants.swift */,
 				E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */,
 			);
@@ -292,15 +292,15 @@
 			path = "third-party dependencies";
 			sourceTree = "<group>";
 		};
-		E4D4FE732133AE0E00438A8F /* _Documentation */ = {
+		E4D4FE732133AE0E00438A8F /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
 				E49569FE221E4C0F0070FB31 /* License.txt */,
 				E4D4FE742133AE2000438A8F /* README.md */,
 				E4956A01221E4DCD0070FB31 /* reduxion-ios-architecture-block-diagram.png */,
 			);
-			name = _Documentation;
-			path = "../Reduxion iOS/_Documentation";
+			name = Documentation;
+			path = "../Reduxion iOS/Documentation";
 			sourceTree = "<group>";
 		};
 		E4D4FE7C2133B6F200438A8F /* Use cases */ = {
