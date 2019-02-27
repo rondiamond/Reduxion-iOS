@@ -63,7 +63,7 @@ class StockQuoteService: Service {
         
         var headers: [String : String] = [:]
         headers[SERVICE_REQUEST_HEADER_CONTENT_TYPE] = SERVICE_REQUEST_HEADER_CONTENT_TYPE_JSON
-        Alamofire.request(urlString, method: .post, parameters: nil, encoding: URLEncoding.default, headers: headers)
+        Alamofire.request(urlString, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers)
             .validate(contentType: [SERVICE_REQUEST_HEADER_CONTENT_TYPE_JSON])
             .responseString { response in
                 // handle any non-JSON errors here (e.g., HTML)
