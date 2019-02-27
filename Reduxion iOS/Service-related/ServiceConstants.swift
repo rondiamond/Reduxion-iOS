@@ -8,7 +8,7 @@
 
 /**
  Single Responsibility (SRP):
- This file contains constants related to the Service layer.
+ This file contains constants and types related to the Service layer.
  */
 
 import Foundation
@@ -44,6 +44,9 @@ enum ServiceEnvironment {
     // more as needed ...
 }
 
+let networkTimeoutInSeconds: TimeInterval           = 10.0
+let mockServiceSimulatedLatencyInSeconds: Double    = 0.5
+
 
 // MARK: - HTTP response codes
 /*
@@ -75,7 +78,3 @@ let SERVICE_REQUEST_HEADER_CONTENT_TYPE = "Content-Type"
 let SERVICE_REQUEST_HEADER_CONTENT_TYPE_JSON = "application/json"
 let SERVICE_REQUEST_HEADER_GET = "GET"
 let SERVICE_REQUEST_HEADER_POST = "POST"
-
-// MARK: - Latency
-let networkTimeoutInSeconds: TimeInterval           = 10.0
-let mockServiceSimulatedLatencyInSeconds: Double    = 0.5

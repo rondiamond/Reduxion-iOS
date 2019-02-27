@@ -8,15 +8,15 @@
 
 import Foundation
 
-struct ServiceHandlers {
-    var mock: Service
-    var real: Service
-}
-
 struct UseCaseComponents {
     var name: String
     var logic: Logic
     var services: ServiceHandlers
+}
+
+struct ServiceHandlers {
+    var mock: Service
+    var real: Service
 }
 
 protocol AppComponents {
