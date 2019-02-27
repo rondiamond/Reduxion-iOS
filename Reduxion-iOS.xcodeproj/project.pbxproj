@@ -100,17 +100,17 @@
 		E4A581972150BD5600B31C62 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = SOURCE_ROOT; };
 		E4BBF61E22262D6B00A1C5FA /* ComponentCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentCoordinator.swift; sourceTree = "<group>"; };
 		E4CE6AC12131498B00E4E865 /* Reduxion-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reduxion-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4CE6AC82131498B00E4E865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4CE6AC82131498B00E4E865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../../Reduxion iOS/Reduxion-iOSTests/Info.plist"; sourceTree = "<group>"; };
 		E4CE6AD321314BE400E4E865 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		E4CE6AD421314BE400E4E865 /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		E4CE6AD521314BE400E4E865 /* ServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogicCoordinator.swift; sourceTree = "<group>"; };
-		E4D4FE6C2133784300438A8F /* Reduxion-iOSTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reduxion-iOSTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		E4D4FE742133AE2000438A8F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		E4D4FE7E2133B78E00438A8F /* StockQuoteLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StockQuoteLogic.swift; path = "use cases/Sample app/Stock quotes/StockQuoteLogic.swift"; sourceTree = SOURCE_ROOT; };
-		E4D4FE852133BF0300438A8F /* StockQuoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StockQuoteService.swift; path = "use cases/Sample app/Stock quotes/StockQuoteService.swift"; sourceTree = SOURCE_ROOT; };
-		E4D4FE882133BFBF00438A8F /* GeneralConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GeneralConstants.swift; path = "Unidirectional data flow/GeneralConstants.swift"; sourceTree = SOURCE_ROOT; };
-		E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceActivityIndicator.swift; path = "Services (general)/ServiceActivityIndicator.swift"; sourceTree = SOURCE_ROOT; };
+		E4D4FE6C2133784300438A8F /* Reduxion-iOSTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Reduxion-iOSTests-Bridging-Header.h"; path = "../../Reduxion iOS/third-party dependencies/Reduxion-iOSTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		E4D4FE742133AE2000438A8F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
+		E4D4FE7E2133B78E00438A8F /* StockQuoteLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StockQuoteLogic.swift; path = "Sample app/Use cases/Stock quotes/StockQuoteLogic.swift"; sourceTree = SOURCE_ROOT; };
+		E4D4FE852133BF0300438A8F /* StockQuoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StockQuoteService.swift; path = "Sample app/Use cases/Stock quotes/StockQuoteService.swift"; sourceTree = SOURCE_ROOT; };
+		E4D4FE882133BFBF00438A8F /* GeneralConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GeneralConstants.swift; path = "Reduxion iOS/Unidirectional data flow/GeneralConstants.swift"; sourceTree = SOURCE_ROOT; };
+		E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceActivityIndicator.swift; path = "Reduxion iOS/Service-related/ServiceActivityIndicator.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,15 +173,15 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		E49569F9221E47F80070FB31 /* Services (general) */ = {
+		E49569F9221E47F80070FB31 /* Service-related */ = {
 			isa = PBXGroup;
 			children = (
 				E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */,
 				E49569F6221E464E0070FB31 /* ServiceConstants.swift */,
 				E4CE6AD521314BE400E4E865 /* ServiceFactory.swift */,
 			);
-			name = "Services (general)";
-			path = "../Services (general)";
+			name = "Service-related";
+			path = "../Reduxion iOS/Service-related";
 			sourceTree = "<group>";
 		};
 		E49569FA221E4AD10070FB31 /* Stock quotes */ = {
@@ -193,7 +193,8 @@
 				E49569FB221E4B040070FB31 /* StockQuoteMockData.json */,
 				E4956A02221E50BA0070FB31 /* StockQuoteTest.swift */,
 			);
-			path = "Stock quotes";
+			name = "Stock quotes";
+			path = "../Use cases/Stock quotes";
 			sourceTree = "<group>";
 		};
 		E4A581932150BD1700B31C62 /* Frameworks */ = {
@@ -229,7 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				E4D4FE732133AE0E00438A8F /* _Documentation */,
-				E49569F9221E47F80070FB31 /* Services (general) */,
+				E49569F9221E47F80070FB31 /* Service-related */,
 				E4CE6ADD21314BE800E4E865 /* Unidirectional data flow */,
 				E4D4FE6B2133781600438A8F /* third-party dependencies */,
 				E4CE6AC52131498B00E4E865 /* Reduxion-iOSTests */,
@@ -276,7 +277,8 @@
 				E4D4FE882133BFBF00438A8F /* GeneralConstants.swift */,
 				E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */,
 			);
-			path = "Unidirectional data flow";
+			name = "Unidirectional data flow";
+			path = "../Reduxion iOS/Unidirectional data flow";
 			sourceTree = "<group>";
 		};
 		E4D4FE6B2133781600438A8F /* third-party dependencies */ = {
@@ -298,7 +300,7 @@
 				E4956A01221E4DCD0070FB31 /* reduxion-ios-architecture-block-diagram.png */,
 			);
 			name = _Documentation;
-			path = ../_Documentation;
+			path = "../Reduxion iOS/_Documentation";
 			sourceTree = "<group>";
 		};
 		E4D4FE7C2133B6F200438A8F /* Use cases */ = {
