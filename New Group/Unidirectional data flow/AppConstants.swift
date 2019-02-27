@@ -30,23 +30,3 @@ struct UseCaseComponents {
     var services: ServiceHandlers
 }
 
-
-
-
-
-var allUseCaseComponents: [UseCaseComponents] {
-    get {
-        var _allUseCaseComponents: [UseCaseComponents]
-        _allUseCaseComponents = {
-            UseCaseComponents.init(name: "StockQuote",
-                                   logic: StockQuoteLogic(),
-                                   services: ServiceHandlers.init(mock: MockStockQuoteService(),
-                                                                  real: StockQuoteService())    // FIX
-            )
-        }
-        
-        return _allUseCaseComponents
-    }
-}
-
-

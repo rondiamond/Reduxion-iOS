@@ -151,7 +151,7 @@
 				E45A853E2152372700581DCE /* AppDelegate.swift */,
 				E45A854A2152372800581DCE /* Info.plist */,
 				E4BBF6222226467500A1C5FA /* Data */,
-				E49569FA221E4AD10070FB31 /* Stock quotes */,
+				E4D4FE7C2133B6F200438A8F /* Use cases */,
 				E4BBF6232226468900A1C5FA /* View */,
 			);
 			path = "Sample app";
@@ -170,6 +170,7 @@
 			children = (
 			);
 			name = Frameworks;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		E49569F9221E47F80070FB31 /* Services (general) */ = {
@@ -179,7 +180,8 @@
 				E49569F6221E464E0070FB31 /* ServiceConstants.swift */,
 				E4CE6AD521314BE400E4E865 /* ServiceFactory.swift */,
 			);
-			path = "Services (general)";
+			name = "Services (general)";
+			path = "../Services (general)";
 			sourceTree = "<group>";
 		};
 		E49569FA221E4AD10070FB31 /* Stock quotes */ = {
@@ -223,17 +225,26 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		E4CE6AAE2131498B00E4E865 = {
+		E4BBF625222649BF00A1C5FA /* Reduxion iOS */ = {
 			isa = PBXGroup;
 			children = (
 				E4D4FE732133AE0E00438A8F /* _Documentation */,
 				E49569F9221E47F80070FB31 /* Services (general) */,
 				E4CE6ADD21314BE800E4E865 /* Unidirectional data flow */,
-				E4D4FE7C2133B6F200438A8F /* Use cases */,
 				E4D4FE6B2133781600438A8F /* third-party dependencies */,
 				E4CE6AC52131498B00E4E865 /* Reduxion-iOSTests */,
-				E4CE6AB92131498B00E4E865 /* Products */,
 				E478EA1F2163605F008F05DB /* Frameworks */,
+				E4CE6AB92131498B00E4E865 /* Products */,
+			);
+			name = "Reduxion iOS";
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		E4CE6AAE2131498B00E4E865 = {
+			isa = PBXGroup;
+			children = (
+				E4BBF625222649BF00A1C5FA /* Reduxion iOS */,
+				E442F60921509550000B37FE /* Sample app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -244,6 +255,7 @@
 				E45A853C2152372700581DCE /* Reduxion-iOS.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		E4CE6AC52131498B00E4E865 /* Reduxion-iOSTests */ = {
@@ -285,13 +297,14 @@
 				E4D4FE742133AE2000438A8F /* README.md */,
 				E4956A01221E4DCD0070FB31 /* reduxion-ios-architecture-block-diagram.png */,
 			);
-			path = _Documentation;
+			name = _Documentation;
+			path = ../_Documentation;
 			sourceTree = "<group>";
 		};
 		E4D4FE7C2133B6F200438A8F /* Use cases */ = {
 			isa = PBXGroup;
 			children = (
-				E442F60921509550000B37FE /* Sample app */,
+				E49569FA221E4AD10070FB31 /* Stock quotes */,
 			);
 			name = "Use cases";
 			path = "use cases";
