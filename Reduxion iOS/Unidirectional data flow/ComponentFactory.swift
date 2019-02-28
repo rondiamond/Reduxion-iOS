@@ -13,12 +13,12 @@ import Foundation
  Protocol to return all use case components used in the application.
  This is an array of Logic units and Services (mock and real), organized by use case.
  */
-protocol AllUseCaseComponents {
-    var allUseCaseComponents: [UseCaseComponents] { get }
+protocol AllUseCases {
+    var AllUseCases: [UseCase] { get }
 }
 
 
-struct UseCaseComponents {
+struct UseCase {
     var name: String
     var logic: Logic
     var services: ServiceHandlers
@@ -30,7 +30,7 @@ struct ServiceHandlers {
 }
 
 protocol AppComponents {
-    var allUseCaseComponents: [UseCaseComponents] { get }
+    var AllUseCases: [UseCase] { get }
 }
 
 
@@ -49,7 +49,7 @@ struct ComponentFactory: AppComponents, CurrentServicesType {
         }
         
         var logicUnits: [Logic] = []
-        for componentsForUseCase in allUseCaseComponents {
+        for componentsForUseCase in AllUseCases {
             var logic = componentsForUseCase.logic
             var service: Service
             
