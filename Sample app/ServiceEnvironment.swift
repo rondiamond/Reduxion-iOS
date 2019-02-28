@@ -9,3 +9,4 @@
 import Foundation
 
 internal let currentServicesType: ServicesType = .real(.production)
+//internal let currentServicesType: ServicesType = .mock

@@ -58,7 +58,7 @@ struct StockQuoteLogic: Logic {
                 // fetch data via service, and store it (could be real or mock service/data; we don't care)
                 service?.fetchAndStoreData([StockQuoteServiceKey_Symbol : symbol])
             } else {
-                
+                print("Warning - no service handler specified!")
             }
             break
 
@@ -100,11 +100,3 @@ struct StockQuoteLogic: Logic {
     }
     
 }
-
-
-
-
-
-
-
-

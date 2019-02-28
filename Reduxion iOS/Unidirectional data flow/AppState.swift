@@ -61,7 +61,12 @@ class AppState: NSObject, NSCoding, AppStatePersistable {
     static func persist(_ appState: AppState) {
         print("AppState - PERSIST ***")
         if let filePath = persistenceFilePath() {
-            NSKeyedArchiver.archiveRootObject(appState, toFile: filePath)
+//            NSKeyedArchiver.archiveRootObject(appState, toFile: filePath)
+            let data: Data = NSKeyedArchiver.archivedData(withRootObject: appState, requiringSecureCoding: false)
+                
+                [NSKeyedArchiver archivedDataWithRootObject:appState requiringSecureCoding:NO error:&error];
+
+            
         }
     }
 
