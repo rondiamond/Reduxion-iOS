@@ -42,7 +42,7 @@ Please see sample app for usage patterns.
 ~
 
 ### Future milestones
-- Framework, with sample app
+- Standalone framework
 - Carthage support
 - Formatter classes (for displayed data)
 - ... more

@@ -9,6 +9,10 @@
 
 import UIKit
 
+let alphaDimValue: CGFloat   = 0.8
+let alphaFullValue: CGFloat  = 1.0
+
+
 class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFieldDelegate {
     var appStateSubscriberIdentifier: String = ""
 
@@ -51,11 +55,22 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
         if ((self.symbolTextField.text?.count)! > 0) {
             let symbol = self.symbolTextField.text!
             LogicCoordinator.performAction(Action.stockQuoteServiceRequest(symbol: symbol))
+            self.view.alpha = alphaDimValue
         }
     }
     
     
-    // MARK: - Stock info
+    // MARK: - Display updating
+    
+    private func updateDisplay(with state: AppState) {
+        self.view.alpha = alphaFullValue
+        self.updateStockInfoText(with: state)
+        self.updateHistoryDisplay(state: state)
+        self.symbolTextField.selectAll(nil)     // make it easy to type another stock symbol
+    }
+    
+    
+    // MARK: - Stock info display
     
     private func updateStockInfoText(with state: AppState) {
         let stockInfo = state.dataModel.stocksHistory.currentStock
@@ -65,17 +80,17 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
     private func stockInfoText(from stockInfo: DataModel.StockInfo?) -> String {
         var stockInfoText = ""
         if let stockInfo = stockInfo {
-            stockInfoText.append("symbol = \(String(describing: stockInfo.symbol))\n")
-            stockInfoText.append("name = \(String(describing: stockInfo.name))\n")
-            stockInfoText.append("primaryExchange = \(String(describing: stockInfo.primaryExchange))\n")
-            stockInfoText.append("sector = \(String(describing: stockInfo.sector))\n")
-            stockInfoText.append("latestPrice = \(String(describing: stockInfo.latestPrice))\n")
-            stockInfoText.append("previousClose = \(String(describing: stockInfo.previousClose))\n")
-            stockInfoText.append("change = \(String(describing: stockInfo.change))\n")
-            stockInfoText.append("changePercent = \(String(describing: stockInfo.changePercent))%\n")
-            stockInfoText.append("week52High = \(String(describing: stockInfo.week52High))\n")
-            stockInfoText.append("week52Low = \(String(describing: stockInfo.week52Low))\n")
-            stockInfoText.append("latestVolume = \(String(describing: stockInfo.latestVolume))\n")
+            stockInfoText.append("symbol = \(String(describing: stockInfo.symbol ?? ""))\n")
+            stockInfoText.append("name = \(String(describing: stockInfo.name ?? ""))\n")
+            stockInfoText.append("primaryExchange = \(String(describing: stockInfo.primaryExchange ?? ""))\n")
+            stockInfoText.append("sector = \(String(describing: stockInfo.sector ?? ""))\n")
+            stockInfoText.append("latestPrice = \(String(describing: stockInfo.latestPrice ?? 0))\n")
+            stockInfoText.append("previousClose = \(String(describing: stockInfo.previousClose ?? 0))\n")
+            stockInfoText.append("change = \(String(describing: stockInfo.change ?? 0))\n")
+            stockInfoText.append("changePercent = \(String(describing: stockInfo.changePercent ?? 0))%\n")
+            stockInfoText.append("week52High = \(String(describing: stockInfo.week52High ?? 0))\n")
+            stockInfoText.append("week52Low = \(String(describing: stockInfo.week52Low ?? 0))\n")
+            stockInfoText.append("latestVolume = \(String(describing: stockInfo.latestVolume ?? 0))\n")
         }
         return stockInfoText
     }
@@ -91,17 +106,17 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
         LogicCoordinator.performAction(.goForwardInHistory())
     }
     
-    private func updateHistoryState(with state: AppState) {
-        self.updateHistoryNavigationButtonsState(with: state)
-        self.updateHistoryCountLabel(with: state)
+    private func updateHistoryDisplay(state: AppState) {
+        self.updateHistoryNavigationButtons(state: state)
+        self.updateHistoryCountLabel(state: state)
     }
     
-    private func updateHistoryNavigationButtonsState(with state: AppState) {
+    private func updateHistoryNavigationButtons(state: AppState) {
         self.buttonGoBack.isEnabled = state.dataModel.stocksHistory.canGoBack
         self.buttonGoForward.isEnabled = state.dataModel.stocksHistory.canGoForward
     }
     
-    private func updateHistoryCountLabel(with state: AppState) {
+    private func updateHistoryCountLabel(state: AppState) {
         let historyCountLabelText: String
         if state.dataModel.stocksHistory.currentIndex != nil {
             let numberOfCurrentHistoryCalculation = state.dataModel.stocksHistory.currentIndex! + 1
@@ -119,11 +134,10 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
     func update(_ state: AppState, mostRecentAction: Action) {
         switch mostRecentAction {
         case .null, .stockQuoteServiceResponse(_, _):
-            self.updateStockInfoText(with: state)
-            self.updateHistoryState(with: state)
+            updateDisplay(with: state)
             break
         case .goBackInHistory(), .goForwardInHistory():
-            self.updateHistoryState(with: state)
+            self.updateHistoryDisplay(state: state)
             break
         default:
             break

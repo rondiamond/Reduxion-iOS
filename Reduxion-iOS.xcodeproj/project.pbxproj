@@ -190,8 +190,8 @@
 			children = (
 				E45A85402152372700581DCE /* StockQuoteViewController.swift */,
 				E4D4FE7E2133B78E00438A8F /* StockQuoteLogic.swift */,
-				E4D4FE852133BF0300438A8F /* StockQuoteService.swift */,
 				E49569FB221E4B040070FB31 /* StockQuoteMockData.json */,
+				E4D4FE852133BF0300438A8F /* StockQuoteService.swift */,
 				E4956A02221E50BA0070FB31 /* StockQuoteTest.swift */,
 			);
 			name = "Stock quotes";
