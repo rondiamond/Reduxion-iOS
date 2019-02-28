@@ -32,23 +32,27 @@ class AppState: NSObject, NSCoding, AppStatePersistable {
     override init() {}
     
     // MARK: Properties
-    var currentStockInfo: StockInfo?
-    var stocksHistory = StocksHistory()
+//    var currentStockInfo: StockInfo?
+//    var stocksHistory = StocksHistory()
+    var dataModel = DataModel()
 
     // MARK: Persistence key names
 //    let currentStockInfoKeyName = "stockInfo"
-    let stocksHistoryKeyName = "stocksHistory"
+//    let stocksHistoryKeyName = "stocksHistory"
+    let dataModelKeyName = "dataModel"
     
     // MARK: - Persistence methods
 
     // persist
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(self.stocksHistory, forKey:stocksHistoryKeyName)
+//        aCoder.encode(self.stocksHistory, forKey:stocksHistoryKeyName)
+        aCoder.encode(self.dataModel, forKey:dataModelKeyName)
     }
     
     // recall
     required init(coder aDecoder: NSCoder) {
-        self.stocksHistory = aDecoder.decodeObject(forKey: stocksHistoryKeyName) as? StocksHistory ?? StocksHistory()
+//        self.stocksHistory = aDecoder.decodeObject(forKey: stocksHistoryKeyName) as? StocksHistory ?? StocksHistory()
+        self.dataModel = aDecoder.decodeObject(forKey: dataModelKeyName) as? DataModel ?? DataModel()
     }
     
     /**

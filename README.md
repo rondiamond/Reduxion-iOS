@@ -36,6 +36,11 @@ Good, concise overview of one available library which has been modified for use 
 
 ~
 
+### How to Use
+Please see sample app for usage patterns.
+
+~
+
 ### Future milestones
 - Framework, with sample app
 - Carthage support
