@@ -61,13 +61,29 @@ class AppState: NSObject, NSCoding, AppStatePersistable {
     static func persist(_ appState: AppState) {
         print("AppState - PERSIST ***")
         if let filePath = persistenceFilePath() {
+            
+//            if let data = try? Data(contentsOf: URL(fileURLWithPath: path)) {
+//                do {
+//                    try sampleStockQuoteData = JSON(data: data)
+//                } catch {
+//                    print("Error: Unable to parse JSON for sampleStockQuoteData!")
+//                }
+//            }
+
 //            NSKeyedArchiver.archiveRootObject(appState, toFile: filePath)
-            let data: Data = NSKeyedArchiver.archivedData(withRootObject: appState, requiringSecureCoding: false)
+//            if let data = try? NSKeyedArchiver.archivedData(withRootObject: appState, requiringSecureCoding: false) {
+//
+//                }
+            do {
                 
-                [NSKeyedArchiver archivedDataWithRootObject:appState requiringSecureCoding:NO error:&error];
+            try? NSKeyedArchiver.archivedData(withRootObject: appState, requiringSecureCoding: false)
+            } catch {
+                print("Error - data not persisted!")
+            }
+                
+//                [NSKeyedArchiver archivedDataWithRootObject:appState requiringSecureCoding:NO error:&error];
 
             
-        }
     }
 
     /**
