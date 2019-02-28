@@ -3,7 +3,9 @@ import Foundation
 // MARK: - Data model
 
 struct DataModel: Codable {
-
+    /**
+     The actual data.
+     */
     var stocksHistory = StocksHistory()
     
     /**
@@ -34,4 +36,18 @@ struct DataModel: Codable {
         var week52High: Float?
         var week52Low: Float?
     }
+
+
+    /*
+    // MARK: - Codable
+    
+    public func encode(to encoder: Encoder) throws {
+        
+    }
+
+    public init(from decoder: Decoder) throws {
+        
+    }
+     */
+    
 }
