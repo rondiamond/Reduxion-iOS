@@ -1,5 +1,5 @@
 //
-//  UseCaseComponents.swift
+//  ComponentFactory.swift
 //  Reduxion-iOS
 //
 //  Copyright © 2018-2019 Ron Diamond.
@@ -8,7 +8,34 @@
 
 import Foundation
 
+
+/**
+ Protocol to return all use case components used in the application.
+ This is an array of Logic units and Services (mock and real), organized by use case.
+ */
+protocol AllUseCaseComponents {
+    var allUseCaseComponents: [UseCaseComponents] { get }
+}
+
+
+struct UseCaseComponents {
+    var name: String
+    var logic: Logic
+    var services: ServiceHandlers
+}
+
+struct ServiceHandlers {
+    var mock: Service
+    var real: Service
+}
+
+protocol AppComponents {
+    var allUseCaseComponents: [UseCaseComponents] { get }
+}
+
+
 struct ComponentFactory: AppComponents, CurrentServicesType {
+    static let shared = ComponentFactory()
     
     internal let currentServicesType: ServicesType = .real(.production)
 
@@ -40,19 +67,3 @@ struct ComponentFactory: AppComponents, CurrentServicesType {
         }
         initializeLogicCoordinator(logicUnits: logicUnits)
     }
-    
-    var allUseCaseComponents: [UseCaseComponents] {
-        get {
-            let _allUseCaseComponents: [UseCaseComponents] = [
-                UseCaseComponents.init(name: "StockQuote",
-                                       logic: StockQuoteLogic(),
-                                       services: ServiceHandlers.init(mock: MockStockQuoteService(),
-                                                                      real: StockQuoteService()
-                    )
-                )
-            ]
-            return _allUseCaseComponents
-        }
-    }
-    
-}
