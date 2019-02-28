@@ -27,7 +27,7 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
     override func viewDidLoad() {
         super.viewDidLoad()
         self.symbolTextField.delegate = self
-        LogicCoordinator.subscribe(self)
+        LogicCoordinator.subscribe(self, updateWithCurrentAppState: true)
     }
 
     deinit {
@@ -118,7 +118,7 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
     
     func update(_ state: AppState, mostRecentAction: Action) {
         switch mostRecentAction {
-        case .stockQuoteServiceResponse(_, _):
+        case .null, .stockQuoteServiceResponse(_, _):
             self.updateStockInfoText(with: state)
             self.updateHistoryState(with: state)
             break
