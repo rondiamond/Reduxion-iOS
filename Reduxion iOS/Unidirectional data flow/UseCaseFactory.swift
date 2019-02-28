@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 /**
  Protocol to return all Use Cases used in the application.
  This is an array of Logic units and Services (mock and real), organized by individual use case.
@@ -30,7 +29,6 @@ struct UseCaseServices {
     var mock: Service
     var real: Service
 }
-
 
 struct UseCaseFactory {
     static let shared = UseCaseFactory()
@@ -63,3 +61,4 @@ struct UseCaseFactory {
         }
         initializeLogicCoordinator(logicUnits: logicUnits)
     }
+}

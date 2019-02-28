@@ -9,10 +9,10 @@
 Easy-to-implement, best-practice Unidirectional Data Flow for iOS apps, featuring:  
 - Loosely-coupled layers for View / Business Logic / Services / Data
 - Composable business logic, in single-responsibility units
-- Separation of concerns facilitating unit testing (TDD/BDD)
+- Good separation of concerns facilitating unit testing (TDD/BDD)
 - Ability to switch entire application from real to mock services using one line of code
-- Ability to time travel (rewind/fast-forward) between different states of the application
 - Ability to easily persist & recall the entire state of the application
+- Ability to easily add time travel (rewind/fast-forward) between different states of the application
 
 ~
 

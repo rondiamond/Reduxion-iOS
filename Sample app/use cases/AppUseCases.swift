@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct AppUseCases: UseCases {
+//struct AppUseCases: UseCases {
     var useCases: [UseCase] {
         get {
             let _useCases: [UseCase] = [
@@ -22,4 +22,4 @@ struct AppUseCases: UseCases {
             return _useCases
         }
     }
-}
+//}
