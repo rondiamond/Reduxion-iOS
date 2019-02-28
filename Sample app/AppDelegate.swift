@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
 //        initializeLogicCoordinator(currentServicesType)
-//_ = ComponentFactory.init()
-        _ = ComponentFactory.shared     // initialize
+//_ = UseCaseFactory.init()
+        _ = UseCaseFactory.shared     // initialize
         
         return true
     }

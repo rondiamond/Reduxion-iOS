@@ -169,13 +169,13 @@ class LogicCoordinator {
 //            self.stockQuoteService = _serviceFactory?.stockQuoteService
 //            self.stockQuoteLogic.service = self.stockQuoteService
             
-//            AllUseCases.forEach { (componentsForUseCase) in
-//                componentsForUseCase.logic.service = componentsForUseCase.service
+//            useCases.forEach { (useCase) in
+//                useCase.logic.service = useCase.service
 //            }
 //
 
-//            for componentsForUseCase in AllUseCases {
-//                componentsForUseCase.logic.service = componentsForUseCase.service
+//            for useCase in useCases {
+//                useCase.logic.service = useCase.service
 //
 //            }
 

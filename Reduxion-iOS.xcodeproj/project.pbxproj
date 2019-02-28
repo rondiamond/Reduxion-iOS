@@ -27,8 +27,10 @@
 		E45A855E21523D1100581DCE /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581942150BD4C00B31C62 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E45A855F21523D1100581DCE /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581972150BD5600B31C62 /* SwiftyJSON.framework */; };
 		E45A856021523D1100581DCE /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581972150BD5600B31C62 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E4645F08222773DD00FCC46E /* UseCaseComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4645F07222773DD00FCC46E /* UseCaseComponents.swift */; };
-		E4645F09222773DD00FCC46E /* UseCaseComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4645F07222773DD00FCC46E /* UseCaseComponents.swift */; };
+		E4645F08222773DD00FCC46E /* AppUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4645F07222773DD00FCC46E /* AppUseCases.swift */; };
+		E4645F09222773DD00FCC46E /* AppUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4645F07222773DD00FCC46E /* AppUseCases.swift */; };
+		E4645F0B222777E400FCC46E /* ServiceEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4645F0A222777E400FCC46E /* ServiceEnvironment.swift */; };
+		E4645F0C222777E400FCC46E /* ServiceEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4645F0A222777E400FCC46E /* ServiceEnvironment.swift */; };
 		E478EA1D216350AA008F05DB /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E478EA1821635091008F05DB /* Nimble.framework */; };
 		E478EA1E216350AA008F05DB /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E478EA1721635091008F05DB /* Quick.framework */; };
 		E49569F7221E464E0070FB31 /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49569F6221E464E0070FB31 /* ServiceConstants.swift */; };
@@ -40,8 +42,8 @@
 		E4956A03221E50BA0070FB31 /* StockQuoteTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4956A02221E50BA0070FB31 /* StockQuoteTest.swift */; };
 		E4A581962150BD4C00B31C62 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581942150BD4C00B31C62 /* Alamofire.framework */; };
 		E4A581992150BD5600B31C62 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581972150BD5600B31C62 /* SwiftyJSON.framework */; };
-		E4BBF61F22262D6B00A1C5FA /* ComponentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BBF61E22262D6B00A1C5FA /* ComponentFactory.swift */; };
-		E4BBF62022262D6B00A1C5FA /* ComponentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BBF61E22262D6B00A1C5FA /* ComponentFactory.swift */; };
+		E4BBF61F22262D6B00A1C5FA /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BBF61E22262D6B00A1C5FA /* UseCaseFactory.swift */; };
+		E4BBF62022262D6B00A1C5FA /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BBF61E22262D6B00A1C5FA /* UseCaseFactory.swift */; };
 		E4BBF6212226466E00A1C5FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45A853E2152372700581DCE /* AppDelegate.swift */; };
 		E4D4FE832133BEB600438A8F /* StockQuoteLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE7E2133B78E00438A8F /* StockQuoteLogic.swift */; };
 		E4D4FE842133BEBB00438A8F /* LogicCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */; };
@@ -86,7 +88,8 @@
 		E45A85452152372800581DCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E45A85482152372800581DCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E45A854A2152372800581DCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E4645F07222773DD00FCC46E /* UseCaseComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UseCaseComponents.swift; path = "Sample app/use cases/UseCaseComponents.swift"; sourceTree = SOURCE_ROOT; };
+		E4645F07222773DD00FCC46E /* AppUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppUseCases.swift; path = "Sample app/use cases/AppUseCases.swift"; sourceTree = SOURCE_ROOT; };
+		E4645F0A222777E400FCC46E /* ServiceEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceEnvironment.swift; sourceTree = "<group>"; };
 		E478EA1721635091008F05DB /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = SOURCE_ROOT; };
 		E478EA1821635091008F05DB /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = SOURCE_ROOT; };
 		E49569F6221E464E0070FB31 /* ServiceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConstants.swift; sourceTree = "<group>"; };
@@ -96,7 +99,7 @@
 		E4956A02221E50BA0070FB31 /* StockQuoteTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockQuoteTest.swift; sourceTree = "<group>"; };
 		E4A581942150BD4C00B31C62 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
 		E4A581972150BD5600B31C62 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = SOURCE_ROOT; };
-		E4BBF61E22262D6B00A1C5FA /* ComponentFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentFactory.swift; sourceTree = "<group>"; };
+		E4BBF61E22262D6B00A1C5FA /* UseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
 		E4CE6AC12131498B00E4E865 /* Reduxion-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reduxion-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4CE6AC82131498B00E4E865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../../Reduxion iOS/Reduxion-iOSTests/Info.plist"; sourceTree = "<group>"; };
 		E4CE6AD321314BE400E4E865 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -148,6 +151,7 @@
 				E4CE6AD421314BE400E4E865 /* Actions.swift */,
 				E45A853E2152372700581DCE /* AppDelegate.swift */,
 				E45A854A2152372800581DCE /* Info.plist */,
+				E4645F0A222777E400FCC46E /* ServiceEnvironment.swift */,
 				E4BBF6222226467500A1C5FA /* Data */,
 				E4D4FE7C2133B6F200438A8F /* Use cases */,
 				E4BBF6232226468900A1C5FA /* View */,
@@ -268,9 +272,9 @@
 			isa = PBXGroup;
 			children = (
 				E4CE6AD321314BE400E4E865 /* AppState.swift */,
-				E4BBF61E22262D6B00A1C5FA /* ComponentFactory.swift */,
 				E4D4FE882133BFBF00438A8F /* GeneralConstants.swift */,
 				E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */,
+				E4BBF61E22262D6B00A1C5FA /* UseCaseFactory.swift */,
 			);
 			name = "Unidirectional data flow";
 			path = "Reduxion iOS/Unidirectional data flow";
@@ -302,7 +306,7 @@
 		E4D4FE7C2133B6F200438A8F /* Use cases */ = {
 			isa = PBXGroup;
 			children = (
-				E4645F07222773DD00FCC46E /* UseCaseComponents.swift */,
+				E4645F07222773DD00FCC46E /* AppUseCases.swift */,
 				E49569FA221E4AD10070FB31 /* Stock quotes */,
 			);
 			name = "Use cases";
@@ -417,14 +421,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E45A855021523B0000581DCE /* Actions.swift in Sources */,
-				E4645F08222773DD00FCC46E /* UseCaseComponents.swift in Sources */,
+				E4645F08222773DD00FCC46E /* AppUseCases.swift in Sources */,
 				E45A855221523B0000581DCE /* LogicCoordinator.swift in Sources */,
 				E45A855921523B1100581DCE /* StockQuoteLogic.swift in Sources */,
 				E45A85412152372700581DCE /* StockQuoteViewController.swift in Sources */,
-				E4BBF61F22262D6B00A1C5FA /* ComponentFactory.swift in Sources */,
+				E4BBF61F22262D6B00A1C5FA /* UseCaseFactory.swift in Sources */,
 				E45A855A21523B1100581DCE /* StockQuoteService.swift in Sources */,
 				E45A855521523B0500581DCE /* DataModel.swift in Sources */,
 				E45A855721523B0A00581DCE /* ServiceActivityIndicator.swift in Sources */,
+				E4645F0B222777E400FCC46E /* ServiceEnvironment.swift in Sources */,
 				E45A853F2152372700581DCE /* AppDelegate.swift in Sources */,
 				E45A855121523B0000581DCE /* AppState.swift in Sources */,
 				E45A855621523B0A00581DCE /* GeneralConstants.swift in Sources */,
@@ -436,8 +441,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4BBF62022262D6B00A1C5FA /* ComponentFactory.swift in Sources */,
-				E4645F09222773DD00FCC46E /* UseCaseComponents.swift in Sources */,
+				E4BBF62022262D6B00A1C5FA /* UseCaseFactory.swift in Sources */,
+				E4645F09222773DD00FCC46E /* AppUseCases.swift in Sources */,
 				E49569F8221E464E0070FB31 /* ServiceConstants.swift in Sources */,
 				E4BBF6212226466E00A1C5FA /* AppDelegate.swift in Sources */,
 				E4D4FE832133BEB600438A8F /* StockQuoteLogic.swift in Sources */,
@@ -445,6 +450,7 @@
 				E442F6082150951A000B37FE /* AppState.swift in Sources */,
 				E45A850C215225BC00581DCE /* Actions.swift in Sources */,
 				E4D4FE842133BEBB00438A8F /* LogicCoordinator.swift in Sources */,
+				E4645F0C222777E400FCC46E /* ServiceEnvironment.swift in Sources */,
 				E4D4FE8D2133C28F00438A8F /* ServiceActivityIndicator.swift in Sources */,
 				E44260AF2137BC6900A218C6 /* DataModel.swift in Sources */,
 				E4D4FE872133BF0300438A8F /* StockQuoteService.swift in Sources */,
