@@ -3,10 +3,13 @@ import Foundation
 // MARK: - Data model
 
 struct DataModel: Codable {
+
+    var stocksHistory = StocksHistory()
+    
     /**
      The history of stock lookups done by the user.
      */
-    struct StocksHistory {
+    struct StocksHistory: Codable {
         var history: [StockInfo] = []
         var currentIndex: Int?
         var currentStock: StockInfo?
@@ -17,7 +20,7 @@ struct DataModel: Codable {
     /**
      Represents results for a particular stock lookup.
      */
-    struct StockInfo {
+    struct StockInfo: Codable {
         var symbol: String?
         var name: String?
         var sector: String?

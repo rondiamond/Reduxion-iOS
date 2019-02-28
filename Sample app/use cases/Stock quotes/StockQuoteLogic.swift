@@ -68,7 +68,7 @@ struct StockQuoteLogic: Logic {
             }
             
             if (jsonPayload != JSON.null) {
-                var stockInfo = StockInfo()
+                var stockInfo = DataModel.StockInfo()
                 stockInfo.symbol            = jsonPayload["symbol"].stringValue
                 stockInfo.name              = jsonPayload["companyName"].stringValue
                 stockInfo.sector            = jsonPayload["sector"].stringValue
@@ -82,15 +82,15 @@ struct StockQuoteLogic: Logic {
                 stockInfo.week52High        = jsonPayload["week52High"].floatValue
                 stockInfo.week52Low         = jsonPayload["week52Low"].floatValue
             
-                if (state.stocksHistory.history.count > 0),
-                    (state.stocksHistory.currentIndex != nil) {
+                if (state.dataModel.stocksHistory.history.count > 0),
+                    (state.dataModel.stocksHistory.currentIndex != nil) {
                     // remove any 'forward' history states
-                    let subrangeToDelete = state.stocksHistory.currentIndex!..<state.stocksHistory.history.count
-                    state.stocksHistory.history.removeSubrange(subrangeToDelete)
+                    let subrangeToDelete = state.dataModel.stocksHistory.currentIndex!..<state.dataModel.stocksHistory.history.count
+                    state.dataModel.stocksHistory.history.removeSubrange(subrangeToDelete)
                 }
-                state.currentStockInfo = stockInfo
-                state.stocksHistory.history.append(stockInfo)
-                state.stocksHistory.currentIndex = state.stocksHistory.history.count - 1
+                state.dataModel.stocksHistory.currentStock = stockInfo
+                state.dataModel.stocksHistory.history.append(stockInfo)
+                state.dataModel.stocksHistory.currentIndex = state.dataModel.stocksHistory.history.count - 1
             }
             break
     

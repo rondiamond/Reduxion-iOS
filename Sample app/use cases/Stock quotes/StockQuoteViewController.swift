@@ -58,11 +58,11 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
     // MARK: - Stock info
     
     private func updateStockInfoText(with state: AppState) {
-        let stockInfo = state.currentStockInfo
+        let stockInfo = state.dataModel.stocksHistory.currentStock
         self.stockInfoResultsTextField.text = stockInfoText(from: stockInfo)
     }
 
-    private func stockInfoText(from stockInfo: StockInfo?) -> String {
+    private func stockInfoText(from stockInfo: DataModel.StockInfo?) -> String {
         var stockInfoText = ""
         if let stockInfo = stockInfo {
             stockInfoText.append("symbol = \(String(describing: stockInfo.symbol))\n")
@@ -97,15 +97,15 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
     }
     
     private func updateHistoryNavigationButtonsState(with state: AppState) {
-        self.buttonGoBack.isEnabled = state.stocksHistory.canGoBack
-        self.buttonGoForward.isEnabled = state.stocksHistory.canGoForward
+        self.buttonGoBack.isEnabled = state.dataModel.stocksHistory.canGoBack
+        self.buttonGoForward.isEnabled = state.dataModel.stocksHistory.canGoForward
     }
     
     private func updateHistoryCountLabel(with state: AppState) {
         let historyCountLabelText: String
-        if state.stocksHistory.currentIndex != nil {
-            let numberOfCurrentHistoryCalculation = state.stocksHistory.currentIndex! + 1
-            let numberOfHistoryCalculations = state.stocksHistory.history.count
+        if state.dataModel.stocksHistory.currentIndex != nil {
+            let numberOfCurrentHistoryCalculation = state.dataModel.stocksHistory.currentIndex! + 1
+            let numberOfHistoryCalculations = state.dataModel.stocksHistory.history.count
             historyCountLabelText = "\(numberOfCurrentHistoryCalculation) of \(numberOfHistoryCalculations)"
         } else {
             historyCountLabelText = EMPTY_STRING
