@@ -38,7 +38,7 @@ struct DataModel: Codable {
     }
 
 
-    /*
+//    /*
     // MARK: - Codable
     
     public func encode(to encoder: Encoder) throws {
@@ -48,6 +48,22 @@ struct DataModel: Codable {
     public init(from decoder: Decoder) throws {
         
     }
-     */
+//     */
+
+    init() {
+    }
+    
+    
+//    func encode(with aCoder: NSCoder) {
+//        aCoder.encode(self, forKey:"model")
+//    }
+//
+//    init() {
+//    }
+//
+//    init(coder aDecoder: NSCoder) {
+//        self = aDecoder.decodeObject(forKey: "model") as? DataModel ?? DataModel()
+//    }
+
     
 }

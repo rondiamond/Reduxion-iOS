@@ -47,6 +47,8 @@ class AppState: NSObject, NSCoding, AppStatePersistable {
     func encode(with aCoder: NSCoder) {
 //        aCoder.encode(self.stocksHistory, forKey:stocksHistoryKeyName)
         aCoder.encode(self.dataModel, forKey:dataModelKeyName)
+//aCoder.encode("foobar", forKey:dataModelKeyName)
+
     }
     
     // recall
@@ -68,6 +70,21 @@ class AppState: NSObject, NSCoding, AppStatePersistable {
             } catch {
                 print("Error - data not persisted!")
             }
+            
+            /*
+            // https://medium.com/@sdrzn/swift-4-codable-lets-make-things-even-easier-c793b6cf29e1
+            do {
+                let data = try encoder.encode(object)
+                if FileManager.default.fileExists(atPath: url.path) {
+                    try FileManager.default.removeItem(at: url)
+                }
+                FileManager.default.createFile(atPath: url.path, contents: data, attributes: nil)
+            } catch {
+                fatalError(error.localizedDescription)
+            }
+             */
+            
+            
         }
     }
 
