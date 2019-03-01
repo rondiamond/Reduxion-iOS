@@ -37,7 +37,7 @@ class AppState: NSObject, NSCoding {
     
     // persist
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(self.dataModel,  forKey:dataModelKeyName)
+        aCoder.encode(self, forKey:dataModelKeyName)
     }
     
     // recall

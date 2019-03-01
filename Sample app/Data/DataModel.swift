@@ -2,7 +2,9 @@ import Foundation
 
 // MARK: - Data model
 
-struct DataModel: Codable {
+//struct DataModel: Codable {
+class DataModel: NSCoding {
+
     /**
      The actual data.
      */
@@ -54,16 +56,13 @@ struct DataModel: Codable {
     }
     
     
-//    func encode(with aCoder: NSCoder) {
+    func encode(with aCoder: NSCoder) {
 //        aCoder.encode(self, forKey:"model")
-//    }
-//
-//    init() {
-//    }
-//
-//    init(coder aDecoder: NSCoder) {
-//        self = aDecoder.decodeObject(forKey: "model") as? DataModel ?? DataModel()
-//    }
+    }
+
+    required init(coder aDecoder: NSCoder) {
+//        self. = aDecoder.decodeObject(forKey: "model") as? DataModel ?? DataModel()
+    }
 
     
 }
