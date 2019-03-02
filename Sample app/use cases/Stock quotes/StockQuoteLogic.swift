@@ -21,7 +21,7 @@ struct StockQuoteLogic: Logic {
     var service: Service?
     
 //    func performLogic(_ state: AppState, action: Action) {
-    mutating func performLogic(_ state: AppState, action: Action) {
+    func performLogic(state: inout AppState, action: Action) {
         switch action {
         case .stockQuoteServiceRequest(let symbol):
             if service != nil {
@@ -60,11 +60,11 @@ struct StockQuoteLogic: Logic {
                     (state.dataModel.stocksHistory.currentIndex != nil) {
                     // remove any 'forward' history states
                     let subrangeToDelete = state.dataModel.stocksHistory.currentIndex!..<state.dataModel.stocksHistory.history.count
-                    newState.dataModel.stocksHistory.history.removeSubrange(subrangeToDelete)
+                    state.dataModel.stocksHistory.history.removeSubrange(subrangeToDelete)
                 }
                 state.dataModel.stocksHistory.currentStock = stockInfo
                 state.dataModel.stocksHistory.history.append(stockInfo)
-                state.dataModel.stocksHistory.currentIndex = newState.dataModel.stocksHistory.history.count - 1
+                state.dataModel.stocksHistory.currentIndex = state.dataModel.stocksHistory.history.count - 1
             }
             break
     

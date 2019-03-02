@@ -65,8 +65,9 @@ protocol Logic {
      Nothing is returned.  Instead, the logic (optionally) mutates the AppState object passed in (if the requested action was something relevant to what that business logic cared about).
      */
 //    func performLogic(_ state: AppState, action: Action)
-    func performLogic(_ state: AppState, action: Action)
-    
+//    mutating func performLogic(_ state: AppState, action: Action)
+    func performLogic(state: inout AppState, action: Action)
+
     /**
      *  Utilized by logic modules which connect with a web service. (The logic module's reference to the Service must be injected, to support unit testing, mock data, etc.).
      */
@@ -285,7 +286,7 @@ class LogicCoordinator {
      */
     private func performLogic(_ action: Action) {
         // Note: Expensive action logic should be performed on a separate thread; and when ready with the results, should call another type of action specifically for the purpose of mutating the AppState.
-        self.logicUnits.forEach({ $0.performLogic(self.appState, action: action) })
+        self.logicUnits.forEach({ $0.performLogic(state: &self.appState, action: action) })
         self.updateSubscribers(action)
     }
     
