@@ -20,7 +20,6 @@ struct StockQuoteLogic: Logic {
     
     var service: Service?
     
-//    func performLogic(_ state: AppState, action: Action) {
     func performLogic(state: inout AppState, action: Action) {
         switch action {
         case .stockQuoteServiceRequest(let symbol):
@@ -65,12 +64,40 @@ struct StockQuoteLogic: Logic {
                 state.dataModel.stocksHistory.currentStock = stockInfo
                 state.dataModel.stocksHistory.history.append(stockInfo)
                 state.dataModel.stocksHistory.currentIndex = state.dataModel.stocksHistory.history.count - 1
+                
+                let currentIndex = state.dataModel.stocksHistory.currentIndex!
+                let totalHistoryCount = state.dataModel.stocksHistory.history.count
+                state.dataModel.stocksHistory.canGoBack = (currentIndex > 0)
+                state.dataModel.stocksHistory.canGoForward = (currentIndex < totalHistoryCount-1)
             }
             break
-    
+            
+        case .goBackInHistory():
+            self.modifyCurrentIndex(delta: .decrement, state: &state)
+
+        case .goForwardInHistory():
+            self.modifyCurrentIndex(delta: .increment, state: &state)
+
         default:
             break
         }
+    }
+
+    enum indexDelta: Int {
+        case decrement = -1
+        case increment = 1
+    }
+    
+    func modifyCurrentIndex(delta: indexDelta, state: inout AppState) {
+        let totalHistoryCount = state.dataModel.stocksHistory.history.count
+        var index = state.dataModel.stocksHistory.currentIndex ?? 0
+
+        index += delta.rawValue
+        index = max(0, index)
+        index = min(index, totalHistoryCount)
+        
+        state.dataModel.stocksHistory.canGoBack = (index > 0)
+        state.dataModel.stocksHistory.canGoForward = (index < totalHistoryCount-1)
     }
     
 }

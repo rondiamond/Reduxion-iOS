@@ -38,31 +38,5 @@ struct DataModel: Codable {
         var week52High: Float?
         var week52Low: Float?
     }
-
-
-    /*
-    // MARK: - Codable
-    
-    public func encode(to encoder: Encoder) throws {
-        
-    }
-
-    public init(from decoder: Decoder) throws {
-        
-    }
-     */
-
-//    init() {
-//    }
-    
-    
-//    func encode(with aCoder: NSCoder) {
-////        aCoder.encode(self, forKey:"model")
-//    }
-//
-//    required init(coder aDecoder: NSCoder) {
-////        self. = aDecoder.decodeObject(forKey: "model") as? DataModel ?? DataModel()
-//    }
-
     
 }
