@@ -61,14 +61,25 @@ struct AppState {
     static func recall() -> AppState {
         print("AppState - RECALL ***")
         var recalledAppState = AppState()
-        if let filePath = persistenceFilePath() {
-            if let newAppState = NSKeyedUnarchiver.unarchiveObject(withFile: filePath) as? AppState {
-                recalledAppState = newAppState
-            } else {
-                print("Error: Failed to load object from filePath \(filePath)")
+        if let fileURL = persistenceFileURL() {
+            let decoder = JSONDecoder()
+            let data: Data
+            let newDataModel: DataModel
+            do {
+                data = try Data(contentsOf: fileURL)
+            }
+            catch {
+                print("Warning: Couldn't retrieve app state from file path")
+            }
+            do {
+                let recalledDataModel = try decoder.decode(newDataModel, from: data)
+                recalledAppState.dataModel = recalledDataModel
+            }
+            catch {
+                print("Error: Couldn't decode app state from retrieved file!")
             }
         } else {
-            print("Error: Couldn't get persistence file path")
+            fatalError("Error: Couldn't get persistence file path")
         }
         
         return recalledAppState
