@@ -20,20 +20,13 @@ let persistenceFileName = "AppState"
 ///**
 // Object that encapsulates the state of the entire application, and can be persisted and recalled.
 // */
-//class AppState: NSObject, NSCoding {
 struct AppState {
-//    // (Needs to inherit from NSObject, in order to implement NSCoding.)
     // AppState is instantiated with default values (if not recalled from persistence).
-    // ** NOTE: For persisting data -- when adding properties, be SURE to also add them to the NSCoding methods below **
-    
-    // MARK: Calculations
+
+    // MARK: - Data model
     var dataModel = DataModel()
-    
-//    override init() {}
-    
-    
+
     // MARK: - Persistence
-    
     let dataModelKeyName = "dataModel"
     
 //    // persist
@@ -51,25 +44,21 @@ struct AppState {
      */
     static func persist(_ appState: AppState) {
         print("AppState - PERSIST ***")
-        if let fileURL = persistenceFileURL() {
-                let encoder = JSONEncoder()
-                do {
-                    let data = try encoder.encode(appState.dataModel)
-                    try data.write(to: fileURL, options: .atomic)
-                } catch {
-                    print("Error - unable to persist file at file URL: \(fileURL)")
-                }
+        if let fileURL = self.persistenceFileURL() {
+            let encoder = JSONEncoder()
+            do {
+                let data = try encoder.encode(appState.dataModel)
+                try data.write(to: fileURL, options: .atomic)
+            } catch {
+                print("Error - unable to persist file at file URL: \(fileURL)")
             }
-
-            
-            
         }
     }
     
     /**
      Recalls the AppState object from disk, and returns it.  If it doesn't exist or can't be recalled, returns a new AppState object.
      */
-    func recall() -> AppState {
+    static func recall() -> AppState {
         print("AppState - RECALL ***")
         var recalledAppState = AppState()
         if let filePath = persistenceFilePath() {
@@ -89,7 +78,7 @@ struct AppState {
     /**
      Returns the string for the absolute file persistence path within the Documents directory.  If for some reason this isn't available, returns nil.
      */
-    private func persistenceFilePath() -> String? {
+    static private func persistenceFilePath() -> String? {
         let documentsDirectoryURL = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask)[0]
         let fileURL = documentsDirectoryURL.appendingPathComponent(persistenceFileName)
         let filePath = fileURL.path
@@ -100,7 +89,7 @@ struct AppState {
     /**
      Returns the URL for the absolute file persistence path within the Documents directory.  If for some reason this isn't available, returns nil.
      */
-    private func persistenceFileURL() -> URL? {
+    static private func persistenceFileURL() -> URL? {
         var url: URL? = nil
         if let path = persistenceFilePath() {
             url = URL.init(fileURLWithPath: path)
