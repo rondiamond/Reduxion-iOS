@@ -26,19 +26,6 @@ struct AppState {
     // MARK: - Data model
     var dataModel = DataModel()
 
-    // MARK: - Persistence
-    let dataModelKeyName = "dataModel"
-    
-//    // persist
-//    func encode(with aCoder: NSCoder) {
-//        aCoder.encode(self, forKey:dataModelKeyName)
-//    }
-    
-//    // recall
-//    required init(coder aDecoder: NSCoder) {
-//        self.dataModel = aDecoder.decodeObject(forKey: dataModelKeyName) as? DataModel ?? DataModel()
-//    }
-    
     /**
      Persists the given AppState object to disk.
      */
@@ -60,29 +47,30 @@ struct AppState {
      */
     static func recall() -> AppState {
         print("AppState - RECALL ***")
-        var recalledAppState = AppState()
+        var newAppState = AppState()
         if let fileURL = persistenceFileURL() {
             let decoder = JSONDecoder()
             let data: Data
-            let newDataModel: DataModel
             do {
                 data = try Data(contentsOf: fileURL)
             }
             catch {
                 print("Warning: Couldn't retrieve app state from file path")
+                return newAppState
             }
             do {
-                let recalledDataModel = try decoder.decode(newDataModel, from: data)
-                recalledAppState.dataModel = recalledDataModel
+                let recalledDataModel = try decoder.decode(DataModel.self, from: data)
+                newAppState.dataModel = recalledDataModel
             }
             catch {
                 print("Error: Couldn't decode app state from retrieved file!")
+                return newAppState
             }
         } else {
-            fatalError("Error: Couldn't get persistence file path")
+            fatalError("Error: Couldn't get persistence file path!")
         }
         
-        return recalledAppState
+        return newAppState
         // needs to be stored by caller
     }
     

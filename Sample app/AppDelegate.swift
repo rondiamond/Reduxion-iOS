@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         _ = UseCaseFactory.shared     // initialize
-        
+        LogicCoordinator.sharedInstance.recallAppState()
         return true
     }
 
