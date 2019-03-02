@@ -64,8 +64,9 @@ protocol Logic {
      - parameter action: Action enum: encapsulates the desired operation being requested, and optionally carries any relevant data (as an attributed enum value)
      Nothing is returned.  Instead, the logic (optionally) mutates the AppState object passed in (if the requested action was something relevant to what that business logic cared about).
      */
+//    func performLogic(_ state: AppState, action: Action)
     func performLogic(_ state: AppState, action: Action)
-
+    
     /**
      *  Utilized by logic modules which connect with a web service. (The logic module's reference to the Service must be injected, to support unit testing, mock data, etc.).
      */
