@@ -633,7 +633,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/third-party\\ dependencies/Frameworks",
 				);
-				INFOPLIST_FILE = "Reduxion-iOSTests/Info.plist";
+				INFOPLIST_FILE = "Reduxion iOS/Reduxion-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -661,7 +661,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/third-party\\ dependencies/Frameworks",
 				);
-				INFOPLIST_FILE = "Reduxion-iOSTests/Info.plist";
+				INFOPLIST_FILE = "Reduxion iOS/Reduxion-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
