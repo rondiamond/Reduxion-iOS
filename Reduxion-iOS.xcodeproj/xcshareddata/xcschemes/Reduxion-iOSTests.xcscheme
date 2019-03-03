@@ -17,8 +17,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E4CE6AC02131498B00E4E865"
-               BuildableName = "Reduxion-iOSTests.xctest"
-               BlueprintName = "Reduxion-iOSTests"
+               BuildableName = "ReduxioniOSTests.xctest"
+               BlueprintName = "ReduxioniOSTests"
                ReferencedContainer = "container:Reduxion-iOS.xcodeproj">
             </BuildableReference>
          </TestableReference>
