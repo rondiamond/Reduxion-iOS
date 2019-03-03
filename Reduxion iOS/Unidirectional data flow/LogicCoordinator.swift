@@ -24,32 +24,14 @@ import Foundation
 
 // MARK: - Initialization
 
-/*
 /**
  Instantiates the Logic Coordinator for the application.
- - parameter servicesType: The type of Service Factory to be used (Production, Mock, etc.).  Allows the opportunity to use real or mock (static) data.
+ - parameter logicUnits: The logic units to be in the daisy chain.
  */
-func initializeLogicCoordinator(_ servicesType: ServicesType) {
-    _ = LogicCoordinator.sharedInstance   // instantiate singleton
-    LogicCoordinator.sharedInstance.serviceFactory = ServiceFactory(environmentType: currentServicesType)
-    
-    
-    
-}
-
-func initializeLogicUnits() -> [Logic] {
- 
-}
- */
-
 func initializeLogicCoordinator(logicUnits: [Logic]) {
     _ = LogicCoordinator.sharedInstance   // instantiate singleton
     LogicCoordinator.sharedInstance.logicUnits = logicUnits
-    
-    
-    
 }
-
 
 
 // MARK: - Protocols
@@ -64,8 +46,6 @@ protocol Logic {
      - parameter action: Action enum: encapsulates the desired operation being requested, and optionally carries any relevant data (as an attributed enum value)
      Nothing is returned.  Instead, the logic (optionally) mutates the AppState object passed in (if the requested action was something relevant to what that business logic cared about).
      */
-//    func performLogic(_ state: AppState, action: Action)
-//    mutating func performLogic(_ state: AppState, action: Action)
     func performLogic(state: inout AppState, action: Action)
 
     /**
@@ -73,25 +53,6 @@ protocol Logic {
      */
     var service: Service? { get set }
 }
-
-//protocol HasService {
-//    var service: Service? { get set }
-//}
-
-
-///**
-// *  Adopted by logic modules which connect with a web service. (The logic module's reference to the Service must be injected, to support unit testing, mock data, etc.).
-// */
-//protocol HasService {
-//    var activeService: Service? { get set }
-//    var serviceTypes: ServiceTypes { get }
-////    func baseURL(for environment: ServiceEnvironment) -> String
-//}
-//
-//struct ServiceTypes {
-//    var mockService: Service
-//    var realService: Service
-//}
 
 
 // MARK: AppStateSubscriber
@@ -151,74 +112,16 @@ class LogicCoordinator {
     // MARK: - Logic units
     fileprivate var stockQuoteLogic = StockQuoteLogic()
     
-    // MARK: - Service handling
-//    fileprivate var _serviceFactory: ServiceFactory?
-//    private var stockQuoteService: Service?
-//    private var services:
-    
-//    struct ServiceLogicPairs {
-//        <#fields#>
-//    }
-
-    /*
-    var serviceFactory: ServiceFactory {
-        // lazy assignment, since Singleton's serviceFactory needs to be dependency-injected (after instantiation)
-        set(newServiceFactory) {
-            _serviceFactory = newServiceFactory
-
-            // grab references to any Services (could be real or mock) from the ServiceFactory
-            // ... then inject them into the business logic units that depend on them
-//            self.stockQuoteService = _serviceFactory?.stockQuoteService
-//            self.stockQuoteLogic.service = self.stockQuoteService
-            
-//            useCases.forEach { (useCase) in
-//                useCase.logic.service = useCase.service
-//            }
-//
-
-//            for useCase in useCases {
-//                useCase.logic.service = useCase.service
-//
-//            }
-
-            
-            
-            
-        }
-        get {
-            return _serviceFactory!
-        }
-    }
-     */
-    
-    
-    // MARK: - Setup
-    
-    init() {
-        // no super.init, since this is a base class
-        self.add(logic: StockQuoteLogic())
-    }
-    
     
     // MARK: - Logic units (aka 'reducers')
-    
     /**
      The daisy chain of composable business logic units
-     
      Notes:
      - This business logic is the same regardless of whether we're using real or mock data.
      - The order of logic units in the daisy chain shouldn't matter.  If so, that's a code smell, and dependent operations should be handled differently.
      */
     fileprivate var logicUnits: [Logic] = []
     
-    /**
-     Adds a Logic unit to the logic coordinator's chain of composable business logic.
-     - parameter logic:  A unit of business logic to be added.
-     */
-    private func add(logic: Logic) {
-        self.logicUnits.append(logic)
-    }
-
     
     // MARK: - Data persistence
     
@@ -256,10 +159,6 @@ class LogicCoordinator {
         LogicCoordinator.sharedInstance.unsubscribe(listener)
     }
 
-//    static func add(logic: Logic) {
-//        LogicCoordinator.sharedInstance.add(logic: logic)
-//    }
-    
     
     // MARK: - Action
 
