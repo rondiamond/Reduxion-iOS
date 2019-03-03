@@ -65,10 +65,11 @@ struct StockQuoteLogic: Logic {
                 state.dataModel.stocksHistory.history.append(stockInfo)
                 state.dataModel.stocksHistory.currentIndex = state.dataModel.stocksHistory.history.count - 1
                 
-                let currentIndex = state.dataModel.stocksHistory.currentIndex!
-                let totalHistoryCount = state.dataModel.stocksHistory.history.count
-                state.dataModel.stocksHistory.canGoBack = (currentIndex > 0)
-                state.dataModel.stocksHistory.canGoForward = (currentIndex < totalHistoryCount-1)
+                self.modifyCurrentIndex(delta: .noChange, state: &state)
+//                let currentIndex = state.dataModel.stocksHistory.currentIndex!
+//                let totalHistoryCount = state.dataModel.stocksHistory.history.count
+//                state.dataModel.stocksHistory.canGoBack = (currentIndex > 0)
+//                state.dataModel.stocksHistory.canGoForward = (currentIndex < totalHistoryCount-1)
             }
             break
             
@@ -85,6 +86,7 @@ struct StockQuoteLogic: Logic {
 
     enum indexDelta: Int {
         case decrement = -1
+        case noChange = 0
         case increment = 1
     }
     

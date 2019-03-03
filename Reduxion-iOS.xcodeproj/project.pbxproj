@@ -39,7 +39,7 @@
 		E49569FD221E4B040070FB31 /* StockQuoteMockData.json in Resources */ = {isa = PBXBuildFile; fileRef = E49569FB221E4B040070FB31 /* StockQuoteMockData.json */; };
 		E49569FF221E4C0F0070FB31 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = E49569FE221E4C0F0070FB31 /* License.txt */; };
 		E4956A00221E4C0F0070FB31 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = E49569FE221E4C0F0070FB31 /* License.txt */; };
-		E4956A03221E50BA0070FB31 /* StockQuoteTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4956A02221E50BA0070FB31 /* StockQuoteTest.swift */; };
+		E4956A03221E50BA0070FB31 /* StockQuoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4956A02221E50BA0070FB31 /* StockQuoteTests.swift */; };
 		E4A581962150BD4C00B31C62 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581942150BD4C00B31C62 /* Alamofire.framework */; };
 		E4A581992150BD5600B31C62 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581972150BD5600B31C62 /* SwiftyJSON.framework */; };
 		E4BBF61F22262D6B00A1C5FA /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BBF61E22262D6B00A1C5FA /* UseCaseFactory.swift */; };
@@ -96,7 +96,7 @@
 		E49569FB221E4B040070FB31 /* StockQuoteMockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StockQuoteMockData.json; sourceTree = "<group>"; };
 		E49569FE221E4C0F0070FB31 /* License.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
 		E4956A01221E4DCD0070FB31 /* reduxion-ios-architecture-block-diagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reduxion-ios-architecture-block-diagram.png"; sourceTree = "<group>"; };
-		E4956A02221E50BA0070FB31 /* StockQuoteTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockQuoteTest.swift; sourceTree = "<group>"; };
+		E4956A02221E50BA0070FB31 /* StockQuoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockQuoteTests.swift; sourceTree = "<group>"; };
 		E4A581942150BD4C00B31C62 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
 		E4A581972150BD5600B31C62 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = SOURCE_ROOT; };
 		E4BBF61E22262D6B00A1C5FA /* UseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
@@ -192,7 +192,7 @@
 				E4D4FE7E2133B78E00438A8F /* StockQuoteLogic.swift */,
 				E49569FB221E4B040070FB31 /* StockQuoteMockData.json */,
 				E4D4FE852133BF0300438A8F /* StockQuoteService.swift */,
-				E4956A02221E50BA0070FB31 /* StockQuoteTest.swift */,
+				E4956A02221E50BA0070FB31 /* StockQuoteTests.swift */,
 			);
 			name = "Stock quotes";
 			path = "../Use cases/Stock quotes";
@@ -446,7 +446,7 @@
 				E49569F8221E464E0070FB31 /* ServiceConstants.swift in Sources */,
 				E4BBF6212226466E00A1C5FA /* AppDelegate.swift in Sources */,
 				E4D4FE832133BEB600438A8F /* StockQuoteLogic.swift in Sources */,
-				E4956A03221E50BA0070FB31 /* StockQuoteTest.swift in Sources */,
+				E4956A03221E50BA0070FB31 /* StockQuoteTests.swift in Sources */,
 				E442F6082150951A000B37FE /* AppState.swift in Sources */,
 				E45A850C215225BC00581DCE /* Actions.swift in Sources */,
 				E4D4FE842133BEBB00438A8F /* LogicCoordinator.swift in Sources */,
