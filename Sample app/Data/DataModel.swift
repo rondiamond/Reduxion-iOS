@@ -3,8 +3,6 @@ import Foundation
 // MARK: - Data model
 
 struct DataModel: Codable {
-//class DataModel: NSCoding {
-
     /**
      The actual data.
      */
@@ -38,5 +36,4 @@ struct DataModel: Codable {
         var week52High: Float?
         var week52Low: Float?
     }
-    
 }
