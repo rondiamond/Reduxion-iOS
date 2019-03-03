@@ -123,7 +123,7 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
             let numberOfHistoryCalculations = state.dataModel.stocksHistory.history.count
             historyCountLabelText = "\(numberOfCurrentHistoryCalculation) of \(numberOfHistoryCalculations)"
         } else {
-            historyCountLabelText = EMPTY_STRING
+            historyCountLabelText = ""
         }
         self.historyCountLabel.text = historyCountLabelText
     }

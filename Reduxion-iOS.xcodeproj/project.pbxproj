@@ -19,8 +19,6 @@
 		E45A855121523B0000581DCE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD321314BE400E4E865 /* AppState.swift */; };
 		E45A855221523B0000581DCE /* LogicCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */; };
 		E45A855521523B0500581DCE /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44260AD2137BC6800A218C6 /* DataModel.swift */; };
-		E45A855621523B0A00581DCE /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE882133BFBF00438A8F /* GeneralConstants.swift */; };
-		E45A855721523B0A00581DCE /* ServiceActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */; };
 		E45A855921523B1100581DCE /* StockQuoteLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE7E2133B78E00438A8F /* StockQuoteLogic.swift */; };
 		E45A855A21523B1100581DCE /* StockQuoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE852133BF0300438A8F /* StockQuoteService.swift */; };
 		E45A855D21523D1100581DCE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581942150BD4C00B31C62 /* Alamofire.framework */; };
@@ -31,13 +29,12 @@
 		E4645F09222773DD00FCC46E /* AppUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4645F07222773DD00FCC46E /* AppUseCases.swift */; };
 		E478EA1D216350AA008F05DB /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E478EA1821635091008F05DB /* Nimble.framework */; };
 		E478EA1E216350AA008F05DB /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E478EA1721635091008F05DB /* Quick.framework */; };
-		E48FE18C222BB5E1002646E7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4CE6AC82131498B00E4E865 /* Info.plist */; };
+		E48FE18E222BBEAA002646E7 /* ServiceActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */; };
+		E48FE18F222BBF5D002646E7 /* ServiceActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */; };
 		E49569F7221E464E0070FB31 /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49569F6221E464E0070FB31 /* ServiceConstants.swift */; };
 		E49569F8221E464E0070FB31 /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49569F6221E464E0070FB31 /* ServiceConstants.swift */; };
 		E49569FC221E4B040070FB31 /* StockQuoteMockData.json in Resources */ = {isa = PBXBuildFile; fileRef = E49569FB221E4B040070FB31 /* StockQuoteMockData.json */; };
 		E49569FD221E4B040070FB31 /* StockQuoteMockData.json in Resources */ = {isa = PBXBuildFile; fileRef = E49569FB221E4B040070FB31 /* StockQuoteMockData.json */; };
-		E49569FF221E4C0F0070FB31 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = E49569FE221E4C0F0070FB31 /* License.txt */; };
-		E4956A00221E4C0F0070FB31 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = E49569FE221E4C0F0070FB31 /* License.txt */; };
 		E4956A03221E50BA0070FB31 /* StockQuoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4956A02221E50BA0070FB31 /* StockQuoteTests.swift */; };
 		E4A581962150BD4C00B31C62 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581942150BD4C00B31C62 /* Alamofire.framework */; };
 		E4A581992150BD5600B31C62 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581972150BD5600B31C62 /* SwiftyJSON.framework */; };
@@ -47,8 +44,6 @@
 		E4D4FE832133BEB600438A8F /* StockQuoteLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE7E2133B78E00438A8F /* StockQuoteLogic.swift */; };
 		E4D4FE842133BEBB00438A8F /* LogicCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */; };
 		E4D4FE872133BF0300438A8F /* StockQuoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE852133BF0300438A8F /* StockQuoteService.swift */; };
-		E4D4FE8A2133BFBF00438A8F /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE882133BFBF00438A8F /* GeneralConstants.swift */; };
-		E4D4FE8D2133C28F00438A8F /* ServiceActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,7 +72,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E41DF642216201A7004D248F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		E44260AD2137BC6800A218C6 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		E442F60B21509637000B37FE /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
 		E45A853C2152372700581DCE /* Reduxion-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reduxion-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,7 +101,6 @@
 		E4D4FE742133AE2000438A8F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		E4D4FE7E2133B78E00438A8F /* StockQuoteLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StockQuoteLogic.swift; path = "Sample app/Use cases/Stock quotes/StockQuoteLogic.swift"; sourceTree = SOURCE_ROOT; };
 		E4D4FE852133BF0300438A8F /* StockQuoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StockQuoteService.swift; path = "Sample app/Use cases/Stock quotes/StockQuoteService.swift"; sourceTree = SOURCE_ROOT; };
-		E4D4FE882133BFBF00438A8F /* GeneralConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GeneralConstants.swift; path = "Reduxion iOS/Unidirectional data flow/GeneralConstants.swift"; sourceTree = SOURCE_ROOT; };
 		E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceActivityIndicator.swift; path = "Reduxion iOS/Service-related/ServiceActivityIndicator.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -135,14 +128,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E41DF6412162018F004D248F /* SwiftLint */ = {
-			isa = PBXGroup;
-			children = (
-				E41DF642216201A7004D248F /* .swiftlint.yml */,
-			);
-			path = SwiftLint;
-			sourceTree = "<group>";
-		};
 		E442F60921509550000B37FE /* Sample app */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,14 +147,6 @@
 				E442F60B21509637000B37FE /* Cartfile */,
 			);
 			path = Carthage;
-			sourceTree = "<group>";
-		};
-		E478EA1F2163605F008F05DB /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		E49569F9221E47F80070FB31 /* Service-related */ = {
@@ -232,7 +209,6 @@
 				E4CE6ADD21314BE800E4E865 /* Unidirectional data flow */,
 				E4D4FE6B2133781600438A8F /* third-party dependencies */,
 				E4CE6AC52131498B00E4E865 /* Reduxion-iOSTests */,
-				E478EA1F2163605F008F05DB /* Frameworks */,
 				E4CE6AB92131498B00E4E865 /* Products */,
 			);
 			name = "Reduxion iOS";
@@ -269,7 +245,6 @@
 			isa = PBXGroup;
 			children = (
 				E4CE6AD321314BE400E4E865 /* AppState.swift */,
-				E4D4FE882133BFBF00438A8F /* GeneralConstants.swift */,
 				E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */,
 				E4BBF61E22262D6B00A1C5FA /* UseCaseFactory.swift */,
 			);
@@ -283,7 +258,6 @@
 				E4D4FE6C2133784300438A8F /* Reduxion-iOSTests-Bridging-Header.h */,
 				E442F60A21509622000B37FE /* Carthage */,
 				E4A581932150BD1700B31C62 /* Frameworks */,
-				E41DF6412162018F004D248F /* SwiftLint */,
 			);
 			name = "third-party dependencies";
 			path = "Reduxion iOS/third-party dependencies";
@@ -394,7 +368,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E49569FC221E4B040070FB31 /* StockQuoteMockData.json in Resources */,
-				E49569FF221E4C0F0070FB31 /* License.txt in Resources */,
 				E45A85492152372800581DCE /* LaunchScreen.storyboard in Resources */,
 				E45A85462152372800581DCE /* Assets.xcassets in Resources */,
 				E45A85442152372700581DCE /* Main.storyboard in Resources */,
@@ -405,9 +378,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4956A00221E4C0F0070FB31 /* License.txt in Resources */,
 				E49569FD221E4B040070FB31 /* StockQuoteMockData.json in Resources */,
-				E48FE18C222BB5E1002646E7 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E45A855021523B0000581DCE /* Actions.swift in Sources */,
+				E48FE18E222BBEAA002646E7 /* ServiceActivityIndicator.swift in Sources */,
 				E4645F08222773DD00FCC46E /* AppUseCases.swift in Sources */,
 				E45A855221523B0000581DCE /* LogicCoordinator.swift in Sources */,
 				E45A855921523B1100581DCE /* StockQuoteLogic.swift in Sources */,
@@ -426,10 +398,8 @@
 				E4BBF61F22262D6B00A1C5FA /* UseCaseFactory.swift in Sources */,
 				E45A855A21523B1100581DCE /* StockQuoteService.swift in Sources */,
 				E45A855521523B0500581DCE /* DataModel.swift in Sources */,
-				E45A855721523B0A00581DCE /* ServiceActivityIndicator.swift in Sources */,
 				E45A853F2152372700581DCE /* AppDelegate.swift in Sources */,
 				E45A855121523B0000581DCE /* AppState.swift in Sources */,
-				E45A855621523B0A00581DCE /* GeneralConstants.swift in Sources */,
 				E49569F7221E464E0070FB31 /* ServiceConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E48FE18F222BBF5D002646E7 /* ServiceActivityIndicator.swift in Sources */,
 				E4BBF62022262D6B00A1C5FA /* UseCaseFactory.swift in Sources */,
 				E4645F09222773DD00FCC46E /* AppUseCases.swift in Sources */,
 				E49569F8221E464E0070FB31 /* ServiceConstants.swift in Sources */,
@@ -447,10 +418,8 @@
 				E442F6082150951A000B37FE /* AppState.swift in Sources */,
 				E45A850C215225BC00581DCE /* Actions.swift in Sources */,
 				E4D4FE842133BEBB00438A8F /* LogicCoordinator.swift in Sources */,
-				E4D4FE8D2133C28F00438A8F /* ServiceActivityIndicator.swift in Sources */,
 				E44260AF2137BC6900A218C6 /* DataModel.swift in Sources */,
 				E4D4FE872133BF0300438A8F /* StockQuoteService.swift in Sources */,
-				E4D4FE8A2133BFBF00438A8F /* GeneralConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
