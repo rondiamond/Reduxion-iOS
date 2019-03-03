@@ -29,8 +29,6 @@
 		E45A856021523D1100581DCE /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581972150BD5600B31C62 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E4645F08222773DD00FCC46E /* AppUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4645F07222773DD00FCC46E /* AppUseCases.swift */; };
 		E4645F09222773DD00FCC46E /* AppUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4645F07222773DD00FCC46E /* AppUseCases.swift */; };
-		E4645F0B222777E400FCC46E /* ServiceEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4645F0A222777E400FCC46E /* ServiceEnvironment.swift */; };
-		E4645F0C222777E400FCC46E /* ServiceEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4645F0A222777E400FCC46E /* ServiceEnvironment.swift */; };
 		E478EA1D216350AA008F05DB /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E478EA1821635091008F05DB /* Nimble.framework */; };
 		E478EA1E216350AA008F05DB /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E478EA1721635091008F05DB /* Quick.framework */; };
 		E49569F7221E464E0070FB31 /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49569F6221E464E0070FB31 /* ServiceConstants.swift */; };
@@ -89,7 +87,6 @@
 		E45A85482152372800581DCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E45A854A2152372800581DCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4645F07222773DD00FCC46E /* AppUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppUseCases.swift; path = "Sample app/use cases/AppUseCases.swift"; sourceTree = SOURCE_ROOT; };
-		E4645F0A222777E400FCC46E /* ServiceEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceEnvironment.swift; sourceTree = "<group>"; };
 		E478EA1721635091008F05DB /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = SOURCE_ROOT; };
 		E478EA1821635091008F05DB /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = SOURCE_ROOT; };
 		E49569F6221E464E0070FB31 /* ServiceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConstants.swift; sourceTree = "<group>"; };
@@ -151,7 +148,6 @@
 				E4CE6AD421314BE400E4E865 /* Actions.swift */,
 				E45A853E2152372700581DCE /* AppDelegate.swift */,
 				E45A854A2152372800581DCE /* Info.plist */,
-				E4645F0A222777E400FCC46E /* ServiceEnvironment.swift */,
 				E4BBF6222226467500A1C5FA /* Data */,
 				E4D4FE7C2133B6F200438A8F /* Use cases */,
 				E4BBF6232226468900A1C5FA /* View */,
@@ -429,7 +425,6 @@
 				E45A855A21523B1100581DCE /* StockQuoteService.swift in Sources */,
 				E45A855521523B0500581DCE /* DataModel.swift in Sources */,
 				E45A855721523B0A00581DCE /* ServiceActivityIndicator.swift in Sources */,
-				E4645F0B222777E400FCC46E /* ServiceEnvironment.swift in Sources */,
 				E45A853F2152372700581DCE /* AppDelegate.swift in Sources */,
 				E45A855121523B0000581DCE /* AppState.swift in Sources */,
 				E45A855621523B0A00581DCE /* GeneralConstants.swift in Sources */,
@@ -450,7 +445,6 @@
 				E442F6082150951A000B37FE /* AppState.swift in Sources */,
 				E45A850C215225BC00581DCE /* Actions.swift in Sources */,
 				E4D4FE842133BEBB00438A8F /* LogicCoordinator.swift in Sources */,
-				E4645F0C222777E400FCC46E /* ServiceEnvironment.swift in Sources */,
 				E4D4FE8D2133C28F00438A8F /* ServiceActivityIndicator.swift in Sources */,
 				E44260AF2137BC6900A218C6 /* DataModel.swift in Sources */,
 				E4D4FE872133BF0300438A8F /* StockQuoteService.swift in Sources */,

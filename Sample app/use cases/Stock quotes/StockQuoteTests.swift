@@ -28,23 +28,31 @@ class StockQuoteSpec: QuickSpec, AppStateSubscriber {
         beforeSuite {
             print("\n \(self) \(#function) line \(#line); NSDate = \(NSDate.init().timeIntervalSince1970)")
             print("** beforeSuite **")
+            
+            let currentServicesType: ServicesType = .mock
             _ = UseCaseFactory.shared     // initialize
             LogicCoordinator.subscribe(self, updateWithCurrentAppState: false)
         }
         
         beforeEach {
+            print("\n \(self) \(#function) line \(#line); NSDate = \(NSDate.init().timeIntervalSince1970)")
+            print("** beforeEach **")
+
             // clear history
 
             self.currentStockSymbol = nil
         }
         
         afterEach {
-            
+            print("\n \(self) \(#function) line \(#line); NSDate = \(NSDate.init().timeIntervalSince1970)")
+            print("** afterEach **")
+
         }
 
         afterSuite {
             print("\n \(self) \(#function) line \(#line); NSDate = \(NSDate.init().timeIntervalSince1970)")
             print("** afterSuite **")
+            
             LogicCoordinator.unsubscribe(self)
         }
 
