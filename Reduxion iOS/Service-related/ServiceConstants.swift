@@ -15,6 +15,8 @@ import Foundation
 
 // MARK: - Service type & Environment
 
+var currentServicesType: ServicesType?
+
 /**
  Protocol adopted by object which implements a service.
  Includes entry point for requesting it to fetch data from its corresponding endpoint (and if applicable, store the results).

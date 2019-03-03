@@ -35,7 +35,11 @@ struct UseCaseFactory {
     
     init() {
         var currentEnvironment: ServiceEnvironment? = nil
-        switch currentServicesType {
+        guard (currentServicesType != nil) else {
+            fatalError("Error: currentServicesType must be set!")
+        }
+        
+        switch currentServicesType! {
         case .mock:
             break
         case .real(let environment):
@@ -47,7 +51,7 @@ struct UseCaseFactory {
             var logic = useCase.logic
             var service: Service
             
-            switch currentServicesType {
+            switch currentServicesType! {
             case .mock:
                 service = useCase.services.mock
                 break
