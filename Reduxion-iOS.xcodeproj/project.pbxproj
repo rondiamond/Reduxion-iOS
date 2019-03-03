@@ -40,7 +40,6 @@
 		E4A581992150BD5600B31C62 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581972150BD5600B31C62 /* SwiftyJSON.framework */; };
 		E4BBF61F22262D6B00A1C5FA /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BBF61E22262D6B00A1C5FA /* UseCaseFactory.swift */; };
 		E4BBF62022262D6B00A1C5FA /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BBF61E22262D6B00A1C5FA /* UseCaseFactory.swift */; };
-		E4BBF6212226466E00A1C5FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45A853E2152372700581DCE /* AppDelegate.swift */; };
 		E4D4FE832133BEB600438A8F /* StockQuoteLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE7E2133B78E00438A8F /* StockQuoteLogic.swift */; };
 		E4D4FE842133BEBB00438A8F /* LogicCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */; };
 		E4D4FE872133BF0300438A8F /* StockQuoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE852133BF0300438A8F /* StockQuoteService.swift */; };
@@ -412,7 +411,6 @@
 				E4BBF62022262D6B00A1C5FA /* UseCaseFactory.swift in Sources */,
 				E4645F09222773DD00FCC46E /* AppUseCases.swift in Sources */,
 				E49569F8221E464E0070FB31 /* ServiceConstants.swift in Sources */,
-				E4BBF6212226466E00A1C5FA /* AppDelegate.swift in Sources */,
 				E4D4FE832133BEB600438A8F /* StockQuoteLogic.swift in Sources */,
 				E4956A03221E50BA0070FB31 /* StockQuoteTests.swift in Sources */,
 				E442F6082150951A000B37FE /* AppState.swift in Sources */,

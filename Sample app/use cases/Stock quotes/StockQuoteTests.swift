@@ -13,7 +13,7 @@ import Nimble
 
 class StockQuoteSpec: QuickSpec, AppStateSubscriber {
     var appStateSubscriberIdentifier: String = ""
-    
+
     let stockSymbols = [
         "aapl", "goog", "nflx", "sbux", "tgt"
     ]
@@ -28,7 +28,7 @@ class StockQuoteSpec: QuickSpec, AppStateSubscriber {
             print("\n \(self) \(#function) line \(#line); NSDate = \(NSDate.init().timeIntervalSince1970)")
             print("** beforeSuite **")
             
-            let currentServicesType: ServicesType = .mock
+            currentServicesType = .mock
             _ = UseCaseFactory.shared     // initialize
             LogicCoordinator.subscribe(self, updateWithCurrentAppState: false)
         }
