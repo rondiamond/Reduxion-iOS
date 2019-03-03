@@ -74,7 +74,7 @@
 /* Begin PBXFileReference section */
 		E44260AD2137BC6800A218C6 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		E442F60B21509637000B37FE /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
-		E45A853C2152372700581DCE /* ReduxioniOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReduxioniOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E45A853C2152372700581DCE /* ReduxionIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReduxionIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45A853E2152372700581DCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E45A85402152372700581DCE /* StockQuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockQuoteViewController.swift; sourceTree = "<group>"; };
 		E45A85432152372700581DCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 		E4A581942150BD4C00B31C62 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
 		E4A581972150BD5600B31C62 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = SOURCE_ROOT; };
 		E4BBF61E22262D6B00A1C5FA /* UseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
-		E4CE6AC12131498B00E4E865 /* ReduxioniOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReduxioniOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4CE6AC12131498B00E4E865 /* ReduxionIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReduxionIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4CE6AC82131498B00E4E865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4CE6AD321314BE400E4E865 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		E4CE6AD421314BE400E4E865 /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
@@ -225,8 +225,8 @@
 		E4CE6AB92131498B00E4E865 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E4CE6AC12131498B00E4E865 /* ReduxioniOSTests.xctest */,
-				E45A853C2152372700581DCE /* ReduxioniOS.app */,
+				E4CE6AC12131498B00E4E865 /* ReduxionIOSTests.xctest */,
+				E45A853C2152372700581DCE /* ReduxionIOS.app */,
 			);
 			name = Products;
 			path = ..;
@@ -287,9 +287,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E45A853B2152372700581DCE /* ReduxioniOS */ = {
+		E45A853B2152372700581DCE /* ReduxionIOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E45A854B2152372800581DCE /* Build configuration list for PBXNativeTarget "ReduxioniOS" */;
+			buildConfigurationList = E45A854B2152372800581DCE /* Build configuration list for PBXNativeTarget "ReduxionIOS" */;
 			buildPhases = (
 				E45A85382152372700581DCE /* Sources */,
 				E45A85392152372700581DCE /* Frameworks */,
@@ -300,14 +300,14 @@
 			);
 			dependencies = (
 			);
-			name = ReduxioniOS;
+			name = ReduxionIOS;
 			productName = "Reduxion-iOS";
-			productReference = E45A853C2152372700581DCE /* ReduxioniOS.app */;
+			productReference = E45A853C2152372700581DCE /* ReduxionIOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E4CE6AC02131498B00E4E865 /* ReduxioniOSTests */ = {
+		E4CE6AC02131498B00E4E865 /* ReduxionIOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4CE6ACF2131498B00E4E865 /* Build configuration list for PBXNativeTarget "ReduxioniOSTests" */;
+			buildConfigurationList = E4CE6ACF2131498B00E4E865 /* Build configuration list for PBXNativeTarget "ReduxionIOSTests" */;
 			buildPhases = (
 				E4CE6ABD2131498B00E4E865 /* Sources */,
 				E4CE6ABE2131498B00E4E865 /* Frameworks */,
@@ -318,9 +318,9 @@
 			dependencies = (
 				E478EA2521636EAE008F05DB /* PBXTargetDependency */,
 			);
-			name = ReduxioniOSTests;
+			name = ReduxionIOSTests;
 			productName = "Reduxion-iOSTests";
-			productReference = E4CE6AC12131498B00E4E865 /* ReduxioniOSTests.xctest */;
+			productReference = E4CE6AC12131498B00E4E865 /* ReduxionIOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -356,8 +356,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E45A853B2152372700581DCE /* ReduxioniOS */,
-				E4CE6AC02131498B00E4E865 /* ReduxioniOSTests */,
+				E45A853B2152372700581DCE /* ReduxionIOS */,
+				E4CE6AC02131498B00E4E865 /* ReduxionIOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -428,7 +428,7 @@
 /* Begin PBXTargetDependency section */
 		E478EA2521636EAE008F05DB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E45A853B2152372700581DCE /* ReduxioniOS */;
+			target = E45A853B2152372700581DCE /* ReduxionIOS */;
 			targetProxy = E478EA2421636EAE008F05DB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -645,7 +645,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Reduxion-iOS.app/Reduxion-iOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReduxionIOS.app/ReduxionIOS";
 			};
 			name = Debug;
 		};
@@ -672,14 +672,14 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Reduxion iOS/third-party dependencies/Reduxion-iOSTests-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Reduxion-iOS.app/Reduxion-iOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReduxionIOS.app/ReduxionIOS";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E45A854B2152372800581DCE /* Build configuration list for PBXNativeTarget "ReduxioniOS" */ = {
+		E45A854B2152372800581DCE /* Build configuration list for PBXNativeTarget "ReduxionIOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E45A854C2152372800581DCE /* Debug */,
@@ -697,7 +697,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4CE6ACF2131498B00E4E865 /* Build configuration list for PBXNativeTarget "ReduxioniOSTests" */ = {
+		E4CE6ACF2131498B00E4E865 /* Build configuration list for PBXNativeTarget "ReduxionIOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4CE6AD02131498B00E4E865 /* Debug */,

@@ -9,7 +9,7 @@
 
 import Quick
 import Nimble
-@testable import Reduxion-iOS
+@testable import ReduxionIOS
 
 class StockQuoteSpec: QuickSpec, AppStateSubscriber {
     var appStateSubscriberIdentifier: String = ""

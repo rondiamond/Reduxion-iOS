@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E45A853B2152372700581DCE"
-               BuildableName = "ReduxioniOS.app"
-               BlueprintName = "ReduxioniOS"
+               BuildableName = "ReduxionIOS.app"
+               BlueprintName = "ReduxionIOS"
                ReferencedContainer = "container:Reduxion-iOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E45A853B2152372700581DCE"
-            BuildableName = "ReduxioniOS.app"
-            BlueprintName = "ReduxioniOS"
+            BuildableName = "ReduxionIOS.app"
+            BlueprintName = "ReduxionIOS"
             ReferencedContainer = "container:Reduxion-iOS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -56,8 +56,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E45A853B2152372700581DCE"
-            BuildableName = "ReduxioniOS.app"
-            BlueprintName = "ReduxioniOS"
+            BuildableName = "ReduxionIOS.app"
+            BlueprintName = "ReduxionIOS"
             ReferencedContainer = "container:Reduxion-iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -75,8 +75,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E45A853B2152372700581DCE"
-            BuildableName = "ReduxioniOS.app"
-            BlueprintName = "ReduxioniOS"
+            BuildableName = "ReduxionIOS.app"
+            BlueprintName = "ReduxionIOS"
             ReferencedContainer = "container:Reduxion-iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
