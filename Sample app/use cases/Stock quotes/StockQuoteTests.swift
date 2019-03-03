@@ -9,7 +9,7 @@
 
 import Quick
 import Nimble
-//@testable import Reduxion-iOS
+@testable import Reduxion-iOS
 
 class StockQuoteSpec: QuickSpec, AppStateSubscriber {
     var appStateSubscriberIdentifier: String = ""
@@ -17,7 +17,6 @@ class StockQuoteSpec: QuickSpec, AppStateSubscriber {
     let stockSymbols = [
         "aapl", "goog", "nflx", "sbux", "tgt"
     ]
-
     var currentStockSymbol: String? = nil
     var stockResultInfo: StockInfo? = nil
 
@@ -68,10 +67,10 @@ class StockQuoteSpec: QuickSpec, AppStateSubscriber {
                     
                     // make sure result meets basic sanity checking
                     
+                    expect(self.stockResultInfo).toEventually(!beNil())
 //                    expect(self.stockResultInfo).toEventually(!beNil())
-//                    expect(self.stockResultInfo).toEventually(!beNil())
-                    
-                    self.stockResultInfo
+//expect(self.stockResultInfo
+//                    self.stockResultInfo.symbol
 
 
                     
@@ -89,20 +88,20 @@ class StockQuoteSpec: QuickSpec, AppStateSubscriber {
         describe("Stock quotes") {
             context("attempt to fetch data") {
                 it("should yield current stock data") {
-                    for stockWithExpectedValues in self.stocksWithExpectedValues {
-                        let symbol = stockWithExpectedValues.symbol
-                        LogicCoordinator.performAction(.stockQuoteServiceRequest(symbol: symbol))
-                        
-                        let expectedCompanyNamePartial = stockWithExpectedValues.expectedCompanyNamePartial
-                        let expectedCompanySectorPartial = stockWithExpectedValues.expectedCompanySectorPartial
-                        let expectedPrice = stockWithExpectedValues.expectedPrice
-                        let expectedPriceMinimum = self.stockExpectedPriceRangeMinimum * expectedPrice
-                        let expectedPriceMaximum = self.stockExpectedPriceRangeMaximum * expectedPrice
-                        
-                        expect(self.stockCurrentPrice).toEventually(beGreaterThan(expectedPriceMinimum))
-                        expect(self.stockCurrentPrice).toEventually(beLessThan(expectedPriceMaximum))
-                        expect(stockWithExpectedValues.expectedCompanyNamePartial.contains(<#T##element: Character##Character#>)
-                        
+//                    for stockWithExpectedValues in self.stocksWithExpectedValues {
+//                        let symbol = stockWithExpectedValues.symbol
+//                        LogicCoordinator.performAction(.stockQuoteServiceRequest(symbol: symbol))
+//
+//                        let expectedCompanyNamePartial = stockWithExpectedValues.expectedCompanyNamePartial
+//                        let expectedCompanySectorPartial = stockWithExpectedValues.expectedCompanySectorPartial
+//                        let expectedPrice = stockWithExpectedValues.expectedPrice
+//                        let expectedPriceMinimum = self.stockExpectedPriceRangeMinimum * expectedPrice
+//                        let expectedPriceMaximum = self.stockExpectedPriceRangeMaximum * expectedPrice
+//
+//                        expect(self.stockCurrentPrice).toEventually(beGreaterThan(expectedPriceMinimum))
+//                        expect(self.stockCurrentPrice).toEventually(beLessThan(expectedPriceMaximum))
+//                        expect(stockWithExpectedValues.expectedCompanyNamePartial.contains(<#T##element: Character##Character#>)
+//
                     }
                     
                     
@@ -207,9 +206,7 @@ class StockQuoteSpec: QuickSpec, AppStateSubscriber {
         print("... mostRecentAction = \(mostRecentAction)")
         switch mostRecentAction {
         case .stockQuoteServiceResponse(_):
-            
-            // get current stock info in history
-            // assign to self.stockResultInfo
+            self.stockResultInfo = state.dataModel.stocksHistory.currentStock
             
             
             

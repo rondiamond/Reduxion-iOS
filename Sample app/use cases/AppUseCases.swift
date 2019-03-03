@@ -8,18 +8,21 @@
 
 import Foundation
 
-//struct AppUseCases: UseCases {
-    var useCases: [UseCase] {
-        get {
-            let _useCases: [UseCase] = [
-                UseCase.init(name: "StockQuote",
-                             logic: StockQuoteLogic(),
-                             services: UseCaseServices.init(mock: MockStockQuoteService(),
-                                                            real: StockQuoteService()
-                    )
+
+/**
+ The pre-defined use cases for the application.
+ Each consists of a Logic unit, and two Service handlers (real and mock).
+ */
+var useCases: [UseCase] {
+    get {
+        let _useCases: [UseCase] = [
+            UseCase.init(logic: StockQuoteLogic(),
+                         services: UseCaseServices.init(mock: MockStockQuoteService(),
+                                                        real: StockQuoteService()
                 )
-            ]
-            return _useCases
-        }
+            )
+            // more as needed ...
+        ]
+        return _useCases
     }
-//}
+}

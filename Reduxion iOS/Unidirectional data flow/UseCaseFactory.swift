@@ -20,7 +20,6 @@ protocol UseCases {
  A 'use case' consists of the components used to implement a particular logical purpose in the application.
  */
 struct UseCase {
-    var name: String
     var logic: Logic
     var services: UseCaseServices
 }
