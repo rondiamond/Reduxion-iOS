@@ -62,7 +62,7 @@ class StockQuoteSpec: QuickSpec, AppStateSubscriber {
             context("attempt to look up") {
                 it("should get some stock information") {
                 // pick a stock
-                    let stockSymbol = stockSymbols.first!
+                    let stockSymbol = self.stockSymbols.first!
                     LogicCoordinator.performAction(.stockQuoteServiceRequest(symbol: stockSymbol))
                     
                     // make sure result meets basic sanity checking
@@ -102,11 +102,10 @@ class StockQuoteSpec: QuickSpec, AppStateSubscriber {
 //                        expect(self.stockCurrentPrice).toEventually(beLessThan(expectedPriceMaximum))
 //                        expect(stockWithExpectedValues.expectedCompanyNamePartial.contains(<#T##element: Character##Character#>)
 //
-                    }
-                    
-                    
-                    
                 }
+                
+                
+                
             }
         }
 
@@ -114,8 +113,7 @@ class StockQuoteSpec: QuickSpec, AppStateSubscriber {
         describe("Stock lookups") {
             context("when do n # of lookups") {
                 it("then expect history count = the same number") {
-                    try! something()
-                    expect(some.state) == someother.state
+
                 }
             }
         }
@@ -125,8 +123,6 @@ class StockQuoteSpec: QuickSpec, AppStateSubscriber {
                 it("then expect no back or forward") {
                     // clear history
                     
-                    try! something()
-                    expect(some.state) == someother.state
                 }
             }
         }
@@ -156,8 +152,8 @@ class StockQuoteSpec: QuickSpec, AppStateSubscriber {
                 it("then") {
                     // clear history
 
-                    try! something()
-                    expect(some.state) == someother.state
+//                    try! something()
+//                    expect(some.state) == someother.state
                 }
             }
         }
@@ -193,7 +189,7 @@ class StockQuoteSpec: QuickSpec, AppStateSubscriber {
         }
  */
 
-        
+    }
         
         
         
