@@ -78,7 +78,14 @@ struct StockQuoteLogic: Logic {
 
         case .goForwardInHistory():
             self.modifyCurrentIndex(delta: .increment, state: &state)
-
+            
+        case .clearHistory():
+            state.dataModel.stocksHistory.history.removeAll()
+            state.dataModel.stocksHistory.currentStock = nil
+            state.dataModel.stocksHistory.currentIndex = nil
+            state.dataModel.stocksHistory.canGoBack = false
+            state.dataModel.stocksHistory.canGoForward = false
+            
         default:
             break
         }
