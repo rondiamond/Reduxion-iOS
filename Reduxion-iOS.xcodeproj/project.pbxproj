@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E401110A222CCC9800551782 /* StockQuoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4011109222CCC9800551782 /* StockQuoteTests.swift */; };
 		E44260AF2137BC6900A218C6 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44260AD2137BC6800A218C6 /* DataModel.swift */; };
 		E442F6082150951A000B37FE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD321314BE400E4E865 /* AppState.swift */; };
 		E45A850C215225BC00581DCE /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD421314BE400E4E865 /* Actions.swift */; };
@@ -27,15 +28,12 @@
 		E45A856021523D1100581DCE /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581972150BD5600B31C62 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E4645F08222773DD00FCC46E /* AppUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4645F07222773DD00FCC46E /* AppUseCases.swift */; };
 		E4645F09222773DD00FCC46E /* AppUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4645F07222773DD00FCC46E /* AppUseCases.swift */; };
-		E478EA1D216350AA008F05DB /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E478EA1821635091008F05DB /* Nimble.framework */; };
-		E478EA1E216350AA008F05DB /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E478EA1721635091008F05DB /* Quick.framework */; };
 		E48FE18E222BBEAA002646E7 /* ServiceActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */; };
 		E48FE18F222BBF5D002646E7 /* ServiceActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */; };
 		E49569F7221E464E0070FB31 /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49569F6221E464E0070FB31 /* ServiceConstants.swift */; };
 		E49569F8221E464E0070FB31 /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49569F6221E464E0070FB31 /* ServiceConstants.swift */; };
 		E49569FC221E4B040070FB31 /* StockQuoteMockData.json in Resources */ = {isa = PBXBuildFile; fileRef = E49569FB221E4B040070FB31 /* StockQuoteMockData.json */; };
 		E49569FD221E4B040070FB31 /* StockQuoteMockData.json in Resources */ = {isa = PBXBuildFile; fileRef = E49569FB221E4B040070FB31 /* StockQuoteMockData.json */; };
-		E4956A03221E50BA0070FB31 /* StockQuoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4956A02221E50BA0070FB31 /* StockQuoteTests.swift */; };
 		E4A581962150BD4C00B31C62 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581942150BD4C00B31C62 /* Alamofire.framework */; };
 		E4A581992150BD5600B31C62 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581972150BD5600B31C62 /* SwiftyJSON.framework */; };
 		E4BBF61F22262D6B00A1C5FA /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BBF61E22262D6B00A1C5FA /* UseCaseFactory.swift */; };
@@ -71,6 +69,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E4011109222CCC9800551782 /* StockQuoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockQuoteTests.swift; sourceTree = "<group>"; };
 		E44260AD2137BC6800A218C6 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		E442F60B21509637000B37FE /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
 		E45A853C2152372700581DCE /* ReduxionIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReduxionIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,13 +80,10 @@
 		E45A85482152372800581DCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E45A854A2152372800581DCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4645F07222773DD00FCC46E /* AppUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppUseCases.swift; path = "Sample app/use cases/AppUseCases.swift"; sourceTree = SOURCE_ROOT; };
-		E478EA1721635091008F05DB /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = SOURCE_ROOT; };
-		E478EA1821635091008F05DB /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = SOURCE_ROOT; };
 		E49569F6221E464E0070FB31 /* ServiceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConstants.swift; sourceTree = "<group>"; };
 		E49569FB221E4B040070FB31 /* StockQuoteMockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StockQuoteMockData.json; sourceTree = "<group>"; };
 		E49569FE221E4C0F0070FB31 /* License.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
 		E4956A01221E4DCD0070FB31 /* reduxion-ios-architecture-block-diagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reduxion-ios-architecture-block-diagram.png"; sourceTree = "<group>"; };
-		E4956A02221E50BA0070FB31 /* StockQuoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockQuoteTests.swift; sourceTree = "<group>"; };
 		E4A581942150BD4C00B31C62 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
 		E4A581972150BD5600B31C62 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = SOURCE_ROOT; };
 		E4BBF61E22262D6B00A1C5FA /* UseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
@@ -119,8 +115,6 @@
 			files = (
 				E4A581962150BD4C00B31C62 /* Alamofire.framework in Frameworks */,
 				E4A581992150BD5600B31C62 /* SwiftyJSON.framework in Frameworks */,
-				E478EA1E216350AA008F05DB /* Quick.framework in Frameworks */,
-				E478EA1D216350AA008F05DB /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,7 +159,7 @@
 				E4D4FE7E2133B78E00438A8F /* StockQuoteLogic.swift */,
 				E49569FB221E4B040070FB31 /* StockQuoteMockData.json */,
 				E4D4FE852133BF0300438A8F /* StockQuoteService.swift */,
-				E4956A02221E50BA0070FB31 /* StockQuoteTests.swift */,
+				E4011109222CCC9800551782 /* StockQuoteTests.swift */,
 			);
 			name = "Stock quotes";
 			path = "../Use cases/Stock quotes";
@@ -175,8 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				E4A581942150BD4C00B31C62 /* Alamofire.framework */,
-				E478EA1821635091008F05DB /* Nimble.framework */,
-				E478EA1721635091008F05DB /* Quick.framework */,
 				E4A581972150BD5600B31C62 /* SwiftyJSON.framework */,
 			);
 			path = Frameworks;
@@ -408,11 +400,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E48FE18F222BBF5D002646E7 /* ServiceActivityIndicator.swift in Sources */,
+				E401110A222CCC9800551782 /* StockQuoteTests.swift in Sources */,
 				E4BBF62022262D6B00A1C5FA /* UseCaseFactory.swift in Sources */,
 				E4645F09222773DD00FCC46E /* AppUseCases.swift in Sources */,
 				E49569F8221E464E0070FB31 /* ServiceConstants.swift in Sources */,
 				E4D4FE832133BEB600438A8F /* StockQuoteLogic.swift in Sources */,
-				E4956A03221E50BA0070FB31 /* StockQuoteTests.swift in Sources */,
 				E442F6082150951A000B37FE /* AppState.swift in Sources */,
 				E45A850C215225BC00581DCE /* Actions.swift in Sources */,
 				E4D4FE842133BEBB00438A8F /* LogicCoordinator.swift in Sources */,
