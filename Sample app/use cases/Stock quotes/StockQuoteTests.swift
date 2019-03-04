@@ -21,7 +21,6 @@ class StockQuoteTests: XCTestCase, AppStateSubscriber {
     ]
     var currentStockSymbol: String? = nil
 
-    
     override func setUp() {
         currentServicesType = .mock
         //currentServicesType = .real(.production)
@@ -69,27 +68,6 @@ class StockQuoteTests: XCTestCase, AppStateSubscriber {
         for stockSymbol in stockSymbols {
             LogicCoordinator.performAction(.stockQuoteRequest(symbol: stockSymbol))
         }
-        
-//        waitForExpectations(timeout: expectationWaitTimeInSeconds) { error in
-//            print("... error = \(String(describing: error))")
-//        }
-    }
-
-    func testHistoryStatusForMultipleStockLookupsAndNavigation() {
-        self.numberOfExpectedUpdates = stockSymbols.count + 1      // for the Back action
-        self.expectation = expectation(description: "Expected correct history state after \(numberOfExpectedUpdates) lookups")
-        self.appStateUpdatedCompletionBlock = {
-            (state: AppState) in
-            XCTAssert(state.dataModel.stocksHistory.history.count == self.stockSymbols.count, "Expected correct number of stock history entries")
-            XCTAssert(state.dataModel.stocksHistory.canGoBack == true, "Expected history back button to be enabled")
-            XCTAssert(state.dataModel.stocksHistory.canGoForward == true, "Expected history forward button to be disabled")
-            XCTAssert(state.dataModel.stocksHistory.enableClearHistory == true, "Expected history clear button to be enabled")
-        }
-        
-        for stockSymbol in stockSymbols {
-            LogicCoordinator.performAction(.stockQuoteRequest(symbol: stockSymbol))
-        }
-        LogicCoordinator.performAction(.goBackInHistory)
         
         waitForExpectations(timeout: expectationWaitTimeInSeconds) { error in
             print("... error = \(String(describing: error))")
