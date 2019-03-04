@@ -11,6 +11,7 @@ import Quick
 import Nimble
 @testable import ReduxionIOS
 
+
 class StockQuoteSpec: QuickSpec, AppStateSubscriber {
     var appStateSubscriberIdentifier: String = ""
 
@@ -63,7 +64,7 @@ class StockQuoteSpec: QuickSpec, AppStateSubscriber {
                 it("should get some stock information") {
                 // pick a stock
                     let stockSymbol = self.stockSymbols.first!
-                    LogicCoordinator.performAction(.stockQuoteServiceRequest(symbol: stockSymbol))
+                    LogicCoordinator.performAction(.stockQuoteRequest(symbol: stockSymbol))
                     
                     // make sure result meets basic sanity checking
                     
@@ -90,7 +91,7 @@ class StockQuoteSpec: QuickSpec, AppStateSubscriber {
                 it("should yield current stock data") {
 //                    for stockWithExpectedValues in self.stocksWithExpectedValues {
 //                        let symbol = stockWithExpectedValues.symbol
-//                        LogicCoordinator.performAction(.stockQuoteServiceRequest(symbol: symbol))
+//                        LogicCoordinator.performAction(.stockQuoteRequest(symbol: symbol))
 //
 //                        let expectedCompanyNamePartial = stockWithExpectedValues.expectedCompanyNamePartial
 //                        let expectedCompanySectorPartial = stockWithExpectedValues.expectedCompanySectorPartial
@@ -113,7 +114,7 @@ class StockQuoteSpec: QuickSpec, AppStateSubscriber {
         describe("Stock lookups") {
             context("when do n # of lookups") {
                 it("then expect history count = the same number") {
-
+print("foobar")
                 }
             }
         }
@@ -201,7 +202,7 @@ class StockQuoteSpec: QuickSpec, AppStateSubscriber {
         print("\n \(self) \(#function) line \(#line); NSDate = \(NSDate.init().timeIntervalSince1970)")
         print("... mostRecentAction = \(mostRecentAction)")
         switch mostRecentAction {
-        case .stockQuoteServiceResponse(_):
+        case .stockQuoteResponse(_):
             self.stockResultInfo = state.dataModel.stocksHistory.currentStock
             
             

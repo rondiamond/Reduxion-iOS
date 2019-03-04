@@ -136,11 +136,8 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
     
     func update(_ state: AppState, mostRecentAction: Action) {
         switch mostRecentAction {
-        case .null, .stockQuoteResponse(_, _):
+        case .null, .stockQuoteResponse(_, _), .goBackInHistory, .goForwardInHistory, .clearHistory:
             updateDisplay(with: state)
-            break
-        case .goBackInHistory, .goForwardInHistory:
-            self.updateHistoryDisplay(state: state)
             break
         default:
             break
