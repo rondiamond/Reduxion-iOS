@@ -110,6 +110,6 @@ class MockStockQuoteService: StockQuoteService {
 }
 
 fileprivate func parseAndStoreData(json: JSON, error: String?) {
-    LogicCoordinator.performAction(Action.stockQuoteInfoResponse(json: json, error: error))
+    LogicCoordinator.performAction(Action.stockQuoteResponse(json: json, error: error))
     // hand off payload as-is - will be parsed by Logic unit
 }

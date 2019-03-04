@@ -22,7 +22,7 @@ struct StockQuoteLogic: Logic {
     
     func performLogic(state: inout AppState, action: Action) {
         switch action {
-        case .stockQuoteInfoRequest(let symbol):
+        case .stockQuoteRequest(let symbol):
             if service != nil {
                 if (symbol.count == 0) {
                     print("Error - can't do stock lookup without a stock symbol!")
@@ -35,9 +35,9 @@ struct StockQuoteLogic: Logic {
             }
             break
 
-        case .stockQuoteInfoResponse (let jsonPayload, let error):
+        case .stockQuoteResponse (let jsonPayload, let error):
             if (error != nil) {
-                print("stockQuoteInfoResponse - error = \(error!)")
+                print("stockQuoteResponse - error = \(error!)")
             }
             
             if (jsonPayload != JSON.null) {

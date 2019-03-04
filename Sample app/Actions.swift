@@ -24,8 +24,8 @@ enum Action {
     case null
     
     // MARK: Stock quote service
-    case stockQuoteInfoRequest(symbol: String)
-    case stockQuoteInfoResponse(json: JSON, error: String?)
+    case stockQuoteRequest(symbol: String)
+    case stockQuoteResponse(json: JSON, error: String?)
     
     case goBackInHistory
     case goForwardInHistory
