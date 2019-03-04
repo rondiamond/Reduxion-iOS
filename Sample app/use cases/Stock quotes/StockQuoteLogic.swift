@@ -54,22 +54,17 @@ struct StockQuoteLogic: Logic {
                 stockInfo.changePercent     = jsonPayload["changePercent"].floatValue
                 stockInfo.week52High        = jsonPayload["week52High"].floatValue
                 stockInfo.week52Low         = jsonPayload["week52Low"].floatValue
-            
+
                 if (state.dataModel.stocksHistory.history.count > 0),
                     (state.dataModel.stocksHistory.currentIndex != nil) {
-                    // remove any 'forward' history states
-                    let subrangeToDelete = state.dataModel.stocksHistory.currentIndex!..<state.dataModel.stocksHistory.history.count
+                    // first, remove any history states 'forward' from here
+                    let subrangeToDelete = state.dataModel.stocksHistory.currentIndex!..<state.dataModel.stocksHistory.history.count-1
                     state.dataModel.stocksHistory.history.removeSubrange(subrangeToDelete)
                 }
+                self.modifyCurrentIndex(delta: .increment, state: &state)
                 state.dataModel.stocksHistory.currentStock = stockInfo
                 state.dataModel.stocksHistory.history.append(stockInfo)
-                state.dataModel.stocksHistory.currentIndex = state.dataModel.stocksHistory.history.count - 1
-                
-                self.modifyCurrentIndex(delta: .noChange, state: &state)
-//                let currentIndex = state.dataModel.stocksHistory.currentIndex!
-//                let totalHistoryCount = state.dataModel.stocksHistory.history.count
-//                state.dataModel.stocksHistory.canGoBack = (currentIndex > 0)
-//                state.dataModel.stocksHistory.canGoForward = (currentIndex < totalHistoryCount-1)
+//                state.dataModel.stocksHistory.currentIndex = state.dataModel.stocksHistory.history.count - 1
             }
             break
             
