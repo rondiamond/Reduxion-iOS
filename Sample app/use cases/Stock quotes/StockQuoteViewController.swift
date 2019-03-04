@@ -55,7 +55,7 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
     @IBAction func buttonStockFetchDataTapped(_ sender: Any) {
         if ((self.symbolTextField.text?.count)! > 0) {
             let symbol = self.symbolTextField.text!
-            LogicCoordinator.performAction(.stockQuoteServiceRequest(symbol: symbol))
+            LogicCoordinator.performAction(.stockQuoteInfoRequest(symbol: symbol))
             self.view.alpha = alphaDimValue
         }
     }
@@ -136,7 +136,7 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
     
     func update(_ state: AppState, mostRecentAction: Action) {
         switch mostRecentAction {
-        case .null, .stockQuoteServiceResponse(_, _):
+        case .null, .stockQuoteInfoResponse(_, _):
             updateDisplay(with: state)
             break
         case .goBackInHistory, .goForwardInHistory:
