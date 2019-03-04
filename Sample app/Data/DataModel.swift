@@ -18,6 +18,7 @@ struct DataModel: Codable {
         var canGoBack: Bool = false
         var canGoForward: Bool = false
         var enableClearHistory: Bool = false
+        var historyCountDescription: String = ""   // e.g., "2 of 3"
     }
 
     /**

@@ -89,12 +89,26 @@ struct StockQuoteLogic: Logic {
         default:
             break
         }
+
+        state.dataModel.stocksHistory.historyStatesDescription = self.historyCountString(with: state)
     }
 
     enum indexDelta: Int {
         case decrement = -1
         case noChange = 0
         case increment = 1
+    }
+    
+    func historyCountString(with state: AppState) -> String {
+        let description: String
+        if state.dataModel.stocksHistory.currentIndex != nil {
+            let currentNumberInStockHistory = state.dataModel.stocksHistory.currentIndex! + 1
+            let totalNumberOfStockLookups = state.dataModel.stocksHistory.history.count
+            description = "\(currentNumberInStockHistory) of \(totalNumberOfStockLookups)"
+        } else {
+            description = ""
+        }
+        return description
     }
     
     func modifyCurrentIndex(delta: indexDelta, state: inout AppState) {

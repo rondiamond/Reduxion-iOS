@@ -77,25 +77,13 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
     
     private func updateHistoryDisplay(state: AppState) {
         self.updateHistoryNavigationButtons(state: state)
-        self.updateHistoryCountLabel(state: state)
+        self.historyCountLabel.text = state.dataModel.stocksHistory.historyCountDescription
         self.buttonClearHistory.isEnabled = state.dataModel.stocksHistory.enableClearHistory
     }
     
     private func updateHistoryNavigationButtons(state: AppState) {
         self.buttonGoBack.isEnabled = state.dataModel.stocksHistory.canGoBack
         self.buttonGoForward.isEnabled = state.dataModel.stocksHistory.canGoForward
-    }
-    
-    private func updateHistoryCountLabel(state: AppState) {
-        let historyCountLabelText: String
-        if state.dataModel.stocksHistory.currentIndex != nil {
-            let currentNumberInStockHistory = state.dataModel.stocksHistory.currentIndex! + 1
-            let totalNumberOfStockLookups = state.dataModel.stocksHistory.history.count
-            historyCountLabelText = "\(currentNumberInStockHistory) of \(totalNumberOfStockLookups)"
-        } else {
-            historyCountLabelText = ""
-        }
-        self.historyCountLabel.text = historyCountLabelText
     }
     
     
