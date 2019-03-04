@@ -11,10 +11,6 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-//protocol StockQuoteServiceProtocol: Service {
-//    // protocol to ensure proper typing in LogicCoordinator and ServiceFactory
-//}
-
 // MARK: - Dictionary keys
 
 let StockQuoteServiceKey_Symbol = "StockQuoteServiceKey_Symbol"

@@ -24,6 +24,7 @@ class StockQuoteTests: XCTestCase, AppStateSubscriber {
     override func setUp() {
         currentServicesType = .mock
         //currentServicesType = .real(.production)
+        
         _ = UseCaseFactory.shared     // initialize
         LogicCoordinator.subscribe(self, updateWithCurrentAppState: false)
         LogicCoordinator.performAction(.clearHistory)
