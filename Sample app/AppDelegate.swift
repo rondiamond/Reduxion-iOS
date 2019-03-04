@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         currentServicesType = .real(.production)
+//        currentServicesType = .mock
         _ = UseCaseFactory.shared     // initialize
         LogicCoordinator.sharedInstance.recallAppState()
         return true
