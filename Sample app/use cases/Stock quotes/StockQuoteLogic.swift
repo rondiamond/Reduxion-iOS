@@ -90,7 +90,8 @@ struct StockQuoteLogic: Logic {
             break
         }
 
-        state.dataModel.stocksHistory.historyStatesDescription = self.historyCountString(with: state)
+print("self.historyCountString(with: state) = \(self.historyCountString(with: state))")
+        state.dataModel.stocksHistory.historyCountDescription = self.historyCountString(with: state)
     }
 
     enum indexDelta: Int {
@@ -118,7 +119,8 @@ struct StockQuoteLogic: Logic {
         index += delta.rawValue
         index = max(0, index)
         index = min(index, totalHistoryCount)
-        
+
+        state.dataModel.stocksHistory.currentIndex = index
         state.dataModel.stocksHistory.canGoBack = (index > 0)
         state.dataModel.stocksHistory.canGoForward = (index < totalHistoryCount-1)
         state.dataModel.stocksHistory.enableClearHistory = (totalHistoryCount > 0)
