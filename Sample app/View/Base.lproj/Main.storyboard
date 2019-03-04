@@ -78,7 +78,7 @@
                                 <rect key="frame" x="143" y="603" width="89" height="30"/>
                                 <state key="normal" title="Clear History"/>
                                 <connections>
-                                    <action selector="historyClearButtonTapped:" destination="XLk-ba-JDL" eventType="touchUpInside" id="7zH-TP-5gt"/>
+                                    <action selector="buttonClearHistoryTapped:" destination="XLk-ba-JDL" eventType="touchUpInside" id="7zH-TP-5gt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -106,9 +106,9 @@
                         <viewLayoutGuide key="safeArea" id="mNt-kT-YHJ"/>
                     </view>
                     <connections>
+                        <outlet property="buttonClearHistory" destination="txw-7e-155" id="Nme-qo-8aZ"/>
                         <outlet property="buttonGoBack" destination="KId-N9-eI5" id="nQT-CB-Bhc"/>
                         <outlet property="buttonGoForward" destination="v7g-Qx-ued" id="dQs-kp-MzS"/>
-                        <outlet property="historyClearButton" destination="txw-7e-155" id="Nme-qo-8aZ"/>
                         <outlet property="historyCountLabel" destination="peK-Qa-hz6" id="SyS-p3-l1J"/>
                         <outlet property="stockFetchDataButton" destination="d8u-cz-LCh" id="LcV-jC-7NF"/>
                         <outlet property="stockInfoResultsTextField" destination="ZRa-MZ-iDe" id="bgm-GF-o93"/>
