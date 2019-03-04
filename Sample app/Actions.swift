@@ -27,9 +27,9 @@ enum Action {
     case stockQuoteServiceRequest(symbol: String)
     case stockQuoteServiceResponse(json: JSON, error: String?)
     
-    case goBackInHistory()
-    case goForwardInHistory()
-    case clearHistory()
+    case goBackInHistory
+    case goForwardInHistory
+    case clearHistory
 }
 
 

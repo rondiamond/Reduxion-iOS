@@ -55,13 +55,13 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
     @IBAction func stockFetchDataTapped(_ sender: Any) {
         if ((self.symbolTextField.text?.count)! > 0) {
             let symbol = self.symbolTextField.text!
-            LogicCoordinator.performAction(Action.stockQuoteServiceRequest(symbol: symbol))
+            LogicCoordinator.performAction(.stockQuoteServiceRequest(symbol: symbol))
             self.view.alpha = alphaDimValue
         }
     }
     
     @IBAction func buttonClearHistoryTapped(_ sender: Any) {
-        LogicCoordinator.performAction(Action.clearHistory)
+        LogicCoordinator.performAction(.clearHistory)
     }
     
     
@@ -104,17 +104,17 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
     // MARK: - History navigation
     
     @IBAction func buttonBackTapped(_ sender: Any) {
-        LogicCoordinator.performAction(.goBackInHistory())
+        LogicCoordinator.performAction(.goBackInHistory)
     }
     
     @IBAction func buttonForwardTapped(_ sender: Any) {
-        LogicCoordinator.performAction(.goForwardInHistory())
+        LogicCoordinator.performAction(.goForwardInHistory)
     }
     
     private func updateHistoryDisplay(state: AppState) {
         self.updateHistoryNavigationButtons(state: state)
         self.updateHistoryCountLabel(state: state)
-        self.buttonClearHistory.enable = state.dataModel.stocksHistory.enableClearHistory
+        self.buttonClearHistory.isEnabled = state.dataModel.stocksHistory.enableClearHistory
     }
     
     private func updateHistoryNavigationButtons(state: AppState) {
@@ -142,7 +142,7 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
         case .null, .stockQuoteServiceResponse(_, _):
             updateDisplay(with: state)
             break
-        case .goBackInHistory(), .goForwardInHistory():
+        case .goBackInHistory, .goForwardInHistory:
             self.updateHistoryDisplay(state: state)
             break
         default:
