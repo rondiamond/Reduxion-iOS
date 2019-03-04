@@ -20,7 +20,7 @@ import SwiftyJSON
  NOTE: Actions are executed on the Main thread, via one or more Logic modules.
  Any expensive action logic should be performed asynchronously (on a background thread), and a separate 'store results' action performed, which would in turn mutate the appState itself on the main thread.
  */
-enum Action {
+enum Action: Equatable {
     case null
     
     // MARK: Stock quote service

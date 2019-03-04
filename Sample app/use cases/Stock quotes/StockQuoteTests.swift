@@ -14,7 +14,9 @@ class StockQuoteTests: XCTestCase, AppStateSubscriber {
     var expectation: XCTestExpectation?
     var expectationWaitTimeInSeconds = 10.0
     var appStateUpdatedCompletionBlock: ((AppState) -> Void)?
-    var numberOfExpectedStateUpdates = 0
+    var numberOfExpectedActionTypeUpdates = 0
+    var actionTypeForExpectedNumberOfUpdates: Action?
+    
     let stockSymbols = [
         "aapl", "goog", "nflx", "sbux", "tgt"
     ]
@@ -46,7 +48,7 @@ class StockQuoteTests: XCTestCase, AppStateSubscriber {
             XCTAssert(state.dataModel.stocksHistory.currentStock?.name?.count != 0, "Expected a name from the stock lookup")
             XCTAssert(state.dataModel.stocksHistory.currentStock?.previousClose != 0, "Expected the closing price to be non-zero")
         }
-        self.numberOfExpectedStateUpdates = 1
+        self.numberOfExpectedActionTypeUpdates = 1
         LogicCoordinator.performAction(.stockQuoteRequest(symbol: stockSymbol))
         waitForExpectations(timeout: expectationWaitTimeInSeconds) { error in
             print("... error = \(String(describing: error))")
@@ -54,8 +56,9 @@ class StockQuoteTests: XCTestCase, AppStateSubscriber {
     }
     
     func testHistoryStatusForMultipleStockLookups() {
-        self.numberOfExpectedStateUpdates = stockSymbols.count
-        self.expectation = expectation(description: "Expected correct history state after \(numberOfExpectedStateUpdates) lookups")
+        self.actionTypeForExpectedNumberOfUpdates = Action.stockQuoteResponse
+        self.numberOfExpectedActionTypeUpdates = stockSymbols.count
+        self.expectation = expectation(description: "Expected correct history state after \(numberOfExpectedActionTypeUpdates) lookups")
         self.appStateUpdatedCompletionBlock = {
             (state: AppState) in
             XCTAssert(state.dataModel.stocksHistory.history.count == self.stockSymbols.count, "Expected correct number of stock history entries")
@@ -70,7 +73,26 @@ class StockQuoteTests: XCTestCase, AppStateSubscriber {
             print("... error = \(String(describing: error))")
         }
     }
-        
+
+    func testHistoryStatusForMultipleStockLookupsAndNavigation() {
+        self.actionTypeForExpectedNumberOfUpdates = Action.goBackInHistory
+        self.numberOfExpectedActionTypeUpdates = 1      // i.e., the Back action
+        self.expectation = expectation(description: "Expected correct history state after \(numberOfExpectedActionTypeUpdates) lookups")
+        self.appStateUpdatedCompletionBlock = {
+            (state: AppState) in
+            XCTAssert(state.dataModel.stocksHistory.history.count == self.stockSymbols.count, "Expected correct number of stock history entries")
+            XCTAssert(state.dataModel.stocksHistory.canGoBack == true, "Expected history back button to be enabled")
+            XCTAssert(state.dataModel.stocksHistory.canGoForward == false, "Expected history forward button to be disabled")
+            XCTAssert(state.dataModel.stocksHistory.enableClearHistory == true, "Expected history clear button to be enabled")
+        }
+        for stockSymbol in stockSymbols {
+            LogicCoordinator.performAction(.stockQuoteRequest(symbol: stockSymbol))
+        }
+        waitForExpectations(timeout: expectationWaitTimeInSeconds) { error in
+            print("... error = \(String(describing: error))")
+        }
+    }
+
     
     // MARK: - AppState
     
@@ -85,13 +107,25 @@ class StockQuoteTests: XCTestCase, AppStateSubscriber {
         default:
             break
         }
-
-        self.numberOfExpectedStateUpdates -= 1
-        if (self.numberOfExpectedStateUpdates == 0) {
-            if (self.expectation != nil) {
-                self.expectation!.fulfill()
+        
+        
+//        if case self.actionTypeForExpectedNumberOfUpdates(_) == mostRecentAction {
+//
+//        }
+        
+print("Action = \(mostRecentAction)")
+        if (mostRecentAction == self.actionTypeForExpectedNumberOfUpdates!) {
+            print("self.numberOfExpectedStateUpdates = \(self.numberOfExpectedActionTypeUpdates)")
+            self.numberOfExpectedActionTypeUpdates -= 1
+            if (self.numberOfExpectedActionTypeUpdates == 0) {
+                if (self.expectation != nil) {
+                    print("self.expectation!.fulfill()")
+                    self.expectation!.fulfill()
+                }
             }
         }
+        
     }
+
     
 }
