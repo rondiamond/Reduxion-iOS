@@ -1,18 +1,15 @@
 
 # Reduxion-iOS
 
-*Source code soon to come!*  
-
-------
   
 ### TL;DR
 Easy-to-implement, best-practice Unidirectional Data Flow for iOS apps, featuring:  
 - Loosely-coupled layers for View / Business Logic / Services / Data
+- Good separation of concerns facilitating unit testing (TDD/BDD)
 - Composable business logic, in single-responsibility units
-- Separation of concerns facilitating unit testing (TDD/BDD)
 - Ability to switch entire application from real to mock services using one line of code
-- Ability to time travel (rewind/fast-forward) between different states of the application
 - Ability to easily persist & recall the entire state of the application
+- Ability to easily add time travel (rewind/fast-forward) between different states of the application
 
 ~
 
@@ -32,14 +29,18 @@ Good, concise overview of one available library which has been modified for use 
 ~
 
 ### Block Diagram
-![](./_Documentation/reduxion-ios-architecture-block-diagram.png)
+![](./Documentation/reduxion-ios-architecture-block-diagram.png)
+
+~
+
+### How to Use
+Please see sample app for usage patterns.
 
 ~
 
 ### Future milestones
-- Framework, with sample app
-- Carthage support
-- Formatter classes (for displayed data)
+- Standalone framework
+- Carthage & Swift Package Manager support
 - ... more
 
 ~
