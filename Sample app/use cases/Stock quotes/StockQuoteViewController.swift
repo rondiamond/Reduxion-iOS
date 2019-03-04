@@ -40,16 +40,11 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
     }
     
     
-    // MARK: - IBAction
+    // MARK: - Stock symbol input
     
     @IBAction func symbolTextFieldValueChanged(_ sender: Any) {
         let hasText = ((sender as! UITextField).text!.count > 0)
         self.stockFetchDataButton.isEnabled = hasText
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.buttonStockFetchDataTapped(textField)
-        return true
     }
     
     @IBAction func buttonStockFetchDataTapped(_ sender: Any) {
@@ -59,44 +54,12 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
             self.view.alpha = alphaDimValue
         }
     }
-    
-    @IBAction func buttonClearHistoryTapped(_ sender: Any) {
-        LogicCoordinator.performAction(.clearHistory)
-    }
-    
-    
-    // MARK: - Display updating
-    
-    private func updateDisplay(with state: AppState) {
-        self.view.alpha = alphaFullValue
-        self.updateStockInfoText(with: state)
-        self.updateHistoryDisplay(state: state)
-        self.symbolTextField.selectAll(nil)     // make it easy to type another stock symbol
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.buttonStockFetchDataTapped(textField)
+        return true
     }
 
-    private func updateStockInfoText(with state: AppState) {
-        let stockInfo = state.dataModel.stocksHistory.currentStock
-        self.stockInfoResultsTextField.text = stockInfoText(from: stockInfo)
-    }
-
-    private func stockInfoText(from stockInfo: DataModel.StockInfo?) -> String {
-        var stockInfoText = ""
-        if let stockInfo = stockInfo {
-            stockInfoText.append("symbol = \(String(describing: stockInfo.symbol ?? ""))\n")
-            stockInfoText.append("name = \(String(describing: stockInfo.name ?? ""))\n")
-            stockInfoText.append("primaryExchange = \(String(describing: stockInfo.primaryExchange ?? ""))\n")
-            stockInfoText.append("sector = \(String(describing: stockInfo.sector ?? ""))\n")
-            stockInfoText.append("latestPrice = \(String(describing: stockInfo.latestPrice ?? 0))\n")
-            stockInfoText.append("previousClose = \(String(describing: stockInfo.previousClose ?? 0))\n")
-            stockInfoText.append("change = \(String(describing: stockInfo.change ?? 0))\n")
-            stockInfoText.append("changePercent = \(String(describing: stockInfo.changePercent ?? 0))%\n")
-            stockInfoText.append("week52High = \(String(describing: stockInfo.week52High ?? 0))\n")
-            stockInfoText.append("week52Low = \(String(describing: stockInfo.week52Low ?? 0))\n")
-            stockInfoText.append("latestVolume = \(String(describing: stockInfo.latestVolume ?? 0))\n")
-        }
-        return stockInfoText
-    }
-    
     
     // MARK: - History navigation
     
@@ -106,6 +69,10 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
     
     @IBAction func buttonForwardTapped(_ sender: Any) {
         LogicCoordinator.performAction(.goForwardInHistory)
+    }
+    
+    @IBAction func buttonClearHistoryTapped(_ sender: Any) {
+        LogicCoordinator.performAction(.clearHistory)
     }
     
     private func updateHistoryDisplay(state: AppState) {
@@ -122,13 +89,46 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
     private func updateHistoryCountLabel(state: AppState) {
         let historyCountLabelText: String
         if state.dataModel.stocksHistory.currentIndex != nil {
-            let numberOfCurrentHistoryCalculation = state.dataModel.stocksHistory.currentIndex! + 1
-            let numberOfHistoryCalculations = state.dataModel.stocksHistory.history.count
-            historyCountLabelText = "\(numberOfCurrentHistoryCalculation) of \(numberOfHistoryCalculations)"
+            let currentNumberInStockHistory = state.dataModel.stocksHistory.currentIndex! + 1
+            let totalNumberOfStockLookups = state.dataModel.stocksHistory.history.count
+            historyCountLabelText = "\(currentNumberInStockHistory) of \(totalNumberOfStockLookups)"
         } else {
             historyCountLabelText = ""
         }
         self.historyCountLabel.text = historyCountLabelText
+    }
+    
+    
+    // MARK: - Display updating
+    
+    private func updateDisplay(with state: AppState) {
+        self.view.alpha = alphaFullValue
+        self.updateStockInfoText(with: state)
+        self.updateHistoryDisplay(state: state)
+        self.symbolTextField.selectAll(nil)     // make it easy to type another stock symbol
+    }
+    
+    private func updateStockInfoText(with state: AppState) {
+        let stockInfo = state.dataModel.stocksHistory.currentStock
+        self.stockInfoResultsTextField.text = stockInfoText(from: stockInfo)
+    }
+    
+    private func stockInfoText(from stockInfo: DataModel.StockInfo?) -> String {
+        var stockInfoText = ""
+        if let stockInfo = stockInfo {
+            stockInfoText.append("symbol = \(String(describing: stockInfo.symbol ?? ""))\n")
+            stockInfoText.append("name = \(String(describing: stockInfo.name ?? ""))\n")
+            stockInfoText.append("primaryExchange = \(String(describing: stockInfo.primaryExchange ?? ""))\n")
+            stockInfoText.append("sector = \(String(describing: stockInfo.sector ?? ""))\n")
+            stockInfoText.append("latestPrice = \(String(describing: stockInfo.latestPrice ?? 0))\n")
+            stockInfoText.append("previousClose = \(String(describing: stockInfo.previousClose ?? 0))\n")
+            stockInfoText.append("change = \(String(describing: stockInfo.change ?? 0))\n")
+            stockInfoText.append("changePercent = \(String(describing: stockInfo.changePercent ?? 0))%\n")
+            stockInfoText.append("week52High = \(String(describing: stockInfo.week52High ?? 0))\n")
+            stockInfoText.append("week52Low = \(String(describing: stockInfo.week52Low ?? 0))\n")
+            stockInfoText.append("latestVolume = \(String(describing: stockInfo.latestVolume ?? 0))\n")
+        }
+        return stockInfoText
     }
     
 
