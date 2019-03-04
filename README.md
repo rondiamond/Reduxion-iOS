@@ -43,8 +43,7 @@ Please see sample app for usage patterns.
 
 ### Future milestones
 - Standalone framework
-- Carthage support
-- Formatter classes (for displayed data)
+- Carthage & Swift Package Manager support
 - ... more
 
 ~

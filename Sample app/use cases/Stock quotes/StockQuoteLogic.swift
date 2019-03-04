@@ -15,7 +15,6 @@
 import Foundation
 import SwiftyJSON
 
-//struct StockQuoteLogic: Logic, HasService {
 struct StockQuoteLogic: Logic {
     
     var service: Service?
@@ -64,7 +63,6 @@ struct StockQuoteLogic: Logic {
                 state.dataModel.stocksHistory.currentStock = stockInfo
                 state.dataModel.stocksHistory.history.append(stockInfo)
                 self.modifyCurrentIndex(delta: .increment, state: &state)
-//                state.dataModel.stocksHistory.currentIndex = state.dataModel.stocksHistory.history.count - 1
             }
             break
             
@@ -84,8 +82,7 @@ struct StockQuoteLogic: Logic {
         default:
             break
         }
-
-print("self.historyCountString(with: state) = \(self.historyCountString(with: state))")
+        
         state.dataModel.stocksHistory.historyCountDescription = self.historyCountString(with: state)
     }
 

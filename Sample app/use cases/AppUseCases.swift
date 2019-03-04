@@ -2,12 +2,11 @@
 //  UseCase.swift
 //  Reduxion-iOS
 //
-//  Created by Ron Diamond on 2/27/19.
-//  Copyright © 2019 Ron Diamond. All rights reserved.
+//  Copyright © 2018-2019 Ron Diamond.
+//  Licensed per the LICENSE.txt file.
 //
 
 import Foundation
-
 
 /**
  The pre-defined use cases for the application.

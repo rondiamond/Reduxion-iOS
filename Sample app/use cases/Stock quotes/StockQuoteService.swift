@@ -24,7 +24,6 @@ let STOCK_QUOTE_SERVICE_URL_FORMAT  = "stock/%@/quote"
 
 // MARK: - StockQuoteService
 
-//struct StockQuoteService: Service, HasEnvironment {
 class StockQuoteService: Service {
     private var baseURL: String?
     private var _environment: ServiceEnvironment?

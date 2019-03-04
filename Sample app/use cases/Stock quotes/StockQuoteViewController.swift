@@ -123,7 +123,6 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
     // MARK: - AppState
     
     func update(_ state: AppState, mostRecentAction: Action) {
-print("mostRecentAction = \(mostRecentAction)")
         switch mostRecentAction {
         case .null, .stockQuoteResponse(_, _), .goBackInHistory, .goForwardInHistory, .clearHistory:
             updateDisplay(with: state)

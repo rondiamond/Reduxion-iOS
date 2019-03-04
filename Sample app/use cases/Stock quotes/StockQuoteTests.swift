@@ -2,8 +2,8 @@
 //  StockQuoteTests.swift
 //  ReduxionIOSTests
 //
-//  Created by Ron Diamond on 3/3/19.
-//  Copyright © 2019 Ron Diamond. All rights reserved.
+//  Copyright © 2018-2019 Ron Diamond.
+//  Licensed per the LICENSE.txt file.
 //
 
 import XCTest

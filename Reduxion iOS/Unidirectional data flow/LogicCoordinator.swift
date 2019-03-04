@@ -21,7 +21,6 @@
 
 import Foundation
 
-
 // MARK: - Initialization
 
 /**
