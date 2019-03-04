@@ -17,6 +17,7 @@ struct DataModel: Codable {
         var currentStock: StockInfo?
         var canGoBack: Bool = false
         var canGoForward: Bool = false
+        var enableClearHistory: Bool = false
     }
 
     /**

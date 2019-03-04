@@ -24,7 +24,8 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
     @IBOutlet weak var historyCountLabel: UILabel!
     @IBOutlet weak var buttonGoBack: UIButton!
     @IBOutlet weak var buttonGoForward: UIButton!
-
+    @IBOutlet weak var historyClearButton: UIButton!
+    
     
     // MARK: - UIViewController lifecycle
     
@@ -57,6 +58,10 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
             LogicCoordinator.performAction(Action.stockQuoteServiceRequest(symbol: symbol))
             self.view.alpha = alphaDimValue
         }
+    }
+    
+    @IBAction func historyClearButtonTapped(_ sender: Any) {
+        LogicCoordinator.performAction(Action.clearHistory)
     }
     
     
@@ -109,6 +114,7 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
     private func updateHistoryDisplay(state: AppState) {
         self.updateHistoryNavigationButtons(state: state)
         self.updateHistoryCountLabel(state: state)
+        self.historyClearButton.enable = state.dataModel.stocksHistory.enableClearHistory
     }
     
     private func updateHistoryNavigationButtons(state: AppState) {

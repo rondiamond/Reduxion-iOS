@@ -13,7 +13,7 @@
         <!--Stock Quote View Controller-->
         <scene sceneID="bA9-GW-69N">
             <objects>
-                <viewController id="XLk-ba-JDL" customClass="StockQuoteViewController" customModule="Reduxion_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XLk-ba-JDL" customClass="StockQuoteViewController" customModule="ReduxionIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lvf-pr-KCx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,7 +46,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KId-N9-eI5">
-                                <rect key="frame" x="30" y="594" width="30" height="48"/>
+                                <rect key="frame" x="30" y="549" width="30" height="48"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                                 <state key="normal" title="&lt;"/>
                                 <connections>
@@ -54,7 +54,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7g-Qx-ued">
-                                <rect key="frame" x="315" y="594" width="30" height="48"/>
+                                <rect key="frame" x="315" y="549" width="30" height="48"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                                 <state key="normal" title="&gt;"/>
                                 <connections>
@@ -62,22 +62,29 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peK-Qa-hz6">
-                                <rect key="frame" x="166.5" y="608" width="42" height="21"/>
+                                <rect key="frame" x="166.5" y="563" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZRa-MZ-iDe">
-                                <rect key="frame" x="16" y="172" width="343" height="405"/>
+                                <rect key="frame" x="16" y="172" width="343" height="347"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txw-7e-155">
+                                <rect key="frame" x="143" y="603" width="89" height="30"/>
+                                <state key="normal" title="Clear History"/>
+                                <connections>
+                                    <action selector="historyClearButtonTapped:" destination="XLk-ba-JDL" eventType="touchUpInside" id="7zH-TP-5gt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mNt-kT-YHJ" firstAttribute="bottom" secondItem="v7g-Qx-ued" secondAttribute="bottom" constant="25" id="0bp-2d-8L5"/>
+                            <constraint firstItem="mNt-kT-YHJ" firstAttribute="bottom" secondItem="v7g-Qx-ued" secondAttribute="bottom" constant="70" id="0bp-2d-8L5"/>
                             <constraint firstItem="mNt-kT-YHJ" firstAttribute="trailing" secondItem="ZRa-MZ-iDe" secondAttribute="trailing" constant="16" id="0fK-av-LqI"/>
                             <constraint firstItem="KId-N9-eI5" firstAttribute="leading" secondItem="mNt-kT-YHJ" secondAttribute="leading" constant="30" id="2Pv-dO-X3C"/>
                             <constraint firstItem="ZRa-MZ-iDe" firstAttribute="top" secondItem="d8u-cz-LCh" secondAttribute="bottom" constant="22" id="4k2-Bq-C4J"/>
@@ -85,20 +92,23 @@
                             <constraint firstItem="d8u-cz-LCh" firstAttribute="centerX" secondItem="peK-Qa-hz6" secondAttribute="centerX" id="Ezu-TF-vCa"/>
                             <constraint firstItem="v6Z-dw-Cwb" firstAttribute="centerX" secondItem="mNt-kT-YHJ" secondAttribute="centerX" id="HrU-Zo-okp"/>
                             <constraint firstItem="qak-Zf-Miv" firstAttribute="top" secondItem="mNt-kT-YHJ" secondAttribute="top" constant="27" id="MMc-uI-gik"/>
-                            <constraint firstItem="mNt-kT-YHJ" firstAttribute="bottom" secondItem="peK-Qa-hz6" secondAttribute="bottom" constant="38" id="TgG-jp-WcM"/>
+                            <constraint firstItem="mNt-kT-YHJ" firstAttribute="bottom" secondItem="peK-Qa-hz6" secondAttribute="bottom" constant="83" id="TgG-jp-WcM"/>
+                            <constraint firstItem="txw-7e-155" firstAttribute="centerX" secondItem="mNt-kT-YHJ" secondAttribute="centerX" id="XVF-jm-Pyt"/>
                             <constraint firstItem="peK-Qa-hz6" firstAttribute="centerX" secondItem="mNt-kT-YHJ" secondAttribute="centerX" id="YSU-g4-Lwy"/>
-                            <constraint firstItem="peK-Qa-hz6" firstAttribute="top" secondItem="ZRa-MZ-iDe" secondAttribute="bottom" constant="31" id="cyw-iu-bXa"/>
+                            <constraint firstItem="mNt-kT-YHJ" firstAttribute="bottom" secondItem="txw-7e-155" secondAttribute="bottom" constant="34" id="cNg-82-sZl"/>
+                            <constraint firstItem="peK-Qa-hz6" firstAttribute="top" secondItem="ZRa-MZ-iDe" secondAttribute="bottom" constant="44" id="cyw-iu-bXa"/>
                             <constraint firstItem="mNt-kT-YHJ" firstAttribute="trailing" secondItem="v7g-Qx-ued" secondAttribute="trailing" constant="30" id="dst-cs-Nnq"/>
                             <constraint firstItem="v6Z-dw-Cwb" firstAttribute="top" secondItem="qak-Zf-Miv" secondAttribute="bottom" constant="8" id="fln-6Q-bzC"/>
                             <constraint firstItem="ZRa-MZ-iDe" firstAttribute="leading" secondItem="mNt-kT-YHJ" secondAttribute="leading" constant="16" id="kMj-4M-awe"/>
                             <constraint firstItem="qak-Zf-Miv" firstAttribute="centerX" secondItem="mNt-kT-YHJ" secondAttribute="centerX" id="lIB-vb-zSC"/>
-                            <constraint firstItem="mNt-kT-YHJ" firstAttribute="bottom" secondItem="KId-N9-eI5" secondAttribute="bottom" constant="25" id="z3N-qr-xod"/>
+                            <constraint firstItem="mNt-kT-YHJ" firstAttribute="bottom" secondItem="KId-N9-eI5" secondAttribute="bottom" constant="70" id="z3N-qr-xod"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mNt-kT-YHJ"/>
                     </view>
                     <connections>
                         <outlet property="buttonGoBack" destination="KId-N9-eI5" id="nQT-CB-Bhc"/>
                         <outlet property="buttonGoForward" destination="v7g-Qx-ued" id="dQs-kp-MzS"/>
+                        <outlet property="historyClearButton" destination="txw-7e-155" id="Nme-qo-8aZ"/>
                         <outlet property="historyCountLabel" destination="peK-Qa-hz6" id="SyS-p3-l1J"/>
                         <outlet property="stockFetchDataButton" destination="d8u-cz-LCh" id="LcV-jC-7NF"/>
                         <outlet property="stockInfoResultsTextField" destination="ZRa-MZ-iDe" id="bgm-GF-o93"/>

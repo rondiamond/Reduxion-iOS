@@ -85,7 +85,7 @@ struct StockQuoteLogic: Logic {
             state.dataModel.stocksHistory.currentIndex = nil
             state.dataModel.stocksHistory.canGoBack = false
             state.dataModel.stocksHistory.canGoForward = false
-            
+            state.dataModel.stocksHistory.enableClearHistory = false
         default:
             break
         }
@@ -107,6 +107,7 @@ struct StockQuoteLogic: Logic {
         
         state.dataModel.stocksHistory.canGoBack = (index > 0)
         state.dataModel.stocksHistory.canGoForward = (index < totalHistoryCount-1)
+        state.dataModel.stocksHistory.enableClearHistory = (totalHistoryCount > 0)
     }
     
 }
