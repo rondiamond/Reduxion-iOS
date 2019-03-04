@@ -121,6 +121,7 @@ print("self.historyCountString(with: state) = \(self.historyCountString(with: st
         index = min(index, totalHistoryCount)
 
         state.dataModel.stocksHistory.currentIndex = index
+        state.dataModel.stocksHistory.currentStock = state.dataModel.stocksHistory.history[index]
         state.dataModel.stocksHistory.canGoBack = (index > 0)
         state.dataModel.stocksHistory.canGoForward = (index < totalHistoryCount-1)
         state.dataModel.stocksHistory.enableClearHistory = (totalHistoryCount > 0)
