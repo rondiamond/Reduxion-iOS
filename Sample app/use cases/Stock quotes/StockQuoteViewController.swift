@@ -48,11 +48,11 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.stockFetchDataTapped(textField)
+        self.buttonStockFetchDataTapped(textField)
         return true
     }
     
-    @IBAction func stockFetchDataTapped(_ sender: Any) {
+    @IBAction func buttonStockFetchDataTapped(_ sender: Any) {
         if ((self.symbolTextField.text?.count)! > 0) {
             let symbol = self.symbolTextField.text!
             LogicCoordinator.performAction(.stockQuoteServiceRequest(symbol: symbol))
@@ -73,10 +73,7 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
         self.updateHistoryDisplay(state: state)
         self.symbolTextField.selectAll(nil)     // make it easy to type another stock symbol
     }
-    
-    
-    // MARK: - Stock info display
-    
+
     private func updateStockInfoText(with state: AppState) {
         let stockInfo = state.dataModel.stocksHistory.currentStock
         self.stockInfoResultsTextField.text = stockInfoText(from: stockInfo)

@@ -42,7 +42,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="FETCH DATA"/>
                                 <connections>
-                                    <action selector="stockFetchDataTapped:" destination="XLk-ba-JDL" eventType="touchUpInside" id="C5O-zk-Nx2"/>
+                                    <action selector="buttonStockFetchDataTapped:" destination="XLk-ba-JDL" eventType="touchUpInside" id="C5O-zk-Nx2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KId-N9-eI5">

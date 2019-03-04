@@ -31,8 +31,3 @@ enum Action {
     case goForwardInHistory
     case clearHistory
 }
-
-
-// MARK: - Action dictionary keys
-// ...
-
