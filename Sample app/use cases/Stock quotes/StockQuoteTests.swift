@@ -39,8 +39,6 @@ class StockQuoteTests: XCTestCase, AppStateSubscriber {
         let stockSymbol = self.stockSymbols.first!
         self.appStateUpdatedCompletionBlock = {
             (state: AppState) in
-            print("\n \(self) \(#function) line \(#line); NSDate = \(NSDate.init().timeIntervalSince1970)")
-
             // NOTE: the response may be from Mock (static) data
             XCTAssert(state.dataModel.stocksHistory.history.count == 1, "Expected an entry in the stock lookup history")
             XCTAssert(state.dataModel.stocksHistory.currentStock?.name?.count != 0, "Expected a name from the stock lookup")
@@ -78,18 +76,14 @@ class StockQuoteTests: XCTestCase, AppStateSubscriber {
     // MARK: - AppState
     
     func update(_ state: AppState, mostRecentAction: Action) {
-        print("\n \(self) \(#function) line \(#line); NSDate = \(NSDate.init().timeIntervalSince1970)")
-        print("mostRecentAction = \(mostRecentAction)")
         switch mostRecentAction {
         case .stockQuoteResponse(_), .goBackInHistory, .goForwardInHistory:
             self.numberOfExpectedUpdates -= 1
-            print("self.numberOfExpectedUpdates = \(self.numberOfExpectedUpdates)")
             if (self.numberOfExpectedUpdates == 0) {
                 if (self.appStateUpdatedCompletionBlock != nil) {
                     self.appStateUpdatedCompletionBlock!(state)
                 }
                 if (self.expectation != nil) {
-                    print("self.expectation!.fulfill()")
                     self.expectation!.fulfill()
                 }
             }
