@@ -14,6 +14,7 @@ class StockQuoteTests: XCTestCase, AppStateSubscriber {
     var expectation: XCTestExpectation?
     var expectationWaitTimeInSeconds = 10.0
     var appStateUpdatedCompletionBlock: ((AppState) -> Void)?
+    var numberOfExpectedStateUpdates = 0
     let stockSymbols = [
         "aapl", "goog", "nflx", "sbux", "tgt"
     ]
@@ -22,20 +23,18 @@ class StockQuoteTests: XCTestCase, AppStateSubscriber {
 
     
     override func setUp() {
-        print("\n \(self) \(#function) line \(#line); NSDate = \(NSDate.init().timeIntervalSince1970)")
         currentServicesType = .mock
+        //currentServicesType = .real(.production)
         _ = UseCaseFactory.shared     // initialize
         LogicCoordinator.subscribe(self, updateWithCurrentAppState: false)
         LogicCoordinator.performAction(.clearHistory)
     }
 
     override func tearDown() {
-        print("\n \(self) \(#function) line \(#line); NSDate = \(NSDate.init().timeIntervalSince1970)")
         LogicCoordinator.unsubscribe(self)
     }
 
     func testStockLookup() {
-        print("\n \(self) \(#function) line \(#line); NSDate = \(NSDate.init().timeIntervalSince1970)")
         self.expectation = expectation(description: "Expected information from stock lookup")
         let stockSymbol = self.stockSymbols.first!
         self.appStateUpdatedCompletionBlock = {
@@ -47,7 +46,26 @@ class StockQuoteTests: XCTestCase, AppStateSubscriber {
             XCTAssert(state.dataModel.stocksHistory.currentStock?.name?.count != 0, "Expected a name from the stock lookup")
             XCTAssert(state.dataModel.stocksHistory.currentStock?.previousClose != 0, "Expected the closing price to be non-zero")
         }
+        self.numberOfExpectedStateUpdates = 1
         LogicCoordinator.performAction(.stockQuoteRequest(symbol: stockSymbol))
+        waitForExpectations(timeout: expectationWaitTimeInSeconds) { error in
+            print("... error = \(String(describing: error))")
+        }
+    }
+    
+    func testHistoryStatusForMultipleStockLookups() {
+        self.numberOfExpectedStateUpdates = stockSymbols.count
+        self.expectation = expectation(description: "Expected correct history state after \(numberOfExpectedStateUpdates) lookups")
+        self.appStateUpdatedCompletionBlock = {
+            (state: AppState) in
+            XCTAssert(state.dataModel.stocksHistory.history.count == self.stockSymbols.count, "Expected correct number of stock history entries")
+            XCTAssert(state.dataModel.stocksHistory.canGoBack == true, "Expected history back button to be enabled")
+            XCTAssert(state.dataModel.stocksHistory.canGoBack == false, "Expected history forward button to be disabled")
+            XCTAssert(state.dataModel.stocksHistory.enableClearHistory == true, "Expected history clear button to be enabled")
+        }
+        for stockSymbol in stockSymbols {
+            LogicCoordinator.performAction(.stockQuoteRequest(symbol: stockSymbol))
+        }
         waitForExpectations(timeout: expectationWaitTimeInSeconds) { error in
             print("... error = \(String(describing: error))")
         }
@@ -64,12 +82,15 @@ class StockQuoteTests: XCTestCase, AppStateSubscriber {
             if (self.appStateUpdatedCompletionBlock != nil) {
                 self.appStateUpdatedCompletionBlock!(state)
             }
-            if (self.expectation != nil) {
-                print("self.expectation!.fulfill()")
-                self.expectation!.fulfill()
-            }
         default:
             break
+        }
+
+        self.numberOfExpectedStateUpdates -= 1
+        if (self.numberOfExpectedStateUpdates == 0) {
+            if (self.expectation != nil) {
+                self.expectation!.fulfill()
+            }
         }
     }
     
