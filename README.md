@@ -1,10 +1,7 @@
 
 # Reduxion-iOS
 
-*Source code soon to come!*  
-   
---   
-  
+
 ### TL;DR
 Easy-to-implement, best-practice Unidirectional Data Flow for iOS apps, featuring:  
 - Loosely-coupled layers for View / Business Logic / Services / Data
@@ -25,7 +22,7 @@ Superb overview of clean architectural design principles [1 hour].  **Highly rec
 [***Unidirectional Data Flow in Swift***](https://realm.io/news/benji-encz-unidirectional-data-flow-swift/) - Benjamin Encz  
 Video explaining the unidirectional data flow design pattern and its advantages in depth [31+ minutes].
 
-[***Redux for iOS***](http://blog.jtribe.com.au/redux-for-ios/) - Armin Kroll  
+[***Redux for iOS***](https://web.archive.org/web/20190807000530/http://blog.jtribe.com.au/redux-for-ios/) - Armin Kroll  
 Good, concise overview of one available library which has been modified for use in this project.
 
 

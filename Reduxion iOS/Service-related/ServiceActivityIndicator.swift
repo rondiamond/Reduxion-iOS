@@ -42,7 +42,7 @@ func serviceRequestEnded() {
 /**
  Hides the network activity spinner, regardless of any pending network requests.
  */
-func forceserviceRequestEnded() {
+func forceServiceRequestEnded() {
     numberOfPendingShowActivityIndicatorRequests = 0
     UIApplication.shared.isNetworkActivityIndicatorVisible = false
     //SVProgressHUD.dismiss()  // uncomment if using SVProgressHUD
