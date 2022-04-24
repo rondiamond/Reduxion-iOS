@@ -60,15 +60,15 @@ struct StockQuoteLogic: Logic {
                 }
                 state.dataModel.stocksHistory.currentStock = stockInfo
                 state.dataModel.stocksHistory.history.append(stockInfo)
-                self.modifyCurrentIndex(delta: .increment, state: &state)
+                self.modifyCurrentIndex(deltaType: .increment, state: &state)
             }
             break
             
         case .goBackInHistory:
-            self.modifyCurrentIndex(delta: .decrement, state: &state)
+            self.modifyCurrentIndex(deltaType: .decrement, state: &state)
 
         case .goForwardInHistory:
-            self.modifyCurrentIndex(delta: .increment, state: &state)
+            self.modifyCurrentIndex(deltaType: .increment, state: &state)
             
         case .clearHistory:
             state.dataModel.stocksHistory.history.removeAll()
@@ -102,11 +102,11 @@ struct StockQuoteLogic: Logic {
         return description
     }
     
-    func modifyCurrentIndex(delta: indexDelta, state: inout AppState) {
+    func modifyCurrentIndex(deltaType: indexDelta, state: inout AppState) {
         let totalHistoryCount = state.dataModel.stocksHistory.history.count
         var index = state.dataModel.stocksHistory.currentIndex ?? 0
 
-        index += delta.rawValue
+        index += deltaType.rawValue
         index = max(0, index)
         index = min(index, totalHistoryCount)
 
