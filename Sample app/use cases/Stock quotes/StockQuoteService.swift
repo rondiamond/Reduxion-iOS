@@ -18,7 +18,7 @@ let StockQuoteServiceKey_Symbol = "StockQuoteServiceKey_Symbol"
 
 // MARK: - Service paths
 
-let STOCK_QUOTE_SERVICE_URL_BASE    = "https://query.finance.yahoo.com/v8/finance/chart/"
+let STOCK_QUOTE_SERVICE_URL_BASE    = "https://query2.finance.yahoo.com/v8/finance/chart/"
 let STOCK_QUOTE_SERVICE_URL_FORMAT  = "%@"
 
 
@@ -55,6 +55,7 @@ class StockQuoteService: Service {
         let urlString = self.baseURL! + subpath
         let parameters = [
             "interval": "1d",
+            "range": "1d",
             "includePrePost": "False",
             "events": "div,splits"
         ]
