@@ -104,11 +104,12 @@ struct StockQuoteLogic: Logic {
     
     func modifyCurrentIndex(deltaType: indexDelta, state: inout AppState) {
         let totalHistoryCount = state.dataModel.stocksHistory.history.count
+        let maxIndex = totalHistoryCount - 1
         var index = state.dataModel.stocksHistory.currentIndex ?? 0
 
         index += deltaType.rawValue
         index = max(0, index)
-        index = min(index, totalHistoryCount)
+        index = min(index, maxIndex)
 
         state.dataModel.stocksHistory.currentIndex = index
         state.dataModel.stocksHistory.currentStock = state.dataModel.stocksHistory.history[index]
