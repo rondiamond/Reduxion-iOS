@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,6 +28,7 @@
 		E45A856021523D1100581DCE /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581972150BD5600B31C62 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E4645F08222773DD00FCC46E /* AppUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4645F07222773DD00FCC46E /* AppUseCases.swift */; };
 		E4645F09222773DD00FCC46E /* AppUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4645F07222773DD00FCC46E /* AppUseCases.swift */; };
+		E47FD57E2814EA9100356797 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E47FD57D2814EA9100356797 /* SwiftyJSON */; };
 		E48FE18E222BBEAA002646E7 /* ServiceActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */; };
 		E48FE18F222BBF5D002646E7 /* ServiceActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */; };
 		E49569F7221E464E0070FB31 /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49569F6221E464E0070FB31 /* ServiceConstants.swift */; };
@@ -104,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E47FD57E2814EA9100356797 /* SwiftyJSON in Frameworks */,
 				E45A855F21523D1100581DCE /* SwiftyJSON.framework in Frameworks */,
 				E45A855D21523D1100581DCE /* Alamofire.framework in Frameworks */,
 			);
@@ -292,6 +294,9 @@
 			dependencies = (
 			);
 			name = ReduxionIOS;
+			packageProductDependencies = (
+				E47FD57D2814EA9100356797 /* SwiftyJSON */,
+			);
 			productName = "Reduxion-iOS";
 			productReference = E45A853C2152372700581DCE /* ReduxionIOS.app */;
 			productType = "com.apple.product-type.application";
@@ -343,6 +348,9 @@
 				Base,
 			);
 			mainGroup = E4CE6AAE2131498B00E4E865;
+			packageReferences = (
+				E47FD57C2814EA9100356797 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = E4CE6AB92131498B00E4E865 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -699,6 +707,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E47FD57C2814EA9100356797 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E47FD57D2814EA9100356797 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E47FD57C2814EA9100356797 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E4CE6AAF2131498B00E4E865 /* Project object */;
 }
