@@ -22,8 +22,6 @@
 		E45A855521523B0500581DCE /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44260AD2137BC6800A218C6 /* DataModel.swift */; };
 		E45A855921523B1100581DCE /* StockQuoteLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE7E2133B78E00438A8F /* StockQuoteLogic.swift */; };
 		E45A855A21523B1100581DCE /* StockQuoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE852133BF0300438A8F /* StockQuoteService.swift */; };
-		E45A855D21523D1100581DCE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581942150BD4C00B31C62 /* Alamofire.framework */; };
-		E45A855F21523D1100581DCE /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581972150BD5600B31C62 /* SwiftyJSON.framework */; };
 		E4645F08222773DD00FCC46E /* AppUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4645F07222773DD00FCC46E /* AppUseCases.swift */; };
 		E4645F09222773DD00FCC46E /* AppUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4645F07222773DD00FCC46E /* AppUseCases.swift */; };
 		E48FE18E222BBEAA002646E7 /* ServiceActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */; };
@@ -36,8 +34,6 @@
 		E4A581992150BD5600B31C62 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581972150BD5600B31C62 /* SwiftyJSON.framework */; };
 		E4BBF61F22262D6B00A1C5FA /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BBF61E22262D6B00A1C5FA /* UseCaseFactory.swift */; };
 		E4BBF62022262D6B00A1C5FA /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BBF61E22262D6B00A1C5FA /* UseCaseFactory.swift */; };
-		E4C600DB28151193002AC518 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E4C600DA28151193002AC518 /* SwiftyJSON */; };
-		E4C600DE28151205002AC518 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E4C600DD28151205002AC518 /* Alamofire */; };
 		E4D4FE832133BEB600438A8F /* StockQuoteLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE7E2133B78E00438A8F /* StockQuoteLogic.swift */; };
 		E4D4FE842133BEBB00438A8F /* LogicCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */; };
 		E4D4FE872133BF0300438A8F /* StockQuoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE852133BF0300438A8F /* StockQuoteService.swift */; };
@@ -102,10 +98,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4C600DB28151193002AC518 /* SwiftyJSON in Frameworks */,
-				E4C600DE28151205002AC518 /* Alamofire in Frameworks */,
-				E45A855F21523D1100581DCE /* SwiftyJSON.framework in Frameworks */,
-				E45A855D21523D1100581DCE /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,8 +285,6 @@
 			);
 			name = ReduxionIOS;
 			packageProductDependencies = (
-				E4C600DA28151193002AC518 /* SwiftyJSON */,
-				E4C600DD28151205002AC518 /* Alamofire */,
 			);
 			productName = "Reduxion-iOS";
 			productReference = E45A853C2152372700581DCE /* ReduxionIOS.app */;
@@ -720,19 +710,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		E4C600DA28151193002AC518 /* SwiftyJSON */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E4C600D928151193002AC518 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
-			productName = SwiftyJSON;
-		};
-		E4C600DD28151205002AC518 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E4C600DC28151205002AC518 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E4CE6AAF2131498B00E4E865 /* Project object */;
 }
