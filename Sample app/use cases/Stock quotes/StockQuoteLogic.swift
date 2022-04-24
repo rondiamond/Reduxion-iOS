@@ -39,20 +39,18 @@ struct StockQuoteLogic: Logic {
                 print("stockQuoteResponse - error = \(error!)")
             }
             
+            let chartResult = jsonPayload["chart"]["result"][0]
+            let metadata = chartResult["meta"]
+            let timestamp = chartResult["timestamp"][1]
+            let indicators = chartResult["indicators"]["quote"][0]
+            
             if (jsonPayload != JSON.null) {
                 var stockInfo = DataModel.StockInfo()
-                stockInfo.symbol            = jsonPayload["symbol"].stringValue
-                stockInfo.name              = jsonPayload["companyName"].stringValue
-                stockInfo.sector            = jsonPayload["sector"].stringValue
-                stockInfo.primaryExchange   = jsonPayload["primaryExchange"].stringValue
-                stockInfo.latestPrice       = jsonPayload["latestPrice"].floatValue
-                stockInfo.latestUpdate      = jsonPayload["latestUpdate"].intValue
-                stockInfo.latestVolume      = jsonPayload["latestVolume"].intValue
-                stockInfo.previousClose     = jsonPayload["previousClose"].floatValue
-                stockInfo.change            = jsonPayload["change"].floatValue
-                stockInfo.changePercent     = jsonPayload["changePercent"].floatValue
-                stockInfo.week52High        = jsonPayload["week52High"].floatValue
-                stockInfo.week52Low         = jsonPayload["week52Low"].floatValue
+                stockInfo.symbol            = metadata["symbol"].stringValue
+                stockInfo.primaryExchange   = metadata["exchangeName"].stringValue
+                stockInfo.latestPrice       = indicators["close"].floatValue
+                stockInfo.latestUpdate      = timestamp.intValue
+                stockInfo.latestVolume      = indicators["volume"].intValue
 
                 if (state.dataModel.stocksHistory.history.count > 0),
                     (state.dataModel.stocksHistory.currentIndex != nil) {

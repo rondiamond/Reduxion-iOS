@@ -105,15 +105,8 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
         var stockInfoText = ""
         if let stockInfo = stockInfo {
             stockInfoText.append("symbol = \(String(describing: stockInfo.symbol ?? ""))\n")
-            stockInfoText.append("name = \(String(describing: stockInfo.name ?? ""))\n")
             stockInfoText.append("primaryExchange = \(String(describing: stockInfo.primaryExchange ?? ""))\n")
-            stockInfoText.append("sector = \(String(describing: stockInfo.sector ?? ""))\n")
             stockInfoText.append("latestPrice = \(String(describing: stockInfo.latestPrice ?? 0))\n")
-            stockInfoText.append("previousClose = \(String(describing: stockInfo.previousClose ?? 0))\n")
-            stockInfoText.append("change = \(String(describing: stockInfo.change ?? 0))\n")
-            stockInfoText.append("changePercent = \(String(describing: stockInfo.changePercent ?? 0))%\n")
-            stockInfoText.append("week52High = \(String(describing: stockInfo.week52High ?? 0))\n")
-            stockInfoText.append("week52Low = \(String(describing: stockInfo.week52Low ?? 0))\n")
             stockInfoText.append("latestVolume = \(String(describing: stockInfo.latestVolume ?? 0))\n")
         }
         return stockInfoText

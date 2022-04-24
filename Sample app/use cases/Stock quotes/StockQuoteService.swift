@@ -19,7 +19,7 @@ let StockQuoteServiceKey_Symbol = "StockQuoteServiceKey_Symbol"
 // MARK: - Service paths
 
 let STOCK_QUOTE_SERVICE_URL_BASE    = "https://query2.finance.yahoo.com/v8/finance/chart/"
-let STOCK_QUOTE_SERVICE_URL_FORMAT  = "%@"
+let STOCK_QUOTE_SERVICE_URL_FORMAT  = "%@?interval=1m&range=1m&includePrePost=False&events=div,splits"
 
 
 // MARK: - StockQuoteService
@@ -53,18 +53,12 @@ class StockQuoteService: Service {
         
         let subpath = String(format: STOCK_QUOTE_SERVICE_URL_FORMAT, stockSymbol)
         let urlString = self.baseURL! + subpath
-        let parameters = [
-            "interval": "1d",
-            "range": "1d",
-            "includePrePost": "False",
-            "events": "div,splits"
-        ]
         
         serviceRequestBegan()
         
         var headers: [String : String] = [:]
         headers[SERVICE_REQUEST_HEADER_CONTENT_TYPE] = SERVICE_REQUEST_HEADER_CONTENT_TYPE_JSON
-        Alamofire.request(urlString, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers)
+        Alamofire.request(urlString, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers)
             .validate(contentType: [SERVICE_REQUEST_HEADER_CONTENT_TYPE_JSON])
             .responseString { response in
                 // handle any non-JSON errors here (e.g., HTML)
