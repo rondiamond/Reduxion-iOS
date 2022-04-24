@@ -27,15 +27,9 @@ struct DataModel: Codable {
     struct StockInfo: Codable {
         var symbol: String?
         var name: String?
-        var sector: String?
         var primaryExchange: String?
         var latestPrice: Float?
         var latestUpdate: Int?   // Unix seconds
         var latestVolume: Int?
-        var previousClose: Float?
-        var change: Float?
-        var changePercent: Float?
-        var week52High: Float?
-        var week52Low: Float?
     }
 }
