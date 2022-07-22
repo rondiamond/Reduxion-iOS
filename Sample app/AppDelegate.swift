@@ -6,6 +6,11 @@
 //  Licensed per the LICENSE.txt file.
 //
 
+/**
+ Single Responsibility (SRP):
+ This class handles application lifecycle events.
+ */
+
 import UIKit
 
 @UIApplicationMain

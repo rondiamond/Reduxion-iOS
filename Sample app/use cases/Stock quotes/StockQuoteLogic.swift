@@ -7,13 +7,13 @@
 //  Licensed per the LICENSE.txt file.
 //
 
-/**
- Single Responsibility (SRP):
- This class implements a sample Logic module for the Reduxion-iOS sample code.
- */
-
 import Foundation
 import SwiftyJSON
+
+/**
+ Single Responsibility (SRP):
+ This struct implements a sample Logic module for the Reduxion-iOS sample code.
+ */
 
 struct StockQuoteLogic: Logic {
     

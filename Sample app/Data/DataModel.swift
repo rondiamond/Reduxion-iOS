@@ -2,6 +2,11 @@ import Foundation
 
 // MARK: - Data model
 
+/**
+ Single Responsibility (SRP):
+ This struct implements the application's data model.
+ */
+
 struct DataModel: Codable {
     /**
      The actual data.
