@@ -18,8 +18,8 @@ let StockQuoteServiceKey_Symbol = "StockQuoteServiceKey_Symbol"
 
 // MARK: - Service paths
 
-let STOCK_QUOTE_SERVICE_URL_BASE    = "https://query2.finance.yahoo.com/v8/finance/chart/"
-let STOCK_QUOTE_SERVICE_URL_FORMAT  = "%@?interval=1m&range=1m&includePrePost=False&events=div,splits"
+let STOCK_QUOTE_SERVICE_URL_BASE    = "https://query2.finance.yahoo.com/v10/finance/quoteSummary/"
+let STOCK_QUOTE_SERVICE_URL_FORMAT  = "%@?modules=price"
 
 
 // MARK: - StockQuoteService

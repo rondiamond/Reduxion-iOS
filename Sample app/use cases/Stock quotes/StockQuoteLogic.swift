@@ -39,18 +39,19 @@ struct StockQuoteLogic: Logic {
                 print("stockQuoteResponse - error = \(error!)")
             }
             
-            let chartResult = jsonPayload["chart"]["result"][0]
-            let metadata = chartResult["meta"]
-            let timestamp = chartResult["timestamp"][1]
-            let indicators = chartResult["indicators"]["quote"][0]
-            
             if (jsonPayload != JSON.null) {
+                let info = jsonPayload["quoteSummary"]["result"][0]["price"]
+                
                 var stockInfo = DataModel.StockInfo()
-                stockInfo.symbol            = metadata["symbol"].stringValue
-                stockInfo.primaryExchange   = metadata["exchangeName"].stringValue
-                stockInfo.latestPrice       = indicators["close"].floatValue
-                stockInfo.latestUpdate      = timestamp.intValue
-                stockInfo.latestVolume      = indicators["volume"].intValue
+                stockInfo.symbol            = info["symbol"].stringValue
+                stockInfo.name              = info["shortName"].stringValue
+                stockInfo.latestPrice       = info["regularMarketPrice"]["fmt"].stringValue
+                stockInfo.latestUpdateTime  = info["regularMarketTime"].intValue
+                stockInfo.latestVolume      = info["regularMarketVolume"]["fmt"].stringValue
+                let currencySymbol          = info["currencySymbol"].stringValue
+                let marketCapString         = info["marketCap"]["fmt"].stringValue
+                stockInfo.marketCap         = "\(currencySymbol + marketCapString)"
+                stockInfo.exchangeName      = info["exchangeName"].stringValue
 
                 if (state.dataModel.stocksHistory.history.count > 0),
                     (state.dataModel.stocksHistory.currentIndex != nil) {

@@ -105,9 +105,20 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
         var stockInfoText = ""
         if let stockInfo = stockInfo {
             stockInfoText.append("symbol = \(String(describing: stockInfo.symbol ?? ""))\n")
-            stockInfoText.append("primaryExchange = \(String(describing: stockInfo.primaryExchange ?? ""))\n")
-            stockInfoText.append("latestPrice = \(String(describing: stockInfo.latestPrice ?? 0))\n")
-            stockInfoText.append("latestVolume = \(String(describing: stockInfo.latestVolume ?? 0))\n")
+            stockInfoText.append("name = \(String(describing: stockInfo.name ?? ""))\n")
+            stockInfoText.append("exchangeName = \(String(describing: stockInfo.exchangeName ?? ""))\n")
+            stockInfoText.append("latestPrice = \(String(describing: stockInfo.latestPrice ?? ""))\n")
+            stockInfoText.append("latestVolume = \(String(describing: stockInfo.latestVolume ?? ""))\n")
+            stockInfoText.append("marketCap = \(String(describing: stockInfo.marketCap ?? ""))\n")
+
+            if let latestUpdateTime = stockInfo.latestUpdateTime {
+                let latestUpdateTimeDouble = Double(latestUpdateTime)
+                let updateDateTime = Date(timeIntervalSince1970: latestUpdateTimeDouble)
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+                let formattedDateTime = dateFormatter.string(from: updateDateTime)
+                stockInfoText.append("latestUpdateTime = \(String(describing: formattedDateTime))")
+            }
         }
         return stockInfoText
     }
