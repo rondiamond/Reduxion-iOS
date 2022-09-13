@@ -13,18 +13,13 @@ Easy-to-implement, best-practice Unidirectional Data Flow for iOS apps, featuri
 
 ~
 
-### Essential Architectural Overview  
-A few resources essential to understanding the underlying design patterns:
+### Conceptual Overview
 
-[***The Principles of Clean Architecture***](https://www.youtube.com/watch?v=o_TH-Y78tt4&t=10m45s) - Robert Martin  
-Superb overview of clean architectural design principles [1 hour].  **Highly recommended**.
+Reduxion-iOS is a Clean Architecture implementation, based on the patterns of:
+- [Unidirectional data flow](https://duckduckgo.com/?q=unidirectional%20data%20flow)
+- [Redux's unified "state container" data model](https://duckduckgo.com/?q=redux%20%22state%20container%22)
 
-[***Unidirectional Data Flow in Swift***](https://realm.io/news/benji-encz-unidirectional-data-flow-swift/) - Benjamin Encz  
-Video explaining the unidirectional data flow design pattern and its advantages in depth [31+ minutes].
-
-[***Redux for iOS***](https://web.archive.org/web/20190807000530/http://blog.jtribe.com.au/redux-for-ios/) - Armin Kroll  
-Good, concise overview of one available library which has been modified for use in this project.
-
+It is a custom implementation, based in part on [sample code](https://github.com/armin/Redux-iOS) by Armin Kroll.
 
 ~
 
