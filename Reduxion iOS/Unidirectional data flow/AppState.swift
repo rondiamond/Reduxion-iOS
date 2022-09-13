@@ -17,9 +17,10 @@ import Foundation
 
 let persistenceFileName = "AppState"
 
-///**
-// Object that encapsulates the state of the entire application, and can be persisted and recalled.
-// */
+/**
+ Object that encapsulates the state of the entire application.
+ It can be persisted and recalled.
+ */
 struct AppState {
     // AppState is instantiated with default values (if not recalled from persistence).
 

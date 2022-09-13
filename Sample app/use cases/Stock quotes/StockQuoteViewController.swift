@@ -113,10 +113,10 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
 
             if let latestUpdateTime = stockInfo.latestUpdateTime {
                 let latestUpdateTimeDouble = Double(latestUpdateTime)
-                let updateDateTime = Date(timeIntervalSince1970: latestUpdateTimeDouble)
+                let latestUpdateDate = Date(timeIntervalSince1970: latestUpdateTimeDouble)
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
-                let formattedDateTime = dateFormatter.string(from: updateDateTime)
+                let formattedDateTime = dateFormatter.string(from: latestUpdateDate)
                 stockInfoText.append("latestUpdateTime = \(String(describing: formattedDateTime))")
             }
         }
