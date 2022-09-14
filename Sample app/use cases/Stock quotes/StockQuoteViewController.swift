@@ -35,6 +35,11 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
         LogicCoordinator.subscribe(self, updateWithCurrentAppState: true)
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.symbolTextField.becomeFirstResponder()
+    }
+    
     deinit {
         LogicCoordinator.unsubscribe(self)
     }
