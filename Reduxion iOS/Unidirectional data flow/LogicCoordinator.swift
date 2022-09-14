@@ -13,10 +13,10 @@
 
 /**
  Single Responsibility (SRP):
- This class implements the LogicCoordinator object.  It:
- ... accepts Action requests from the rest of the application
- ... hands those actions off to each Logic unit for processing
- ... notifies Subscribers when the logic processing has finished
+ This file implements the LogicCoordinator.  It:
+ ... accepts Action requests from the rest of the application;
+ ... hands those actions off to each Logic unit for processing;
+ ... notifies Subscribers when the logic processing has finished.
  */
 
 import Foundation

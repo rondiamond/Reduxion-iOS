@@ -9,7 +9,7 @@
 
 /**
  Single Responsibility (SRP):
- This class implements the enum containing all possible Actions (with optional arguments) that can be passed in to the business logic for processing.
+ This enum contains all possible Actions (with optional arguments) that can be passed in to the business logic for processing.
  */
 
 import Foundation

@@ -9,7 +9,7 @@
 
 /**
  Single Responsibility (SRP):
- This class implements the AppState object, which contains the current state of the application.
+ This struct implements the AppState object, which contains the current state of the application.
  It can persist and recall itself as needed.
  */
 
