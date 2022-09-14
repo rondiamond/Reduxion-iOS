@@ -239,6 +239,7 @@ class LogicCoordinator {
         // Since observers include the View layer, this needs to be on the Main thread.
         let immutableAppState = self.appState
         self.subscribers.forEach { $0.update(immutableAppState, mostRecentAction: mostRecentAction) }
+        persistAppState()   // optional, assuming inexpensive operation
     }
     
     /**
