@@ -24,7 +24,7 @@ It is a custom implementation, based in part on [sample code](https://github.com
 ~
 
 ### Block Diagram
-![](./_Documentation/reduxion-ios-architecture-block-diagram.png)
+![](./Reduxion%20iOS/Documentation/reduxion-ios-architecture-block-diagram.png)
 
 ~
 
@@ -33,12 +33,6 @@ Please see sample app for usage patterns.
 
 ~
 
-### Future milestones
-- Standalone framework
-- Carthage & Swift Package Manager support
-- ... more
-
-~
 ### Special Thanks
 - [Armin Kroll](https://twitter.com/persival)
 - [Benjamin Encz](https://twitter.com/benjaminencz)
