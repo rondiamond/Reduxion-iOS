@@ -15,7 +15,7 @@
 
 import Foundation
 
-let persistenceFileName = "AppState"
+let persistenceFileName = "AppState.json"   // file extension is optional; ".json" is helpful for opening in external viewer/editors
 
 /**
  Object that encapsulates the state of the entire application.
