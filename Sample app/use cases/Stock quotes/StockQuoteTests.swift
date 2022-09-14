@@ -43,7 +43,6 @@ class StockQuoteTests: XCTestCase, AppStateSubscriber {
             // NOTE: the response may be from Mock (static) data
             XCTAssert(state.dataModel.stocksHistory.history.count == 1, "Expected an entry in the stock lookup history")
             XCTAssert(state.dataModel.stocksHistory.currentStock?.name?.count != 0, "Expected a name from the stock lookup")
-            XCTAssert(state.dataModel.stocksHistory.currentStock?.previousClose != 0, "Expected the closing price to be non-zero")
         }
         
         LogicCoordinator.performAction(.stockQuoteRequest(symbol: stockSymbol))
@@ -78,7 +77,7 @@ class StockQuoteTests: XCTestCase, AppStateSubscriber {
     
     func update(_ state: AppState, mostRecentAction: Action) {
         switch mostRecentAction {
-        case .stockQuoteResponse(_), .goBackInHistory, .goForwardInHistory:
+        case .stockQuoteResponse(_, _), .goBackInHistory, .goForwardInHistory:
             self.numberOfExpectedUpdates -= 1
             if (self.numberOfExpectedUpdates == 0) {
                 if (self.appStateUpdatedCompletionBlock != nil) {
