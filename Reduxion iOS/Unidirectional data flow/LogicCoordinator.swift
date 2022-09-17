@@ -4,7 +4,7 @@
 //
 //  Created by Ron Diamond on 9/14/16.
 //  Copyright © Ron Diamond.
-//  Licensed per the LICENSE.txt file.
+//  Licensed per the LICENSE file.
 //
 //  Based upon:
 //  Redux-iOS - created by Armin Kroll on 12/12/2015.

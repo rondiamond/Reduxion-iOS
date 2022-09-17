@@ -3,7 +3,7 @@
 //  Reduxion-iOS
 //
 //  Copyright © Ron Diamond.
-//  Licensed per the LICENSE.txt file.
+//  Licensed per the LICENSE file.
 //
 
 import Foundation
