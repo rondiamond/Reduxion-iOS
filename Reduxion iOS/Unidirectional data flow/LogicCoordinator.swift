@@ -48,7 +48,7 @@ protocol Logic {
     func performLogic(state: inout AppState, action: Action)
 
     /**
-     *  Utilized by logic modules which connect with a web service. (The logic module's reference to the Service must be injected, to support unit testing, mock data, etc.).
+     *  Utilized by logic modules which connect with a web service. (The logic module's reference to the Service must be injected, to support automated testing, mock data, etc.).
      */
     var service: Service? { get set }
 }
