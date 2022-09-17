@@ -21,7 +21,7 @@ private var numberOfPendingShowActivityIndicatorRequests = 0
 /**
  Shows the network activity spinner (and keeps track of the number of outstanding requests).
  */
-func serviceRequestBegan() {
+func serviceRequestBegins() {
     numberOfPendingShowActivityIndicatorRequests += 1
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
     //SVProgressHUD.show()  // uncomment if using SVProgressHUD
@@ -30,7 +30,7 @@ func serviceRequestBegan() {
 /**
  Hides the network activity spinner (assuming this was the only pending request).
  */
-func serviceRequestEnded() {
+func serviceRequestEnds() {
     numberOfPendingShowActivityIndicatorRequests -= 1
     if numberOfPendingShowActivityIndicatorRequests <= 0 {
         numberOfPendingShowActivityIndicatorRequests = 0
@@ -42,7 +42,7 @@ func serviceRequestEnded() {
 /**
  Hides the network activity spinner, regardless of any pending network requests.
  */
-func forceServiceRequestEnded() {
+func forceserviceRequestEnds() {
     numberOfPendingShowActivityIndicatorRequests = 0
     UIApplication.shared.isNetworkActivityIndicatorVisible = false
     //SVProgressHUD.dismiss()  // uncomment if using SVProgressHUD

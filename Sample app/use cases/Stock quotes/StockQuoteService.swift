@@ -54,7 +54,7 @@ class StockQuoteService: Service {
         let subpath = String(format: STOCK_QUOTE_SERVICE_URL_FORMAT, stockSymbol)
         let urlString = self.baseURL! + subpath
         
-        serviceRequestBegan()
+        serviceRequestBegins()
         
         var headers: [String : String] = [:]
         headers[SERVICE_REQUEST_HEADER_CONTENT_TYPE] = SERVICE_REQUEST_HEADER_CONTENT_TYPE_JSON
@@ -75,7 +75,7 @@ class StockQuoteService: Service {
                 }
         }
         
-        serviceRequestEnded()
+        serviceRequestEnds()
     }
 }
 
