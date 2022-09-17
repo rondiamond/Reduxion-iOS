@@ -30,8 +30,6 @@
 		E49569F8221E464E0070FB31 /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49569F6221E464E0070FB31 /* ServiceConstants.swift */; };
 		E49569FC221E4B040070FB31 /* StockQuoteMockData.json in Resources */ = {isa = PBXBuildFile; fileRef = E49569FB221E4B040070FB31 /* StockQuoteMockData.json */; };
 		E49569FD221E4B040070FB31 /* StockQuoteMockData.json in Resources */ = {isa = PBXBuildFile; fileRef = E49569FB221E4B040070FB31 /* StockQuoteMockData.json */; };
-		E4A581962150BD4C00B31C62 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581942150BD4C00B31C62 /* Alamofire.framework */; };
-		E4A581992150BD5600B31C62 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581972150BD5600B31C62 /* SwiftyJSON.framework */; };
 		E4BBF61F22262D6B00A1C5FA /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BBF61E22262D6B00A1C5FA /* UseCaseFactory.swift */; };
 		E4BBF62022262D6B00A1C5FA /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BBF61E22262D6B00A1C5FA /* UseCaseFactory.swift */; };
 		E4C600E7281518CD002AC518 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E4C600E6281518CD002AC518 /* SwiftyJSON */; };
@@ -67,7 +65,6 @@
 /* Begin PBXFileReference section */
 		E4011109222CCC9800551782 /* StockQuoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockQuoteTests.swift; sourceTree = "<group>"; };
 		E44260AD2137BC6800A218C6 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		E442F60B21509637000B37FE /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
 		E45A853C2152372700581DCE /* ReduxionIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReduxionIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45A853E2152372700581DCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E45A85402152372700581DCE /* StockQuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockQuoteViewController.swift; sourceTree = "<group>"; };
@@ -80,15 +77,12 @@
 		E49569F6221E464E0070FB31 /* ServiceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConstants.swift; sourceTree = "<group>"; };
 		E49569FB221E4B040070FB31 /* StockQuoteMockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StockQuoteMockData.json; sourceTree = "<group>"; };
 		E4956A01221E4DCD0070FB31 /* reduxion-ios-architecture-block-diagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reduxion-ios-architecture-block-diagram.png"; sourceTree = "<group>"; };
-		E4A581942150BD4C00B31C62 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
-		E4A581972150BD5600B31C62 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = SOURCE_ROOT; };
 		E4BBF61E22262D6B00A1C5FA /* UseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
 		E4CE6AC12131498B00E4E865 /* ReduxionIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReduxionIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4CE6AC82131498B00E4E865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4CE6AD321314BE400E4E865 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		E4CE6AD421314BE400E4E865 /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogicCoordinator.swift; sourceTree = "<group>"; };
-		E4D4FE6C2133784300438A8F /* Reduxion-iOSTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reduxion-iOSTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		E4D4FE742133AE2000438A8F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		E4D4FE7E2133B78E00438A8F /* StockQuoteLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StockQuoteLogic.swift; path = "Sample app/Use cases/Stock quotes/StockQuoteLogic.swift"; sourceTree = SOURCE_ROOT; };
 		E4D4FE852133BF0300438A8F /* StockQuoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StockQuoteService.swift; path = "Sample app/Use cases/Stock quotes/StockQuoteService.swift"; sourceTree = SOURCE_ROOT; };
@@ -109,8 +103,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4A581962150BD4C00B31C62 /* Alamofire.framework in Frameworks */,
-				E4A581992150BD5600B31C62 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,14 +120,6 @@
 				E4BBF6232226468900A1C5FA /* View */,
 			);
 			path = "Sample app";
-			sourceTree = "<group>";
-		};
-		E442F60A21509622000B37FE /* Carthage */ = {
-			isa = PBXGroup;
-			children = (
-				E442F60B21509637000B37FE /* Cartfile */,
-			);
-			path = Carthage;
 			sourceTree = "<group>";
 		};
 		E49569F9221E47F80070FB31 /* Service-related */ = {
@@ -159,15 +143,6 @@
 			);
 			name = "Stock quotes";
 			path = "../Use cases/Stock quotes";
-			sourceTree = "<group>";
-		};
-		E4A581932150BD1700B31C62 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E4A581942150BD4C00B31C62 /* Alamofire.framework */,
-				E4A581972150BD5600B31C62 /* SwiftyJSON.framework */,
-			);
-			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		E4BBF6222226467500A1C5FA /* Data */ = {
@@ -194,7 +169,6 @@
 				E4D4FE732133AE0E00438A8F /* Documentation */,
 				E49569F9221E47F80070FB31 /* Service-related */,
 				E4CE6ADD21314BE800E4E865 /* Unidirectional data flow */,
-				E4D4FE6B2133781600438A8F /* third-party dependencies */,
 				E4CE6AC52131498B00E4E865 /* Reduxion-iOSTests */,
 				E4CE6AB92131498B00E4E865 /* Products */,
 			);
@@ -245,17 +219,6 @@
 			);
 			name = "Unidirectional data flow";
 			path = "Reduxion iOS/Unidirectional data flow";
-			sourceTree = "<group>";
-		};
-		E4D4FE6B2133781600438A8F /* third-party dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				E4D4FE6C2133784300438A8F /* Reduxion-iOSTests-Bridging-Header.h */,
-				E442F60A21509622000B37FE /* Carthage */,
-				E4A581932150BD1700B31C62 /* Frameworks */,
-			);
-			name = "third-party dependencies";
-			path = "Reduxion iOS/third-party dependencies";
 			sourceTree = "<group>";
 		};
 		E4D4FE732133AE0E00438A8F /* Documentation */ = {
