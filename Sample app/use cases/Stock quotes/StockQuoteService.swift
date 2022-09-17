@@ -84,23 +84,23 @@ class MockStockQuoteService: StockQuoteService {
     override func fetchAndStoreData(_ optionalArguments: [String : String]) {
         let dispatchDeadline: DispatchTime = .now() + mockServiceSimulatedLatencyInSeconds
         DispatchQueue.main.asyncAfter(deadline: dispatchDeadline) {
-            let sampleStockQuoteData = self.sampleStockQuoteData()
-            parseAndStoreData(json: sampleStockQuoteData, error: nil)
+            let mockStockQuoteData = self.mockStockQuoteData()
+            parseAndStoreData(json: mockStockQuoteData, error: nil)
         }
     }
     
-    fileprivate func sampleStockQuoteData() -> JSON {
-        var sampleStockQuoteData = JSON.null  // default value
+    fileprivate func mockStockQuoteData() -> JSON {
+        var mockStockQuoteData = JSON.null  // default value
         if let path = Bundle.main.path(forResource: "StockQuoteMockData", ofType: "json") {
             if let data = try? Data(contentsOf: URL(fileURLWithPath: path)) {
                 do {
-                    try sampleStockQuoteData = JSON(data: data)
+                    try mockStockQuoteData = JSON(data: data)
                 } catch {
-                    print("Error: Unable to parse JSON for sampleStockQuoteData!")
+                    print("Error: Unable to parse JSON for mockStockQuoteData!")
                 }
             }
         }
-        return sampleStockQuoteData
+        return mockStockQuoteData
     }
 }
 
