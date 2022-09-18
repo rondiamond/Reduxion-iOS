@@ -1,35 +1,28 @@
 
 # Reduxion-iOS
 
-  
+
 ### TL;DR
 Easy-to-implement, best-practice Unidirectional Data Flow for iOS apps, featuring:  
 - Loosely-coupled layers for View / Business Logic / Services / Data
-- Good separation of concerns facilitating unit testing (TDD/BDD)
 - Composable business logic, in single-responsibility units
+- Good separation of concerns facilitating automated testing (TDD/BDD)
 - Ability to switch entire application from real to mock services using one line of code
 - Ability to easily persist & recall the entire state of the application
 - Ability to easily add time travel (rewind/fast-forward) between different states of the application
 
 ~
 
-### Essential Architectural Overview  
-A few resources essential to understanding the underlying design patterns:
+### Conceptual Overview
 
-[***The Principles of Clean Architecture***](https://www.youtube.com/watch?v=o_TH-Y78tt4&t=10m45s) - Robert Martin  
-Superb overview of clean architectural design principles [1 hour].  **Highly recommended**.
-
-[***Unidirectional Data Flow in Swift***](https://realm.io/news/benji-encz-unidirectional-data-flow-swift/) - Benjamin Encz  
-Video explaining the unidirectional data flow design pattern and its advantages in depth [31+ minutes].
-
-[***Redux for iOS***](http://blog.jtribe.com.au/redux-for-ios/) - Armin Kroll  
-Good, concise overview of one available library which has been modified for use in this project.
-
+Reduxion-iOS is a Clean Architecture implementation, based on the patterns of:
+- [Unidirectional data flow](https://duckduckgo.com/?q=unidirectional%20data%20flow)
+- [Redux's unified "state container" data model](https://duckduckgo.com/?q=redux%20%22state%20container%22)
 
 ~
 
 ### Block Diagram
-![](./Documentation/reduxion-ios-architecture-block-diagram.png)
+![](./Reduxion%20iOS/Documentation/reduxion-ios-architecture-block-diagram.png)
 
 ~
 
@@ -38,16 +31,15 @@ Please see sample app for usage patterns.
 
 ~
 
-### Future milestones
-- Standalone framework
-- Carthage & Swift Package Manager support
-- ... more
+### Future Milestones
+- SwiftUI and Combine (and other modernizations) in the sample app
 
 ~
+
 ### Special Thanks
-- [Armin Kroll](https://twitter.com/persival)
-- [Benjamin Encz](https://twitter.com/benjaminencz)
-- ["Uncle Bob" Martin](https://twitter.com/unclebobmartin)
+- [Armin Kroll](https://twitter.com/persival) (whose [Redux-iOS](https://github.com/armin/Redux-iOS) helped inspire this implementation)
+- [Benjamin Encz](https://twitter.com/benjaminencz) (for evangelizing Redux and Unidirectional Data Flow for iOS)
+- ["Uncle Bob" Martin](https://twitter.com/unclebobmartin) (for too many reasons to count)
 - ... and everyone else who's been an inspiration toward *Clean Code*.  Thanks.
 
 

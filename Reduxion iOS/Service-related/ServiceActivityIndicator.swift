@@ -2,8 +2,8 @@
 //  ServiceActivityIndicator.swift
 //  Reduxion-iOS
 //
-//  Copyright © 2016-2019 Ron Diamond.
-//  Licensed per the LICENSE.txt file.
+//  Copyright © Ron Diamond.
+//  Licensed per the LICENSE file.
 //
 
 /**
@@ -21,7 +21,7 @@ private var numberOfPendingShowActivityIndicatorRequests = 0
 /**
  Shows the network activity spinner (and keeps track of the number of outstanding requests).
  */
-func serviceRequestBegan() {
+func serviceRequestBegins() {
     numberOfPendingShowActivityIndicatorRequests += 1
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
     //SVProgressHUD.show()  // uncomment if using SVProgressHUD
@@ -30,7 +30,7 @@ func serviceRequestBegan() {
 /**
  Hides the network activity spinner (assuming this was the only pending request).
  */
-func serviceRequestEnded() {
+func serviceRequestEnds() {
     numberOfPendingShowActivityIndicatorRequests -= 1
     if numberOfPendingShowActivityIndicatorRequests <= 0 {
         numberOfPendingShowActivityIndicatorRequests = 0
@@ -42,7 +42,7 @@ func serviceRequestEnded() {
 /**
  Hides the network activity spinner, regardless of any pending network requests.
  */
-func forceserviceRequestEnded() {
+func forceServiceRequestEnds() {
     numberOfPendingShowActivityIndicatorRequests = 0
     UIApplication.shared.isNetworkActivityIndicatorVisible = false
     //SVProgressHUD.dismiss()  // uncomment if using SVProgressHUD

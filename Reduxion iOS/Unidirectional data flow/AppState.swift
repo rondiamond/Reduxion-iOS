@@ -3,23 +3,24 @@
 //  Reduxion-iOS
 //
 //  Created by Ron Diamond on 9/14/16.
-//  Copyright © 2016-2018 Ron Diamond.
-//  Licensed per the LICENSE.txt file.
+//  Copyright © Ron Diamond.
+//  Licensed per the LICENSE file.
 //
 
 /**
  Single Responsibility (SRP):
- This class implements the AppState object, which contains the current state of the application.
+ This struct implements the AppState object, which contains the current state of the application.
  It can persist and recall itself as needed.
  */
 
 import Foundation
 
-let persistenceFileName = "AppState"
+let persistenceFileName = "AppState.json"   // file extension is optional; ".json" is helpful for opening in external viewer/editors
 
-///**
-// Object that encapsulates the state of the entire application, and can be persisted and recalled.
-// */
+/**
+ Object that encapsulates the state of the entire application.
+ It can be persisted and recalled.
+ */
 struct AppState {
     // AppState is instantiated with default values (if not recalled from persistence).
 

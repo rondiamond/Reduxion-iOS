@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,22 +22,20 @@
 		E45A855521523B0500581DCE /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44260AD2137BC6800A218C6 /* DataModel.swift */; };
 		E45A855921523B1100581DCE /* StockQuoteLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE7E2133B78E00438A8F /* StockQuoteLogic.swift */; };
 		E45A855A21523B1100581DCE /* StockQuoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE852133BF0300438A8F /* StockQuoteService.swift */; };
-		E45A855D21523D1100581DCE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581942150BD4C00B31C62 /* Alamofire.framework */; };
-		E45A855E21523D1100581DCE /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581942150BD4C00B31C62 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E45A855F21523D1100581DCE /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581972150BD5600B31C62 /* SwiftyJSON.framework */; };
-		E45A856021523D1100581DCE /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581972150BD5600B31C62 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E4645F08222773DD00FCC46E /* AppUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4645F07222773DD00FCC46E /* AppUseCases.swift */; };
 		E4645F09222773DD00FCC46E /* AppUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4645F07222773DD00FCC46E /* AppUseCases.swift */; };
+		E4721EDD28D6F023003C803F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E4721EDC28D6F023003C803F /* SwiftyJSON */; };
+		E4721EDF28D6F027003C803F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E4721EDE28D6F027003C803F /* Alamofire */; };
 		E48FE18E222BBEAA002646E7 /* ServiceActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */; };
 		E48FE18F222BBF5D002646E7 /* ServiceActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */; };
 		E49569F7221E464E0070FB31 /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49569F6221E464E0070FB31 /* ServiceConstants.swift */; };
 		E49569F8221E464E0070FB31 /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49569F6221E464E0070FB31 /* ServiceConstants.swift */; };
 		E49569FC221E4B040070FB31 /* StockQuoteMockData.json in Resources */ = {isa = PBXBuildFile; fileRef = E49569FB221E4B040070FB31 /* StockQuoteMockData.json */; };
 		E49569FD221E4B040070FB31 /* StockQuoteMockData.json in Resources */ = {isa = PBXBuildFile; fileRef = E49569FB221E4B040070FB31 /* StockQuoteMockData.json */; };
-		E4A581962150BD4C00B31C62 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581942150BD4C00B31C62 /* Alamofire.framework */; };
-		E4A581992150BD5600B31C62 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A581972150BD5600B31C62 /* SwiftyJSON.framework */; };
 		E4BBF61F22262D6B00A1C5FA /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BBF61E22262D6B00A1C5FA /* UseCaseFactory.swift */; };
 		E4BBF62022262D6B00A1C5FA /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BBF61E22262D6B00A1C5FA /* UseCaseFactory.swift */; };
+		E4C600E7281518CD002AC518 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E4C600E6281518CD002AC518 /* SwiftyJSON */; };
+		E4C600E9281518D1002AC518 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E4C600E8281518D1002AC518 /* Alamofire */; };
 		E4D4FE832133BEB600438A8F /* StockQuoteLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE7E2133B78E00438A8F /* StockQuoteLogic.swift */; };
 		E4D4FE842133BEBB00438A8F /* LogicCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */; };
 		E4D4FE872133BF0300438A8F /* StockQuoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE852133BF0300438A8F /* StockQuoteService.swift */; };
@@ -60,8 +58,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E45A856021523D1100581DCE /* SwiftyJSON.framework in Embed Frameworks */,
-				E45A855E21523D1100581DCE /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,7 +67,6 @@
 /* Begin PBXFileReference section */
 		E4011109222CCC9800551782 /* StockQuoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockQuoteTests.swift; sourceTree = "<group>"; };
 		E44260AD2137BC6800A218C6 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		E442F60B21509637000B37FE /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
 		E45A853C2152372700581DCE /* ReduxionIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReduxionIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45A853E2152372700581DCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E45A85402152372700581DCE /* StockQuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockQuoteViewController.swift; sourceTree = "<group>"; };
@@ -80,20 +75,17 @@
 		E45A85482152372800581DCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E45A854A2152372800581DCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4645F07222773DD00FCC46E /* AppUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppUseCases.swift; path = "Sample app/use cases/AppUseCases.swift"; sourceTree = SOURCE_ROOT; };
+		E464FCCC28D468AE001D6DD6 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		E49569F6221E464E0070FB31 /* ServiceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConstants.swift; sourceTree = "<group>"; };
 		E49569FB221E4B040070FB31 /* StockQuoteMockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StockQuoteMockData.json; sourceTree = "<group>"; };
-		E49569FE221E4C0F0070FB31 /* License.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
-		E49ED0C7222D0A95003FC6D7 /* reduxion-ios-architecture-block-diagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "reduxion-ios-architecture-block-diagram.png"; path = "Documentation/reduxion-ios-architecture-block-diagram.png"; sourceTree = SOURCE_ROOT; };
-		E4A581942150BD4C00B31C62 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
-		E4A581972150BD5600B31C62 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = SOURCE_ROOT; };
+		E4956A01221E4DCD0070FB31 /* reduxion-ios-architecture-block-diagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reduxion-ios-architecture-block-diagram.png"; sourceTree = "<group>"; };
 		E4BBF61E22262D6B00A1C5FA /* UseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
 		E4CE6AC12131498B00E4E865 /* ReduxionIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReduxionIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4CE6AC82131498B00E4E865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4CE6AD321314BE400E4E865 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		E4CE6AD421314BE400E4E865 /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogicCoordinator.swift; sourceTree = "<group>"; };
-		E4D4FE6C2133784300438A8F /* Reduxion-iOSTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reduxion-iOSTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		E4D4FE742133AE2000438A8F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		E4D4FE742133AE2000438A8F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		E4D4FE7E2133B78E00438A8F /* StockQuoteLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StockQuoteLogic.swift; path = "Sample app/Use cases/Stock quotes/StockQuoteLogic.swift"; sourceTree = SOURCE_ROOT; };
 		E4D4FE852133BF0300438A8F /* StockQuoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StockQuoteService.swift; path = "Sample app/Use cases/Stock quotes/StockQuoteService.swift"; sourceTree = SOURCE_ROOT; };
 		E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceActivityIndicator.swift; path = "Reduxion iOS/Service-related/ServiceActivityIndicator.swift"; sourceTree = SOURCE_ROOT; };
@@ -104,8 +96,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E45A855F21523D1100581DCE /* SwiftyJSON.framework in Frameworks */,
-				E45A855D21523D1100581DCE /* Alamofire.framework in Frameworks */,
+				E4C600E7281518CD002AC518 /* SwiftyJSON in Frameworks */,
+				E4C600E9281518D1002AC518 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,8 +105,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4A581962150BD4C00B31C62 /* Alamofire.framework in Frameworks */,
-				E4A581992150BD5600B31C62 /* SwiftyJSON.framework in Frameworks */,
+				E4721EDD28D6F023003C803F /* SwiftyJSON in Frameworks */,
+				E4721EDF28D6F027003C803F /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,21 +116,14 @@
 		E442F60921509550000B37FE /* Sample app */ = {
 			isa = PBXGroup;
 			children = (
+				E4CE6AD421314BE400E4E865 /* Actions.swift */,
+				E45A853E2152372700581DCE /* AppDelegate.swift */,
+				E45A854A2152372800581DCE /* Info.plist */,
 				E4BBF6222226467500A1C5FA /* Data */,
-				E4E120C0222D11090098E246 /* Other */,
 				E4D4FE7C2133B6F200438A8F /* Use cases */,
 				E4BBF6232226468900A1C5FA /* View */,
 			);
 			path = "Sample app";
-			sourceTree = "<group>";
-		};
-		E442F60A21509622000B37FE /* Carthage */ = {
-			isa = PBXGroup;
-			children = (
-				E442F60B21509637000B37FE /* Cartfile */,
-			);
-			name = Carthage;
-			path = ../../Carthage;
 			sourceTree = "<group>";
 		};
 		E49569F9221E47F80070FB31 /* Service-related */ = {
@@ -162,15 +147,6 @@
 			);
 			name = "Stock quotes";
 			path = "../Use cases/Stock quotes";
-			sourceTree = "<group>";
-		};
-		E4A581932150BD1700B31C62 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E4A581942150BD4C00B31C62 /* Alamofire.framework */,
-				E4A581972150BD5600B31C62 /* SwiftyJSON.framework */,
-			);
-			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		E4BBF6222226467500A1C5FA /* Data */ = {
@@ -198,10 +174,16 @@
 				E49569F9221E47F80070FB31 /* Service-related */,
 				E4CE6ADD21314BE800E4E865 /* Unidirectional data flow */,
 				E4CE6AC52131498B00E4E865 /* Reduxion-iOSTests */,
-				E4D4FE6B2133781600438A8F /* Third-party dependencies */,
 				E4CE6AB92131498B00E4E865 /* Products */,
 			);
 			name = "Reduxion iOS";
+			sourceTree = "<group>";
+		};
+		E4C600E5281518CD002AC518 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E4CE6AAE2131498B00E4E865 = {
@@ -209,6 +191,7 @@
 			children = (
 				E4BBF625222649BF00A1C5FA /* Reduxion iOS */,
 				E442F60921509550000B37FE /* Sample app */,
+				E4C600E5281518CD002AC518 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -242,44 +225,25 @@
 			path = "Reduxion iOS/Unidirectional data flow";
 			sourceTree = "<group>";
 		};
-		E4D4FE6B2133781600438A8F /* Third-party dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				E4D4FE6C2133784300438A8F /* Reduxion-iOSTests-Bridging-Header.h */,
-				E442F60A21509622000B37FE /* Carthage */,
-				E4A581932150BD1700B31C62 /* Frameworks */,
-			);
-			name = "Third-party dependencies";
-			path = "Reduxion iOS/Third-party dependencies";
-			sourceTree = "<group>";
-		};
 		E4D4FE732133AE0E00438A8F /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
-				E49569FE221E4C0F0070FB31 /* License.txt */,
+				E464FCCC28D468AE001D6DD6 /* LICENSE */,
 				E4D4FE742133AE2000438A8F /* README.md */,
-				E49ED0C7222D0A95003FC6D7 /* reduxion-ios-architecture-block-diagram.png */,
+				E4956A01221E4DCD0070FB31 /* reduxion-ios-architecture-block-diagram.png */,
 			);
-			path = Documentation;
+			name = Documentation;
+			path = "Reduxion iOS/Documentation";
 			sourceTree = "<group>";
 		};
 		E4D4FE7C2133B6F200438A8F /* Use cases */ = {
 			isa = PBXGroup;
 			children = (
-				E4CE6AD421314BE400E4E865 /* Actions.swift */,
 				E4645F07222773DD00FCC46E /* AppUseCases.swift */,
 				E49569FA221E4AD10070FB31 /* Stock quotes */,
 			);
-			path = "Use cases";
-			sourceTree = "<group>";
-		};
-		E4E120C0222D11090098E246 /* Other */ = {
-			isa = PBXGroup;
-			children = (
-				E45A853E2152372700581DCE /* AppDelegate.swift */,
-				E45A854A2152372800581DCE /* Info.plist */,
-			);
-			path = Other;
+			name = "Use cases";
+			path = "use cases";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +263,10 @@
 			dependencies = (
 			);
 			name = ReduxionIOS;
+			packageProductDependencies = (
+				E4C600E6281518CD002AC518 /* SwiftyJSON */,
+				E4C600E8281518D1002AC518 /* Alamofire */,
+			);
 			productName = "Reduxion-iOS";
 			productReference = E45A853C2152372700581DCE /* ReduxionIOS.app */;
 			productType = "com.apple.product-type.application";
@@ -317,6 +285,10 @@
 				E478EA2521636EAE008F05DB /* PBXTargetDependency */,
 			);
 			name = ReduxionIOSTests;
+			packageProductDependencies = (
+				E4721EDC28D6F023003C803F /* SwiftyJSON */,
+				E4721EDE28D6F027003C803F /* Alamofire */,
+			);
 			productName = "Reduxion-iOSTests";
 			productReference = E4CE6AC12131498B00E4E865 /* ReduxionIOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -328,7 +300,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1330;
 				ORGANIZATIONNAME = "Ron Diamond";
 				TargetAttributes = {
 					E45A853B2152372700581DCE = {
@@ -350,6 +322,10 @@
 				Base,
 			);
 			mainGroup = E4CE6AAE2131498B00E4E865;
+			packageReferences = (
+				E4C600D928151193002AC518 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				E4C600DC28151205002AC518 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = E4CE6AB92131498B00E4E865 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -456,19 +432,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9VSXUETUH;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = "Sample app/Other/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "Sample app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "test4321.Reduxion-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -479,19 +452,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9VSXUETUH;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = "Sample app/Other/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "Sample app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "test4321.Reduxion-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -522,6 +492,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -548,13 +519,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -586,6 +558,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -606,12 +579,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -625,11 +599,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9VSXUETUH;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)/Reduxion\\ iOS/third-party\\ dependencies/Frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Reduxion iOS/Reduxion-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -638,9 +608,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "test4321.Reduxion-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Reduxion iOS/third-party dependencies/Reduxion-iOSTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReduxionIOS.app/ReduxionIOS";
 			};
@@ -653,11 +623,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9VSXUETUH;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)/Reduxion\\ iOS/third-party\\ dependencies/Frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Reduxion iOS/Reduxion-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -666,8 +632,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "test4321.Reduxion-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Reduxion iOS/third-party dependencies/Reduxion-iOSTests-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReduxionIOS.app/ReduxionIOS";
 			};
@@ -704,6 +670,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E4C600D928151193002AC518 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		E4C600DC28151205002AC518 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E4721EDC28D6F023003C803F /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4C600D928151193002AC518 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		E4721EDE28D6F027003C803F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4C600DC28151205002AC518 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		E4C600E6281518CD002AC518 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4C600D928151193002AC518 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		E4C600E8281518D1002AC518 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4C600DC28151205002AC518 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E4CE6AAF2131498B00E4E865 /* Project object */;
 }

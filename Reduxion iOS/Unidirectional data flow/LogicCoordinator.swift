@@ -3,20 +3,16 @@
 //  Reduxion-iOS
 //
 //  Created by Ron Diamond on 9/14/16.
-//  Copyright © 2016-2019 Ron Diamond.
-//  Licensed per the LICENSE.txt file.
-//
-//  Based upon:
-//  Redux-iOS - created by Armin Kroll on 12/12/2015.
-//  https://github.com/armin/Redux-iOS/blob/8bf11d9e2495e1e7969d42ea266ec76b59472e1b/LICENSE
+//  Copyright © Ron Diamond.
+//  Licensed per the LICENSE file.
 //
 
 /**
  Single Responsibility (SRP):
- This class implements the LogicCoordinator object.  It:
- ... accepts Action requests from the rest of the application
- ... hands those actions off to each Logic unit for processing
- ... notifies Subscribers when the logic processing has finished
+ This file implements the LogicCoordinator.  It:
+ ... accepts Action requests from the rest of the application;
+ ... hands those actions off to each Logic unit for processing;
+ ... notifies Subscribers when the logic processing has finished.
  */
 
 import Foundation
@@ -48,7 +44,7 @@ protocol Logic {
     func performLogic(state: inout AppState, action: Action)
 
     /**
-     *  Utilized by logic modules which connect with a web service. (The logic module's reference to the Service must be injected, to support unit testing, mock data, etc.).
+     *  Utilized by logic modules which connect with a web service. (The logic module's reference to the Service must be injected, to support automated testing, mock data, etc.).
      */
     var service: Service? { get set }
 }
@@ -57,7 +53,7 @@ protocol Logic {
 // MARK: AppStateSubscriber
 
 /**
- *  An AppStateSubscriber is an object that listens for changes to the AppState, and has the opportunity to react to different types of Actions.
+ *  An AppStateSubscriber is an object that observes changes to the AppState, and has the opportunity to react to different types of Actions.
  */
 protocol AppStateSubscriber {
     /**
@@ -68,7 +64,7 @@ protocol AppStateSubscriber {
     /**
      Offers a logic module the opportunity to (optionally) mutate the AppState, based on the most recent type of Action.
      - parameter state:  Reference to the AppState to optionally be mutated.
-     - parameter mostRecentAction:  The most recent Action executed by the business/service logic.  Allows the listener to determine what to do, if anything, based on the type of Action executed.
+     - parameter mostRecentAction:  The most recent Action executed by the business/service logic.  Allows the subscriber to determine what to do, if anything, based on the type of Action executed.
      */
     func update(_ state: AppState, mostRecentAction: Action)
 }
@@ -92,8 +88,8 @@ private func generateUniqueIdentifier() -> String {
  - returns: True if the subscribers have the different identifiers; False if they're the same.
  */
 func !=(lhs: AppStateSubscriber, rhs: AppStateSubscriber) -> Bool {
-    let isInequal = (lhs.appStateSubscriberIdentifier != rhs.appStateSubscriberIdentifier)
-    return isInequal
+    let isDifferent = (lhs.appStateSubscriberIdentifier != rhs.appStateSubscriberIdentifier)
+    return isDifferent
 }
 
 
@@ -107,28 +103,24 @@ class LogicCoordinator {
     fileprivate var appState = AppState()
     fileprivate var appStateRecalled: Bool = false
     fileprivate var subscribers = [AppStateSubscriber]()
-
-    // MARK: - Logic units
-    fileprivate var stockQuoteLogic = StockQuoteLogic()
-    
     
     // MARK: - Logic units (aka 'reducers')
     /**
      The daisy chain of composable business logic units
      Notes:
      - This business logic is the same regardless of whether we're using real or mock data.
-     - The order of logic units in the daisy chain shouldn't matter.  If so, that's a code smell, and dependent operations should be handled differently.
+     - The order of logic units in the daisy chain shouldn't matter.  If so, that's a code smell, and dependent operations should be handled sequentially in the calling code.
      */
     fileprivate var logicUnits: [Logic] = []
     
     
     // MARK: - Data persistence
     
-    func persistAppState() {
+    public func persistAppState() {
         AppState.persist(self.appState)
     }
     
-    func recallAppState() {
+    public func recallAppState() {
         if (self.appStateRecalled) {
             print("Warning: AppState should only be recalled once at the beginning of the session")
             return
@@ -141,21 +133,34 @@ class LogicCoordinator {
     
     // MARK: - Convenience functions
     // Convenience functions for accessing the LogicCoordinator's sharedInstance.
-    
+
+    /**
+     Asks the LogicCoordinator to perform the specified action (with no arguments).
+     */
     static func performAction(_ action: Action) {
         LogicCoordinator.sharedInstance.performAction(action)
     }
 
+    /**
+     Asks the LogicCoordinator to add a subscriber to be notified of changes to the AppState.
+     */
     static func subscribe(_ newSubscriber: AppStateSubscriber) {
         LogicCoordinator.sharedInstance.subscribe(newSubscriber)
     }
     
+    /**
+     Asks the LogicCoordinator to add a subscriber to be notified of changes to the AppState.
+     If 'updateWithCurrentAppState' is True, then the subscriber is also notified with the current value of the AppState.
+     */
     static func subscribe(_ newSubscriber: AppStateSubscriber, updateWithCurrentAppState: Bool) {
         LogicCoordinator.sharedInstance.subscribe(newSubscriber, updateWithCurrentAppState: updateWithCurrentAppState)
     }
     
-    static func unsubscribe(_ listener: AppStateSubscriber) {
-        LogicCoordinator.sharedInstance.unsubscribe(listener)
+    /**
+     Asks the LogicCoordinator to remove a subscriber.
+     */
+    static func unsubscribe(_ subscriber: AppStateSubscriber) {
+        LogicCoordinator.sharedInstance.unsubscribe(subscriber)
     }
 
     
@@ -167,7 +172,7 @@ class LogicCoordinator {
      NOTE: Logic is executed on the Main thread.  If the request is initiated from the main thread, then the logic (and the update:appState callback) will be executed synchronously.
      */
     private func performAction(_ action: Action) {
-        // All actions *must* be performed on the same thread, in order to insure data consistency.
+        // All actions MUST be performed on the same thread, in order to insure data consistency.
         if !Thread.current.isMainThread {
             DispatchQueue.main.async {
                 self.performLogic(action)
@@ -183,7 +188,7 @@ class LogicCoordinator {
      - parameter action: The Action to be executed.
      */
     private func performLogic(_ action: Action) {
-        // Note: Expensive action logic should be performed on a separate thread; and when ready with the results, should call another type of action specifically for the purpose of mutating the AppState.
+        // Note: Expensive action logic should be performed on a separate thread -- and when ready with the results, should call another type of action specifically for the purpose of mutating the AppState.
         self.logicUnits.forEach({ $0.performLogic(state: &self.appState, action: action) })
         self.updateSubscribers(action)
     }
@@ -213,9 +218,10 @@ class LogicCoordinator {
         }
         
         let identifier = generateUniqueIdentifier()
-        var mutableListener = newSubscriber
-        mutableListener.appStateSubscriberIdentifier = identifier
-        self.subscribers.append(newSubscriber)
+        var mutableSubscriber = newSubscriber
+        mutableSubscriber.appStateSubscriberIdentifier = identifier
+        let immutableSubscriber = mutableSubscriber
+        self.subscribers.append(immutableSubscriber)
         
         if updateWithCurrentAppState {
             newSubscriber.update(self.appState, mostRecentAction: Action.null)  // ?
@@ -227,15 +233,16 @@ class LogicCoordinator {
      */
     private func updateSubscribers(_ mostRecentAction: Action) {
         // Since observers include the View layer, this needs to be on the Main thread.
-        let appStateReadOnly = self.appState
-        self.subscribers.forEach { $0.update(appStateReadOnly, mostRecentAction: mostRecentAction) }
+        let immutableAppState = self.appState
+        self.subscribers.forEach { $0.update(immutableAppState, mostRecentAction: mostRecentAction) }
+        persistAppState()   // optional, assuming inexpensive operation
     }
     
     /**
      Removes the subscriber from being notified of the results of any subsequent 'performAction' call.
-     - parameter listener: The subscriber to be removed.
+     - parameter subscriber: The subscriber to be removed.
      */
-    private func unsubscribe(_ listener: AppStateSubscriber) {
-        self.subscribers = self.subscribers.filter({ $0.appStateSubscriberIdentifier != listener.appStateSubscriberIdentifier })
+    private func unsubscribe(_ subscriber: AppStateSubscriber) {
+        self.subscribers = self.subscribers.filter({ $0.appStateSubscriberIdentifier != subscriber.appStateSubscriberIdentifier })
     }
 }

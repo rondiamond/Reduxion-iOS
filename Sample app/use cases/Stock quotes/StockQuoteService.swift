@@ -3,8 +3,8 @@
 //  Reduxion-iOS
 //
 //  Created by Ron Diamond on 8/26/18.
-//  Copyright © 2016-2019 Ron Diamond.
-//  Licensed per the LICENSE.txt file.
+//  Copyright © Ron Diamond.
+//  Licensed per the LICENSE file.
 //
 
 import Foundation
@@ -18,8 +18,8 @@ let StockQuoteServiceKey_Symbol = "StockQuoteServiceKey_Symbol"
 
 // MARK: - Service paths
 
-let STOCK_QUOTE_SERVICE_URL_BASE    = "https://api.iextrading.com/1.0/"
-let STOCK_QUOTE_SERVICE_URL_FORMAT  = "stock/%@/quote"
+let STOCK_QUOTE_SERVICE_URL_BASE    = "https://query2.finance.yahoo.com/v10/finance/quoteSummary/"
+let STOCK_QUOTE_SERVICE_URL_FORMAT  = "%@?modules=price"
 
 
 // MARK: - StockQuoteService
@@ -54,16 +54,13 @@ class StockQuoteService: Service {
         let subpath = String(format: STOCK_QUOTE_SERVICE_URL_FORMAT, stockSymbol)
         let urlString = self.baseURL! + subpath
         
-        serviceRequestBegan()
+        serviceRequestBegins()
         
-        var headers: [String : String] = [:]
-        headers[SERVICE_REQUEST_HEADER_CONTENT_TYPE] = SERVICE_REQUEST_HEADER_CONTENT_TYPE_JSON
-        Alamofire.request(urlString, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers)
+        let headers: HTTPHeaders = [SERVICE_REQUEST_HEADER_CONTENT_TYPE : SERVICE_REQUEST_HEADER_CONTENT_TYPE_JSON]
+        AF.request(urlString, headers: headers)
+            .validate(statusCode: 200..<300)
             .validate(contentType: [SERVICE_REQUEST_HEADER_CONTENT_TYPE_JSON])
-            .responseString { response in
-                // handle any non-JSON errors here (e.g., HTML)
-            }
-            .responseJSON { response in
+            .responseData { response in
                 switch response.result {
                 case .success(let value):
                     let json = SwiftyJSON.JSON(value)
@@ -73,9 +70,9 @@ class StockQuoteService: Service {
                     // TODO: handle error case
                     print("Request failed with error: \(error)")
                 }
-        }
+            }
         
-        serviceRequestEnded()
+        serviceRequestEnds()
     }
 }
 
@@ -84,23 +81,23 @@ class MockStockQuoteService: StockQuoteService {
     override func fetchAndStoreData(_ optionalArguments: [String : String]) {
         let dispatchDeadline: DispatchTime = .now() + mockServiceSimulatedLatencyInSeconds
         DispatchQueue.main.asyncAfter(deadline: dispatchDeadline) {
-            let sampleStockQuoteData = self.sampleStockQuoteData()
-            parseAndStoreData(json: sampleStockQuoteData, error: nil)
+            let mockStockQuoteData = self.mockStockQuoteData()
+            parseAndStoreData(json: mockStockQuoteData, error: nil)
         }
     }
     
-    fileprivate func sampleStockQuoteData() -> JSON {
-        var sampleStockQuoteData = JSON.null  // default value
+    fileprivate func mockStockQuoteData() -> JSON {
+        var mockStockQuoteData = JSON.null  // default value
         if let path = Bundle.main.path(forResource: "StockQuoteMockData", ofType: "json") {
             if let data = try? Data(contentsOf: URL(fileURLWithPath: path)) {
                 do {
-                    try sampleStockQuoteData = JSON(data: data)
+                    try mockStockQuoteData = JSON(data: data)
                 } catch {
-                    print("Error: Unable to parse JSON for sampleStockQuoteData!")
+                    print("Error: Unable to parse JSON for mockStockQuoteData!")
                 }
             }
         }
-        return sampleStockQuoteData
+        return mockStockQuoteData
     }
 }
 

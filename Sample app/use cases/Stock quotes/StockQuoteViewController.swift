@@ -3,8 +3,8 @@
 //  Reduxion-iOS
 //
 //  Created by Ron Diamond on 9/18/18.
-//  Copyright © 2018-2019 Ron Diamond.
-//  Licensed per the LICENSE.txt file.
+//  Copyright © Ron Diamond.
+//  Licensed per the LICENSE file.
 //
 
 import UIKit
@@ -35,6 +35,11 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
         LogicCoordinator.subscribe(self, updateWithCurrentAppState: true)
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.symbolTextField.becomeFirstResponder()
+    }
+    
     deinit {
         LogicCoordinator.unsubscribe(self)
     }
@@ -106,15 +111,19 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
         if let stockInfo = stockInfo {
             stockInfoText.append("symbol = \(String(describing: stockInfo.symbol ?? ""))\n")
             stockInfoText.append("name = \(String(describing: stockInfo.name ?? ""))\n")
-            stockInfoText.append("primaryExchange = \(String(describing: stockInfo.primaryExchange ?? ""))\n")
-            stockInfoText.append("sector = \(String(describing: stockInfo.sector ?? ""))\n")
-            stockInfoText.append("latestPrice = \(String(describing: stockInfo.latestPrice ?? 0))\n")
-            stockInfoText.append("previousClose = \(String(describing: stockInfo.previousClose ?? 0))\n")
-            stockInfoText.append("change = \(String(describing: stockInfo.change ?? 0))\n")
-            stockInfoText.append("changePercent = \(String(describing: stockInfo.changePercent ?? 0))%\n")
-            stockInfoText.append("week52High = \(String(describing: stockInfo.week52High ?? 0))\n")
-            stockInfoText.append("week52Low = \(String(describing: stockInfo.week52Low ?? 0))\n")
-            stockInfoText.append("latestVolume = \(String(describing: stockInfo.latestVolume ?? 0))\n")
+            stockInfoText.append("exchangeName = \(String(describing: stockInfo.exchangeName ?? ""))\n")
+            stockInfoText.append("latestPrice = \(String(describing: stockInfo.latestPrice ?? ""))\n")
+            stockInfoText.append("latestVolume = \(String(describing: stockInfo.latestVolume ?? ""))\n")
+            stockInfoText.append("marketCap = \(String(describing: stockInfo.marketCap ?? ""))\n")
+
+            if let latestUpdateTime = stockInfo.latestUpdateTime {
+                let latestUpdateTimeDouble = Double(latestUpdateTime)
+                let latestUpdateDate = Date(timeIntervalSince1970: latestUpdateTimeDouble)
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+                let formattedDateTime = dateFormatter.string(from: latestUpdateDate)
+                stockInfoText.append("latestUpdateTime = \(String(describing: formattedDateTime))")
+            }
         }
         return stockInfoText
     }

@@ -2,6 +2,11 @@ import Foundation
 
 // MARK: - Data model
 
+/**
+ Single Responsibility (SRP):
+ This struct implements the application's data model.
+ */
+
 struct DataModel: Codable {
     /**
      The actual data.
@@ -27,15 +32,10 @@ struct DataModel: Codable {
     struct StockInfo: Codable {
         var symbol: String?
         var name: String?
-        var sector: String?
-        var primaryExchange: String?
-        var latestPrice: Float?
-        var latestUpdate: Int?   // Unix seconds
-        var latestVolume: Int?
-        var previousClose: Float?
-        var change: Float?
-        var changePercent: Float?
-        var week52High: Float?
-        var week52Low: Float?
+        var latestPrice: String?
+        var latestUpdateTime: Int?   // Unix seconds
+        var latestVolume: String?
+        var marketCap: String?
+        var exchangeName: String?
     }
 }

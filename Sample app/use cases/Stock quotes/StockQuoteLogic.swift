@@ -3,17 +3,17 @@
 //  Reduxion-iOS
 //
 //  Created by Ron Diamond on 8/26/18.
-//  Copyright © 2018-2019 Ron Diamond.
-//  Licensed per the LICENSE.txt file.
+//  Copyright © Ron Diamond.
+//  Licensed per the LICENSE file.
 //
-
-/**
- Single Responsibility (SRP):
- This class implements a sample Logic module for the Reduxion-iOS sample code.
- */
 
 import Foundation
 import SwiftyJSON
+
+/**
+ Single Responsibility (SRP):
+ This struct implements a sample Logic module for the Reduxion-iOS sample code.
+ */
 
 struct StockQuoteLogic: Logic {
     
@@ -40,19 +40,18 @@ struct StockQuoteLogic: Logic {
             }
             
             if (jsonPayload != JSON.null) {
+                let info = jsonPayload["quoteSummary"]["result"][0]["price"]
+                
                 var stockInfo = DataModel.StockInfo()
-                stockInfo.symbol            = jsonPayload["symbol"].stringValue
-                stockInfo.name              = jsonPayload["companyName"].stringValue
-                stockInfo.sector            = jsonPayload["sector"].stringValue
-                stockInfo.primaryExchange   = jsonPayload["primaryExchange"].stringValue
-                stockInfo.latestPrice       = jsonPayload["latestPrice"].floatValue
-                stockInfo.latestUpdate      = jsonPayload["latestUpdate"].intValue
-                stockInfo.latestVolume      = jsonPayload["latestVolume"].intValue
-                stockInfo.previousClose     = jsonPayload["previousClose"].floatValue
-                stockInfo.change            = jsonPayload["change"].floatValue
-                stockInfo.changePercent     = jsonPayload["changePercent"].floatValue
-                stockInfo.week52High        = jsonPayload["week52High"].floatValue
-                stockInfo.week52Low         = jsonPayload["week52Low"].floatValue
+                stockInfo.symbol            = info["symbol"].stringValue
+                stockInfo.name              = info["shortName"].stringValue
+                stockInfo.latestPrice       = info["regularMarketPrice"]["fmt"].stringValue
+                stockInfo.latestUpdateTime  = info["regularMarketTime"].intValue
+                stockInfo.latestVolume      = info["regularMarketVolume"]["fmt"].stringValue
+                let currencySymbol          = info["currencySymbol"].stringValue
+                let marketCapString         = info["marketCap"]["fmt"].stringValue
+                stockInfo.marketCap         = "\(currencySymbol + marketCapString)"
+                stockInfo.exchangeName      = info["exchangeName"].stringValue
 
                 if (state.dataModel.stocksHistory.history.count > 0),
                     (state.dataModel.stocksHistory.currentIndex != nil) {
@@ -62,15 +61,15 @@ struct StockQuoteLogic: Logic {
                 }
                 state.dataModel.stocksHistory.currentStock = stockInfo
                 state.dataModel.stocksHistory.history.append(stockInfo)
-                self.modifyCurrentIndex(delta: .increment, state: &state)
+                self.modifyCurrentIndex(deltaType: .increment, state: &state)
             }
             break
             
         case .goBackInHistory:
-            self.modifyCurrentIndex(delta: .decrement, state: &state)
+            self.modifyCurrentIndex(deltaType: .decrement, state: &state)
 
         case .goForwardInHistory:
-            self.modifyCurrentIndex(delta: .increment, state: &state)
+            self.modifyCurrentIndex(deltaType: .increment, state: &state)
             
         case .clearHistory:
             state.dataModel.stocksHistory.history.removeAll()
@@ -104,13 +103,14 @@ struct StockQuoteLogic: Logic {
         return description
     }
     
-    func modifyCurrentIndex(delta: indexDelta, state: inout AppState) {
+    func modifyCurrentIndex(deltaType: indexDelta, state: inout AppState) {
         let totalHistoryCount = state.dataModel.stocksHistory.history.count
-        var index = state.dataModel.stocksHistory.currentIndex ?? -1
+        let maxIndex = totalHistoryCount - 1
+        var index = state.dataModel.stocksHistory.currentIndex ?? 0
 
-        index += delta.rawValue
+        index += deltaType.rawValue
         index = max(0, index)
-        index = min(index, totalHistoryCount)
+        index = min(index, maxIndex)
 
         state.dataModel.stocksHistory.currentIndex = index
         state.dataModel.stocksHistory.currentStock = state.dataModel.stocksHistory.history[index]
