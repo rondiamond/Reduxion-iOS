@@ -24,6 +24,8 @@
 		E45A855A21523B1100581DCE /* StockQuoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE852133BF0300438A8F /* StockQuoteService.swift */; };
 		E4645F08222773DD00FCC46E /* AppUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4645F07222773DD00FCC46E /* AppUseCases.swift */; };
 		E4645F09222773DD00FCC46E /* AppUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4645F07222773DD00FCC46E /* AppUseCases.swift */; };
+		E4721EDD28D6F023003C803F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E4721EDC28D6F023003C803F /* SwiftyJSON */; };
+		E4721EDF28D6F027003C803F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E4721EDE28D6F027003C803F /* Alamofire */; };
 		E48FE18E222BBEAA002646E7 /* ServiceActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */; };
 		E48FE18F222BBF5D002646E7 /* ServiceActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */; };
 		E49569F7221E464E0070FB31 /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49569F6221E464E0070FB31 /* ServiceConstants.swift */; };
@@ -103,6 +105,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4721EDD28D6F023003C803F /* SwiftyJSON in Frameworks */,
+				E4721EDF28D6F027003C803F /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +285,10 @@
 				E478EA2521636EAE008F05DB /* PBXTargetDependency */,
 			);
 			name = ReduxionIOSTests;
+			packageProductDependencies = (
+				E4721EDC28D6F023003C803F /* SwiftyJSON */,
+				E4721EDE28D6F027003C803F /* Alamofire */,
+			);
 			productName = "Reduxion-iOSTests";
 			productReference = E4CE6AC12131498B00E4E865 /* ReduxionIOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -689,6 +697,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E4721EDC28D6F023003C803F /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4C600D928151193002AC518 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		E4721EDE28D6F027003C803F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4C600DC28151205002AC518 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		E4C600E6281518CD002AC518 /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E4C600D928151193002AC518 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
