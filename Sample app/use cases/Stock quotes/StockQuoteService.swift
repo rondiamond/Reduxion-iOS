@@ -56,15 +56,42 @@ class StockQuoteService: Service {
         
         serviceRequestBegins()
         
-        var headers: [String : String] = [:]
-        headers[SERVICE_REQUEST_HEADER_CONTENT_TYPE] = SERVICE_REQUEST_HEADER_CONTENT_TYPE_JSON
-        Alamofire.request(urlString, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers)
+//        var headers: [String : String] = [:]
+//        headers[SERVICE_REQUEST_HEADER_CONTENT_TYPE] = SERVICE_REQUEST_HEADER_CONTENT_TYPE_JSON
+//        Alamofire.request(urlString, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers)
+//            .validate(contentType: [SERVICE_REQUEST_HEADER_CONTENT_TYPE_JSON])
+//            .responseString { response in
+//                // handle any non-JSON errors here (e.g., HTML)
+//            }
+//            .responseJSON { response in
+//                switch response.result {
+//                case .success(let value):
+//                    let json = SwiftyJSON.JSON(value)
+//                    parseAndStoreData(json: json, error: nil)
+//                    break
+//                case .failure(let error):
+//                    // TODO: handle error case
+//                    print("Request failed with error: \(error)")
+//                }
+//        }
+
+//        Alamofire.request(urlString).validate() { (response),<#arg#>,<#arg#>  in
+//
+//        }
+
+        // https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#response-validation
+        
+        let headers: HTTPHeaders = [SERVICE_REQUEST_HEADER_CONTENT_TYPE : SERVICE_REQUEST_HEADER_CONTENT_TYPE_JSON]
+        AF.request(urlString, headers: headers)
+//        AF.request("https://httpbin.org/get")
+            .validate(statusCode: 200..<300)
             .validate(contentType: [SERVICE_REQUEST_HEADER_CONTENT_TYPE_JSON])
-            .responseString { response in
-                // handle any non-JSON errors here (e.g., HTML)
-            }
-            .responseJSON { response in
+            .responseData { response in
                 switch response.result {
+//                case .success:
+//                    print("Validation Successful")
+//                case let .failure(error):
+//                    print(error)
                 case .success(let value):
                     let json = SwiftyJSON.JSON(value)
                     parseAndStoreData(json: json, error: nil)
@@ -73,7 +100,16 @@ class StockQuoteService: Service {
                     // TODO: handle error case
                     print("Request failed with error: \(error)")
                 }
-        }
+
+
+            }
+        
+        
+        
+
+        
+        
+        
         
         serviceRequestEnds()
     }
