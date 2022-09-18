@@ -34,7 +34,7 @@ Please see sample app for usage patterns.
 ~
 
 ### Future Milestones
-- SwiftUI and Combine in the sample app
+- SwiftUI and Combine (and other modernizations) in the sample app
 
 ~
 
