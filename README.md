@@ -19,7 +19,7 @@ Reduxion-iOS is a Clean Architecture implementation, based on the patterns of:
 - [Unidirectional data flow](https://duckduckgo.com/?q=unidirectional%20data%20flow)
 - [Redux's unified "state container" data model](https://duckduckgo.com/?q=redux%20%22state%20container%22)
 
-It is a custom implementation, based in part on [sample code](https://github.com/armin/Redux-iOS) by Armin Kroll.
+It is a custom implementation, inspired in part by [Redux-iOS](https://github.com/armin/Redux-iOS) by Armin Kroll.
 
 ~
 

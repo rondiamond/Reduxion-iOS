@@ -6,10 +6,6 @@
 //  Copyright © Ron Diamond.
 //  Licensed per the LICENSE file.
 //
-//  Based upon:
-//  Redux-iOS - created by Armin Kroll on 12/12/2015.
-//  https://github.com/armin/Redux-iOS/blob/8bf11d9e2495e1e7969d42ea266ec76b59472e1b/LICENSE
-//
 
 /**
  Single Responsibility (SRP):
