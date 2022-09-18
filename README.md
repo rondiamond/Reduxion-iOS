@@ -33,6 +33,12 @@ Please see sample app for usage patterns.
 
 ~
 
+### Future Milestones
+- SwiftUI
+- Combine
+
+~
+
 ### Special Thanks
 - [Armin Kroll](https://twitter.com/persival)
 - [Benjamin Encz](https://twitter.com/benjaminencz)
