@@ -38,8 +38,8 @@ Please see sample app for usage patterns.
 
 ### Special Thanks
 - [Armin Kroll](https://twitter.com/persival), whose [Redux-iOS](https://github.com/armin/Redux-iOS) helped inspire this implementation.
-- [Benjamin Encz](https://twitter.com/benjaminencz)
-- ["Uncle Bob" Martin](https://twitter.com/unclebobmartin)
+- [Benjamin Encz](https://twitter.com/benjaminencz), for evangelizing Redux and Unidirectional Data Flow for iOS.
+- ["Uncle Bob" Martin](https://twitter.com/unclebobmartin), for too many reasons to count.
 - ... and everyone else who's been an inspiration toward *Clean Code*.  Thanks.
 
 
