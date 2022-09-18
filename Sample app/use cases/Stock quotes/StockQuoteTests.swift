@@ -14,7 +14,7 @@ class StockQuoteTests: XCTestCase, AppStateSubscriber {
     var expectation: XCTestExpectation?
     var expectationWaitTimeInSeconds = 10.0
     var appStateUpdatedCompletionBlock: ((AppState) -> Void)?
-    var numberOfExpectedUpdates = 0
+    var numberOfExpectedUpdates = 0     // since some tests are based on multiple stock lookups
     
     let stockSymbols = [
         "aapl", "goog", "nflx", "sbux", "tgt"
