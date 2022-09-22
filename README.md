@@ -9,14 +9,20 @@ Easy-to-implement, best-practice Clean Architecture for iOS apps, featuring:
     - for View / Business Logic / Data / Services
 + Composable business logic
     - in single-responsibility units
-+ Good separation of concerns facilitating automated testing (TDD/[BDD](https://duckduckgo.com/?q=behavior+driven+development))
-    - that’s performant and not brittle
++ Good separation of concerns
+    - facilitating automated testing (TDD/[BDD](https://duckduckgo.com/?q=behavior+driven+development)) that’s performant and not brittle
 + Ability to switch the entire application between real and mock services
     - with one line of code
 + Ability to easily persist & recall the entire state of the application
     - without any database framework at all
 + Ability to easily add time travel (rewind/fast-forward)
     - between different states of the application
+
+---
+
+### Rationale and History
+
+["Introducing Reduxion-iOS"](https://ron-dev.medium.com/introducing-reduxion-ios-9e2ac5dcf054) (Medium.com)
 
 ---
 
