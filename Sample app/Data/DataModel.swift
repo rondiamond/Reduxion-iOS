@@ -22,7 +22,7 @@ struct DataModel: Codable {
         var currentStock: StockInfo?
         var canGoBack: Bool = false
         var canGoForward: Bool = false
-        var enableClearHistory: Bool = false
+        var enableHistoryClear: Bool = false
         var historyCountDescription: String = ""   // e.g., "2 of 3"
     }
 

@@ -108,7 +108,7 @@ class LogicCoordinator {
     /**
      The daisy chain of composable business logic units
      Notes:
-     - This business logic is the same regardless of whether we're using real or mock data.
+     - Business logic is the same regardless of whether we're using real or mock data.
      - The order of logic units in the daisy chain shouldn't matter.  If so, that's a code smell, and dependent operations should be handled sequentially in the calling code.
      */
     fileprivate var logicUnits: [Logic] = []
@@ -224,7 +224,7 @@ class LogicCoordinator {
         self.subscribers.append(immutableSubscriber)
         
         if updateWithCurrentAppState {
-            newSubscriber.update(self.appState, mostRecentAction: Action.null)  // ?
+            newSubscriber.update(self.appState, mostRecentAction: Action.null)
         }
     }
 

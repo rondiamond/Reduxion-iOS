@@ -19,7 +19,12 @@ var useCases: [UseCase] {
                          services: UseCaseServices.init(mock: MockStockQuoteService(),
                                                         real: StockQuoteService()
                 )
+            ),
+
+            UseCase.init(logic: AnalyticsLogic(),
+                         services: nil
             )
+
             // more as needed ...
         ]
         return _useCases

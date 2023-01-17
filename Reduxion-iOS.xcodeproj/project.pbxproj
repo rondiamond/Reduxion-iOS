@@ -26,6 +26,8 @@
 		E4645F09222773DD00FCC46E /* AppUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4645F07222773DD00FCC46E /* AppUseCases.swift */; };
 		E4721EDD28D6F023003C803F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E4721EDC28D6F023003C803F /* SwiftyJSON */; };
 		E4721EDF28D6F027003C803F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E4721EDE28D6F027003C803F /* Alamofire */; };
+		E47DAA80296E93BE0057CA3D /* AnalyticsLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47DAA7F296E92070057CA3D /* AnalyticsLogic.swift */; };
+		E47DAA81296E93C40057CA3D /* AnalyticsLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47DAA7F296E92070057CA3D /* AnalyticsLogic.swift */; };
 		E48FE18E222BBEAA002646E7 /* ServiceActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */; };
 		E48FE18F222BBF5D002646E7 /* ServiceActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4FE8B2133C28F00438A8F /* ServiceActivityIndicator.swift */; };
 		E49569F7221E464E0070FB31 /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49569F6221E464E0070FB31 /* ServiceConstants.swift */; };
@@ -76,15 +78,16 @@
 		E45A854A2152372800581DCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4645F07222773DD00FCC46E /* AppUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppUseCases.swift; path = "Sample app/use cases/AppUseCases.swift"; sourceTree = SOURCE_ROOT; };
 		E464FCCC28D468AE001D6DD6 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		E47DAA7F296E92070057CA3D /* AnalyticsLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsLogic.swift; sourceTree = "<group>"; };
 		E49569F6221E464E0070FB31 /* ServiceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConstants.swift; sourceTree = "<group>"; };
 		E49569FB221E4B040070FB31 /* StockQuoteMockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StockQuoteMockData.json; sourceTree = "<group>"; };
 		E4956A01221E4DCD0070FB31 /* reduxion-ios-architecture-block-diagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reduxion-ios-architecture-block-diagram.png"; sourceTree = "<group>"; };
 		E4BBF61E22262D6B00A1C5FA /* UseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
-		E4CE6AC12131498B00E4E865 /* ReduxionIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReduxionIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4CE6AC82131498B00E4E865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4CE6AD321314BE400E4E865 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		E4CE6AD421314BE400E4E865 /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		E4CE6AD621314BE400E4E865 /* LogicCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogicCoordinator.swift; sourceTree = "<group>"; };
+		E4D2440729711DF7000ABFF7 /* ReduxionIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReduxionIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4D4FE742133AE2000438A8F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		E4D4FE7E2133B78E00438A8F /* StockQuoteLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StockQuoteLogic.swift; path = "Sample app/Use cases/Stock quotes/StockQuoteLogic.swift"; sourceTree = SOURCE_ROOT; };
 		E4D4FE852133BF0300438A8F /* StockQuoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StockQuoteService.swift; path = "Sample app/Use cases/Stock quotes/StockQuoteService.swift"; sourceTree = SOURCE_ROOT; };
@@ -124,6 +127,14 @@
 				E4BBF6232226468900A1C5FA /* View */,
 			);
 			path = "Sample app";
+			sourceTree = "<group>";
+		};
+		E47DAA7E296E91ED0057CA3D /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				E47DAA7F296E92070057CA3D /* AnalyticsLogic.swift */,
+			);
+			path = Analytics;
 			sourceTree = "<group>";
 		};
 		E49569F9221E47F80070FB31 /* Service-related */ = {
@@ -198,8 +209,8 @@
 		E4CE6AB92131498B00E4E865 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E4CE6AC12131498B00E4E865 /* ReduxionIOSTests.xctest */,
 				E45A853C2152372700581DCE /* ReduxionIOS.app */,
+				E4D2440729711DF7000ABFF7 /* ReduxionIOSTests.xctest */,
 			);
 			name = Products;
 			path = ..;
@@ -240,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				E4645F07222773DD00FCC46E /* AppUseCases.swift */,
+				E47DAA7E296E91ED0057CA3D /* Analytics */,
 				E49569FA221E4AD10070FB31 /* Stock quotes */,
 			);
 			name = "Use cases";
@@ -290,7 +302,7 @@
 				E4721EDE28D6F027003C803F /* Alamofire */,
 			);
 			productName = "Reduxion-iOSTests";
-			productReference = E4CE6AC12131498B00E4E865 /* ReduxionIOSTests.xctest */;
+			productReference = E4D2440729711DF7000ABFF7 /* ReduxionIOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -368,6 +380,7 @@
 				E4645F08222773DD00FCC46E /* AppUseCases.swift in Sources */,
 				E45A855221523B0000581DCE /* LogicCoordinator.swift in Sources */,
 				E45A855921523B1100581DCE /* StockQuoteLogic.swift in Sources */,
+				E47DAA80296E93BE0057CA3D /* AnalyticsLogic.swift in Sources */,
 				E45A85412152372700581DCE /* StockQuoteViewController.swift in Sources */,
 				E4BBF61F22262D6B00A1C5FA /* UseCaseFactory.swift in Sources */,
 				E45A855A21523B1100581DCE /* StockQuoteService.swift in Sources */,
@@ -387,6 +400,7 @@
 				E4BBF62022262D6B00A1C5FA /* UseCaseFactory.swift in Sources */,
 				E4645F09222773DD00FCC46E /* AppUseCases.swift in Sources */,
 				E49569F8221E464E0070FB31 /* ServiceConstants.swift in Sources */,
+				E47DAA81296E93C40057CA3D /* AnalyticsLogic.swift in Sources */,
 				E4D4FE832133BEB600438A8F /* StockQuoteLogic.swift in Sources */,
 				E442F6082150951A000B37FE /* AppState.swift in Sources */,
 				E45A850C215225BC00581DCE /* Actions.swift in Sources */,

@@ -21,7 +21,7 @@ protocol UseCases {
  */
 struct UseCase {
     var logic: Logic
-    var services: UseCaseServices
+    var services: UseCaseServices?
 }
 
 struct UseCaseServices {
@@ -50,16 +50,18 @@ struct UseCaseFactory {
             var logic = useCase.logic
             var service: Service
             
-            switch currentServicesType! {
-            case .mock:
-                service = useCase.services.mock
-                break
-            case .real(_):
-                service = useCase.services.real
-                service.environment = currentEnvironment
-                break
+            if let services = useCase.services {
+                switch currentServicesType! {
+                case .mock:
+                    service = services.mock
+                    break
+                case .real(_):
+                    service = services.real
+                    service.environment = currentEnvironment
+                    break
+                }
+                logic.service = service
             }
-            logic.service = service
             logicUnits.append(logic)
         }
         initializeLogicCoordinator(logicUnits: logicUnits)

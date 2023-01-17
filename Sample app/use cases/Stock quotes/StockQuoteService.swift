@@ -11,6 +11,11 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+/**
+ Single Responsibility (SRP):
+ This file implements the service handler for the "stock quotes" use case.
+ */
+
 // MARK: - Dictionary keys
 
 let StockQuoteServiceKey_Symbol = "StockQuoteServiceKey_Symbol"

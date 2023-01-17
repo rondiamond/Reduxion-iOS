@@ -12,7 +12,7 @@ import SwiftyJSON
 
 /**
  Single Responsibility (SRP):
- This struct implements a sample Logic module for the Reduxion-iOS sample code.
+ This struct implements Logic for the "stock quotes" use case.
  */
 
 struct StockQuoteLogic: Logic {
@@ -65,19 +65,19 @@ struct StockQuoteLogic: Logic {
             }
             break
             
-        case .goBackInHistory:
+        case .historyGoBack:
             self.modifyCurrentIndex(deltaType: .decrement, state: &state)
 
-        case .goForwardInHistory:
+        case .historyGoForward:
             self.modifyCurrentIndex(deltaType: .increment, state: &state)
             
-        case .clearHistory:
+        case .historyClear:
             state.dataModel.stocksHistory.history.removeAll()
             state.dataModel.stocksHistory.currentStock = nil
             state.dataModel.stocksHistory.currentIndex = nil
             state.dataModel.stocksHistory.canGoBack = false
             state.dataModel.stocksHistory.canGoForward = false
-            state.dataModel.stocksHistory.enableClearHistory = false
+            state.dataModel.stocksHistory.enableHistoryClear = false
         default:
             break
         }
@@ -116,7 +116,7 @@ struct StockQuoteLogic: Logic {
         state.dataModel.stocksHistory.currentStock = state.dataModel.stocksHistory.history[index]
         state.dataModel.stocksHistory.canGoBack = (index > 0)
         state.dataModel.stocksHistory.canGoForward = (index < totalHistoryCount-1)
-        state.dataModel.stocksHistory.enableClearHistory = (totalHistoryCount > 0)
+        state.dataModel.stocksHistory.enableHistoryClear = (totalHistoryCount > 0)
     }
     
 }

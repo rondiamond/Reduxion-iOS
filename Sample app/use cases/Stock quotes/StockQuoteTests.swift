@@ -27,7 +27,7 @@ class StockQuoteTests: XCTestCase, AppStateSubscriber {
         
         _ = UseCaseFactory.shared     // initialize
         LogicCoordinator.subscribe(self, updateWithCurrentAppState: false)
-        LogicCoordinator.performAction(.clearHistory)
+        LogicCoordinator.performAction(.historyClear)
     }
 
     override func tearDown() {
@@ -60,7 +60,7 @@ class StockQuoteTests: XCTestCase, AppStateSubscriber {
             XCTAssert(state.dataModel.stocksHistory.history.count == self.stockSymbols.count, "Expected correct number of stock history entries")
             XCTAssert(state.dataModel.stocksHistory.canGoBack == true, "Expected history back button to be enabled")
             XCTAssert(state.dataModel.stocksHistory.canGoForward == false, "Expected history forward button to be disabled")
-            XCTAssert(state.dataModel.stocksHistory.enableClearHistory == true, "Expected history clear button to be enabled")
+            XCTAssert(state.dataModel.stocksHistory.enableHistoryClear == true, "Expected history clear button to be enabled")
         }
         
         for stockSymbol in stockSymbols {
@@ -77,7 +77,7 @@ class StockQuoteTests: XCTestCase, AppStateSubscriber {
     
     func update(_ state: AppState, mostRecentAction: Action) {
         switch mostRecentAction {
-        case .stockQuoteResponse(_, _), .goBackInHistory, .goForwardInHistory:
+        case .stockQuoteResponse(_, _), .historyGoBack, .historyGoForward:
             self.numberOfExpectedUpdates -= 1
             if (self.numberOfExpectedUpdates == 0) {
                 if (self.appStateUpdatedCompletionBlock != nil) {

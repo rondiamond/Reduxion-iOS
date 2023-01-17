@@ -69,21 +69,21 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
     // MARK: - History navigation
     
     @IBAction func buttonBackTapped(_ sender: Any) {
-        LogicCoordinator.performAction(.goBackInHistory)
+        LogicCoordinator.performAction(.historyGoBack)
     }
     
     @IBAction func buttonForwardTapped(_ sender: Any) {
-        LogicCoordinator.performAction(.goForwardInHistory)
+        LogicCoordinator.performAction(.historyGoForward)
     }
-    
+
     @IBAction func buttonClearHistoryTapped(_ sender: Any) {
-        LogicCoordinator.performAction(.clearHistory)
+        LogicCoordinator.performAction(.historyClear)
     }
     
     private func updateHistoryDisplay(state: AppState) {
         self.updateHistoryNavigationButtons(state: state)
         self.historyCountLabel.text = state.dataModel.stocksHistory.historyCountDescription
-        self.buttonClearHistory.isEnabled = state.dataModel.stocksHistory.enableClearHistory
+        self.buttonClearHistory.isEnabled = state.dataModel.stocksHistory.enableHistoryClear
     }
     
     private func updateHistoryNavigationButtons(state: AppState) {
@@ -133,7 +133,7 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
     
     func update(_ state: AppState, mostRecentAction: Action) {
         switch mostRecentAction {
-        case .null, .stockQuoteResponse(_, _), .goBackInHistory, .goForwardInHistory, .clearHistory:
+        case .null, .stockQuoteResponse(_, _), .historyGoBack, .historyGoForward, .historyClear:
             updateDisplay(with: state)
             break
         default:

@@ -31,7 +31,7 @@ struct AppState {
      Persists the given AppState object to disk.
      */
     static func persist(_ appState: AppState) {
-        print("AppState - PERSIST ***")
+        // print("AppState - PERSIST ***\n")
         if let fileURL = self.persistenceFileURL() {
             let encoder = JSONEncoder()
             do {
@@ -47,7 +47,7 @@ struct AppState {
      Recalls the AppState object from disk, and returns it.  If it doesn't exist or can't be recalled, returns a new AppState object.
      */
     static func recall() -> AppState {
-        print("AppState - RECALL ***")
+        // print("AppState - RECALL ***\n")
         var newAppState = AppState()
         if let fileURL = persistenceFileURL() {
             let decoder = JSONDecoder()
