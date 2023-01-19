@@ -56,7 +56,7 @@ struct StockQuoteLogic: Logic {
                 if (state.dataModel.stocksHistory.history.count > 0),
                     (state.dataModel.stocksHistory.currentIndex != nil) {
                     // first, remove any history states 'forward' from here
-                    let subrangeToDelete = state.dataModel.stocksHistory.currentIndex!+1..<state.dataModel.stocksHistory.history.count
+                    let subrangeToDelete = state.dataModel.stocksHistory.currentIndex!+1 ..< state.dataModel.stocksHistory.history.count
                     state.dataModel.stocksHistory.history.removeSubrange(subrangeToDelete)
                 }
                 state.dataModel.stocksHistory.currentStock = stockInfo

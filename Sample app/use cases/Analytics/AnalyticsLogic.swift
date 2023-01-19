@@ -131,7 +131,7 @@ struct AnalyticsLogic: Logic {
             return
         }
         let analyticsProviderName = provider.rawValue
-        print("\(analyticsProviderName): '\(payloadString)'")
+        print("\(analyticsProviderName) analytics: '\(payloadString)'")
     }
     
     func logAnalyticsEndOfEvent() {

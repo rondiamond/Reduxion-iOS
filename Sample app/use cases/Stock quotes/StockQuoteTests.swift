@@ -77,7 +77,7 @@ class StockQuoteTests: XCTestCase, AppStateSubscriber {
     
     func update(_ state: AppState, mostRecentAction: Action) {
         switch mostRecentAction {
-        case .stockQuoteResponse(_, _), .historyGoBack, .historyGoForward:
+        case .stockQuoteResponse(_, _):
             self.numberOfExpectedUpdates -= 1
             if (self.numberOfExpectedUpdates == 0) {
                 if (self.appStateUpdatedCompletionBlock != nil) {
