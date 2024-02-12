@@ -40,19 +40,23 @@ struct StockQuoteLogic: Logic {
             }
             
             if (jsonPayload != JSON.null) {
-                let info = jsonPayload["quoteSummary"]["result"][0]["price"]
-                
-                var stockInfo = DataModel.StockInfo()
-                stockInfo.symbol            = info["symbol"].stringValue
-                stockInfo.name              = info["shortName"].stringValue
-                stockInfo.latestPrice       = info["regularMarketPrice"]["fmt"].stringValue
-                stockInfo.latestUpdateTime  = info["regularMarketTime"].intValue
-                stockInfo.latestVolume      = info["regularMarketVolume"]["fmt"].stringValue
-                let currencySymbol          = info["currencySymbol"].stringValue
-                let marketCapString         = info["marketCap"]["fmt"].stringValue
-                stockInfo.marketCap         = "\(currencySymbol + marketCapString)"
-                stockInfo.exchangeName      = info["exchangeName"].stringValue
+//                let info = jsonPayload["chart"]["result"][0]["meta"]
+                let info = jsonPayload["chart"]["result"][0]
 
+                var stockInfo = DataModel.StockInfo()
+                stockInfo.symbol            = info["meta"]["symbol"].stringValue
+//                stockInfo.name              = info["shortName"].stringValue
+                stockInfo.latestPrice       = info["meta"]["regularMarketPrice"].stringValue
+                stockInfo.latestUpdateTime  = info["meta"]["regularMarketTime"].intValue
+                stockInfo.latestVolume      = info["indicators"]["quote"][0]["volume"][0].intValue
+                
+                stockInfo.priceHigh         = info["indicators"]["quote"][0]["high"][0].floatValue
+                stockInfo.priceLow          = info["indicators"]["quote"][0]["low"][0].floatValue
+                
+                stockInfo.exchangeName      = info["meta"]["exchangeName"].stringValue
+                stockInfo.instrumentType    = info["meta"]["instrumentType"].stringValue
+                stockInfo.firstTradeDate    = info["meta"]["firstTradeDate"].intValue
+                
                 if (state.dataModel.stocksHistory.history.count > 0),
                     (state.dataModel.stocksHistory.currentIndex != nil) {
                     // first, remove any history states 'forward' from here

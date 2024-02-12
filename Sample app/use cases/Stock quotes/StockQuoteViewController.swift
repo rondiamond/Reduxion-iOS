@@ -110,20 +110,40 @@ class StockQuoteViewController: UIViewController, AppStateSubscriber, UITextFiel
         var stockInfoText = ""
         if let stockInfo = stockInfo {
             stockInfoText.append("symbol = \(String(describing: stockInfo.symbol ?? ""))\n")
-            stockInfoText.append("name = \(String(describing: stockInfo.name ?? ""))\n")
             stockInfoText.append("exchangeName = \(String(describing: stockInfo.exchangeName ?? ""))\n")
+            stockInfoText.append("instrumentType = \(String(describing: stockInfo.instrumentType ?? ""))\n")
             stockInfoText.append("latestPrice = \(String(describing: stockInfo.latestPrice ?? ""))\n")
-            stockInfoText.append("latestVolume = \(String(describing: stockInfo.latestVolume ?? ""))\n")
-            stockInfoText.append("marketCap = \(String(describing: stockInfo.marketCap ?? ""))\n")
+            
+            if let latestVolume = stockInfo.latestVolume {
+                let latestVolumeFormatted = latestVolume.formatted()
+                stockInfoText.append("latestVolume = \(String(describing: latestVolumeFormatted))\n")
+            }
+            
+            stockInfoText.append("priceHigh = \(String(describing: stockInfo.priceHigh!))\n")
+            stockInfoText.append("priceLow = \(String(describing: stockInfo.priceLow!))\n")
 
+            if let priceLow = stockInfo.priceLow {
+                stockInfoText.append("priceLow = \(String(describing: priceLow))\n")
+            }
+            
             if let latestUpdateTime = stockInfo.latestUpdateTime {
                 let latestUpdateTimeDouble = Double(latestUpdateTime)
                 let latestUpdateDate = Date(timeIntervalSince1970: latestUpdateTimeDouble)
                 let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+                dateFormatter.dateFormat = "yyyy-MM-dd  hh:mm:ss a"
                 let formattedDateTime = dateFormatter.string(from: latestUpdateDate)
-                stockInfoText.append("latestUpdateTime = \(String(describing: formattedDateTime))")
+                stockInfoText.append("latestUpdateTime = \(String(describing: formattedDateTime))\n")
             }
+                        
+            if let firstTradeDateTime = stockInfo.firstTradeDate {
+                let firstTradeDateDouble = Double(firstTradeDateTime)
+                let firstTradeDate = Date(timeIntervalSince1970: firstTradeDateDouble)
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd  hh:mm:ss a"
+                let formattedDateTime = dateFormatter.string(from: firstTradeDate)
+                stockInfoText.append("\nfirstTradeDate = \(String(describing: formattedDateTime))")
+            }
+
         }
         return stockInfoText
     }

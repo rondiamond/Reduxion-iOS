@@ -33,9 +33,12 @@ struct DataModel: Codable {
         var symbol: String?
         var name: String?
         var latestPrice: String?
-        var latestUpdateTime: Int?   // Unix seconds
-        var latestVolume: String?
-        var marketCap: String?
+        var latestUpdateTime: Int?  // Unix seconds
+        var priceHigh: Float?
+        var priceLow: Float?
+        var latestVolume: Int?
         var exchangeName: String?
+        var instrumentType: String?
+        var firstTradeDate: Int?
     }
 }

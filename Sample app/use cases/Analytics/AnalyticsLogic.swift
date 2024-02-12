@@ -59,6 +59,7 @@ struct AnalyticsLogic: Logic {
             // ----------------------------------------------------------------------
 
         case .applicationLaunched:
+            print("['Analytics' use case demo - mock analytics providers logged below]\n")
             analyticsPayload = "application.launch"
             logAnalytics(provider: .HooliEverywhere, payloadString: analyticsPayload)
             

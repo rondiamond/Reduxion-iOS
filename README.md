@@ -12,8 +12,8 @@ Easy-to-implement, best-practice Clean Architecture for iOS apps, featuring:
 + Good separation of concerns
     - facilitating automated testing (TDD/[BDD](https://duckduckgo.com/?q=behavior+driven+development)) that’s performant and not brittle
 + Ability to switch the entire application between real and mock services
-    - largely decoupling front-end from back-end development, if needed
     - with one line of code
+    - largely decoupling front-end from back-end development, if needed
 + Ability to easily persist & recall the entire state of the application
     - without any database framework at all
 + Ability to easily add time travel (rewind/fast-forward)
